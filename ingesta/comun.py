@@ -19,7 +19,7 @@ def abrir(url, timeout=60):
             return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout)
         except urllib.error.HTTPError as e:
             if e.code in (429, 500, 502, 503, 504) and intento < 2:
-                time.sleep(5 * (intento + 1))
+                time.sleep(5 if e.code == 429 else 60)
                 continue
             raise
 
