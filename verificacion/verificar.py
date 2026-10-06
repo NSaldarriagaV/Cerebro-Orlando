@@ -66,6 +66,11 @@ def dominio(ruta, lago):
         "clima":     [("temperatura actual en °F en rango sensato", lambda: 20 < valor(lago, "temperatura_actual") < 115),
                       ("pronóstico con al menos 6 periodos", lambda: len(lago["series"]["pronostico_temperatura"]["puntos"]) >= 6),
                       ("pronóstico en rango sensato", lambda: all(20 < p[1] < 115 for p in lago["series"]["pronostico_temperatura"]["puntos"]))],
+        "permisos":  [("permisos del último año completo en rango sensato", lambda: 50 < valor(lago, "permisos_emitidos_ultimo_anio_completo") < 1_000_000),
+                      ("umbral mínimo por barrio de al menos 5 permisos", lambda: valor(lago, "umbral_minimo_por_barrio") >= 5),
+                      ("ningún barrio por debajo del umbral", lambda: all(p[1] >= valor(lago, "umbral_minimo_por_barrio") for p in lago["series"]["permisos_por_barrio_ultimo_anio"]["puntos"])),
+                      ("los barrios mostrados no suman más que el total de la ciudad", lambda: sum(p[1] for p in lago["series"]["permisos_por_barrio_ultimo_anio"]["puntos"]) <= valor(lago, "permisos_emitidos_ultimo_anio_completo")),
+                      ("serie anual ordenada y sin el año en curso", lambda: (lambda a: a == sorted(set(a)) and max(a) < hoy.year)([int(p[0]) for p in lago["series"]["permisos_por_anio"]["puntos"]]))],
         "territorio": [("hay al menos un polígono por capa", lambda: all(c["valor"] >= 1 for c in lago["cifras"].values()))],
     }
     for nombre, fn in reglas.get(t, []):
@@ -75,6 +80,10 @@ def dominio(ruta, lago):
             ok = False
             nombre += f" (no se pudo evaluar: {type(e).__name__})"
         check(f"{ruta}: {nombre}", ok, "valor fuera de rango o estructura distinta")
+    if t == "permisos":
+        c = valor(lago, "coincidencia_nombres_con_capa_barrios")
+        if c is not None and c < 80:
+            warn(f"{ruta}: solo {c} % de los barrios coincide por nombre con la capa de barrios; el nombre no es una llave confiable")
 
 
 # ---------- lago/raw/*/*.json
