@@ -12,8 +12,8 @@ HOY = datetime.date.today().isoformat()
 
 def correr(lago):
     with tempfile.TemporaryDirectory() as t:
-        (pathlib.Path(t) / "lago").mkdir()
-        (pathlib.Path(t) / "lago" / "prueba.json").write_text(json.dumps(lago, ensure_ascii=False), encoding="utf-8")
+        (pathlib.Path(t) / "lago" / "raw" / "prueba").mkdir(parents=True)
+        (pathlib.Path(t) / "lago" / "raw" / "prueba" / "prueba.json").write_text(json.dumps(lago, ensure_ascii=False), encoding="utf-8")
         r = subprocess.run([sys.executable, str(VERIFICAR), "--raiz", t], capture_output=True, text=True, encoding="utf-8")
         return r.returncode, r.stdout
 

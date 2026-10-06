@@ -2,7 +2,7 @@
 """Ingesta · el clima de Orlando hoy y en los próximos días: National Weather Service (F57).
 
 Lee:     api.weather.gov (sin llave; pide un User-Agent con contacto: variable CONTACTO).
-Escribe: lago/clima.json con la forma del contrato.
+Escribe: lago/raw/clima/clima.json con la forma del contrato.
 
 OJO: es tiempo real. Este archivo cambia en cada corrida, así que no entra en la prueba de
 reproducibilidad (git diff siempre lo mostrará distinto). Eso es esperado, no un error.

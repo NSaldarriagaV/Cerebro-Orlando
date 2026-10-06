@@ -64,9 +64,10 @@ def cifra(valor, unidad, vigencia, fuente):
 
 
 def escribir_lago(tema, fuentes, cifras, series):
-    """Escribe lago/<tema>.json con la forma del contrato."""
-    LAGO.mkdir(exist_ok=True)
+    """Escribe lago/raw/<tema>/<tema>.json con la forma del contrato."""
+    carpeta = LAGO / "raw" / tema
+    carpeta.mkdir(parents=True, exist_ok=True)
     lago = {"tema": tema, "probado": hoy(), "fuentes": fuentes, "cifras": cifras, "series": series}
-    ruta = LAGO / f"{tema}.json"
+    ruta = carpeta / f"{tema}.json"
     ruta.write_text(json.dumps(lago, ensure_ascii=False, indent=1), encoding="utf-8")
     return ruta

@@ -26,7 +26,7 @@ correr, porque el servicio del clima pide que el cliente se identifique.
 |---|---|
 | `ingesta/` | Un script por tema. Cada uno dice arriba qué lee y qué escribe. `comun.py` tiene lo compartido. |
 | `catalogo/` | `fuentes_lago.json`: las fuentes que alimentan el lago, con su licencia (aquí se corrige). `catalogo_completo.json`: las 105 fichas del Excel, con las que no entraron, generadas por `exportar_catalogo.py`. |
-| `lago/` | El dato limpio, un JSON por tema con la forma del contrato. `lago/raw/` está en `.gitignore`. |
+| `lago/` | `lago/raw/<tema>/<tema>.json`: lo que escribe cada script de ingesta, con la forma del contrato. Está en `.gitignore`: no llega al repositorio ni al despliegue. |
 | `territorio/` | Capas GeoJSON en WGS84, simplificadas. |
 | `verificacion/` | `verificar.py` y la prueba de que sabe fallar. |
 
@@ -43,6 +43,6 @@ correr, porque el servicio del clima pide que el cliente se identifique.
 
 ## Cosas que cambian solas
 
-- `clima.json` cambia en cada corrida (tiempo real). Es esperado: no entra en la prueba de reproducibilidad.
-- `escucha.json` suma un mes nuevo cada mes; `empleo.json`, cada semana.
+- `lago/raw/clima/clima.json` cambia en cada corrida (tiempo real). Es esperado: no entra en la prueba de reproducibilidad.
+- `lago/raw/escucha/escucha.json` suma un mes nuevo cada mes; `lago/raw/empleo/empleo.json`, cada semana.
 - Las capas de Orlando se actualizan cuando la ciudad las actualiza (ver `vigencia` en cada cifra).

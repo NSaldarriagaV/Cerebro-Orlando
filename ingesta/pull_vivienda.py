@@ -3,7 +3,7 @@
 
 Lee:     fredgraph.csv de la serie ATNHPIUS36740Q (índice de precios de vivienda, área de Orlando), trimestral.
          Sin llave (la API oficial sí pide llave gratuita; el CSV por serie no).
-Escribe: lago/vivienda.json con la forma del contrato.
+Escribe: lago/raw/vivienda/vivienda.json con la forma del contrato.
 
 La licencia de FRED varía por serie: se copia a catalogo/fuentes_lago.json tal como la declara la página
 de la serie. Mientras diga «por verificar», verificar.py falla."""

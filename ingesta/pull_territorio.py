@@ -2,7 +2,7 @@
 """Ingesta · límites de Orlando: ciudad, barrios y distritos de comisionados (F88, F90, F94).
 
 Lee:     portal de datos abiertos de Orlando (API SODA, sin llave), formato JSON con la geometría en 'the_geom'.
-Escribe: territorio/*.geojson (WGS84, simplificado) y lago/territorio.json con el contrato.
+Escribe: territorio/*.geojson (WGS84, simplificado) y lago/raw/territorio/territorio.json con el contrato.
 
 Decisiones:
 - Solo se copian los campos de la lista blanca de cada capa. En la capa de distritos se descarta a propósito

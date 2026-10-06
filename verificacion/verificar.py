@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verificación antes de publicar: con un solo FAIL no se despliega.
 
-Revisa lago/*.json (contrato) y territorio/*.geojson (geometrías). Uso:
+Revisa lago/raw/*/*.json (contrato) y territorio/*.geojson (geometrías). Uso:
     python3 verificacion/verificar.py [--raiz CARPETA]
 Termina con código 1 si algo falla. Las líneas WARN no hacen fallar, pero hay que leerlas."""
 import argparse, datetime, glob, json, pathlib, re, sys
@@ -77,9 +77,9 @@ def dominio(ruta, lago):
         check(f"{ruta}: {nombre}", ok, "valor fuera de rango o estructura distinta")
 
 
-# ---------- lago/*.json
-for ruta in sorted(glob.glob(str(RAIZ / "lago" / "*.json"))):
-    nombre_ruta = "lago/" + pathlib.Path(ruta).name
+# ---------- lago/raw/*/*.json
+for ruta in sorted(glob.glob(str(RAIZ / "lago" / "raw" / "*" / "*.json"))):
+    nombre_ruta = pathlib.Path(ruta).relative_to(RAIZ).as_posix()
     lago = json.load(open(ruta, encoding="utf-8"))
     fuentes = lago.get("fuentes", [])
     ids = {f.get("id") for f in fuentes}

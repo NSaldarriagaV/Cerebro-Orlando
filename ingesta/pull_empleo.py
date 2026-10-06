@@ -3,7 +3,7 @@
 
 Lee:     CSV de GitHub (hiring-lab/job_postings_tracker), todas las áreas metropolitanas de EE. UU.
          (unos 60 MB). Se lee en flujo y solo se guarda Orlando. Sin llave.
-Escribe: lago/empleo.json con la forma del contrato.
+Escribe: lago/raw/empleo/empleo.json con la forma del contrato.
 
 Cruce por código territorial, no por nombre: CBSA 36740 = Orlando-Kissimmee-Sanford, FL."""
 import calendar, csv, datetime, io

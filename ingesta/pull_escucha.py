@@ -2,7 +2,7 @@
 """Ingesta · cuánta gente busca Orlando en Wikipedia (F71).
 
 Lee:     es.wikipedia.org (resumen del artículo) y la API de vistas de Wikimedia. Sin llave.
-Escribe: lago/escucha.json con la forma del contrato.
+Escribe: lago/raw/escucha/escucha.json con la forma del contrato.
 
 «Un título que coincide no es la cosa»: se exige que el título sea un artículo (no una página de
 desambiguación) y que hable de Florida, y se usa el título canónico para pedir las vistas."""
