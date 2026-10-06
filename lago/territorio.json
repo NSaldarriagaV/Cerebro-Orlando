@@ -1,0 +1,48 @@
+{
+ "tema": "territorio",
+ "probado": "2026-10-06",
+ "fuentes": [
+  {
+   "id": "orlando_limites",
+   "nombre": "Orlando Open Data · Orlando City Limits (adpi-29a3)",
+   "url": "https://data.cityoforlando.net/resource/adpi-29a3.json",
+   "estado": "vivo",
+   "licencia": "no declara"
+  },
+  {
+   "id": "orlando_barrios",
+   "nombre": "Orlando Open Data · Orlando Neighborhoods (yskk-n7cw)",
+   "url": "https://data.cityoforlando.net/resource/yskk-n7cw.json",
+   "estado": "vivo",
+   "licencia": "no declara"
+  },
+  {
+   "id": "orlando_distritos",
+   "nombre": "Orlando Open Data · Orlando Commissioner Districts (iy8d-dzv4)",
+   "url": "https://data.cityoforlando.net/resource/iy8d-dzv4.json",
+   "estado": "vivo",
+   "licencia": "no declara"
+  }
+ ],
+ "cifras": {
+  "poligonos_limite_ciudad": {
+   "valor": 1,
+   "unidad": "polígonos",
+   "vigencia": "2026-07-09",
+   "fuente": "orlando_limites"
+  },
+  "poligonos_barrios": {
+   "valor": 125,
+   "unidad": "polígonos",
+   "vigencia": "2026-07-08",
+   "fuente": "orlando_barrios"
+  },
+  "poligonos_distritos_comisionados": {
+   "valor": 6,
+   "unidad": "polígonos",
+   "vigencia": "2026-05-06",
+   "fuente": "orlando_distritos"
+  }
+ },
+ "series": {}
+}

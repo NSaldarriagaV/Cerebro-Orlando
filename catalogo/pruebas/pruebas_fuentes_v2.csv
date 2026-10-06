@@ -1,0 +1,79 @@
+id,url,http,tipo_contenido,url_final,fecha_prueba,error
+F01,https://data.cityoforlando.net,200,text/html; charset=utf-8,https://data.cityoforlando.net,2026-10-06,
+F02,https://www.orlando.gov,200,text/html; charset=utf-8,https://www.orlando.gov/Home,2026-10-06,
+F03,https://www.orangecountyfl.net,200,text/html; charset=utf-8,https://www.orangecountyfl.net,2026-10-06,
+F04,https://www.ocpafl.org,,,,2026-10-06,<urlopen error [Errno 11002] getaddrinfo failed>
+F05,https://www.occompt.com,,,,2026-10-06,<urlopen error [Errno 11002] getaddrinfo failed>
+F06,https://www.ocfelections.gov,200,text/html; charset=UTF-8,https://voteorangefl.gov/,2026-10-06,
+F07,https://dos.fl.gov/sunbiz/,403,,,2026-10-06,Forbidden
+F08,https://www.myfloridalicense.com,403,,,2026-10-06,Forbidden
+F09,https://metroplanorlando.gov,200,text/html; charset=UTF-8,https://metroplanorlando.gov,2026-10-06,
+F10,https://www.ecfrpc.org,200,text/html; charset=UTF-8,https://www.ecfrpc.org,2026-10-06,
+F11,https://www.census.gov/quickfacts/orlandocityflorida,403,,,2026-10-06,Forbidden
+F12,https://data.census.gov,403,,,2026-10-06,Forbidden
+F13,https://www.bls.gov/eag/eag.fl_orlando_msa.htm,403,,,2026-10-06,Forbidden
+F14,https://fred.stlouisfed.org,200,text/html; charset=UTF-8,https://fred.stlouisfed.org,2026-10-06,
+F15,https://floridajobs.org,403,,,2026-10-06,Forbidden
+F16,https://orlando.org,200,text/html; charset=utf-8,https://orlando.org,2026-10-06,
+F17,https://www.huduser.gov/portal/datasets/fmr.html,202,text/html; charset=UTF-8,https://www.huduser.gov/portal/datasets/fmr.html,2026-10-06,
+F18,https://www.numbeo.com/cost-of-living/in/Orlando,200,text/html;charset=UTF-8,https://www.numbeo.com/cost-of-living/in/Orlando,2026-10-06,
+F19,https://www.indeed.com/jobs?l=Orlando%2C+FL,403,,,2026-10-06,Forbidden
+F20,https://www.glassdoor.com,200,text/html; charset=utf-8,https://www.glassdoor.com/recruiter?redirected_from=index,2026-10-06,
+F21,https://www.golynx.com,200,text/html; charset=utf-8,https://www.golynx.com,2026-10-06,
+F22,https://sunrail.com,200,text/html; charset=UTF-8,https://sunrail.com,2026-10-06,
+F23,https://www.orlandoairports.net,200,text/html,https://flymco.com/,2026-10-06,
+F24,https://www.flightaware.com/live/airport/KMCO,200,text/html;charset=utf-8,https://www.flightaware.com/live/airport/KMCO,2026-10-06,
+F25,https://tdaappsprod.dot.state.fl.us/fto/,200,text/html,https://tdaappsprod.dot.state.fl.us/fto/,2026-10-06,
+F26,https://fl511.com,200,text/html; charset=utf-8,https://fl511.com,2026-10-06,
+F27,https://www.cfxway.com,200,text/html; charset=UTF-8,https://www.cfxway.com,2026-10-06,
+F28,https://www.waze.com/live-map,200,text/html; charset=utf-8,https://www.waze.com/live-map,2026-10-06,
+F29,https://www.gasbuddy.com/gasprices/florida/orlando,403,,,2026-10-06,Forbidden
+F30,https://www.walkscore.com/FL/Orlando,200,text/html; charset=utf-8,https://www.walkscore.com/FL/Orlando,2026-10-06,
+F31,https://www.airbnb.com/s/Orlando--FL,200,text/html;charset=utf-8,https://www.airbnb.com/orlando-fl/stays,2026-10-06,
+F32,https://www.airdna.co,200,text/html; charset=utf-8,https://www.airdna.co,2026-10-06,
+F33,https://www.vrbo.com,429,,,2026-10-06,Too Many Requests
+F34,https://www.strava.com/maps,200,text/html; charset=utf-8,https://www.strava.com/maps,2026-10-06,
+F35,https://www.strava.com/segments/explore,200,text/html; charset=utf-8,https://www.strava.com/maps/segments,2026-10-06,
+F36,https://www.alltrails.com/us/florida/orlando,403,,,2026-10-06,Forbidden
+F37,https://www.yelp.com/search?find_loc=Orlando%2C+FL,403,,,2026-10-06,Forbidden
+F38,https://www.tripadvisor.com/Tourism-g34515-Orlando_Florida-Vacations.html,403,,,2026-10-06,Forbidden
+F39,"https://www.google.com/maps/place/Orlando,+FL",200,text/html; charset=UTF-8,"https://www.google.com/maps/place/Orlando,+FL",2026-10-06,
+F40,https://www.zillow.com/orlando-fl/,200,text/html; charset=utf-8,https://www.zillow.com/orlando-fl/,2026-10-06,
+F41,https://www.zillow.com/research/data/,200,text/html; charset=utf-8,https://www.zillow.com/research/data/,2026-10-06,
+F42,https://www.redfin.com/news/data-center/,200,text/html; charset=UTF-8,https://www.redfin.com/news/data-center/,2026-10-06,
+F43,https://www.realtor.com/realestateandhomes-search/Orlando_FL,429,,,2026-10-06,Too Many Requests
+F44,https://www.apartments.com/orlando-fl/,403,,,2026-10-06,Forbidden
+F45,https://www.eventbrite.com/d/fl--orlando/events/,200,text/html,https://www.eventbrite.com/d/fl--orlando/events/,2026-10-06,
+F46,https://www.meetup.com/find/?location=us--fl--Orlando,200,text/html; charset=utf-8,https://www.meetup.com/find/?location=us--fl--Orlando,2026-10-06,
+F47,https://www.reddit.com/r/orlando/,200,text/html,https://www.reddit.com/r/orlando/,2026-10-06,
+F48,https://www.thrill-data.com,403,,,2026-10-06,Forbidden
+F49,https://touringplans.com,200,text/html; charset=utf-8,https://touringplans.com,2026-10-06,
+F50,https://trends.google.com,200,text/html; charset=utf-8,https://trends.google.com/trends/,2026-10-06,
+F51,https://www.visitorlando.com,200,text/html; charset=utf-8,https://www.visitorlando.com,2026-10-06,
+F52,https://disneyworld.disney.go.com,200,text/html,https://disneyworld.disney.go.com/es-co/,2026-10-06,
+F53,https://www.universalorlando.com,200,text/html,https://www.universalorlando.com/web/en/us,2026-10-06,
+F54,https://www.occc.net,200,text/html; charset=utf-8,https://www.occc.net,2026-10-06,
+F55,https://www.nba.com/magic,200,text/html; charset=utf-8,https://www.nba.com/magic/,2026-10-06,
+F56,https://www.orlandocitysc.com,200,text/html,https://www.orlandocitysc.com,2026-10-06,
+F57,https://www.weather.gov/mlb,200,text/html; charset=UTF-8,https://www.weather.gov/mlb,2026-10-06,
+F58,https://www.ncei.noaa.gov/cdo-web/,200,text/html;charset=ISO-8859-1,https://www.ncei.noaa.gov/cdo-web/,2026-10-06,
+F59,https://www.airnow.gov,200,text/html; charset=utf-8,https://www.airnow.gov,2026-10-06,
+F60,https://map.purpleair.com,200,text/html;charset=utf-8,https://map.purpleair.com,2026-10-06,
+F61,https://msc.fema.gov,,,,2026-10-06,<urlopen error [WinError 10054] An existing connection was forcibly closed by the remote host>
+F62,https://orange.floridahealth.gov,200,text/html; charset=UTF-8,https://orange.floridahealth.gov,2026-10-06,
+F63,https://www.countyhealthrankings.org,200,text/html; charset=UTF-8,https://www.countyhealthrankings.org,2026-10-06,
+F64,https://cde.ucr.cjis.gov,200,text/html,https://cde.ucr.cjis.gov,2026-10-06,
+F65,https://www.orlandosentinel.com,200,text/html; charset=utf-8,https://www.orlandosentinel.com,2026-10-06,
+F66,https://www.wesh.com,200,text/html; charset=utf-8,https://www.wesh.com,2026-10-06,
+F67,https://www.wftv.com,200,text/html; charset=utf-8,https://www.wftv.com/unavailable-location/,2026-10-06,
+F68,https://www.orlandoweekly.com,200,text/html; charset=UTF-8,https://www.orlandoweekly.com,2026-10-06,
+F69,https://www.bizjournals.com/orlando,403,,,2026-10-06,Forbidden
+F70,https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/metro_job_postings_us.csv,200,text/plain; charset=utf-8,https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/metro_job_postings_us.csv,2026-10-06,
+F71,https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/es.wikipedia/all-access/user/Orlando_(Florida)/monthly/20250101/20260930,200,application/json; charset=utf-8,https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/es.wikipedia/all-access/user/Orlando_(Florida)/monthly/20250101/20260930,2026-10-06,
+F72,https://api.gdeltproject.org/api/v2/doc/doc?query=Orlando&mode=timelinevol&format=json,429,,,2026-10-06,Too Many Requests
+F73,https://news.google.com/rss/search?q=Orlando+Florida,200,application/xml; charset=utf-8,https://news.google.com/rss/search?q=Orlando+Florida&hl=en-US&gl=US&ceid=US:en,2026-10-06,
+F74,https://overpass-api.de/api/interpreter,400,,,2026-10-06,Bad Request
+F75,https://overturemaps.org,200,text/html; charset=UTF-8,https://overturemaps.org,2026-10-06,
+F76,https://earth-search.aws.element84.com/v1,200,application/json; charset=utf-8,https://earth-search.aws.element84.com/v1,2026-10-06,
+F77,https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/wmts.cgi?SERVICE=WMTS&REQUEST=GetCapabilities,200,text/xml; charset=UTF-8,https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/wmts.cgi?SERVICE=WMTS&REQUEST=GetCapabilities,2026-10-06,
+F78,https://www2.census.gov/geo/tiger/TIGER2024/PLACE/tl_2024_12_place.zip,200,application/zip,https://www2.census.gov/geo/tiger/TIGER2024/PLACE/tl_2024_12_place.zip,2026-10-06,
