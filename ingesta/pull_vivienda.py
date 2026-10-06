@@ -12,7 +12,7 @@ from comun import get_texto, fuente_lago, cifra, escribir_lago, variacion_pct
 
 SERIE = "ATNHPIUS36740Q"
 URL = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={SERIE}"
-UNIDAD = "puntos del índice (la base está en la ficha de la serie)"
+UNIDAD = "índice (1995-Q1 = 100, sin ajuste estacional)"
 
 filas = list(csv.reader(io.StringIO(get_texto(URL))))
 assert filas[0][1] == SERIE, f"La columna es «{filas[0][1]}», se esperaba {SERIE}"

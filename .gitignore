@@ -11,3 +11,7 @@ __pycache__/
 /Diccionario_de_datos_TallerDatos*.xlsx
 /pruebas_fuentes.csv
 /probar_fuentes.py
+
+# Archivos temporales de Office y config local de herramientas
+~$*
+.claude/
