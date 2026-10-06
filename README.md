@@ -26,8 +26,7 @@ correr, porque el servicio del clima pide que el cliente se identifique.
 |---|---|
 | `ingesta/` | Un script por tema. Cada uno dice arriba qué lee y qué escribe. `comun.py` tiene lo compartido. |
 | `catalogo/` | `fuentes_lago.json`: las fuentes que alimentan el lago, con su licencia (aquí se corrige). `catalogo_completo.json`: las 105 fichas del Excel, con las que no entraron, generadas por `exportar_catalogo.py`. |
-| `lago/` | `lago/raw/<tema>/<tema>.json`: lo que escribe cada script de ingesta, con la forma del contrato. Está en `.gitignore`: no llega al repositorio ni al despliegue. |
-| `territorio/` | Capas GeoJSON en WGS84, simplificadas. |
+| `lago/` | `lago/raw/<tema>/<tema>.json`: lo que escribe cada script de ingesta, con la forma del contrato. Está en `.gitignore`: no llega al repositorio ni al despliegue. `lago/territorio/`: capas GeoJSON en WGS84, simplificadas; esta sí se publica. |
 | `verificacion/` | `verificar.py` y la prueba de que sabe fallar. |
 
 ## Lo que hay que hacer a mano antes de publicar

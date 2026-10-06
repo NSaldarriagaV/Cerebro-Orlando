@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verificación antes de publicar: con un solo FAIL no se despliega.
 
-Revisa lago/raw/*/*.json (contrato) y territorio/*.geojson (geometrías). Uso:
+Revisa lago/raw/*/*.json (contrato) y lago/territorio/*.geojson (geometrías). Uso:
     python3 verificacion/verificar.py [--raiz CARPETA]
 Termina con código 1 si algo falla. Las líneas WARN no hacen fallar, pero hay que leerlas."""
 import argparse, datetime, glob, json, pathlib, re, sys
@@ -105,9 +105,9 @@ for ruta in sorted(glob.glob(str(RAIZ / "lago" / "raw" / "*" / "*.json"))):
     sin_datos_personales(nombre_ruta, lago)
     dominio(nombre_ruta, lago)
 
-# ---------- territorio/*.geojson
-for ruta in sorted(glob.glob(str(RAIZ / "territorio" / "*.geojson"))):
-    nombre_ruta = "territorio/" + pathlib.Path(ruta).name
+# ---------- lago/territorio/*.geojson
+for ruta in sorted(glob.glob(str(RAIZ / "lago" / "territorio" / "*.geojson"))):
+    nombre_ruta = pathlib.Path(ruta).relative_to(RAIZ).as_posix()
     kb = pathlib.Path(ruta).stat().st_size // 1024
     check(f"{nombre_ruta}: pesa menos de {MAX_KB_GEOJSON} KB", kb <= MAX_KB_GEOJSON, f"{kb} KB: simplificar más o pasar a PMTiles")
     g = json.load(open(ruta, encoding="utf-8"))

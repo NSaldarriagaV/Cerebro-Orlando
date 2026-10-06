@@ -9,7 +9,7 @@ import os, pathlib, shutil, subprocess, sys
 RAIZ = pathlib.Path(__file__).resolve().parent
 ENV = dict(os.environ, PYTHONIOENCODING="utf-8")
 
-for carpeta, patron in (("lago/raw", "*/*.json"), ("territorio", "*.geojson")):
+for carpeta, patron in (("lago/raw", "*/*.json"), ("lago/territorio", "*.geojson")):
     for f in (RAIZ / carpeta).glob(patron):
         f.unlink()
 fallaron = []
@@ -21,6 +21,6 @@ print("\n== verificar.py")
 verif = subprocess.run([sys.executable, str(RAIZ / "verificacion" / "verificar.py")], cwd=RAIZ, env=ENV).returncode
 if shutil.which("git"):
     print("\n== git diff --stat")
-    subprocess.run(["git", "diff", "--stat", "--", "lago", "territorio"], cwd=RAIZ)
+    subprocess.run(["git", "diff", "--stat", "--", "lago"], cwd=RAIZ)
 print("\nScripts que fallaron:", ", ".join(fallaron) or "ninguno", "| verificación:", "pasó" if verif == 0 else "FALLÓ (no se publica)")
 sys.exit(1 if fallaron or verif else 0)

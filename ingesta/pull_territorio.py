@@ -2,7 +2,7 @@
 """Ingesta · límites de Orlando: ciudad, barrios y distritos de comisionados (F88, F90, F94).
 
 Lee:     portal de datos abiertos de Orlando (API SODA, sin llave), formato JSON con la geometría en 'the_geom'.
-Escribe: territorio/*.geojson (WGS84, simplificado) y lago/raw/territorio/territorio.json con el contrato.
+Escribe: lago/territorio/*.geojson (WGS84, simplificado) y lago/raw/territorio/territorio.json con el contrato.
 
 Decisiones:
 - Solo se copian los campos de la lista blanca de cada capa. En la capa de distritos se descarta a propósito
@@ -67,7 +67,7 @@ def puntos(geom):
     return sum(len(r) for c in ([geom["coordinates"]] if geom["type"] == "Polygon" else geom["coordinates"]) for r in c)
 
 
-pathlib.Path(RAIZ / "territorio").mkdir(exist_ok=True)
+pathlib.Path(RAIZ / "lago" / "territorio").mkdir(parents=True, exist_ok=True)
 fuentes, cifras = [], {}
 for capa in CAPAS:
     filas = get_json(f"{PORTAL}/resource/{capa['dataset']}.json?$limit=5000", timeout=120)
@@ -93,7 +93,7 @@ for capa in CAPAS:
     if not features:
         raise SystemExit(f"{capa['dataset']}: ninguna fila con geometría; no se escribe la capa.")
 
-    ruta = RAIZ / "territorio" / f"{capa['archivo']}.geojson"
+    ruta = RAIZ / "lago" / "territorio" / f"{capa['archivo']}.geojson"
     ruta.write_text(json.dumps({"type": "FeatureCollection", "features": features}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     url = f"{PORTAL}/resource/{capa['dataset']}.json"
     fuentes.append(fuente_lago(capa["fuente"], url))
