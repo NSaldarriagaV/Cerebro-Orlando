@@ -19,5 +19,9 @@
   "nota": "La ficha del portal no declara licencia (campo license vacío el 2026-10-06). Revisar los términos generales del portal."},
  {"id": "orlando_distritos", "ficha_excel": "F94", "nombre": "Orlando Open Data · Orlando Commissioner Districts (iy8d-dzv4)", "entidad": "Ciudad de Orlando",
   "licencia": "no declara", "personas": "no", "proteccion": "abierto", "uso": "Distritos de comisionados para el mapa (tema territorio)",
-  "nota": "El dataset trae el nombre de cada comisionado (persona): el script lo descarta a propósito y solo conserva el número de distrito. Ficha sin licencia el 2026-10-06."}
+  "nota": "El dataset trae el nombre de cada comisionado (persona): el script lo descarta a propósito y solo conserva el número de distrito. Ficha sin licencia el 2026-10-06."},
+ {"id": "orlando_permisos", "ficha_excel": "F79", "nombre": "Orlando Open Data · Permit Applications (ryhf-m453)", "entidad": "Ciudad de Orlando",
+ "licencia": "no declara", "personas": "la fuente sí trae personas (propietarios, contratistas); el lago no: solo agregados por barrio y año",
+ "proteccion": "solo agregados", "uso": "Cuánta construcción se autoriza en cada barrio de Orlando (tema permisos)",
+ "nota": "La ficha del portal no declara licencia (campo license vacío el 2026-10-06). Las columnas con nombres, teléfonos y direcciones nunca se descargan: la consulta agrupa en el servidor. Barrios con menos de 5 permisos en el año se suprimen. Supuesto por confirmar: issue_permit_date con fecha = permiso emitido."}
 ]
