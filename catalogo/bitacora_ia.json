@@ -1,0 +1,142 @@
+[
+ {
+  "n": "1",
+  "herramienta": "Claude",
+  "encargo": "Completar la hoja de fuentes con las 64 fuentes del docx de Orlando y los 5 medios (cómo se obtiene, licencia, datos de personas, periodo, frecuencia, fecha de prueba, estado) y probar las más útiles",
+  "respuesta": "Llenó las 69 filas con lo que sabe de memoria (celdas naranja). No pudo abrir ninguno de los sitios del docx: su red bloquea esos dominios (error 403, host_not_allowed). Sí leyó el repo del grupo (solo README, nada integrado) y descargó el índice de vacantes de Indeed Hiring Lab desde GitHub.",
+  "comprobacion": "Claude probó solo F70 (clonó el repo; licencia CC BY 4.0 en LICENSE y README; datos de Orlando del 2020-02-01 al 2026-09-25). Todo lo demás está sin verificar: el grupo debe abrir cada fuente, copiar la licencia tal como aparece y anotar la fecha de la prueba.",
+  "resultado": "Parcial",
+  "fuentes": "F70",
+  "aprendizaje": "Una IA sin acceso al sitio no puede dar la licencia «tal como aparece»: lo que dice es memoria y hay que comprobarlo. Lo que sí aportó fue una alternativa con licencia clara (F70) para una fuente que bloquea scripts (F19)."
+ },
+ {
+  "n": "2",
+  "herramienta": "Claude",
+  "encargo": "Escribir un script para probar todas las URL de la hoja de fuentes desde la red del grupo",
+  "respuesta": "Entregó probar_fuentes.py (pide el Excel, consulta cada URL y guarda un CSV con código HTTP, tipo de contenido y fecha).",
+  "comprobacion": "El grupo lo corrió el 2026-10-05 y entregó pruebas_fuentes.csv con 69 filas. Claude lo leyó: 49 dieron 200 con HTML, 1 dio 202, 14 dieron 403, 2 dieron 429 y 3 no conectaron (F04, F05 y F61).",
+  "resultado": "Correcto",
+  "fuentes": null,
+  "aprendizaje": "Un 200 en la página principal no demuestra que haya datos: todas las respuestas fueron HTML, así que ninguna cuenta aún como «descarga o API que respondió de verdad». Hay que probar el endpoint exacto de cada fuente."
+ },
+ {
+  "n": "3",
+  "herramienta": "Claude",
+  "encargo": "Proponer rutas reales de datos (APIs y descargas) para las fuentes más útiles, en vez de las páginas principales",
+  "respuesta": "Propuso 8 endpoints de memoria (catálogo de Orlando, ACS, FRED, Zillow, Redfin, NWS, NOAA e Indeed Hiring Lab), con la advertencia de que no estaban probados.",
+  "comprobacion": "El grupo corrió probar_endpoints.py el 2026-10-05: 7 devolvieron datos reales (F01, F14, F41, F42, F57, F58, F70) y 1 devolvió una página HTML «Missing Key» (F12, Census).",
+  "resultado": "Parcial",
+  "fuentes": "F01, F12, F14, F41, F42, F57, F58, F70",
+  "aprendizaje": "La IA acertó las rutas, pero se equivocó en detalles que solo se ven al probar: dijo que la API de Census no pedía llave (la pide) y que Zillow arrancaba en 1996 (el archivo arranca en 2000). Lo que vale es el contenido real que devuelve la fuente."
+ },
+ {
+  "n": "4",
+  "herramienta": "Claude",
+  "encargo": "Leer las instrucciones completas del taller (docx) y ajustar la hoja de Fuentes a ellas",
+  "respuesta": "Normalizó entidades y licencias a una lista cerrada, puso la fecha de prueba también en las fuentes que fallaron y añadió 8 candidatas de las familias que faltaban (lo que se dice, desde arriba, territorio).",
+  "comprobacion": "El grupo corrió probar_fuentes.py el 2026-10-06 sobre las 78 filas: F71, F73, F76, F77 y F78 respondieron con datos; F72 (GDELT) dio 429, F74 (Overpass) dio 400 y F75 devolvió solo HTML.",
+  "resultado": "Parcial",
+  "fuentes": "F71, F72, F73, F74, F75, F76, F77, F78",
+  "aprendizaje": "Antes de leer el taller, Claude había dejado sin fecha las fuentes que respondieron con HTML. El taller dice que la fecha es el día en que el enlace respondió, y que lo que falla también se anota con su fecha y error."
+ },
+ {
+  "n": "5",
+  "herramienta": "Claude",
+  "encargo": "Leer licencias_orlando.csv y pruebas_fuentes_v2.csv y agregar a Fuentes los 27 datasets de Orlando",
+  "respuesta": "Dijo que la licencia de cada dataset estaba en su ficha del portal (/api/views/<id>.json) y armó el script para leerla. Con los resultados agregó 27 filas (F79 a F105).",
+  "comprobacion": "El grupo corrió licencias_orlando.py el 2026-10-06: los 27 datasets respondieron 200 con JSON y filas, pero el campo de licencia salió vacío en los 27.",
+  "resultado": "Parcial",
+  "fuentes": "F79 a F105",
+  "aprendizaje": "La ruta funcionó pero la licencia no estaba: un campo vacío es una respuesta, y se escribe «no declara» sin suponer nada. Que un portal abierto responda no quiere decir que declare una licencia."
+ },
+ {
+  "n": "6",
+  "herramienta": "Claude",
+  "encargo": "Listar por lo menos 50 fuentes de información sobre Orlando (gobierno, plataformas privadas y aplicaciones) con el enlace y qué contiene cada una (2026-09-29)",
+  "respuesta": "Entregó 64 fuentes en 6 categorías y 5 medios locales, de memoria y sin abrir ningún enlace. De esa lista sale el docx «Fuentes de información sobre Orlando».",
+  "comprobacion": "El grupo corrió probar_fuentes.py el 2026-10-05 y el 2026-10-06: 3 fuentes no conectaron (F04, F05 y F61). En el tramo F31 a F54 se leyeron los términos de uso el 2026-10-06 y 20 de las 24 fuentes quedaron descartadas.",
+  "resultado": "Parcial",
+  "fuentes": "F01 a F69",
+  "aprendizaje": "Una lista larga hecha de memoria sirve para empezar a buscar, pero describe lo que la IA cree que hay en cada sitio: si la fuente responde, qué trae y si se puede usar se comprueba abriéndola."
+ },
+ {
+  "n": "7",
+  "herramienta": "Claude (con acceso web)",
+  "encargo": "Verificar la licencia de las 24 fuentes de plataformas y turismo (F31 a F54) abriendo la página de términos de cada una (2026-10-06)",
+  "respuesta": "En el primer intento apoyó 14 de las 24 filas en páginas de terceros que citaban los términos, y lo dijo. Después leyó la página oficial de 19 fuentes; en 5 no pudo cerrar sola: 4 sitios no admiten lectores automáticos (F36, F40, F43, F47) y en 1 no pudo confirmar que la versión leída fuera la vigente (F37). Para Universal (F53) dio primero una ruta de términos que ya no existe; la correcta salió después con una búsqueda. Detectó dos datos viejos: una nota de la propia IA que decía que la página de Zillow Research pide atribuir a Zillow (hoy no lo dice) y una copia archivada de los términos de Vrbo con fecha 2025-09-04 (la página oficial dice 2026-03-26).",
+  "comprobacion": "Mateo abrió a mano las páginas de términos de AllTrails (F36), Zillow (F40), Realtor.com (F43), Reddit (F47) y Universal (F53) y le pasó el texto a Claude, que ubicó las cláusulas; buscó una versión más reciente de los términos de Yelp (F37) y no la encontró; y al abrir la primera ruta de Universal que dio la IA vio que la página ya no existía. Las otras lecturas de la IA no se repitieron a mano.",
+  "resultado": "Parcial",
+  "fuentes": "F31 a F54",
+  "aprendizaje": "Que la IA tenga acceso web no quiere decir que haya leído la fuente: hay que pedirle que diga, fila por fila, qué página abrió y cuál no pudo abrir, y abrir a mano las que no pudo."
+ },
+ {
+  "n": "8",
+  "herramienta": "Claude",
+  "encargo": "Escribir los scripts de ingesta (contrato, verificación y catálogo) para las fuentes F14, F57, F70, F71 y las capas de territorio F88, F90 y F94",
+  "respuesta": "Entregó cinco scripts de ingesta con la forma del contrato del taller, un verificador con una prueba de que sabe fallar, y un exportador del catálogo desde el Excel.",
+  "comprobacion": "El grupo los corrió el 2026-10-06 con datos reales y los cinco escribieron su archivo a la primera (por ejemplo 2.665 vistas de Wikipedia en 2026-09, 125 barrios y el índice de vivienda en 457,07 en 2026-Q2). Al reorganizar el lago en lago/raw/<tema>/, verificar.py quedó sin revisar ningún archivo (así lo anota el commit bbe124c) y el grupo corrigió las rutas.",
+  "resultado": "Parcial",
+  "fuentes": "F14, F57, F70, F71, F88, F90, F94",
+  "aprendizaje": "Los scripts funcionaron, pero el verificador de la IA no avisa cuando no encuentra archivos que revisar: una verificación que pasa sin revisar nada es peor que una que falla. Hay que exigirle que encuentre archivos."
+ },
+ {
+  "n": "9",
+  "herramienta": "Claude",
+  "encargo": "Leer los términos de uso de FRED y del servicio meteorológico (texto pegado por el grupo) y decir qué licencia escribir en F14 y F57",
+  "respuesta": "Con los términos generales de FRED dijo que el uso probablemente no estaba permitido (solo personal y no comercial; prohíbe guardar contenido) y recomendó pensar en descartar F14. Con la página de la serie corrigió: la etiqueta «Public Domain: Citation Requested» permite usarla citando la fuente. Para el clima, con el aviso legal y la documentación de la API, concluyó dominio público con tres condiciones.",
+  "comprobacion": "El grupo abrió las páginas, pegó el texto completo (términos de FRED, página de la serie ATNHPIUS36740Q, weather.gov/disclaimer y la documentación de la API) y escribió las licencias en catalogo/fuentes_lago.json; verificar.py dejó de fallar por licencia.",
+  "resultado": "Parcial",
+  "fuentes": "F14, F57",
+  "aprendizaje": "La IA llegó a una conclusión equivocada leyendo solo los términos generales: la licencia de una serie de FRED está en la etiqueta de la propia serie. Hay que leer la ficha de la serie, no solo los términos generales. Los términos de FRED se contradicen sobre guardar copias, y eso quedó anotado en la fila F14."
+ },
+ {
+  "n": "10",
+  "herramienta": "Claude",
+  "encargo": "Escribir el script de permisos de construcción por barrio (F79), protegiendo los datos de personas, y su regla de verificación",
+  "respuesta": "Entregó pull_permisos.py: la consulta agrupa en el servidor y solo pide barrio, año y conteo, de modo que nombres, teléfonos y direcciones nunca se descargan; suprime los barrios con menos de 5 permisos; mide cuánto coinciden los nombres con la capa de barrios; y agregó reglas a verificar.py, con una prueba de que atrapa un barrio con 2 permisos.",
+  "comprobacion": "El grupo lo corrió el 2026-10-06 contra el portal: 30.721 permisos emitidos en 2025, 122 barrios mostrados, 3 suprimidos, 403 permisos sin barrio y 99,2 % de coincidencia de nombres con la capa de barrios; verificar.py sin fallos. Pendiente: confirmar con una fila real que una fecha de emisión con valor significa permiso emitido.",
+  "resultado": "Correcto",
+  "fuentes": "F79",
+  "aprendizaje": "Un dato público puede hacer daño por lo que se cruza, no por lo que dice: la protección quedó en la consulta (agregar en origen) y en un umbral que el verificador exige. Queda una suposición sin confirmar sobre la fecha de emisión."
+ },
+ {
+  "n": "11",
+  "herramienta": "Claude",
+  "encargo": "Encontrar dónde están los casos de la Policía de Orlando, que el documento inicial de fuentes ubicaba en el portal de datos abiertos pero que no aparecen entre sus 27 datasets",
+  "respuesta": "Siguió el enlace «View the OPD Crime & Cases Dashboard» de orlando.gov hasta un tablero de ArcGIS y de ahí a la capa de servicio OPD_Cases_Viewing (LERMSCases4Dashboard), y la consultó con un script.",
+  "comprobacion": "Prueba del 2026-10-06 (ver la fila F106): HTTP 200 con JSON, 239.996 casos con geometría de punto, 91 tipos de caso, 126 barrios y 5.731 casos sin barrio; campos CaseNumber, CaseDate, CaseType, CommDistID, Beat, Sector, Division y NeighborhoodName. El tablero y el mapa no declaran licencia.",
+  "resultado": "Correcto",
+  "fuentes": "F106",
+  "aprendizaje": "Lo que la IA dice que está en un portal puede estar en otro sistema (aquí un servidor ArcGIS); seguir los enlaces oficiales llevó a la fuente real. Es la fuente más delicada del catálogo (punto exacto y número de caso): no se integra tal cual, solo conteos por barrio y mes. Esta fila se reconstruyó desde lo anotado en F106: el grupo debe confirmarla."
+ },
+ {
+  "n": "12",
+  "herramienta": "Claude",
+  "encargo": "Fusionar el Excel del repositorio con el de los compañeros, corregir los estados de integración y armar el Diccionario con el lago real",
+  "respuesta": "Fusionó celda por celda sin conflictos, corrigió F58 por F57 como fuente integrada y marcó también F14 y F79, armó el Diccionario con 52 campos del lago real y completó esta bitácora.",
+  "comprobacion": "Pendiente: el grupo debe revisar el archivo final y confirmar el Resultado de cada encargo.",
+  "resultado": null,
+  "fuentes": "F14, F57, F58, F79, F106",
+  "aprendizaje": "Los dos Excel marcaban F58 (NOAA) como integrada en lugar de F57 (el servicio meteorológico que sí alimenta el lago): el estado de una fuente debe salir de lo que de verdad hay en lago/ y en catalogo/fuentes_lago.json, no de memoria."
+ },
+ {
+  "n": "13",
+  "herramienta": "Claude",
+  "encargo": "Ampliar el lago a seis preguntas (gente, economía y vivienda, barrios, seguridad y convivencia, turismo, clima) y construir la vista v2 con mapa 3D, ficha de barrio, índice con pesos y comparación con ciudades pares",
+  "respuesta": "Revisó los campos de cada fuente en el navegador del grupo y escribió seis scripts nuevos y cinco ampliaciones. Propuso agregar todo en el servidor (SoQL y outStatistics de ArcGIS), excluir de la policía las categorías de salud mental, muertes y desaparecidos, y poner un umbral general por barrio en verificar.py. También propuso el PIB del área y la población por barrio.",
+  "comprobacion": "verificar.py: 286 comprobaciones, 0 fallos. probar_verificador.py atrapa una categoría excluida («Baker Act») y una celda de 3 casos. Al probar: el PIB del área está DESCONTINUADO en FRED (NGMP36740 y RGMP36740), el primer id de empleo en ocio (SMU…) dio 404 y el Census sigue pidiendo llave. El campo de origen de los casos de código casi no se anotaba antes de 2020: la IA había publicado ceros.",
+  "resultado": "Parcial",
+  "fuentes": "F14, F58, F70, F71, F79, F81, F83, F85, F93, F106",
+  "aprendizaje": "Agregar en el servidor deja usar fuentes con personas sin bajar a nadie, pero la regla tiene que estar en el verificador, no solo en el script. Un cero en una serie puede ser «no se anotaba»: hay que mirar desde cuándo se llena el campo antes de graficarlo."
+ },
+ {
+  "n": "14",
+  "herramienta": "Claude",
+  "encargo": "v3: más fuentes y datos, comparaciones (ciudades, distritos y barrios) y una vista «Decidir» para emprendedores, residentes, compradores y gobierno, sin perder lo anterior",
+  "respuesta": "Propuso traer el censo por sector y estimar barrios por superficie compartida, el índice de riesgo de FEMA, el SIG de la ciudad (parques, colegios, SunRail, ciclovías, proyección 2045, zonas con incentivos), solicitudes de planeación, Zillow, salarios, solicitudes de negocio e ingreso por persona. Escribió reglas a la vista para cada perfil (percentiles ponderados por prioridades, señales de mercado, alertas por barrio) y un apartado «lo que esto no sabe» en cada uno.",
+  "comprobacion": "verificar.py con reglas nuevas por tema (rangos, umbral solo para fuentes de personas, ningún porcentaje en barrios de menos de 200 habitantes): 0 fallos; probar_verificador.py atrapa un barrio de 80 habitantes que publica un porcentaje. La suma de barrios da 313.636 habitantes frente a 319.758 oficiales (−1,9 %). Errores encontrados al probar: api.census.gov ahora exige llave; «latest» de Census Reporter devolvía la edición de 1 año para ciudades (se forzó la de 5 años); la serie de nombres de CRA rompía el contrato numérico (se quitó); el servidor de zonas inundables de FEMA no respondió y Overpass (OSM) rechazó el navegador (no se saltaron); la IA había fechado la temperatura en UTC (27 oct) cuando en Orlando era 26 oct.",
+  "resultado": "Parcial",
+  "fuentes": "F12, F14, F41, F71, F78, F81, F86, F96, F107, F108",
+  "aprendizaje": "Una estimación por barrio sirve para comparar si se dice cómo se hizo y cuánto se aleja de la cifra oficial. Una recomendación solo es defendible si la regla está escrita a la vista y el usuario puede mover los pesos; y cada perfil tiene que decir lo que no sabe."
+ }
+]

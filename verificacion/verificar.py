@@ -14,10 +14,19 @@ fallos = 0
 PII = [re.compile(r"[\w.+-]+@[\w-]+\.[a-z]{2,}"),                                      # correos
        re.compile(r"(?<!\d)3\d{9}(?!\d)"),                                              # celulares colombianos
        re.compile(r"(?<![\d.])(?:\+?1[ .-]?)?\(?[2-9]\d{2}\)?[ .-]?\d{3}[ .-]?\d{4}(?!\d)")]   # teléfonos de EE. UU.
-CAMPOS_PERSONALES = re.compile(r"cedula|documento_identidad|telefono|celular|correo|email|phone|owner|contractor|applicant|suspect|officer|name_?holder|commissionername", re.I)
+CAMPOS_PERSONALES = re.compile(r"cedula|documento_identidad|telefono|celular|correo|email|phone|owner|contractor|applicant|suspect|officer|name_?holder|commissionername"
+                               r"|casenumber|case_number|license_holder|casename|case_comments|add_by|property_address", re.I)
+# Categorías de la policía que decidimos no publicar nunca (salud mental, muertes, personas vulnerables)
+EXCLUIDAS = re.compile(r"baker|suicid|unattended death|drowning|missing|desaparec|custody|custodia|injunction|alejamiento|elderly", re.I)
 BBOX = (-82.0, 28.0, -80.8, 29.0)        # lon_min, lat_min, lon_max, lat_max alrededor de Orlando
 MAX_KB_GEOJSON = 5000
 DIAS_MAX_PRUEBA = 400
+# Fuentes que traen datos de personas y por eso entran solo como conteos con umbral (catalogo/fuentes_lago.json)
+try:
+    _CAT = json.load(open(RAIZ / "catalogo" / "fuentes_lago.json", encoding="utf-8"))
+except FileNotFoundError:
+    _CAT = []
+SOLO_AGREGADOS = {f["id"] for f in _CAT if f.get("proteccion") == "solo agregados"}
 
 
 def check(nombre, ok, detalle=""):
@@ -62,6 +71,8 @@ def dominio(ruta, lago):
         "empleo":    [("índice de vacantes en rango sensato", lambda: 30 < valor(lago, "indice_ultimo_dia") < 300),
                       ("serie diaria ordenada y sin días repetidos", lambda: (lambda d: d == sorted(set(d)))([p[0] for p in lago["series"]["indice_diario"]["puntos"]]))],
         "vivienda":  [("índice de vivienda en rango sensato", lambda: 10 < valor(lago, "indice_ultimo_trimestre") < 2000),
+                      ("arriendo típico en rango sensato", lambda: 300 < valor(lago, "arriendo_tipico_ultimo_mes") < 10_000),
+                      ("rentabilidad bruta del arriendo en rango sensato", lambda: 1 < valor(lago, "rentabilidad_bruta_arriendo") < 20),
                       ("último trimestre de hace menos de dos años", lambda: int(lago["cifras"]["indice_ultimo_trimestre"]["vigencia"][:4]) >= hoy.year - 2)],
         "clima":     [("temperatura actual en °F en rango sensato", lambda: 20 < valor(lago, "temperatura_actual") < 115),
                       ("pronóstico con al menos 6 periodos", lambda: len(lago["series"]["pronostico_temperatura"]["puntos"]) >= 6),
@@ -72,6 +83,43 @@ def dominio(ruta, lago):
                       ("los barrios mostrados no suman más que el total de la ciudad", lambda: sum(p[1] for p in lago["series"]["permisos_por_barrio_ultimo_anio"]["puntos"]) <= valor(lago, "permisos_emitidos_ultimo_anio_completo")),
                       ("serie anual ordenada y sin el año en curso", lambda: (lambda a: a == sorted(set(a)) and max(a) < hoy.year)([int(p[0]) for p in lago["series"]["permisos_por_anio"]["puntos"]]))],
         "territorio": [("hay al menos un polígono por capa", lambda: all(c["valor"] >= 1 for c in lago["cifras"].values()))],
+        "economia":  [("desempleo en rango sensato", lambda: 0.5 < valor(lago, "desempleo_ultimo_mes") < 30),
+                      ("empleo total en rango sensato (miles)", lambda: 300 < valor(lago, "empleo_total_ultimo_mes") < 5000),
+                      ("salario por hora en rango sensato", lambda: 7 < valor(lago, "salario_hora_ultimo_mes") < 200),
+                      ("las seis series de desempleo están", lambda: all(f"desempleo_{c}" in lago["series"] for c in ("orlando", "tampa", "miami", "jacksonville", "florida", "eeuu")))],
+        "gente":     [("población del condado en rango sensato (miles)", lambda: 500 < valor(lago, "poblacion_condado_ultimo_anio") < 5000),
+                      ("ingreso mediano en rango sensato", lambda: 20_000 < valor(lago, "ingreso_mediano_condado") < 300_000),
+                      ("pobreza en rango sensato", lambda: 0 < valor(lago, "pobreza_condado") < 60),
+                      ("ingreso por persona en rango sensato", lambda: 10_000 < valor(lago, "ingreso_por_persona_condado") < 300_000)],
+        "turismo":   [("empleo en ocio y hotelería en rango sensato (miles)", lambda: 20 < valor(lago, "empleo_ocio_ultimo_mes") < 1000),
+                      ("participación del ocio en rango sensato", lambda: 1 < valor(lago, "participacion_ocio_ultimo_mes") < 60)],
+        "seguridad": [("casos del último año en rango sensato", lambda: 100 < valor(lago, "delitos_ultimo_anio") < 1_000_000),
+                      ("umbral mínimo por barrio de al menos 5 casos", lambda: valor(lago, "umbral_minimo_por_barrio") >= 5),
+                      ("ninguna categoría excluida (salud mental, muertes, desaparecidos, custodia, órdenes de alejamiento)",
+                       lambda: not any(EXCLUIDAS.search(str(p[0])) for s in lago["series"].values() for p in s["puntos"]))],
+        "codigo":    [("casos del último año en rango sensato", lambda: 100 < valor(lago, "casos_ultimo_anio") < 1_000_000),
+                      ("umbral mínimo por barrio de al menos 5 casos", lambda: valor(lago, "umbral_minimo_por_barrio") >= 5)],
+        "negocios":  [("licencias vigentes en rango sensato", lambda: 100 < valor(lago, "negocios_vigentes") < 1_000_000),
+                      ("umbral mínimo por barrio de al menos 5 licencias", lambda: valor(lago, "umbral_minimo_por_barrio") >= 5)],
+        "censo":     [("población oficial de la ciudad en rango sensato", lambda: 100_000 < valor(lago, "poblacion_ciudad") < 1_000_000),
+                      ("la suma de barrios no se aleja más de 15 % de la cifra oficial", lambda: abs(valor(lago, "diferencia_con_cifra_oficial")) <= 15),
+                      ("todo porcentaje entre 0 y 100", lambda: all(0 <= p[1] <= 100 for k, s_ in lago["series"].items() if k.startswith("pct_") for p in s_["puntos"])),
+                      ("ingresos medianos en rango sensato", lambda: all(5_000 < p[1] < 500_000 for k in ("ingreso_mediano_barrio", "ingreso_mediano_ciudades") for p in lago["series"][k]["puntos"])),
+                      ("arriendos medianos en rango sensato", lambda: all(200 < p[1] < 8_000 for k in ("arriendo_mediano_barrio", "arriendo_mediano_ciudades") for p in lago["series"][k]["puntos"])),
+                      ("ningún barrio con menos del mínimo de habitantes publica porcentajes o medianas",
+                       lambda: (lambda chicos: not any(p[0] in chicos for k, s_ in lago["series"].items() if k.endswith("_barrio") and k not in ("poblacion_barrio", "cobertura_barrio") for p in s_["puntos"]))(
+                           {p[0] for p in lago["series"]["poblacion_barrio"]["puntos"] if p[1] < valor(lago, "minimo_habitantes_por_barrio")}))],
+        "riesgo":    [("todo puntaje de riesgo entre 0 y 100", lambda: all(0 <= p[1] <= 100 for k, s_ in lago["series"].items() if not k.startswith("perdida") for p in s_["puntos"])),
+                      ("pérdida anual esperada no negativa", lambda: all(p[1] >= 0 for p in lago["series"]["perdida_anual_esperada_barrio"]["puntos"]))],
+        "servicios": [("parques de la ciudad en rango sensato", lambda: 20 <= valor(lago, "parques_ciudad") <= 1000),
+                      ("colegios públicos en rango sensato", lambda: 5 <= valor(lago, "colegios_ciudad") <= 500),
+                      ("ciclovías en rango sensato (km)", lambda: 0 < valor(lago, "ciclovias_km_ciudad") < 3000)],
+        "planeacion": [("crecimiento proyectado a 2045 en rango sensato", lambda: -50 < valor(lago, "crecimiento_poblacion_2045_ciudad") < 300),
+                       ("solicitudes del último año en rango sensato", lambda: 50 < valor(lago, "solicitudes_ultimo_anio") < 100_000),
+                       ("umbral mínimo por barrio de al menos 5 solicitudes", lambda: valor(lago, "umbral_minimo_por_barrio") >= 5),
+                       ("porcentaje de barrio en zonas con incentivo entre 0 y 100", lambda: all(0 <= p[1] <= 100 for k in ("zona_oportunidad_barrio", "main_street_barrio", "cra_barrio") for p in lago["series"][k]["puntos"]))],
+        "clima_historico": [("temperatura media anual en °F en rango sensato", lambda: all(55 < p[1] < 85 for p in lago["series"]["temperatura_anual"]["puntos"])),
+                            ("al menos 60 años con temperatura", lambda: len(lago["series"]["temperatura_anual"]["puntos"]) >= 60)],
     }
     for nombre, fn in reglas.get(t, []):
         try:
@@ -80,6 +128,15 @@ def dominio(ruta, lago):
             ok = False
             nombre += f" (no se pudo evaluar: {type(e).__name__})"
         check(f"{ruta}: {nombre}", ok, "valor fuera de rango o estructura distinta")
+    # Regla general de privacidad: toda serie por barrio que sale de una fuente «solo agregados» (trae personas)
+    # respeta el umbral del tema; y todo tema que use una de esas fuentes tiene que declarar su umbral.
+    usa = {f.get("id") for f in lago.get("fuentes", [])} & SOLO_AGREGADOS
+    umbral = valor(lago, "umbral_minimo_por_barrio")
+    if any("barrio" in k and s_.get("fuente") in usa for k, s_ in lago.get("series", {}).items()):
+        check(f"{ruta}: declara umbral por barrio porque usa fuentes con personas ({', '.join(sorted(usa))})", umbral is not None and umbral >= 5, umbral)
+    if umbral is not None:
+        bajo = [(k, p) for k, s in lago.get("series", {}).items() if "barrio" in k and s.get("fuente") in SOLO_AGREGADOS for p in s["puntos"] if p[1] < umbral]
+        check(f"{ruta}: ninguna celda por barrio bajo el umbral de {umbral}", not bajo, bajo[:3])
     if t == "permisos":
         c = valor(lago, "coincidencia_nombres_con_capa_barrios")
         if c is not None and c < 80:

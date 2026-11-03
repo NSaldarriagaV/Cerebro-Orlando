@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Ingesta · límites de Orlando: ciudad, barrios y distritos de comisionados (F88, F90, F94).
+"""Ingesta · límites de Orlando: ciudad, barrios, distritos de comisionados y lagos (F88, F90, F94, F93).
 
 Lee:     portal de datos abiertos de Orlando (API SODA, sin llave), formato JSON con la geometría en 'the_geom'.
+         Los lagos (F93, sin cambios desde 2016) solo dan contexto al mapa: Orlando es una ciudad de lagos.
 Escribe: lago/territorio/*.geojson (WGS84, simplificado) y lago/raw/territorio/territorio.json con el contrato.
 
 Decisiones:
@@ -18,6 +19,7 @@ CAPAS = [
     {"fuente": "orlando_limites",   "dataset": "adpi-29a3", "archivo": "limite_ciudad",          "campos": {"areaname": "nombre"}},
     {"fuente": "orlando_barrios",   "dataset": "yskk-n7cw", "archivo": "barrios",                "campos": {"neighborhoodname": "nombre", "neighborhoodid": "id"}},
     {"fuente": "orlando_distritos", "dataset": "iy8d-dzv4", "archivo": "distritos_comisionados", "campos": {"commissionerdistrictid": "distrito"}},
+    {"fuente": "orlando_lagos",     "dataset": "j3uy-fhhx", "archivo": "lagos",                  "campos": {"hydroname": "nombre", "feattype": "tipo"}},
 ]
 
 
