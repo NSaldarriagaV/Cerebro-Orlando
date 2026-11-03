@@ -16,6 +16,8 @@ Qué hace:
   (filas de los dos lados); lo derivado (consumo/ e inventario) que difiera se deja y lo rehace la próxima ejecución en
   AWS. Con --reemplazar sí pisa (por ejemplo, para corregir una foto a propósito).
 - Nunca borra nada del bucket.
+- Sube publicar/explorador.html a catalogo/explorador.html: la página que muestra el lago (zonas, fotos y cada archivo)
+  a través de CloudFront, leyendo el inventario catalogo/catalogo_lago.json.
 - Escribe publicar/athena_<bucket>.sql con las tablas de athena.sql apuntando a este bucket.
 El bucket es privado: la web lee la última foto a través de CloudFront (solo las zonas del lago) y, si no responde, su
 copia en Vercel. Costo: el lago pesa decenas de MB (crece con cada foto semanal); S3 cobra centavos al año."""
@@ -113,6 +115,20 @@ print(f"{'subiría' if args.prueba else 'subidos'}: {subidos} archivos ({bytes_s
 if sin_pisar:
     print(f"no se pisaron {len(sin_pisar)} archivos que en el bucket son distintos (p. ej. {', '.join(sin_pisar[:3])}).")
     print("  Lo derivado lo rehace la próxima ejecución en AWS; para pisarlos a propósito: --reemplazar")
+
+# La página que muestra el lago por CloudFront (no es un dato del lago: se pone al día siempre que cambie)
+EXPLORADOR, CLAVE_EXP = RAIZ / "publicar" / "explorador.html", "catalogo/explorador.html"
+if EXPLORADOR.exists() and not args.prueba:
+    cuerpo = EXPLORADOR.read_bytes()
+    huella = hashlib.sha256(cuerpo).hexdigest()
+    try:
+        actual = s3.head_object(Bucket=args.bucket, Key=CLAVE_EXP).get("Metadata", {}).get("sha256")
+    except ClientError:
+        actual = None
+    if actual != huella:
+        s3.put_object(Bucket=args.bucket, Key=CLAVE_EXP, Body=cuerpo, ContentType="text/html; charset=utf-8",
+                      CacheControl="max-age=300", Metadata={"sha256": huella})
+        print("explorador del lago al día:", CLAVE_EXP)
 
 sql = (RAIZ / "publicar" / "athena.sql").read_text(encoding="utf-8").replace("<BUCKET>", args.bucket)
 destino = RAIZ / "publicar" / f"athena_{args.bucket}.sql"

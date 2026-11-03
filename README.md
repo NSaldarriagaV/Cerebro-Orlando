@@ -103,7 +103,7 @@ correr, porque el servicio del clima pide que el cliente se identifique.
 | `catalogo/` | `fuentes_lago.json`: las 37 fuentes que alimentan el lago, con su licencia tal como aparece y su nivel de protección. `catalogo_completo.json`, `diccionario.json` y `bitacora_ia.json`: exportados del Excel por `exportar_catalogo.py`. |
 | `verificacion/` | `verificar.py`, `consistencia.py` (la misma cifra en todas las pestañas), la prueba de que saben fallar y `informe_consistencia.md`. |
 | `aws/` | La actualización semanal: `lambda_cerebro.py`, `maquina.asl.json` (Step Functions) y `crear_infra.py` (lo monta todo). |
-| `publicar/` | `consumo.py` (zona de consumo e inventario), `subir_s3.py` (lago → Amazon S3), `athena.sql` (tablas y consultas de ejemplo), `correr_athena.py` (las crea y las corre en Athena), `probar_sql.py` (las mismas consultas con DuckDB) y `politica_iam.json` (permisos mínimos para subir). |
+| `publicar/` | `consumo.py` (zona de consumo e inventario), `subir_s3.py` (lago → Amazon S3), `athena.sql` (tablas y consultas de ejemplo), `correr_athena.py` (las crea y las corre en Athena), `probar_sql.py` (las mismas consultas con DuckDB), `politica_iam.json` (permisos mínimos para subir) y `explorador.html` (la página que muestra el lago desde S3). |
 | `vista/` | `plantilla.html`, `estilos.css`, `app.js` y `construir_vista.py`. |
 | `publico/` | Lo que publica Vercel: `index.html` y `app.js`. Al construir (y en el build de Vercel) se copia `lago/` adentro. |
 | `middleware.js` | La puerta con contraseña de la página en Vercel. |
@@ -147,7 +147,7 @@ lago/
 | Este repositorio (GitHub) | Todo `lago/` | Historial: cada foto nueva es un cambio con fecha y autor; cualquiera puede clonar y reconstruir |
 | Vercel | La página y una copia de `lago/` en `/lago/…`, detrás de una contraseña | Ver y descargar; es el respaldo si CloudFront no responde |
 | Amazon S3 | El lago maestro: el mismo árbol en el bucket privado `cerebro-orlando-lago-eafit` (us-east-1), cifrado y con versionado, más una foto nueva cada lunes | Nube de verdad: Athena consulta las tablas con SQL (base `cerebro_orlando`) |
-| CloudFront | Una puerta de solo lectura a las zonas del lago (`publicar/nube.json` tiene la dirección) | La página lee de ahí la última foto; `_athena/`, `_trabajo/` y todo lo demás responden 403 |
+| CloudFront | Una puerta de solo lectura a las zonas del lago (`publicar/nube.json` tiene la dirección) | La página lee de ahí la última foto; `_athena/`, `_trabajo/` y todo lo demás responden 403. Para ver el lago: [explorador del lago](https://d1uzvgzpbvgblk.cloudfront.net/catalogo/explorador.html), una página guardada en el bucket que lista cada archivo |
 
 ### Publicar en Vercel
 
