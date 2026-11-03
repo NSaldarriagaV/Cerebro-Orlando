@@ -12,7 +12,7 @@ PRIVACIDAD: el dataset trae el nombre del dueño, teléfono y correo del negocio
 servidor por barrio y categoría. Celdas con menos de UMBRAL licencias se suprimen (un negocio solo en su categoría y barrio
 se reconoce)."""
 import datetime, urllib.parse
-from comun import get_json, fuente_lago, cifra, escribir_lago
+from comun import get_json, fuente_lago, cifra, escribir_lago, fecha_prueba
 
 PORTAL = "https://data.cityoforlando.net"
 DATASET = "7388-4re5"
@@ -50,7 +50,7 @@ def por_barrio(where):
     return conteo
 
 
-hoy = datetime.date.today()
+hoy = fecha_prueba()
 ficha = get_json(f"{PORTAL}/api/views/{DATASET}.json")
 actualizado = datetime.datetime.fromtimestamp(ficha["rowsUpdatedAt"], datetime.timezone.utc).date().isoformat()
 
@@ -59,7 +59,7 @@ rest = por_barrio(ABIERTO + " AND license_category = 'RESTAU'")
 hosp = por_barrio(ABIERTO + " AND license_category = 'LODGES'")
 giros = {g: por_barrio(ABIERTO + f" AND license_category = '{c}'") for g, c in GIROS.items()}
 # Negocios que abrieron el último año completo, por barrio (vigentes o no): dónde se está abriendo negocio
-ult_anio = datetime.date.today().year - 1
+ult_anio = fecha_prueba().year - 1
 nuevos = por_barrio(f"business_open_date >= '{ult_anio}-01-01T00:00:00' AND business_open_date < '{ult_anio + 1}-01-01T00:00:00'")
 cats = get_json(soql(select="license_category, count(*) as n", where=ABIERTO, group="license_category", order="n DESC"))
 aperturas = get_json(soql(select="date_extract_y(business_open_date) as anio, count(*) as n",

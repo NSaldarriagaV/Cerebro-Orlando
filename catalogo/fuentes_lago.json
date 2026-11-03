@@ -350,5 +350,60 @@
   "proteccion": "abierto",
   "uso": "Arriendo y valor de vivienda de Orlando frente a Tampa, Miami, Jacksonville y EE. UU. (tema vivienda)",
   "nota": "La página de datos (zillow.com/research/data) dice que los archivos son «para usar en sus propios análisis» y no trae texto de licencia; se cita a Zillow junto a cada gráfico."
+ },
+ {
+  "id": "fdot_aadt",
+  "ficha_excel": "F25",
+  "nombre": "FDOT · Annual Average Daily Traffic (TDA): tráfico promedio diario por tramo de vía",
+  "entidad": "Florida Department of Transportation (FDOT), Transportation Data and Analytics",
+  "licencia": "no declara (aviso de FDOT: datos «as is», sin garantías)",
+  "personas": "no",
+  "proteccion": "abierto",
+  "uso": "Vías más cargadas y tráfico máximo por barrio (tema tráfico)",
+  "nota": "Capa de ArcGIS Online de FDOT, sin llave. La ficha del ítem trae solo un descargo de responsabilidad («NO WARRANTIES… as is»), leído el 2026-11-02; no declara licencia."
+ },
+ {
+  "id": "fdot_aadt_historico",
+  "ficha_excel": "F25",
+  "nombre": "FDOT · Annual Average Daily Traffic Historical (TDA): el mismo conteo de años anteriores",
+  "entidad": "Florida Department of Transportation (FDOT), Transportation Data and Analytics",
+  "licencia": "no declara (aviso de FDOT: datos «as is», sin garantías)",
+  "personas": "no",
+  "proteccion": "abierto",
+  "uso": "Cómo cambió el tráfico en las mismas estaciones de conteo (tema tráfico)",
+  "nota": "Mismo descargo que la capa del año en curso (leído el 2026-11-02). Trae los últimos cinco años por estación (COSITE)."
+ },
+ {
+  "id": "fdot_nombres_vias",
+  "ficha_excel": "F25",
+  "nombre": "FDOT · Roadway Characteristics Inventory, capa «Roadways with Local Names»",
+  "entidad": "Florida Department of Transportation (FDOT)",
+  "licencia": "no declara",
+  "personas": "no",
+  "proteccion": "abierto",
+  "uso": "Ponerle nombre (I-4, SR-408…) al número de vía de FDOT que trae el conteo (tema tráfico)",
+  "nota": "Servicio gis.fdot.gov/arcgis/rest/services/RCI_Layers, sin llave. La ficha del servicio no declara licencia (2026-11-02)."
+ },
+ {
+  "id": "nhtsa_fars",
+  "ficha_excel": "F109",
+  "nombre": "NHTSA · Fatality Analysis Reporting System (FARS): choques de tránsito con al menos un muerto",
+  "entidad": "National Highway Traffic Safety Administration (Departamento de Transporte de EE. UU.)",
+  "licencia": "Dominio público (obra del gobierno de EE. UU.)",
+  "personas": "sí (cada choque trae fecha, hora y punto)",
+  "proteccion": "solo agregados",
+  "uso": "Choques mortales y muertes por año en la ciudad, y vías con más choques mortales (tema tráfico)",
+  "nota": "Servicio de mapas geo.dot.gov/server/rest/services/NHTSA/FQAcc, una capa por año. Solo se piden estadísticas (conteos por año y por vía); las vías con menos de 5 choques en cinco años no se publican."
+ },
+ {
+  "id": "lynx_gtfs",
+  "ficha_excel": "F21",
+  "nombre": "LYNX · horario de buses en formato GTFS (paradas, rutas, viajes y horas)",
+  "entidad": "Central Florida Regional Transit Authority (LYNX)",
+  "licencia": "no declara para el GTFS (los términos de uso de golynx.com piden permiso escrito para copiar o publicar información del sitio)",
+  "personas": "no",
+  "proteccion": "abierto",
+  "uso": "Paradas, rutas y salidas de bus por barrio en un día hábil (tema transporte)",
+  "nota": "Dirección oficial http://gtfsrt.golynx.com/gtfsrt/google_transit.zip; si no responde, la copia del mismo feed en Mobility Database (mdb-347). La página de descarga de LYNX solo trae un descargo («as is»); los Terms of Use del sitio prohíben copiar o publicar su información sin permiso escrito y no queda claro si cubren el GTFS (ficha F21 del Excel, 2026-10-06). Antes de publicar el ZIP crudo, pedir permiso a inquiry@golynx.com."
  }
 ]

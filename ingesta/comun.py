@@ -3,7 +3,10 @@
 
 Variable de entorno opcional: CONTACTO (un correo del grupo). Algunas fuentes, como el servicio
 del clima de EE. UU., piden que el cliente se identifique."""
-import datetime, json, os, pathlib, sys, time, urllib.error, urllib.request
+import datetime, hashlib, io, json, os, pathlib, sys, time, urllib.error, urllib.request
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import crudo
 
 RAIZ = pathlib.Path(__file__).resolve().parents[1]
 LAGO = RAIZ / "lago"
@@ -12,16 +15,47 @@ CONTACTO = os.environ.get("CONTACTO", "contacto-del-grupo@ejemplo.com")
 UA = {"User-Agent": f"taller-sistemas-de-informacion/1.0 (curso universitario; {CONTACTO})"}
 
 
-def abrir(url, timeout=60):
-    """Abre una URL; si el servidor dice 429 o 5xx, espera y reintenta (hasta 3 veces)."""
+def _traer(url, timeout):
+    """Pide la URL a la fuente; si el servidor dice 429 o 5xx, espera y reintenta (hasta 3 veces)."""
     for intento in range(3):
         try:
-            return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout)
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout) as r:
+                return r.read()
         except urllib.error.HTTPError as e:
             if e.code in (429, 500, 502, 503, 504) and intento < 2:
                 time.sleep(5 if e.code == 429 else 60)
                 continue
             raise
+
+
+def abrir(url, timeout=60):
+    """Devuelve la respuesta de la URL como archivo en memoria y la deja guardada en la zona cruda del lago.
+
+    Tres maneras de conseguirla (variables de entorno):
+      CEREBRO_DESDE_CRUDO=AAAA-MM-DD  la lee de la zona cruda de esa fecha: reconstruir sin internet, idéntico.
+      CEREBRO_CAPTURA=carpeta         la lee de una captura hecha con el navegador del equipo (un archivo por URL,
+                                      con el sha1 de la URL como nombre); se anota «navegador del equipo».
+      (ninguna)                       la pide directo a la fuente; se anota «script directo»."""
+    desde = os.environ.get("CEREBRO_DESDE_CRUDO", "")
+    if desde:
+        return io.BytesIO(crudo.leer(url, desde))
+    captura = os.environ.get("CEREBRO_CAPTURA", "")
+    archivo = pathlib.Path(captura) / hashlib.sha1(url.encode()).hexdigest() if captura else None
+    if archivo and archivo.exists():
+        cuerpo = archivo.read_bytes()
+        meta = archivo.with_suffix(".meta.json")
+        como = json.loads(meta.read_text(encoding="utf-8"))["como"] if meta.exists() else "navegador del equipo"
+    elif captura and not url.startswith("https://raw.githubusercontent.com/"):
+        faltan = os.environ.get("CEREBRO_FALTAN", "")
+        if faltan:
+            with open(faltan, "a", encoding="utf-8") as f:
+                f.write(url + "\n")
+        raise SystemExit(f"FALTA {url}")
+    else:
+        cuerpo, como = _traer(url, timeout), "script directo"
+    if os.environ.get("CEREBRO_GUARDAR_CRUDO", "1") != "0":
+        crudo.guardar(url, cuerpo, hoy(), como)
+    return io.BytesIO(cuerpo)
 
 
 def get_json(url, timeout=60):
@@ -35,8 +69,20 @@ def get_texto(url, timeout=60):
 
 
 def hoy():
-    """El día de la prueba: AAAA-MM-DD, nunca con hora."""
+    """El día de la prueba: AAAA-MM-DD, nunca con hora.
+    Si se reconstruye desde una copia guardada de las respuestas, CEREBRO_FECHA_PRUEBA dice el día en que la fuente
+    respondió de verdad (la prueba no cambia de fecha por volver a leer la misma copia)."""
+    fija = os.environ.get("CEREBRO_FECHA_PRUEBA", "")
+    if fija:
+        datetime.date.fromisoformat(fija)                  # falla si no es AAAA-MM-DD
+        return fija
     return datetime.date.today().isoformat()
+
+
+def fecha_prueba():
+    """hoy() como fecha: todo lo que depende del día (rangos de meses, año en curso) usa esto y no el reloj,
+    para que reconstruir desde la zona cruda dé exactamente lo mismo."""
+    return datetime.date.fromisoformat(hoy())
 
 
 def variacion_pct(nuevo, viejo):
@@ -64,13 +110,20 @@ def cifra(valor, unidad, vigencia, fuente):
 
 
 def escribir_lago(tema, fuentes, cifras, series):
-    """Escribe lago/raw/<tema>/<tema>.json con la forma del contrato."""
-    carpeta = LAGO / "raw" / tema
+    """Escribe la zona curada: lago/curado/tema=<tema>/fecha=<día de la prueba>/<tema>.json con la forma del contrato.
+    Cada fuente lleva en «crudo» las respuestas guardadas de las que salió (el linaje)."""
+    carpeta = LAGO / "curado" / f"tema={tema}" / f"fecha={hoy()}"
     carpeta.mkdir(parents=True, exist_ok=True)
-    lago = {"tema": tema, "probado": hoy(), "fuentes": fuentes, "cifras": cifras, "series": series}
+    lago = {"tema": tema, "probado": hoy(), "fuentes": crudo.linaje_por_fuente(fuentes), "cifras": cifras, "series": series}
     ruta = carpeta / f"{tema}.json"
     ruta.write_text(json.dumps(lago, ensure_ascii=False, indent=1), encoding="utf-8")
     return ruta
+
+
+def ultimo_curado(tema, raiz=None):
+    """La foto más reciente de un tema en la zona curada (None si no hay)."""
+    fotos = sorted((pathlib.Path(raiz or RAIZ) / "lago" / "curado" / f"tema={tema}").glob("fecha=*/*.json"))
+    return fotos[-1] if fotos else None
 
 
 # ---------- utilidades para fuentes nuevas (v2) ----------
@@ -205,6 +258,36 @@ def rejilla(caja, paso_m=120):
 
 def leer_territorio(nombre):
     return json.loads((LAGO / "territorio" / f"{nombre}.geojson").read_text(encoding="utf-8"))["features"]
+
+
+def simplificar_linea(puntos, tol=0.00005):
+    """Douglas-Peucker en grados (0,00005 ≈ 5 m en Orlando), con 5 decimales y sin puntos repetidos."""
+    pts = []
+    for x, y in puntos:
+        q = [round(float(x), 5), round(float(y), 5)]
+        if not pts or q != pts[-1]:
+            pts.append(q)
+    if len(pts) <= 2:
+        return pts
+    def dp(a, b):
+        (x1, y1), (x2, y2) = pts[a], pts[b]
+        dx, dy = x2 - x1, y2 - y1
+        n = (dx * dx + dy * dy) ** 0.5 or 1e-12
+        lejos, k = 0.0, None
+        for i in range(a + 1, b):
+            d = abs(dy * pts[i][0] - dx * pts[i][1] + x2 * y1 - y2 * x1) / n
+            if d > lejos:
+                lejos, k = d, i
+        return dp(a, k)[:-1] + dp(k, b) if k is not None and lejos > tol else [pts[a], pts[b]]
+    return dp(0, len(pts) - 1)
+
+
+def escribir_territorio(nombre, features):
+    """Capa de referencia en lago/territorio/<nombre>.geojson (WGS84), compacta y siempre igual para los mismos datos."""
+    ruta = LAGO / "territorio" / f"{nombre}.geojson"
+    ruta.parent.mkdir(parents=True, exist_ok=True)
+    ruta.write_text(json.dumps({"type": "FeatureCollection", "features": features}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    return ruta
 
 
 def capa_barrios():

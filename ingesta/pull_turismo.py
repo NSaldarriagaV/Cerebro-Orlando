@@ -10,7 +10,7 @@ PRIVACIDAD: el dataset de alquileres trae nombre, teléfono, correo y dirección
 descargan: la consulta agrupa en el servidor por estado de la licencia y por año de emisión, para toda la ciudad.
 Los hospedajes por barrio salen de los negocios con licencia (F81) y están en el tema «negocios»."""
 import datetime, urllib.parse
-from comun import fred, get_json, fuente_lago, cifra, escribir_lago, variacion_pct, mes
+from comun import fred, get_json, fuente_lago, cifra, escribir_lago, variacion_pct, mes, fecha_prueba
 
 PORTAL = "https://data.cityoforlando.net"
 STR = "ssrj-rbua"
@@ -32,7 +32,7 @@ estados = get_json(soql(STR, select="license_status, count(*) as n", group="lice
 por_estado = {(e.get("license_status") or "sin estado").strip(): int(e["n"]) for e in estados}
 anios = get_json(soql(STR, select="date_extract_y(issued_date) as anio, count(*) as n", where="issued_date IS NOT NULL",
                       group="anio", order="anio"))
-hoy = datetime.date.today()
+hoy = fecha_prueba()
 emitidas = [[str(int(float(a["anio"]))), int(a["n"])] for a in anios if int(float(a["anio"])) < hoy.year]
 ficha = get_json(f"{PORTAL}/api/views/{STR}.json")
 actualizado = datetime.datetime.fromtimestamp(ficha["rowsUpdatedAt"], datetime.timezone.utc).date().isoformat()

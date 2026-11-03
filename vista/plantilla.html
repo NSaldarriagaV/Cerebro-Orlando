@@ -1,9 +1,9 @@
 <title>Cerebro Orlando</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Seis preguntas sobre Orlando, Florida, respondidas con datos abiertos: gente, economía y vivienda, barrios, seguridad, turismo y clima. Cada cifra con su fuente.">
+<meta name="description" content="Siete preguntas sobre Orlando, Florida, respondidas con datos abiertos: gente, economía y vivienda, barrios, seguridad, turismo, clima y movilidad. Cada cifra con su fuente.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Overpass:wght@400..900&family=Overpass+Mono:wght@400;600&display=swap">
 <style>/*__ESTILOS__*/</style>
 <!--CUERPO-->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -49,9 +49,15 @@
     <symbol id="i-capitolio" viewBox="0 0 24 24"><path d="M3 21h18M5 21v-8M9 21v-8M15 21v-8M19 21v-8M3 13h18M5 13a7 7 0 0 1 14 0M12 3v3"/></symbol>
     <symbol id="i-arbol" viewBox="0 0 24 24"><path d="M12 21v-6M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zM9.5 18H14.5"/></symbol>
     <symbol id="i-escuela" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c2 1.7 4 2.5 6 2.5s4-.8 6-2.5v-5M22 9v6"/></symbol>
+    <symbol id="i-bus" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="15" rx="3"/><path d="M5 11h14M8 21v-3M16 21v-3M8.5 14.5h.01M15.5 14.5h.01M9 6.5h6"/></symbol>
+    <symbol id="i-carro" viewBox="0 0 24 24"><path d="M5 16V12l2-5h10l2 5v4M5 16h14M5 16v2.5M19 16v2.5M3.5 11.5H5M19 11.5h1.5"/><circle cx="8" cy="13.5" r=".6"/><circle cx="16" cy="13.5" r=".6"/></symbol>
     <symbol id="i-tren" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="14" rx="3"/><path d="M6 11h12M9 21l1.5-4M15 21l-1.5-4M9.5 14h.01M14.5 14h.01"/></symbol>
     <symbol id="i-gota" viewBox="0 0 24 24"><path d="M12 3.5s6.5 7 6.5 11.2A6.5 6.5 0 0 1 5.5 14.7C5.5 10.5 12 3.5 12 3.5z"/></symbol>
     <symbol id="i-viento" viewBox="0 0 24 24"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h7"/></symbol>
+    <symbol id="i-capas" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></symbol>
+    <symbol id="i-robot" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9.5 16h5"/></symbol>
+    <symbol id="i-nube" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8 5.5 5.5 0 0 0-10.6 1.6A3.2 3.2 0 0 0 7 18Z"/></symbol>
+    <symbol id="i-git" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="12" r="2.2"/><path d="M6 8.2v7.6M8.2 6H12a4 4 0 0 1 4 4v0"/></symbol>
     <symbol id="i-futuro" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></symbol>
   </defs>
 </svg>
@@ -68,6 +74,7 @@
       <span><b>Cerebro Orlando</b><small>Datos abiertos de la ciudad para decidir, con la fuente de cada cifra</small></span>
     </a>
     <button class="estado-lago" id="estadoLago" type="button" aria-label="Ver cómo se comprobaron los datos"><span class="pt"></span><span id="estadoTxt"></span></button>
+    <button class="icono-btn" id="buscarBtn" type="button" aria-label="Buscar barrios, temas y fuentes (atajo: /)"><svg class="i"><use href="#i-buscar"/></svg><span class="largo">Buscar</span></button>
     <button class="icono-btn prim" id="presentarBtn" type="button" aria-label="Abrir el modo presentación"><svg class="i"><use href="#i-pantalla"/></svg><span class="largo">Presentar</span></button>
     <button class="icono-btn" id="temaBtn" type="button" aria-label="Cambiar entre modo claro y oscuro"><svg class="i"><use href="#i-tema"/></svg></button>
     <nav class="preguntas" aria-label="Preguntas que responde el tablero">
@@ -80,7 +87,8 @@
       <a href="#seguridad" data-v="seguridad"><svg class="i"><use href="#i-sirena"/></svg>Seguridad</a>
       <a href="#turismo" data-v="turismo"><svg class="i"><use href="#i-maleta"/></svg>Turismo</a>
       <a href="#clima" data-v="clima"><svg class="i"><use href="#i-sol"/></svg>Clima</a>
-      <a href="#fuentes" data-v="fuentes"><svg class="i"><use href="#i-fuente"/></svg>Fuentes</a>
+      <a href="#movilidad" data-v="movilidad"><svg class="i"><use href="#i-bus"/></svg>Movilidad</a>
+      <a href="#fuentes" data-v="fuentes"><svg class="i"><use href="#i-fuente"/></svg>Datos y fuentes</a>
     </nav>
   </div>
 </header>
@@ -91,9 +99,8 @@
 <section class="vista" data-vista="inicio" aria-labelledby="t-inicio">
   <div class="hero">
     <div class="texto">
-      <p class="eyebrow">Orlando, Florida · para quien decide en la ciudad</p>
       <h1 id="t-inicio">¿Cómo va Orlando?</h1>
-      <p class="lead">Seis preguntas sobre la ciudad y cuatro decisiones (emprender, vivir, comprar, gobernar) respondidas con datos abiertos. Cada cifra trae su fuente, su vigencia y la fecha en que la comprobamos: tócala y lo ves.</p>
+      <p class="lead">Siete preguntas sobre la ciudad y cuatro decisiones (emprender, vivir, comprar, gobernar) respondidas con datos abiertos. Cada cifra trae su fuente, su vigencia y la fecha en que la comprobamos: tócala y lo ves.</p>
       <div class="linea" id="lineaInicio"></div>
       <div class="acciones">
         <button class="btn oscuro" type="button" id="recorridoBtn"><svg class="i"><use href="#i-ruta"/></svg>Recorrido por 6 barrios</button>
@@ -110,8 +117,8 @@
   </div>
 
   <div class="seccion">
-    <div class="barra-graf"><h2>Seis preguntas, seis respuestas</h2><span class="peq">Toca una tarjeta para ver la evidencia</span></div>
-    <div class="grid-3" id="tarjetas"></div>
+    <div class="barra-graf"><h2>Siete preguntas, siete respuestas</h2><span class="peq">Toca una tarjeta para ver la evidencia</span></div>
+    <div class="grid-preguntas" id="tarjetas"></div>
   </div>
 
   <div class="seccion">
@@ -139,7 +146,6 @@
 <!-- ================= DECIDIR ================= -->
 <section class="vista" data-vista="decidir" aria-labelledby="t-decidir" hidden>
   <div class="cabeza">
-    <p class="eyebrow">Para decidir</p>
     <h2 id="t-decidir">¿Qué decisión quieres tomar en Orlando?</h2>
     <p class="respuesta" id="r-decidir"></p>
   </div>
@@ -151,7 +157,6 @@
 <!-- ================= COMPARAR ================= -->
 <section class="vista" data-vista="comparar" aria-labelledby="t-comparar" hidden>
   <div class="cabeza">
-    <p class="eyebrow">Contra qué</p>
     <h2 id="t-comparar">¿Orlando está mejor o peor que…?</h2>
     <p class="respuesta" id="r-comparar"></p>
   </div>
@@ -164,12 +169,11 @@
 <!-- ================= GENTE ================= -->
 <section class="vista" data-vista="gente" aria-labelledby="t-gente" hidden>
   <div class="cabeza">
-    <p class="eyebrow">Pregunta 1 · gente</p>
     <h2 id="t-gente">¿Cuánta gente vive aquí y cómo le va frente a ciudades parecidas?</h2>
     <p class="respuesta" id="r-gente"></p>
   </div>
   <article class="card bloque">
-    <div class="lado"><p class="eyebrow">Población</p><div class="kpis" id="k-poblacion"></div>
+    <div class="lado"><h3 class="titulo-bloque">Población</h3><div class="kpis" id="k-poblacion"></div>
       <div class="nota"><svg class="i"><use href="#i-info"/></svg><p id="notaEscala"><b>Escala:</b> la ciudad de Orlando no tiene serie anual de población abierta y sin llave. El condado de Orange la contiene; el área metropolitana suma además los condados de Osceola, Seminole y Lake.</p></div></div>
     <div class="grafico"><div class="barra-graf"><h3>Población residente, en millones de personas</h3></div><div class="chart" id="g-poblacion"></div><div class="barra-graf"><span class="leyenda" id="ley-poblacion"></span><span id="f-poblacion"></span></div></div>
   </article>
@@ -198,27 +202,26 @@
 <!-- ================= ECONOMÍA Y VIVIENDA ================= -->
 <section class="vista" data-vista="economia" aria-labelledby="t-eco" hidden>
   <div class="cabeza">
-    <p class="eyebrow">Pregunta 2 · economía y vivienda</p>
     <h2 id="t-eco">¿Cómo se mueve la economía de Orlando y cuánto cuesta vivir aquí?</h2>
     <p class="respuesta" id="r-eco"></p>
   </div>
   <article class="card bloque">
-    <div class="lado"><p class="eyebrow"><svg class="i"><use href="#i-empleo"/></svg>Desempleo</p><p class="respuesta" id="r-desempleo" style="font-size:1.2rem"></p><div class="kpis" id="k-desempleo"></div></div>
+    <div class="lado"><h3 class="titulo-bloque">Desempleo</h3><p class="respuesta" id="r-desempleo" style="font-size:1.2rem"></p><div class="kpis" id="k-desempleo"></div></div>
     <div class="grafico"><div class="barra-graf"><h3>Tasa de desempleo (%), sin ajuste estacional</h3><div class="seg" data-rango="desempleo" role="group" aria-label="Periodo"><button type="button" data-r="3">3 años</button><button type="button" data-r="10" aria-pressed="true">10 años</button><button type="button" data-r="0">Desde 2000</button></div></div>
       <div class="chart" id="g-desempleo"></div><div class="barra-graf"><span class="leyenda" id="ley-desempleo"></span><span id="f-desempleo"></span></div></div>
   </article>
   <article class="card bloque">
-    <div class="lado"><p class="eyebrow"><svg class="i"><use href="#i-empleo"/></svg>Avisos de empleo</p><p class="respuesta" id="r-empleo" style="font-size:1.2rem"></p><div class="kpis" id="k-empleo"></div>
+    <div class="lado"><h3 class="titulo-bloque">Avisos de empleo</h3><p class="respuesta" id="r-empleo" style="font-size:1.2rem"></p><div class="kpis" id="k-empleo"></div>
       <div class="nota"><svg class="i"><use href="#i-info"/></svg><p><b>Lo que no dice:</b> cuenta avisos publicados en Indeed, no personas empleadas ni salarios.</p></div></div>
     <div class="grafico"><div class="barra-graf"><h3>Avisos de empleo en Indeed, <button class="term" data-term="indice100">índice</button> (feb 2020 = 100)</h3></div>
       <div class="chart" id="g-empleo"></div><div class="barra-graf"><span class="leyenda" id="ley-empleo"></span><span id="f-empleo"></span></div></div>
   </article>
   <article class="card bloque">
-    <div class="lado"><p class="eyebrow"><svg class="i"><use href="#i-empleo"/></svg>Salarios</p><p class="respuesta" id="r-salario" style="font-size:1.2rem"></p><div class="kpis" id="k-salario"></div></div>
+    <div class="lado"><h3 class="titulo-bloque">Salarios</h3><p class="respuesta" id="r-salario" style="font-size:1.2rem"></p><div class="kpis" id="k-salario"></div></div>
     <div class="grafico"><div class="barra-graf"><h3>Salario promedio por hora, sector privado (dólares)</h3></div><div class="chart" id="g-salario"></div><div class="barra-graf"><span class="leyenda" id="ley-salario"></span><span id="f-salario"></span></div></div>
   </article>
   <article class="card bloque">
-    <div class="lado"><p class="eyebrow"><svg class="i"><use href="#i-casa"/></svg>Precio de la vivienda</p><p class="respuesta" id="r-vivienda" style="font-size:1.2rem"></p><div class="kpis" id="k-vivienda"></div></div>
+    <div class="lado"><h3 class="titulo-bloque">Precio de la vivienda</h3><p class="respuesta" id="r-vivienda" style="font-size:1.2rem"></p><div class="kpis" id="k-vivienda"></div></div>
     <div class="grafico"><div class="barra-graf"><h3 id="t-vivienda">Precio de la vivienda</h3><div class="seg" data-rango="vivienda" role="group" aria-label="Vista"><button type="button" data-r="pares" aria-pressed="true">Contra pares</button><button type="button" data-r="largo">Orlando desde 1978</button></div></div>
       <div class="chart" id="g-vivienda"></div><div class="barra-graf"><span class="leyenda" id="ley-vivienda"></span><span id="f-vivienda"></span></div></div>
   </article>
@@ -238,14 +241,14 @@
   </div>
   <div class="grid-2">
     <article class="card grafico"><div class="barra-graf"><h3>Viviendas nuevas autorizadas en el área, por año</h3></div><p class="peq" id="r-autorizadas"></p><div class="chart" id="g-autorizadas"></div><div class="barra-graf"><span class="leyenda"><span><i style="background:var(--accent);height:10px;width:10px"></i>Último año completo</span></span><span id="f-autorizadas"></span></div></article>
-    <article class="card grafico"><div class="barra-graf"><h3>Permisos de construcción emitidos en la ciudad, por año</h3></div><p class="peq" id="r-permisosanio"></p><div class="chart" id="g-permisosanio"></div><div class="barra-graf"><a class="ver" href="#barrios">Ver por barrio en el mapa <svg class="i"><use href="#i-flecha"/></svg></a><span id="f-permisosanio"></span></div></article>
+    <article class="card grafico"><div class="barra-graf"><h3>Permisos de construcción emitidos en la ciudad, por año</h3></div><p class="peq" id="r-permisosanio"></p><div class="chart" id="g-permisosanio"></div><div class="barra-graf"><a class="ver" href="#barrios">Ver por barrio en el mapa</a><span id="f-permisosanio"></span></div></article>
   </div>
   <article class="card bloque">
-    <div class="lado"><p class="eyebrow"><svg class="i"><use href="#i-empleo"/></svg>Empleo total</p><p class="respuesta" id="r-empleototal" style="font-size:1.2rem"></p></div>
+    <div class="lado"><h3 class="titulo-bloque">Empleo total</h3><p class="respuesta" id="r-empleototal" style="font-size:1.2rem"></p></div>
     <div class="grafico"><div class="barra-graf"><h3>Empleos no agrícolas del área, en miles</h3></div><div class="chart" id="g-empleototal"></div><div class="barra-graf"><span></span><span id="f-empleototal"></span></div></div>
   </article>
   <article class="card bloque">
-    <div class="lado"><p class="eyebrow"><svg class="i"><use href="#i-tienda"/></svg>Nuevos negocios</p><p class="respuesta" id="r-bfs" style="font-size:1.2rem"></p></div>
+    <div class="lado"><h3 class="titulo-bloque">Nuevos negocios</h3><p class="respuesta" id="r-bfs" style="font-size:1.2rem"></p></div>
     <div class="grafico"><div class="barra-graf"><h3>Solicitudes de nuevos negocios en Florida, por mes</h3></div><div class="chart" id="g-bfs"></div><div class="barra-graf"><span></span><span id="f-bfs"></span></div></div>
   </article>
   <div class="nota"><svg class="i"><use href="#i-hueco"/></svg><p><b>Lo que falta:</b> el PIB del área. Las series de FRED (NGMP36740 y RGMP36740) están descontinuadas y no las reemplazamos por un número viejo.</p></div>
@@ -254,7 +257,6 @@
 <!-- ================= BARRIOS ================= -->
 <section class="vista" data-vista="barrios" aria-labelledby="t-barrios" hidden>
   <div class="cabeza">
-    <p class="eyebrow">Pregunta 3 · barrios</p>
     <h2 id="t-barrios">¿Qué pasa en cada barrio: dónde se construye, dónde hay más casos y dónde se concentran los negocios?</h2>
     <p class="respuesta" id="r-barrios"></p>
   </div>
@@ -297,7 +299,6 @@
 <!-- ================= SEGURIDAD ================= -->
 <section class="vista" data-vista="seguridad" aria-labelledby="t-seg" hidden>
   <div class="cabeza">
-    <p class="eyebrow">Pregunta 4 · seguridad y convivencia</p>
     <h2 id="t-seg">¿Qué pasa con la seguridad y la convivencia en cada barrio?</h2>
     <p class="respuesta" id="r-seg"></p>
   </div>
@@ -310,12 +311,12 @@
     <article class="card panel"><div class="barra-graf"><h3 id="t-mapaseg">Casos por km² en cada barrio</h3><div class="seg" id="segGrupo" role="group" aria-label="Grupo de delitos"></div></div>
       <div class="seg" id="segMedidaSeg" role="group" aria-label="Medida"><button type="button" data-m="km2" aria-pressed="true">Por km²</button><button type="button" data-m="hab" aria-pressed="false">Por 1.000 hab.</button></div>
       <svg class="svgmapa" id="mapaSeg" role="img" aria-label="Mapa de casos de policía por barrio"></svg><div class="ley-mapa" id="leySeg"></div>
-      <a class="ver" href="#barrios" id="verSeg3d">Verlo en el mapa 3D de barrios <svg class="i"><use href="#i-flecha"/></svg></a></article>
+      <a class="ver" href="#barrios" id="verSeg3d">Verlo en el mapa 3D de barrios</a></article>
     <article class="card panel"><div class="barra-graf"><h3 id="t-rankseg">Barrios con más casos</h3></div><ol class="ranking" id="rankSeg"></ol></article>
   </div>
   <article class="card panel"><div class="barra-graf"><h3>Los tipos de caso más comunes (toda la ciudad)</h3><span id="f-tipos"></span></div><div class="barras-simples" id="tiposSeg"></div></article>
   <div class="nota privada"><svg class="i"><use href="#i-escudo"/></svg><p id="notaPrivSeg"></p></div>
-  <div class="cabeza" style="margin-top:8px"><p class="eyebrow">Convivencia y mantenimiento urbano</p><h2 style="font-size:1.5rem">¿Dónde se queja la gente por el estado de los predios?</h2><p class="respuesta" id="r-codigo" style="font-size:1.2rem"></p></div>
+  <div class="cabeza" style="margin-top:8px"><h2 style="font-size:1.5rem">¿Dónde se queja la gente por el estado de los predios?</h2><p class="respuesta" id="r-codigo" style="font-size:1.2rem"></p></div>
   <div class="grid-2">
     <article class="card grafico"><div class="barra-graf"><h3>Casos de código urbano por año</h3></div><div class="chart" id="g-codigo"></div><div class="barra-graf"><span class="leyenda" id="ley-codigo"></span><span id="f-codigo"></span></div></article>
     <article class="card panel"><div class="barra-graf"><h3>Barrios con más quejas ciudadanas</h3></div><ol class="ranking" id="rankQuejas"></ol></article>
@@ -327,7 +328,6 @@
 <!-- ================= TURISMO ================= -->
 <section class="vista" data-vista="turismo" aria-labelledby="t-tur" hidden>
   <div class="cabeza">
-    <p class="eyebrow">Pregunta 5 · turismo</p>
     <h2 id="t-tur">¿Cuánto pesa el turismo en la ciudad?</h2>
     <p class="respuesta" id="r-tur"></p>
   </div>
@@ -355,7 +355,6 @@
 <!-- ================= CLIMA ================= -->
 <section class="vista" data-vista="clima" aria-labelledby="t-clima" hidden>
   <div class="cabeza">
-    <p class="eyebrow">Pregunta 6 · clima</p>
     <h2 id="t-clima">¿Qué clima hay hoy y cómo está cambiando?</h2>
     <p class="respuesta" id="r-clima"></p>
   </div>
@@ -380,15 +379,99 @@
   <div class="nota"><svg class="i"><use href="#i-info"/></svg><p id="notaClima"></p></div>
 </section>
 
+<!-- ================= MOVILIDAD ================= -->
+<section class="vista" data-vista="movilidad" aria-labelledby="t-mov" hidden>
+  <div class="cabeza">
+    <h2 id="t-mov">¿Cómo se mueve la gente y qué tan seguras son las vías?</h2>
+    <p class="respuesta" id="r-mov"></p>
+  </div>
+  <article class="card panel"><div class="kpis" id="k-mov"></div></article>
+  <article class="card panel">
+    <div class="barra-graf"><h2 style="font-size:1.45rem" id="t-vias">Las carreteras de Orlando</h2><div class="seg" id="segVias" role="group" aria-label="Qué mostrar sobre las vías"><button type="button" data-m="trafico" aria-pressed="true">Tráfico</button><button type="button" data-m="buses" aria-pressed="false">Rutas de bus</button></div></div>
+    <p class="respuesta" id="r-vias" style="font-size:1.12rem"></p>
+    <div class="grid-vias">
+      <div><svg class="svgmapa mapa-vias" id="mapaVias" role="img" aria-label="Mapa de las vías de Orlando"></svg><div class="ley-mapa" id="leyVias"></div></div>
+      <div><h3 id="t-rankVias">Las vías más cargadas</h3><p class="peq" id="r-rankVias"></p><ol class="ranking" id="rankVias"></ol><span id="f-vias"></span></div>
+    </div>
+  </article>
+  <div class="grid-2">
+    <article class="card grafico"><div class="barra-graf"><h3>Muertes en choques de tránsito en la ciudad, por año</h3></div><p class="peq" id="r-fars"></p><div class="chart" id="g-fars"></div><div class="barra-graf"><span class="leyenda" id="ley-fars"></span><span id="f-fars"></span></div></article>
+    <article class="card panel"><div class="barra-graf"><h3>Vías con más choques mortales</h3><span id="f-viasfars"></span></div><p class="peq" id="r-viasfars"></p><ol class="ranking" id="rankViasFars"></ol></article>
+  </div>
+  <div class="grid-2" style="align-items:start">
+    <article class="card grafico"><div class="barra-graf"><h3>Tráfico típico de la ciudad (vehículos al día)</h3></div><p class="peq" id="r-aadtanio"></p><div class="chart" id="g-aadt"></div><div class="barra-graf"><span></span><span id="f-aadtanio"></span></div></article>
+    <article class="card panel">
+      <div class="barra-graf"><h3>¿Qué barrios tienen bus?</h3><div class="seg" id="segBus" role="group" aria-label="Medida"><button type="button" data-m="salidasBus" aria-pressed="true">Buses al día</button><button type="button" data-m="paradas" aria-pressed="false">Paradas</button><button type="button" data-m="traficoMax" aria-pressed="false">Tráfico</button></div></div>
+      <p class="peq" id="r-bus"></p>
+      <svg class="svgmapa" id="mapaBus" role="img" aria-label="Mapa de movilidad por barrio"></svg><div class="ley-mapa" id="leyBus"></div>
+      <ol class="ranking" id="rankBus" style="margin-top:14px"></ol><span id="f-bus"></span>
+    </article>
+  </div>
+  <div class="nota"><svg class="i"><use href="#i-hueco"/></svg><p id="notaMov"></p></div>
+</section>
+
 <!-- ================= FUENTES ================= -->
 <section class="vista" data-vista="fuentes" aria-labelledby="t-fue" hidden>
   <div class="cabeza">
-    <p class="eyebrow">Trazabilidad</p>
-    <h2 id="t-fue">¿De dónde sale cada dato?</h2>
-    <p class="respuesta" id="r-fuentes"></p>
+    <h2 id="t-fue">¿De dónde sale cada dato y dónde vive?</h2>
+    <p class="respuesta" id="r-datos"></p>
   </div>
+  <div class="tres-preg" id="tresPreg"></div>
+
+  <div class="seccion" id="sec-flujo">
+    <div class="barra-graf"><h2>El recorrido de los datos</h2><span class="peq">Toca un sitio, un tema o una pestaña para ver sus archivos</span></div>
+    <div class="card panel flujo-card"><p class="peq solo-cel">Desliza a los lados para ver todo el recorrido →</p><div class="flujo-wrap"><svg id="flujo" class="flujo" role="img" aria-label="Diagrama de flujo de los datos"></svg></div>
+      <div class="flujo-ley"><span><i class="z1"></i>Sitio que respondió</span><span><i class="z2"></i>Tema del lago (zona curada)</span><span><i class="z3"></i>Pestaña del tablero</span><button type="button" class="btn" id="flujoTodo" hidden>Ver todo</button></div>
+      <div id="flujoDet" class="flujo-det" aria-live="polite"></div></div>
+  </div>
+
+  <div class="seccion" id="sec-lago">
+    <div class="barra-graf"><h2>El lago, zona por zona</h2><span class="peq" id="lagoSub"></span></div>
+    <div class="zonas" id="zonas"></div>
+    <div class="donde" id="donde"></div>
+  </div>
+
+  <div class="seccion" id="sec-seguir">
+    <div class="barra-graf"><h2>Sigue un número hasta su origen</h2><span class="peq">Del tablero a la respuesta que dio la fuente, paso a paso</span></div>
+    <div class="card panel"><div class="filtros"><label class="sr" for="seguirSel">Escoge un número</label><select id="seguirSel" class="sel"></select><button class="btn prim" type="button" id="seguirPlay"><svg class="i"><use href="#i-play"/></svg>Seguir el rastro</button></div>
+      <ol class="cadena" id="cadena"></ol></div>
+  </div>
+
+  <div class="seccion" id="sec-cambios">
+    <div class="barra-graf"><h2>Qué cambió entre una foto y la siguiente</h2><span class="peq" id="cambiosSub"></span></div>
+    <div class="card panel"><p class="peq" id="cambiosTxt"></p><div class="filtros" id="cambiosFiltro" role="group" aria-label="Filtrar por tema"></div>
+      <div class="tabla-wrap"><table id="tablaCambios"><thead><tr><th>Tema</th><th>Dato</th><th>Antes</th><th>Ahora</th><th>Cambio</th></tr></thead><tbody></tbody></table></div></div>
+  </div>
+
+  <div class="seccion" id="sec-explorar">
+    <div class="barra-graf"><h2>Explorador de la zona cruda</h2><span class="peq" id="explSub"></span></div>
+    <div class="card panel">
+      <div class="filtros explorar-filtros">
+        <div class="filtros" id="explFechas" role="group" aria-label="Fecha de la foto"></div>
+        <label class="sr" for="explSitio">Sitio</label><select id="explSitio" class="sel"></select>
+        <label class="sr" for="explTema">Tema</label><select id="explTema" class="sel"></select>
+        <div class="buscar" style="max-width:260px"><label class="sr" for="explBuscar">Buscar en las URL</label><svg class="i"><use href="#i-buscar"/></svg><input id="explBuscar" placeholder="Buscar en las URL" autocomplete="off"></div>
+        <label class="toggle"><input type="checkbox" id="explRetirado"> Solo con datos de personas retirados</label>
+      </div>
+      <div class="tabla-wrap"><table id="tablaCrudo"><thead><tr><th>Sitio</th><th>Respuesta</th><th>Tema</th><th>Tamaño</th><th>Cómo se pidió</th><th></th></tr></thead><tbody></tbody></table></div>
+      <p class="peq" id="explCuenta"></p>
+    </div>
+  </div>
+
+  <div class="seccion" id="sec-ia">
+    <div class="barra-graf"><h2>Qué hizo la inteligencia artificial y qué no</h2><span class="peq">Cada encargo, qué respondió y cómo lo comprobamos</span></div>
+    <div class="grid-2">
+      <div class="card panel ia-regla" id="iaRegla"></div>
+      <div class="card panel"><h3>Cómo salió cada encargo</h3><div id="iaBarra" class="ia-barra"></div><p class="peq" id="iaTxt"></p>
+        <h3 style="margin-top:18px">Quién encontró cada fuente</h3><p class="peq" id="iaHallTxt"></p><div class="hallazgo" id="iaHallazgo"></div></div>
+    </div>
+    <div class="card panel"><div class="ia" id="bitacora"></div></div>
+  </div>
+
+  <div class="seccion"><h2>Las fuentes que revisamos</h2><p class="peq" id="r-fuentes" style="max-width:72ch"></p></div>
   <div class="card panel"><div class="embudo" id="embudo" role="img"></div><div class="ley-embudo" id="leyEmbudo"></div></div>
   <div class="nota" id="notaVerif"><svg class="i"><use href="#i-ok"/></svg><p></p></div>
+  <div class="nota" id="notaLicencias"><svg class="i"><use href="#i-escudo"/></svg><p><b>¿Por qué usamos fuentes que no declaran licencia?</b> Las de la Ciudad de Orlando (permisos, negocios, código urbano, policía, solicitudes de planeación y su SIG) no traen licencia en su ficha, y por eso la verificación deja avisos. Las usamos porque son registros públicos de un gobierno local de Florida: la Constitución de Florida (art. I, sección 24) y el <a href="https://www.flsenate.gov/Laws/Statutes/2022/Chapter119/All">capítulo 119 de los Estatutos de Florida</a> dan a cualquier persona el derecho a consultarlos y copiarlos, y un tribunal de apelaciones de Florida decidió en <a href="https://en.wikipedia.org/wiki/Microdecisions,_Inc._v._Skinner"><i>Microdecisions v. Skinner</i> (2004)</a> que una entidad pública no puede exigir licencia ni reclamar derechos de autor sobre sus registros si una ley no la autoriza. Aun así, citamos a la ciudad junto a cada dato, solo publicamos conteos agregados y revisamos la ficha de cada fuente en cada actualización: si la ciudad publicara una licencia restrictiva, la anotaríamos en el catálogo y retiraríamos o ajustaríamos esa fuente. Zillow tampoco declara licencia: publica sus archivos para análisis propios y lo citamos en cada gráfico. Esto es el criterio del equipo, no un concepto jurídico.</p></div>
   <div class="seccion"><h2>Las fuentes que alimentan el tablero</h2><div class="usadas" id="usadas"></div></div>
   <div class="grid-2">
     <div class="card panel"><h3>Por qué descartamos fuentes</h3><p class="peq" id="txtDescarte"></p><div class="barras-simples" id="motivos"></div></div>
@@ -401,7 +484,6 @@
     <div class="lista-fichas" id="fichas"></div>
   </div>
   <div class="grid-2">
-    <div class="card panel"><h3>Cómo usamos la IA</h3><p class="peq">Cada encargo, qué respondió y cómo lo comprobamos. Los errores quedan anotados.</p><div class="ia" id="bitacora"></div></div>
     <div class="card panel"><h3>Diccionario de datos</h3><p class="peq">Cada campo del lago con su significado. Si un campo no está aquí, el tablero no lo usa.</p>
       <details><summary id="sumDic">Ver los campos</summary><div class="tabla-wrap" style="margin-top:10px"><table id="tablaDic"><thead><tr><th>Ficha</th><th>Campo</th><th>Qué significa</th><th>Clase</th></tr></thead><tbody></tbody></table></div></details></div>
   </div>
@@ -412,13 +494,15 @@
   <div class="wrap">
     <div class="cols">
       <p><b>Cerebro Orlando</b> · Taller de datos de Tópicos de Sistemas de Información (Gobernanza de datos), Universidad EAFIT. Profesor Santiago Jiménez Londoño.<br>Equipo: Juan Esteban Alzate, Nicolás Saldarriaga y Mateo Villada.</p>
-      <p><b>Atribuciones.</b> Avisos de empleo: Indeed Hiring Lab, Job Postings Index (CC BY 4.0). Vivienda: U.S. Federal Housing Finance Agency y Realtor.com (Housing Inventory), vía FRED. Desempleo y empleo: U.S. Bureau of Labor Statistics, vía FRED. Población, ingreso y pobreza: U.S. Census Bureau, vía FRED. Salarios: BLS; ingreso por persona: BEA; solicitudes de negocios: U.S. Census Bureau (BFS), todos vía FRED. Población, ingreso, arriendo e idioma por barrio y ciudad: U.S. Census Bureau, American Community Survey 2020-2024, vía Census Reporter. Riesgo: FEMA, National Risk Index. Arriendo y valor típico: Zillow Research. Visitas: Wikimedia Foundation. Clima: National Weather Service y NOAA NCEI. Barrios, permisos, código, negocios, planeación, parques, SunRail y ciclovías: City of Orlando; colegios: Orange County Public Schools.</p>
+      <p><b>Atribuciones.</b> Avisos de empleo: Indeed Hiring Lab, Job Postings Index (CC BY 4.0). Vivienda: U.S. Federal Housing Finance Agency y Realtor.com (Housing Inventory), vía FRED. Desempleo y empleo: U.S. Bureau of Labor Statistics, vía FRED. Población, ingreso y pobreza: U.S. Census Bureau, vía FRED. Salarios: BLS; ingreso por persona: BEA; solicitudes de negocios: U.S. Census Bureau (BFS), todos vía FRED. Población, ingreso, arriendo e idioma por barrio y ciudad: U.S. Census Bureau, American Community Survey 2020-2024, vía Census Reporter. Riesgo: FEMA, National Risk Index. Arriendo y valor típico: Zillow Research. Visitas: Wikimedia Foundation. Clima: National Weather Service y NOAA NCEI. Barrios, permisos, código, negocios, planeación, parques, SunRail y ciclovías: City of Orlando; colegios: Orange County Public Schools. Tráfico: Florida Department of Transportation (FDOT). Choques mortales: NHTSA, Fatality Analysis Reporting System. Buses: LYNX (Central Florida Regional Transit Authority), horario GTFS.</p>
       <p><b>Cómo se construye.</b> <span class="mono">reconstruir.py</span> trae los datos, <span class="mono">verificar.py</span> los revisa (con un solo fallo no se publica) y <span class="mono">vista/construir_vista.py</span> arma esta página. <a id="linkRepo" href="#" target="_blank" rel="noopener">Repositorio</a>.</p>
     </div>
   </div>
 </footer>
 
 <dialog id="traza" aria-labelledby="trazaT"><div class="in" id="trazaIn"></div></dialog>
+<dialog id="verCrudo" aria-labelledby="verCrudoT"><div class="in" id="verCrudoIn"></div></dialog>
+<dialog id="buscador" aria-label="Buscar en el tablero"><div class="in buscador-in"><div class="buscar"><svg class="i"><use href="#i-buscar"/></svg><input id="buscadorIn" placeholder="Barrio, tema, fuente o número…" autocomplete="off" aria-label="Buscar barrios, temas y fuentes"></div><ul id="buscadorRes" class="buscador-res" role="listbox"></ul><p class="peq">Enter abre el primero · Esc cierra · atajo: tecla /</p></div></dialog>
 <div id="globo" role="tooltip"></div>
 <div id="presentacion" hidden role="dialog" aria-modal="true" aria-label="Modo presentación">
   <div class="barra"><b style="font-family:var(--font-display)">Cerebro Orlando · presentación</b><span class="vig" id="pres-n"></span><button class="btn" type="button" id="pres-cerrar"><svg class="i"><use href="#i-cerrar"/></svg>Salir</button></div>

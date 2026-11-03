@@ -1,0 +1,85 @@
+{
+  "Comment": "Cerebro Orlando: actualización semanal del lago. Trae cada tema en paralelo, verifica y solo si pasa publica; al final cuenta en Athena las cifras de la foto nueva.",
+  "StartAt": "Planear",
+  "States": {
+    "Planear": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {"FunctionName": "__FUNCION__", "Payload": {"modo": "planear", "ejecucion.$": "$$.Execution.Name"}},
+      "ResultSelector": {"fecha.$": "$.Payload.fecha", "scripts.$": "$.Payload.scripts"},
+      "ResultPath": "$.plan",
+      "Next": "Traer de las fuentes"
+    },
+    "Traer de las fuentes": {
+      "Type": "Map",
+      "ItemsPath": "$.plan.scripts",
+      "MaxConcurrency": 4,
+      "ItemSelector": {"modo": "traer", "script.$": "$$.Map.Item.Value", "fecha.$": "$.plan.fecha", "ejecucion.$": "$$.Execution.Name"},
+      "ItemProcessor": {
+        "ProcessorConfig": {"Mode": "INLINE"},
+        "StartAt": "Correr un script de ingesta",
+        "States": {
+          "Correr un script de ingesta": {
+            "Type": "Task",
+            "Resource": "arn:aws:states:::lambda:invoke",
+            "Parameters": {"FunctionName": "__FUNCION__", "Payload.$": "$"},
+            "ResultSelector": {"script.$": "$.Payload.script", "ok.$": "$.Payload.ok", "archivos.$": "$.Payload.archivos", "segundos.$": "$.Payload.segundos", "salida.$": "$.Payload.salida"},
+            "Retry": [{"ErrorEquals": ["Lambda.ServiceException", "Lambda.TooManyRequestsException", "Lambda.SdkClientException"], "IntervalSeconds": 10, "MaxAttempts": 2, "BackoffRate": 2}],
+            "End": true
+          }
+        }
+      },
+      "ResultPath": "$.traidos",
+      "Next": "Verificar"
+    },
+    "Verificar": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {"FunctionName": "__FUNCION__", "Payload": {"modo": "verificar", "fecha.$": "$.plan.fecha", "ejecucion.$": "$$.Execution.Name"}},
+      "ResultSelector": {"fallos.$": "$.Payload.fallos", "pasan.$": "$.Payload.pasan", "avisos.$": "$.Payload.avisos", "primeros_fallos.$": "$.Payload.primeros_fallos"},
+      "ResultPath": "$.verificacion",
+      "Next": "Paso la verificacion"
+    },
+    "Paso la verificacion": {
+      "Type": "Choice",
+      "Choices": [{"Variable": "$.verificacion.fallos", "NumericEquals": 0, "Next": "Publicar"}],
+      "Default": "No se publica"
+    },
+    "No se publica": {"Type": "Fail", "Error": "VerificacionFallo", "Cause": "verificar.py encontró fallos: el lago y el tablero quedan como estaban (ver $.verificacion.primeros_fallos)"},
+    "Publicar": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {"FunctionName": "__FUNCION__", "Payload": {"modo": "publicar", "fecha.$": "$.plan.fecha", "ejecucion.$": "$$.Execution.Name"}},
+      "ResultSelector": {"subidos.$": "$.Payload.subidos", "segundos.$": "$.Payload.segundos"},
+      "ResultPath": "$.publicacion",
+      "Next": "Contar en Athena"
+    },
+    "Contar en Athena": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::athena:startQueryExecution.sync",
+      "Parameters": {
+        "QueryString.$": "States.Format('SELECT count(*) AS n FROM cerebro_orlando.cifras WHERE fecha = \\'{}\\'', $.plan.fecha)",
+        "WorkGroup": "primary",
+        "ResultConfiguration": {"OutputLocation": "s3://__BUCKET__/_athena/"}
+      },
+      "ResultSelector": {"id.$": "$.QueryExecution.QueryExecutionId"},
+      "ResultPath": "$.athena",
+      "Next": "Leer el conteo"
+    },
+    "Leer el conteo": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::athena:getQueryResults",
+      "Parameters": {"QueryExecutionId.$": "$.athena.id"},
+      "ResultSelector": {"n.$": "States.StringToJson($.ResultSet.Rows[1].Data[0].VarCharValue)"},
+      "ResultPath": "$.cifras_de_hoy",
+      "Next": "Hay cifras de la foto nueva"
+    },
+    "Hay cifras de la foto nueva": {
+      "Type": "Choice",
+      "Choices": [{"Variable": "$.cifras_de_hoy.n", "NumericGreaterThan": 0, "Next": "Listo"}],
+      "Default": "Athena no ve la foto"
+    },
+    "Athena no ve la foto": {"Type": "Fail", "Error": "AthenaSinCifras", "Cause": "Se publicó, pero Athena no encuentra cifras con la fecha de la foto nueva"},
+    "Listo": {"Type": "Succeed"}
+  }
+}

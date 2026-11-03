@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Prueba que el verificador sepa fallar: «una verificación que nunca falla no está verificando».
 
-Arma dos carpetas temporales. En la buena pone un lago correcto y espera código 0. En la mala rompe el lago a
-propósito (cifra sin fuente, licencia pendiente, hora en 'probado', un correo y dos teléfonos) y espera código 1
-con cada falla nombrada."""
-import json, os, pathlib, subprocess, sys, tempfile, datetime
+Arma carpetas temporales. En la buena pone un lago correcto (zona cruda con su manifiesto y zona curada con su linaje) y
+espera código 0. En las malas rompe el lago a propósito (cifra sin fuente, licencia pendiente, hora en 'probado', un correo
+y dos teléfonos; una respuesta cruda con un correo, una que cambió después de guardarse y una fuente sin respuestas
+crudas) y espera código 1 con cada falla nombrada. Al final hace lo mismo con la consistencia entre pestañas
+(consistencia.py) sobre una copia del lago real."""
+import gzip, hashlib, json, os, pathlib, subprocess, sys, tempfile, datetime
 
 VERIFICAR = pathlib.Path(__file__).resolve().parent / "verificar.py"
 CATALOGO = (pathlib.Path(__file__).resolve().parents[1] / "catalogo" / "fuentes_lago.json").read_text(encoding="utf-8")
@@ -12,14 +14,32 @@ HOY = datetime.date.today().isoformat()
 ENV = dict(os.environ, PYTHONIOENCODING="utf-8")
 
 
-def correr(lago):
+CRUDO_BUENO = json.dumps({"datos": [{"barrio": "Barrio A", "n": 40}]}).encode()
+
+
+def correr(lago, cuerpo=CRUDO_BUENO, alterar=False, sin_linaje=False):
+    """Escribe el lago de prueba en una carpeta temporal y corre el verificador sobre ella."""
     with tempfile.TemporaryDirectory() as t:
-        (pathlib.Path(t) / "lago" / "raw" / "prueba").mkdir(parents=True)
-        (pathlib.Path(t) / "lago" / "raw" / "prueba" / "prueba.json").write_text(json.dumps(lago, ensure_ascii=False), encoding="utf-8")
+        t = pathlib.Path(t)
+        rel = f"crudo/sitio=ejemplo.org/fecha={HOY}/datos-0000000000.json.gz"
+        (t / "lago" / rel).parent.mkdir(parents=True)
+        (t / "lago" / rel).write_bytes(gzip.compress(cuerpo + (b" " if alterar else b""), mtime=0))
+        fila = {"fecha": HOY, "sitio": "ejemplo.org", "url": "https://ejemplo.org/datos", "tema": "prueba", "como": "script directo",
+                "formato": "json", "estado": "guardado", "archivo": rel, "retirado": {}, "bytes_original": len(cuerpo),
+                "sha256_original": hashlib.sha256(cuerpo).hexdigest(), "sha256_guardado": hashlib.sha256(cuerpo).hexdigest()}
+        (t / "lago" / "catalogo" / "manifiesto_crudo").mkdir(parents=True)
+        (t / "lago" / "catalogo" / "manifiesto_crudo" / "manifiesto.jsonl").write_text(json.dumps(fila) + "\n", encoding="utf-8")
+        lago = json.loads(json.dumps(lago))
+        for f in lago["fuentes"]:
+            f["crudo"] = [] if sin_linaje else [rel]
+        tema = lago["tema"]
+        carpeta = t / "lago" / "curado" / f"tema={tema}" / f"fecha={str(lago['probado'])[:10]}"
+        carpeta.mkdir(parents=True)
+        (carpeta / f"{tema}.json").write_text(json.dumps(lago, ensure_ascii=False), encoding="utf-8")
         # el verificador lee del catálogo qué fuentes traen personas («solo agregados»)
-        (pathlib.Path(t) / "catalogo").mkdir()
-        (pathlib.Path(t) / "catalogo" / "fuentes_lago.json").write_text(CATALOGO, encoding="utf-8")
-        r = subprocess.run([sys.executable, str(VERIFICAR), "--raiz", t], capture_output=True, text=True, encoding="utf-8", env=ENV)
+        (t / "catalogo").mkdir()
+        (t / "catalogo" / "fuentes_lago.json").write_text(CATALOGO, encoding="utf-8")
+        r = subprocess.run([sys.executable, str(VERIFICAR), "--raiz", str(t)], capture_output=True, text=True, encoding="utf-8", env=ENV)
         return r.returncode, r.stdout
 
 
@@ -84,5 +104,48 @@ c_mal, sal_c = correr(lago_censo([["Barrio A", 7.5], ["Barrio B", 30.0]]))
 atrapo_censo = c_mal == 1 and any(l.startswith("FAIL") and "mínimo de habitantes" in l for l in sal_c.splitlines())
 print("censo correcto ->", "PASA" if c_ok == 0 else f"FALLA (código {c_ok})")
 print("censo con porcentaje de un barrio de 80 habitantes ->", "ATRAPADO" if atrapo_censo else "NO LO ATRAPÓ")
-sys.exit(0 if ok and codigo == 1 and c_ok == 0 and atrapo_censo and len(atrapadas) == len(esperadas) and cod_ok == 0 and atrapo
+# La zona cruda: un correo que se coló, un archivo que cambió después de guardarse y una fuente sin respuestas crudas
+def atrapa(salida, codigo, texto):
+    return codigo == 1 and any(l.startswith("FAIL") and texto in l for l in salida.splitlines())
+k1, s1 = correr(bueno, cuerpo=json.dumps({"contacto": "Escribir a alguien", "nota": "vecino@correo.com"}).encode())
+k2, s2 = correr(bueno, alterar=True)
+k3, s3 = correr(bueno, sin_linaje=True)
+crudos = [("respuesta cruda con un correo", atrapa(s1, k1, "sin datos de personas")),
+          ("respuesta cruda que cambió después de guardarse", atrapa(s2, k2, "huella")),
+          ("fuente curada sin respuestas crudas (linaje roto)", atrapa(s3, k3, "linaje"))]
+for nombre, ok_c in crudos:
+    print(nombre, "->", "ATRAPADO" if ok_c else "NO LO ATRAPÓ")
+# Un lago vacío (por ejemplo, rutas mal después de reorganizar carpetas) tiene que fallar, no pasar sin revisar nada
+with tempfile.TemporaryDirectory() as t:
+    (pathlib.Path(t) / "lago" / "curado").mkdir(parents=True)
+    (pathlib.Path(t) / "catalogo").mkdir()
+    (pathlib.Path(t) / "catalogo" / "fuentes_lago.json").write_text(CATALOGO, encoding="utf-8")
+    vacio = subprocess.run([sys.executable, str(VERIFICAR), "--raiz", t], capture_output=True, text=True, encoding="utf-8", env=ENV).returncode
+print("lago vacío ->", "ATRAPADO" if vacio == 1 else "NO LO ATRAPÓ: pasa sin revisar nada")
+# Consistencia entre pestañas: la copia real del lago pasa; con la tarjeta y el gráfico en desacuerdo, tiene que fallar
+CONSISTENCIA = pathlib.Path(__file__).resolve().parent / "consistencia.py"
+RAIZ_REAL = pathlib.Path(__file__).resolve().parents[1]
+cons = []
+with tempfile.TemporaryDirectory() as t:
+    t = pathlib.Path(t)
+    import shutil
+    for parte in ("lago/curado", "lago/consumo"):
+        if (RAIZ_REAL / parte).exists():
+            shutil.copytree(RAIZ_REAL / parte, t / parte)
+    (t / "vista").mkdir()
+    for f in ("plantilla.html", "app.js"):
+        shutil.copy(RAIZ_REAL / "vista" / f, t / "vista" / f)
+    correr_c = lambda: subprocess.run([sys.executable, str(CONSISTENCIA), "--raiz", str(t)], capture_output=True, text=True, encoding="utf-8", env=ENV)
+    r0 = correr_c()
+    cons.append(("lago real, todo consistente", r0.returncode == 0))
+    ruta = sorted((t / "lago" / "curado").glob("tema=permisos/fecha=*/permisos.json"))[-1]
+    d = json.loads(ruta.read_text(encoding="utf-8"))
+    d["cifras"]["permisos_emitidos_ultimo_anio_completo"]["valor"] += 50
+    ruta.write_text(json.dumps(d), encoding="utf-8")
+    r1 = correr_c()
+    cons.append(("tarjeta de permisos distinta del gráfico", atrapa(r1.stdout, r1.returncode, "punto 2025 de la serie permisos_por_anio")))
+    cons.append(("total de la ciudad que no cuadra con la suma por barrio", atrapa(r1.stdout, r1.returncode, "cuadra con la suma por barrio")))
+for nombre, ok_c in cons:
+    print("consistencia:", nombre, "->", ("PASA" if ok_c else "FALLA") if nombre.startswith("lago real") else ("ATRAPADO" if ok_c else "NO LO ATRAPÓ"))
+sys.exit(0 if all(c for _, c in crudos) and all(c for _, c in cons) and vacio == 1 and ok and codigo == 1 and c_ok == 0 and atrapo_censo and len(atrapadas) == len(esperadas) and cod_ok == 0 and atrapo
          and s_ok == 0 and atrapo_cat and atrapo_bar else 1)

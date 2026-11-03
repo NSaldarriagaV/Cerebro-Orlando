@@ -12,7 +12,7 @@ PRIVACIDAD: «Case Name», «Case Comments», «Add By» y la dirección pueden 
 agrupa en el servidor por barrio, año y tipo. Celdas barrio-año con menos de UMBRAL casos se suprimen.
 El sistema de casos arranca en 2016-2017 (antes hay pocos registros migrados): la serie anual empieza en 2017."""
 import datetime, urllib.parse
-from comun import get_json, fuente_lago, cifra, escribir_lago, variacion_pct
+from comun import get_json, fuente_lago, cifra, escribir_lago, variacion_pct, fecha_prueba
 
 PORTAL = "https://data.cityoforlando.net"
 DATASET = "k6e8-nw6w"
@@ -34,7 +34,7 @@ def limpio(txt):
     return " ".join(str(txt or "").split())
 
 
-hoy = datetime.date.today()
+hoy = fecha_prueba()
 anios_fila = get_json(soql(select="case_open_year, count(*) as n", group="case_open_year", order="case_open_year"))
 por_anio = {int(f["case_open_year"]): int(f["n"]) for f in anios_fila if f.get("case_open_year", "").strip().isdigit()}
 completos = [a for a in sorted(por_anio) if DESDE <= a < hoy.year]

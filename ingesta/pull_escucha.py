@@ -8,7 +8,7 @@ Escribe: lago/raw/escucha/escucha.json con la forma del contrato.
 desambiguación) y que hable de Florida, y se usa el título canónico para pedir las vistas.
 «Contra qué»: las mismas vistas para Tampa, Miami y Jacksonville, con la misma regla de título y el mismo periodo."""
 import datetime, urllib.parse
-from comun import get_json, hoy, fuente_lago, cifra, escribir_lago, variacion_pct
+from comun import get_json, hoy, fuente_lago, cifra, escribir_lago, variacion_pct, fecha_prueba
 
 TITULOS = ["Orlando (Florida)", "Orlando"]   # candidatos, en orden de preferencia
 PARES = {"tampa": ["Tampa"], "miami": ["Miami"], "jacksonville": ["Jacksonville (Florida)", "Jacksonville"]}
@@ -17,7 +17,7 @@ MESES = 20                                   # meses completos hacia atrás
 
 def rango_meses(n):
     """(desde, hasta) como AAAAMMDD: del primer día de hace n meses al último día del mes pasado."""
-    hasta = datetime.date.today().replace(day=1) - datetime.timedelta(days=1)
+    hasta = fecha_prueba().replace(day=1) - datetime.timedelta(days=1)
     y, m = hasta.year, hasta.month - (n - 1)
     while m <= 0:
         m, y = m + 12, y - 1

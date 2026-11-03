@@ -1,0 +1,2219 @@
+{
+ "tema": "negocios",
+ "probado": "2026-10-26",
+ "fuentes": [
+  {
+   "id": "orlando_negocios",
+   "nombre": "Orlando Open Data · Business Tax Receipts (7388-4re5)",
+   "url": "https://data.cityoforlando.net/resource/7388-4re5.json",
+   "estado": "vivo",
+   "licencia": "no declara",
+   "crudo": [
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-1f59bc0c23.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-6e4f90ba62.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-7a9d73f7db.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-7aae5b95ca.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-7b10e544a8.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-8d67b2ce82.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-b07e3d88e1.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-c6750ef24b.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-c8b6b50aaf.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-d836ef7d2d.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-f4f3a6c1fd.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-7388-4re5-2a0e3ad3a8.json.gz"
+   ]
+  }
+ ],
+ "cifras": {
+  "negocios_vigentes": {
+   "valor": 24827,
+   "unidad": "licencias de negocio vigentes",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_negocios"
+  },
+  "restaurantes_vigentes": {
+   "valor": 1281,
+   "unidad": "licencias de restaurante vigentes",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_negocios"
+  },
+  "hospedajes_vigentes": {
+   "valor": 346,
+   "unidad": "licencias de hospedaje vigentes",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_negocios"
+  },
+  "negocios_sin_barrio": {
+   "valor": 3176,
+   "unidad": "licencias vigentes sin barrio asignado",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_negocios"
+  },
+  "barrios_suprimidos_negocios": {
+   "valor": 9,
+   "unidad": "barrios con menos licencias que el umbral",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_negocios"
+  },
+  "barrios_suprimidos_hospedajes": {
+   "valor": 46,
+   "unidad": "barrios con menos licencias de hospedaje que el umbral",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_negocios"
+  },
+  "umbral_minimo_por_barrio": {
+   "valor": 5,
+   "unidad": "licencias",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_negocios"
+  }
+ },
+ "series": {
+  "negocios_barrio": {
+   "unidad": "licencias de negocio vigentes",
+   "fuente": "orlando_negocios",
+   "puntos": [
+    [
+     "Central Business District",
+     2999
+    ],
+    [
+     "Florida Center",
+     1684
+    ],
+    [
+     "South Orange",
+     1405
+    ],
+    [
+     "North Orange",
+     994
+    ],
+    [
+     "Lake Nona South",
+     945
+    ],
+    [
+     "Metro West",
+     926
+    ],
+    [
+     "College Park",
+     674
+    ],
+    [
+     "Baldwin Park",
+     631
+    ],
+    [
+     "Colonial Town Center",
+     629
+    ],
+    [
+     "Airport North",
+     616
+    ],
+    [
+     "Lake Eola Heights",
+     552
+    ],
+    [
+     "North Quarter",
+     544
+    ],
+    [
+     "Millenia",
+     518
+    ],
+    [
+     "Colonialtown South",
+     441
+    ],
+    [
+     "Princeton/Silver Star",
+     412
+    ],
+    [
+     "33rd St. Industrial",
+     324
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     276
+    ],
+    [
+     "Rosemont",
+     272
+    ],
+    [
+     "South Eola",
+     264
+    ],
+    [
+     "Kirkman South",
+     231
+    ],
+    [
+     "Lake Copeland",
+     211
+    ],
+    [
+     "Park Lake/Highland",
+     210
+    ],
+    [
+     "West Colonial",
+     206
+    ],
+    [
+     "Boggy Creek",
+     197
+    ],
+    [
+     "Florida Center North",
+     195
+    ],
+    [
+     "Pineloch",
+     193
+    ],
+    [
+     "Vista East",
+     191
+    ],
+    [
+     "South Semoran",
+     190
+    ],
+    [
+     "Lake Formosa",
+     189
+    ],
+    [
+     "Colonialtown North",
+     189
+    ],
+    [
+     "Milk District",
+     175
+    ],
+    [
+     "Engelwood Park",
+     170
+    ],
+    [
+     "Wadeview Park",
+     167
+    ],
+    [
+     "South Division",
+     159
+    ],
+    [
+     "Lorna Doone",
+     157
+    ],
+    [
+     "Holden/Parramore",
+     156
+    ],
+    [
+     "Spring Lake",
+     130
+    ],
+    [
+     "Conway",
+     129
+    ],
+    [
+     "Seaboard Industrial",
+     128
+    ],
+    [
+     "Audubon Park",
+     126
+    ],
+    [
+     "Rock Lake",
+     122
+    ],
+    [
+     "Kirkman North",
+     116
+    ],
+    [
+     "Lawsona/Fern Creek",
+     108
+    ],
+    [
+     "Dixie Belle",
+     105
+    ],
+    [
+     "Countryside",
+     104
+    ],
+    [
+     "Callahan",
+     102
+    ],
+    [
+     "LaVina",
+     90
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     89
+    ],
+    [
+     "Windhover",
+     85
+    ],
+    [
+     "Clear Lake",
+     76
+    ],
+    [
+     "Lake Como",
+     72
+    ],
+    [
+     "Lake Cherokee",
+     71
+    ],
+    [
+     "Lake Dot",
+     65
+    ],
+    [
+     "Lake Whippoorwill",
+     62
+    ],
+    [
+     "Monterey",
+     62
+    ],
+    [
+     "East Park",
+     58
+    ],
+    [
+     "Thornton Park",
+     57
+    ],
+    [
+     "Westfield",
+     57
+    ],
+    [
+     "Azalea Park",
+     56
+    ],
+    [
+     "Lake Terrace",
+     55
+    ],
+    [
+     "Rowena Gardens",
+     53
+    ],
+    [
+     "Holden Heights",
+     50
+    ],
+    [
+     "Dover Shores West",
+     48
+    ],
+    [
+     "Lake Sunset",
+     47
+    ],
+    [
+     "Rio Grande Park",
+     46
+    ],
+    [
+     "Mercy Drive",
+     42
+    ],
+    [
+     "Mariners Village",
+     41
+    ],
+    [
+     "Haralson Estates",
+     40
+    ],
+    [
+     "Lake Nona Central",
+     40
+    ],
+    [
+     "Malibu Groves",
+     39
+    ],
+    [
+     "Lake Nona Estates",
+     37
+    ],
+    [
+     "The Dovers",
+     35
+    ],
+    [
+     "Southport",
+     34
+    ],
+    [
+     "Signal Hill",
+     32
+    ],
+    [
+     "Lake Fredrica",
+     32
+    ],
+    [
+     "Richmond Heights",
+     30
+    ],
+    [
+     "Randal Park",
+     29
+    ],
+    [
+     "Ventura",
+     29
+    ],
+    [
+     "Dover Shores East",
+     28
+    ],
+    [
+     "Johnson Village",
+     28
+    ],
+    [
+     "Orlando Executive Airport",
+     26
+    ],
+    [
+     "Storey Park",
+     25
+    ],
+    [
+     "Lake Fairview",
+     23
+    ],
+    [
+     "Washington Shores",
+     23
+    ],
+    [
+     "Beltway Commerce Center",
+     23
+    ],
+    [
+     "Coytown",
+     22
+    ],
+    [
+     "Catalina",
+     22
+    ],
+    [
+     "Orwin Manor",
+     20
+    ],
+    [
+     "Eagles Nest",
+     19
+    ],
+    [
+     "Dover Estates",
+     19
+    ],
+    [
+     "Palomar",
+     19
+    ],
+    [
+     "Bryn Mawr",
+     19
+    ],
+    [
+     "Lake Davis/Greenwood",
+     18
+    ],
+    [
+     "Delaney Park",
+     18
+    ],
+    [
+     "Hibiscus",
+     13
+    ],
+    [
+     "Roosevelt Park",
+     13
+    ],
+    [
+     "Lake Holden",
+     13
+    ],
+    [
+     "Lake Mann Estates",
+     11
+    ],
+    [
+     "Dover Manor",
+     10
+    ],
+    [
+     "Timberleaf",
+     9
+    ],
+    [
+     "Bel Air",
+     9
+    ],
+    [
+     "Rosemont North",
+     8
+    ],
+    [
+     "Lake Weldona",
+     8
+    ],
+    [
+     "Lake Underhill",
+     8
+    ],
+    [
+     "New Malibu",
+     8
+    ],
+    [
+     "The Willows",
+     7
+    ],
+    [
+     "Park Central",
+     7
+    ],
+    [
+     "Lancaster Park",
+     6
+    ],
+    [
+     "Rose Isle",
+     6
+    ],
+    [
+     "Richmond Estates",
+     5
+    ],
+    [
+     "Crescent Park",
+     5
+    ],
+    [
+     "Lake Richmond",
+     5
+    ],
+    [
+     "Carver Shores",
+     5
+    ]
+   ]
+  },
+  "restaurantes_barrio": {
+   "unidad": "licencias de restaurante vigentes",
+   "fuente": "orlando_negocios",
+   "puntos": [
+    [
+     "Florida Center",
+     228
+    ],
+    [
+     "Central Business District",
+     118
+    ],
+    [
+     "Airport North",
+     77
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     61
+    ],
+    [
+     "Millenia",
+     53
+    ],
+    [
+     "Colonial Town Center",
+     48
+    ],
+    [
+     "Lake Nona South",
+     41
+    ],
+    [
+     "Metro West",
+     38
+    ],
+    [
+     "College Park",
+     27
+    ],
+    [
+     "Westfield",
+     27
+    ],
+    [
+     "Colonialtown North",
+     26
+    ],
+    [
+     "Park Lake/Highland",
+     26
+    ],
+    [
+     "South Eola",
+     24
+    ],
+    [
+     "Kirkman South",
+     23
+    ],
+    [
+     "South Semoran",
+     23
+    ],
+    [
+     "Audubon Park",
+     18
+    ],
+    [
+     "Conway",
+     17
+    ],
+    [
+     "Wadeview Park",
+     17
+    ],
+    [
+     "West Colonial",
+     16
+    ],
+    [
+     "Baldwin Park",
+     15
+    ],
+    [
+     "South Orange",
+     15
+    ],
+    [
+     "North Orange",
+     14
+    ],
+    [
+     "Pineloch",
+     14
+    ],
+    [
+     "Vista East",
+     14
+    ],
+    [
+     "Colonialtown South",
+     13
+    ],
+    [
+     "Holden/Parramore",
+     13
+    ],
+    [
+     "Milk District",
+     13
+    ],
+    [
+     "Engelwood Park",
+     11
+    ],
+    [
+     "Lake Eola Heights",
+     10
+    ],
+    [
+     "Rosemont",
+     10
+    ],
+    [
+     "Callahan",
+     9
+    ],
+    [
+     "Princeton/Silver Star",
+     9
+    ],
+    [
+     "North Quarter",
+     9
+    ],
+    [
+     "Lake Formosa",
+     8
+    ],
+    [
+     "Dixie Belle",
+     8
+    ],
+    [
+     "Lake Terrace",
+     8
+    ],
+    [
+     "East Park",
+     7
+    ],
+    [
+     "Lorna Doone",
+     7
+    ],
+    [
+     "Lake Whippoorwill",
+     7
+    ],
+    [
+     "Mariners Village",
+     6
+    ],
+    [
+     "Thornton Park",
+     6
+    ],
+    [
+     "Kirkman North",
+     5
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     5
+    ]
+   ]
+  },
+  "hospedajes_barrio": {
+   "unidad": "licencias de hospedaje vigentes",
+   "fuente": "orlando_negocios",
+   "puntos": [
+    [
+     "Florida Center",
+     63
+    ],
+    [
+     "Airport North",
+     31
+    ],
+    [
+     "Lake Eola Heights",
+     17
+    ],
+    [
+     "College Park",
+     10
+    ],
+    [
+     "Millenia",
+     10
+    ],
+    [
+     "Rosemont",
+     9
+    ],
+    [
+     "Central Business District",
+     9
+    ],
+    [
+     "Engelwood Park",
+     8
+    ],
+    [
+     "Callahan",
+     8
+    ],
+    [
+     "Milk District",
+     8
+    ],
+    [
+     "South Eola",
+     7
+    ],
+    [
+     "Holden/Parramore",
+     7
+    ],
+    [
+     "North Orange",
+     7
+    ],
+    [
+     "Metro West",
+     7
+    ],
+    [
+     "Mercy Drive",
+     7
+    ],
+    [
+     "South Orange",
+     7
+    ],
+    [
+     "Florida Center North",
+     6
+    ],
+    [
+     "Lake Nona South",
+     6
+    ],
+    [
+     "Lake Fredrica",
+     6
+    ],
+    [
+     "Lake Cherokee",
+     6
+    ],
+    [
+     "Baldwin Park",
+     5
+    ],
+    [
+     "North Quarter",
+     5
+    ],
+    [
+     "Kirkman North",
+     5
+    ]
+   ]
+  },
+  "aperturas_barrio_2025": {
+   "unidad": "licencias con fecha de apertura en 2025",
+   "fuente": "orlando_negocios",
+   "puntos": [
+    [
+     "Central Business District",
+     412
+    ],
+    [
+     "South Orange",
+     204
+    ],
+    [
+     "Lake Nona South",
+     164
+    ],
+    [
+     "Florida Center",
+     144
+    ],
+    [
+     "Metro West",
+     125
+    ],
+    [
+     "North Orange",
+     121
+    ],
+    [
+     "Baldwin Park",
+     92
+    ],
+    [
+     "Colonial Town Center",
+     81
+    ],
+    [
+     "Airport North",
+     80
+    ],
+    [
+     "North Quarter",
+     79
+    ],
+    [
+     "Millenia",
+     64
+    ],
+    [
+     "Lake Eola Heights",
+     63
+    ],
+    [
+     "College Park",
+     62
+    ],
+    [
+     "Colonialtown South",
+     51
+    ],
+    [
+     "South Eola",
+     43
+    ],
+    [
+     "Rosemont",
+     38
+    ],
+    [
+     "33rd St. Industrial",
+     36
+    ],
+    [
+     "Princeton/Silver Star",
+     36
+    ],
+    [
+     "Conway",
+     35
+    ],
+    [
+     "Lorna Doone",
+     28
+    ],
+    [
+     "Lake Copeland",
+     26
+    ],
+    [
+     "Kirkman North",
+     26
+    ],
+    [
+     "Holden/Parramore",
+     25
+    ],
+    [
+     "Kirkman South",
+     22
+    ],
+    [
+     "Engelwood Park",
+     22
+    ],
+    [
+     "Vista East",
+     22
+    ],
+    [
+     "Westfield",
+     21
+    ],
+    [
+     "Dixie Belle",
+     20
+    ],
+    [
+     "West Colonial",
+     19
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     18
+    ],
+    [
+     "Pineloch",
+     18
+    ],
+    [
+     "Lake Formosa",
+     17
+    ],
+    [
+     "Rock Lake",
+     17
+    ],
+    [
+     "Florida Center North",
+     16
+    ],
+    [
+     "Colonialtown North",
+     16
+    ],
+    [
+     "Wadeview Park",
+     16
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     15
+    ],
+    [
+     "Seaboard Industrial",
+     15
+    ],
+    [
+     "Milk District",
+     15
+    ],
+    [
+     "Park Lake/Highland",
+     15
+    ],
+    [
+     "Countryside",
+     14
+    ],
+    [
+     "Boggy Creek",
+     13
+    ],
+    [
+     "Spring Lake",
+     11
+    ],
+    [
+     "Lake Dot",
+     11
+    ],
+    [
+     "Callahan",
+     11
+    ],
+    [
+     "Windhover",
+     11
+    ],
+    [
+     "Mercy Drive",
+     11
+    ],
+    [
+     "Lake Whippoorwill",
+     10
+    ],
+    [
+     "Mariners Village",
+     9
+    ],
+    [
+     "South Division",
+     9
+    ],
+    [
+     "Clear Lake",
+     9
+    ],
+    [
+     "Lawsona/Fern Creek",
+     9
+    ],
+    [
+     "Audubon Park",
+     9
+    ],
+    [
+     "LaVina",
+     9
+    ],
+    [
+     "Haralson Estates",
+     8
+    ],
+    [
+     "Randal Park",
+     8
+    ],
+    [
+     "Rio Grande Park",
+     8
+    ],
+    [
+     "Thornton Park",
+     7
+    ],
+    [
+     "Lake Como",
+     7
+    ],
+    [
+     "Monterey",
+     7
+    ],
+    [
+     "South Semoran",
+     7
+    ],
+    [
+     "Signal Hill",
+     6
+    ],
+    [
+     "Lake Terrace",
+     6
+    ],
+    [
+     "Lake Sunset",
+     5
+    ],
+    [
+     "Azalea Park",
+     5
+    ],
+    [
+     "Beltway Commerce Center",
+     5
+    ]
+   ]
+  },
+  "comercio_barrio": {
+   "unidad": "licencias vigentes de la categoría Comercio",
+   "fuente": "orlando_negocios",
+   "puntos": [
+    [
+     "Florida Center",
+     311
+    ],
+    [
+     "Millenia",
+     175
+    ],
+    [
+     "Princeton/Silver Star",
+     113
+    ],
+    [
+     "Colonial Town Center",
+     91
+    ],
+    [
+     "Airport North",
+     79
+    ],
+    [
+     "33rd St. Industrial",
+     72
+    ],
+    [
+     "Boggy Creek",
+     55
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     54
+    ],
+    [
+     "College Park",
+     52
+    ],
+    [
+     "South Orange",
+     52
+    ],
+    [
+     "Lake Nona South",
+     50
+    ],
+    [
+     "Metro West",
+     48
+    ],
+    [
+     "Spring Lake",
+     45
+    ],
+    [
+     "West Colonial",
+     45
+    ],
+    [
+     "Rosemont",
+     42
+    ],
+    [
+     "Central Business District",
+     42
+    ],
+    [
+     "South Semoran",
+     39
+    ],
+    [
+     "North Orange",
+     37
+    ],
+    [
+     "Seaboard Industrial",
+     34
+    ],
+    [
+     "South Division",
+     31
+    ],
+    [
+     "Pineloch",
+     30
+    ],
+    [
+     "Vista East",
+     26
+    ],
+    [
+     "Colonialtown North",
+     26
+    ],
+    [
+     "Wadeview Park",
+     25
+    ],
+    [
+     "Kirkman South",
+     24
+    ],
+    [
+     "Audubon Park",
+     24
+    ],
+    [
+     "Holden/Parramore",
+     23
+    ],
+    [
+     "Colonialtown South",
+     22
+    ],
+    [
+     "Lake Formosa",
+     21
+    ],
+    [
+     "Dixie Belle",
+     21
+    ],
+    [
+     "Park Lake/Highland",
+     21
+    ],
+    [
+     "Lorna Doone",
+     19
+    ],
+    [
+     "Conway",
+     19
+    ],
+    [
+     "Engelwood Park",
+     18
+    ],
+    [
+     "Milk District",
+     18
+    ],
+    [
+     "Baldwin Park",
+     17
+    ],
+    [
+     "Kirkman North",
+     16
+    ],
+    [
+     "Florida Center North",
+     16
+    ],
+    [
+     "Callahan",
+     15
+    ],
+    [
+     "Clear Lake",
+     14
+    ],
+    [
+     "Dover Shores West",
+     11
+    ],
+    [
+     "Rock Lake",
+     11
+    ],
+    [
+     "Lake Terrace",
+     11
+    ],
+    [
+     "South Eola",
+     10
+    ],
+    [
+     "Holden Heights",
+     9
+    ],
+    [
+     "Lake Eola Heights",
+     8
+    ],
+    [
+     "Lake Dot",
+     8
+    ],
+    [
+     "Lake Whippoorwill",
+     8
+    ],
+    [
+     "Malibu Groves",
+     8
+    ],
+    [
+     "Eagles Nest",
+     6
+    ],
+    [
+     "Signal Hill",
+     6
+    ],
+    [
+     "Coytown",
+     6
+    ],
+    [
+     "East Park",
+     6
+    ],
+    [
+     "Lake Sunset",
+     6
+    ],
+    [
+     "North Quarter",
+     6
+    ],
+    [
+     "Azalea Park",
+     6
+    ],
+    [
+     "Richmond Heights",
+     5
+    ]
+   ]
+  },
+  "belleza_barrio": {
+   "unidad": "licencias vigentes de la categoría Salones de belleza",
+   "fuente": "orlando_negocios",
+   "puntos": [
+    [
+     "Colonial Town Center",
+     59
+    ],
+    [
+     "Metro West",
+     54
+    ],
+    [
+     "South Orange",
+     45
+    ],
+    [
+     "College Park",
+     39
+    ],
+    [
+     "Conway",
+     31
+    ],
+    [
+     "Airport North",
+     29
+    ],
+    [
+     "Pineloch",
+     22
+    ],
+    [
+     "Colonialtown North",
+     22
+    ],
+    [
+     "Florida Center",
+     21
+    ],
+    [
+     "Kirkman South",
+     21
+    ],
+    [
+     "Lake Formosa",
+     19
+    ],
+    [
+     "Lake Nona South",
+     15
+    ],
+    [
+     "Central Business District",
+     15
+    ],
+    [
+     "Baldwin Park",
+     12
+    ],
+    [
+     "Thornton Park",
+     12
+    ],
+    [
+     "Lake Como",
+     12
+    ],
+    [
+     "Engelwood Park",
+     12
+    ],
+    [
+     "Park Lake/Highland",
+     12
+    ],
+    [
+     "Millenia",
+     12
+    ],
+    [
+     "Vista East",
+     10
+    ],
+    [
+     "Wadeview Park",
+     10
+    ],
+    [
+     "South Semoran",
+     10
+    ],
+    [
+     "South Eola",
+     9
+    ],
+    [
+     "Lake Whippoorwill",
+     9
+    ],
+    [
+     "North Orange",
+     8
+    ],
+    [
+     "Colonialtown South",
+     8
+    ],
+    [
+     "Dover Shores West",
+     7
+    ],
+    [
+     "Holden/Parramore",
+     7
+    ],
+    [
+     "West Colonial",
+     6
+    ],
+    [
+     "Lawsona/Fern Creek",
+     6
+    ],
+    [
+     "Lake Terrace",
+     6
+    ],
+    [
+     "Milk District",
+     6
+    ],
+    [
+     "Kirkman North",
+     5
+    ],
+    [
+     "Lorna Doone",
+     5
+    ],
+    [
+     "Callahan",
+     5
+    ],
+    [
+     "Rosemont",
+     5
+    ],
+    [
+     "Azalea Park",
+     5
+    ]
+   ]
+  },
+  "profesionales_barrio": {
+   "unidad": "licencias vigentes de la categoría Servicios profesionales",
+   "fuente": "orlando_negocios",
+   "puntos": [
+    [
+     "Central Business District",
+     2148
+    ],
+    [
+     "South Orange",
+     1027
+    ],
+    [
+     "North Orange",
+     873
+    ],
+    [
+     "Lake Nona South",
+     654
+    ],
+    [
+     "North Quarter",
+     405
+    ],
+    [
+     "Lake Eola Heights",
+     403
+    ],
+    [
+     "Metro West",
+     384
+    ],
+    [
+     "Baldwin Park",
+     321
+    ],
+    [
+     "Colonialtown South",
+     272
+    ],
+    [
+     "Florida Center",
+     261
+    ],
+    [
+     "College Park",
+     242
+    ],
+    [
+     "Colonial Town Center",
+     225
+    ],
+    [
+     "Lake Copeland",
+     192
+    ],
+    [
+     "South Eola",
+     135
+    ],
+    [
+     "Millenia",
+     99
+    ],
+    [
+     "Lake Formosa",
+     88
+    ],
+    [
+     "Airport North",
+     88
+    ],
+    [
+     "Park Lake/Highland",
+     69
+    ],
+    [
+     "Kirkman South",
+     57
+    ],
+    [
+     "Pineloch",
+     57
+    ],
+    [
+     "Engelwood Park",
+     57
+    ],
+    [
+     "Lawsona/Fern Creek",
+     57
+    ],
+    [
+     "Milk District",
+     54
+    ],
+    [
+     "Windhover",
+     53
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     52
+    ],
+    [
+     "LaVina",
+     50
+    ],
+    [
+     "Wadeview Park",
+     49
+    ],
+    [
+     "Colonialtown North",
+     48
+    ],
+    [
+     "Vista East",
+     47
+    ],
+    [
+     "Rock Lake",
+     45
+    ],
+    [
+     "Countryside",
+     45
+    ],
+    [
+     "Rowena Gardens",
+     44
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     43
+    ],
+    [
+     "Audubon Park",
+     42
+    ],
+    [
+     "Lake Cherokee",
+     40
+    ],
+    [
+     "Florida Center North",
+     38
+    ],
+    [
+     "Spring Lake",
+     33
+    ],
+    [
+     "Dixie Belle",
+     32
+    ],
+    [
+     "South Semoran",
+     26
+    ],
+    [
+     "Monterey",
+     25
+    ],
+    [
+     "West Colonial",
+     24
+    ],
+    [
+     "Holden/Parramore",
+     24
+    ],
+    [
+     "Lake Whippoorwill",
+     22
+    ],
+    [
+     "Rosemont",
+     22
+    ],
+    [
+     "Rio Grande Park",
+     20
+    ],
+    [
+     "Kirkman North",
+     19
+    ],
+    [
+     "Lake Nona Estates",
+     18
+    ],
+    [
+     "Lake Sunset",
+     18
+    ],
+    [
+     "Thornton Park",
+     16
+    ],
+    [
+     "Conway",
+     16
+    ],
+    [
+     "Princeton/Silver Star",
+     15
+    ],
+    [
+     "Lake Como",
+     14
+    ],
+    [
+     "Azalea Park",
+     13
+    ],
+    [
+     "South Division",
+     12
+    ],
+    [
+     "Dover Estates",
+     12
+    ],
+    [
+     "East Park",
+     11
+    ],
+    [
+     "Randal Park",
+     11
+    ],
+    [
+     "Mariners Village",
+     10
+    ],
+    [
+     "Dover Shores East",
+     10
+    ],
+    [
+     "Lorna Doone",
+     10
+    ],
+    [
+     "Orwin Manor",
+     7
+    ],
+    [
+     "Lake Dot",
+     7
+    ],
+    [
+     "33rd St. Industrial",
+     7
+    ],
+    [
+     "Lake Fairview",
+     7
+    ],
+    [
+     "Lake Fredrica",
+     7
+    ],
+    [
+     "The Dovers",
+     7
+    ],
+    [
+     "Holden Heights",
+     6
+    ],
+    [
+     "Hibiscus",
+     5
+    ],
+    [
+     "Rose Isle",
+     5
+    ],
+    [
+     "Callahan",
+     5
+    ],
+    [
+     "Palomar",
+     5
+    ],
+    [
+     "Boggy Creek",
+     5
+    ],
+    [
+     "Storey Park",
+     5
+    ],
+    [
+     "Dover Manor",
+     5
+    ],
+    [
+     "Delaney Park",
+     5
+    ]
+   ]
+  },
+  "cuidado_infantil_barrio": {
+   "unidad": "licencias vigentes de la categoría Cuidado infantil",
+   "fuente": "orlando_negocios",
+   "puntos": [
+    [
+     "College Park",
+     5
+    ]
+   ]
+  },
+  "automotor_barrio": {
+   "unidad": "licencias vigentes de la categoría Automotor",
+   "fuente": "orlando_negocios",
+   "puntos": [
+    [
+     "Central Business District",
+     29
+    ],
+    [
+     "West Colonial",
+     25
+    ],
+    [
+     "Florida Center",
+     19
+    ],
+    [
+     "Airport North",
+     17
+    ],
+    [
+     "Princeton/Silver Star",
+     15
+    ],
+    [
+     "Holden/Parramore",
+     8
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     6
+    ],
+    [
+     "Boggy Creek",
+     5
+    ],
+    [
+     "Callahan",
+     5
+    ],
+    [
+     "South Orange",
+     5
+    ]
+   ]
+  },
+  "categorias_ciudad": {
+   "unidad": "licencias de negocio vigentes en toda la ciudad",
+   "fuente": "orlando_negocios",
+   "puntos": [
+    [
+     "Servicios profesionales",
+     9349
+    ],
+    [
+     "Servicios y reparaciones",
+     2373
+    ],
+    [
+     "Comercio",
+     2178
+    ],
+    [
+     "Contratistas",
+     2018
+    ],
+    [
+     "Restaurantes",
+     1281
+    ],
+    [
+     "Oficinas",
+     1262
+    ],
+    [
+     "Venta ambulante",
+     990
+    ],
+    [
+     "Seguros",
+     657
+    ],
+    [
+     "Salones de belleza",
+     649
+    ],
+    [
+     "Servicios financieros",
+     407
+    ],
+    [
+     "Hospedaje",
+     346
+    ],
+    [
+     "Aseo y limpieza",
+     302
+    ],
+    [
+     "Bodegas",
+     286
+    ],
+    [
+     "Manufactura",
+     273
+    ],
+    [
+     "Automotor",
+     194
+    ],
+    [
+     "Masajes",
+     169
+    ],
+    [
+     "Instructores y academias",
+     152
+    ],
+    [
+     "Distribución",
+     136
+    ],
+    [
+     "Lavanderías",
+     132
+    ],
+    [
+     "Sin categoría",
+     130
+    ],
+    [
+     "Ventas por correo o internet",
+     109
+    ],
+    [
+     "Estaciones de servicio",
+     101
+    ],
+    [
+     "Escuelas",
+     92
+    ],
+    [
+     "Máquinas expendedoras",
+     81
+    ],
+    [
+     "Jardinería",
+     81
+    ],
+    [
+     "Spas y gimnasios",
+     72
+    ],
+    [
+     "Cuidado infantil",
+     70
+    ],
+    [
+     "Grúas",
+     60
+    ],
+    [
+     "Fotografía",
+     60
+    ],
+    [
+     "Entretenimiento",
+     57
+    ],
+    [
+     "VENCOM",
+     56
+    ],
+    [
+     "Seguridad privada",
+     48
+    ],
+    [
+     "GROUPC",
+     43
+    ],
+    [
+     "Laboratorios",
+     38
+    ],
+    [
+     "Agencias de viaje",
+     34
+    ],
+    [
+     "Decoración",
+     33
+    ],
+    [
+     "Paisajismo",
+     32
+    ],
+    [
+     "Publicidad",
+     29
+    ],
+    [
+     "Manicura",
+     29
+    ],
+    [
+     "Banquetes",
+     28
+    ],
+    [
+     "Artistas",
+     28
+    ],
+    [
+     "Salones de baile",
+     26
+    ],
+    [
+     "TRANCO",
+     25
+    ],
+    [
+     "EMPAGY",
+     19
+    ],
+    [
+     "HALLHI",
+     18
+    ],
+    [
+     "MESNGR",
+     16
+    ],
+    [
+     "STUDIO",
+     16
+    ],
+    [
+     "SEAMST",
+     15
+    ],
+    [
+     "KENNEL",
+     15
+    ],
+    [
+     "MANAGT",
+     15
+    ],
+    [
+     "HOLDCO",
+     15
+    ],
+    [
+     "EXTERM",
+     13
+    ],
+    [
+     "SALVAG",
+     12
+    ],
+    [
+     "STKBND",
+     11
+    ],
+    [
+     "Servicios turísticos",
+     10
+    ],
+    [
+     "BAILER",
+     9
+    ],
+    [
+     "THEATR",
+     9
+    ],
+    [
+     "SOCLUB",
+     8
+    ],
+    [
+     "SPIRIT",
+     8
+    ],
+    [
+     "LANDEV",
+     7
+    ],
+    [
+     "FUNEHM",
+     7
+    ],
+    [
+     "PAWNBR",
+     7
+    ],
+    [
+     "ITINER",
+     7
+    ],
+    [
+     "PROMOT",
+     6
+    ],
+    [
+     "AIRCFT",
+     6
+    ],
+    [
+     "DEMONS",
+     6
+    ],
+    [
+     "TELCOM",
+     5
+    ],
+    [
+     "COLSER",
+     5
+    ],
+    [
+     "ACFTTR",
+     5
+    ]
+   ]
+  },
+  "aperturas_por_anio": {
+   "unidad": "licencias con fecha de apertura en el año (vigentes o cerradas)",
+   "fuente": "orlando_negocios",
+   "puntos": [
+    [
+     "2000",
+     1666
+    ],
+    [
+     "2001",
+     2907
+    ],
+    [
+     "2002",
+     3934
+    ],
+    [
+     "2003",
+     4100
+    ],
+    [
+     "2004",
+     4458
+    ],
+    [
+     "2005",
+     4656
+    ],
+    [
+     "2006",
+     4872
+    ],
+    [
+     "2007",
+     4726
+    ],
+    [
+     "2008",
+     3883
+    ],
+    [
+     "2009",
+     3980
+    ],
+    [
+     "2010",
+     4052
+    ],
+    [
+     "2011",
+     3731
+    ],
+    [
+     "2012",
+     3970
+    ],
+    [
+     "2013",
+     3742
+    ],
+    [
+     "2014",
+     3744
+    ],
+    [
+     "2015",
+     3825
+    ],
+    [
+     "2016",
+     4125
+    ],
+    [
+     "2017",
+     4727
+    ],
+    [
+     "2018",
+     4595
+    ],
+    [
+     "2019",
+     4614
+    ],
+    [
+     "2020",
+     4253
+    ],
+    [
+     "2021",
+     4213
+    ],
+    [
+     "2022",
+     5046
+    ],
+    [
+     "2023",
+     4404
+    ],
+    [
+     "2024",
+     3930
+    ],
+    [
+     "2025",
+     3288
+    ]
+   ]
+  }
+ }
+}

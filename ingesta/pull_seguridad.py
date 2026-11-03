@@ -15,7 +15,7 @@ PRIVACIDAD (este es el tema más delicado del lago):
 - Límite conocido: «caso» no es «delito comprobado»; es un reporte que la policía abrió. Y no hay población por barrio,
   así que no se calculan tasas por habitante: solo totales y casos por km² (en la vista)."""
 import datetime, json, urllib.parse
-from comun import get_json, fuente_lago, cifra, escribir_lago, variacion_pct
+from comun import get_json, fuente_lago, cifra, escribir_lago, variacion_pct, fecha_prueba
 
 CAPA = "https://gis.orlando.gov/server/rest/services/OPD_Cases_Viewing/FeatureServer/0"
 UMBRAL = 5
@@ -59,7 +59,7 @@ def limpio(txt):
     return " ".join(str(txt or "").split())
 
 
-hoy = datetime.date.today()
+hoy = fecha_prueba()
 # El primer caso de la capa es de febrero de 2021: 2021 está incompleto y no se usa
 rango = get_json(f"{CAPA}/query?" + urllib.parse.urlencode({"where": "1=1", "f": "json", "outStatistics": json.dumps(
     [{"statisticType": "min", "onStatisticField": "CaseDate", "outStatisticFieldName": "mn"}])}, quote_via=urllib.parse.quote))

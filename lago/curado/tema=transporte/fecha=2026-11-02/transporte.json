@@ -1,0 +1,1268 @@
+{
+ "tema": "transporte",
+ "probado": "2026-11-02",
+ "fuentes": [
+  {
+   "id": "lynx_gtfs",
+   "nombre": "LYNX · horario de buses en formato GTFS (paradas, rutas, viajes y horas)",
+   "url": "https://files.mobilitydatabase.org/mdb-347/latest.zip",
+   "estado": "vivo",
+   "licencia": "no declara para el GTFS (los términos de uso de golynx.com piden permiso escrito para copiar o publicar información del sitio)",
+   "crudo": [
+    "crudo/sitio=files.mobilitydatabase.org/fecha=2026-11-02/latest-zip-9241f4e8de.zip.gz"
+   ]
+  }
+ ],
+ "cifras": {
+  "rutas_en_la_ciudad": {
+   "valor": 48,
+   "unidad": "rutas de bus que paran en la ciudad",
+   "vigencia": "2026-10-07",
+   "fuente": "lynx_gtfs"
+  },
+  "rutas_lynx": {
+   "valor": 62,
+   "unidad": "rutas en el horario de LYNX",
+   "vigencia": "2026-10-07",
+   "fuente": "lynx_gtfs"
+  },
+  "paradas_en_la_ciudad": {
+   "valor": 1196,
+   "unidad": "paradas de bus dentro de la ciudad",
+   "vigencia": "2026-10-07",
+   "fuente": "lynx_gtfs"
+  },
+  "salidas_dia_habil_ciudad": {
+   "valor": 55551,
+   "unidad": "veces que para un bus en la ciudad en un día hábil",
+   "vigencia": "2026-10-07",
+   "fuente": "lynx_gtfs"
+  },
+  "barrios_sin_parada": {
+   "valor": 30,
+   "unidad": "barrios sin ninguna parada de bus",
+   "vigencia": "2026-10-07",
+   "fuente": "lynx_gtfs"
+  },
+  "mediana_salidas_barrio": {
+   "valor": 176,
+   "unidad": "paradas de bus por barrio en un día hábil (mediana)",
+   "vigencia": "2026-10-07",
+   "fuente": "lynx_gtfs"
+  }
+ },
+ "series": {
+  "paradas_barrio": {
+   "unidad": "paradas de bus",
+   "fuente": "lynx_gtfs",
+   "puntos": [
+    [
+     "Florida Center",
+     60
+    ],
+    [
+     "Holden/Parramore",
+     58
+    ],
+    [
+     "Central Business District",
+     49
+    ],
+    [
+     "Airport North",
+     42
+    ],
+    [
+     "Callahan",
+     40
+    ],
+    [
+     "West Colonial",
+     39
+    ],
+    [
+     "Florida Center North",
+     35
+    ],
+    [
+     "South Semoran",
+     33
+    ],
+    [
+     "Metro West",
+     31
+    ],
+    [
+     "Engelwood Park",
+     28
+    ],
+    [
+     "Colonial Town Center",
+     26
+    ],
+    [
+     "South Orange",
+     23
+    ],
+    [
+     "Lorna Doone",
+     22
+    ],
+    [
+     "Millenia",
+     22
+    ],
+    [
+     "Rosemont",
+     22
+    ],
+    [
+     "North Orange",
+     21
+    ],
+    [
+     "College Park",
+     20
+    ],
+    [
+     "Malibu Groves",
+     19
+    ],
+    [
+     "Mercy Drive",
+     18
+    ],
+    [
+     "Milk District",
+     18
+    ],
+    [
+     "33rd St. Industrial",
+     17
+    ],
+    [
+     "Lake Como",
+     17
+    ],
+    [
+     "Princeton/Silver Star",
+     17
+    ],
+    [
+     "Monterey",
+     16
+    ],
+    [
+     "Colonialtown South",
+     14
+    ],
+    [
+     "Conway",
+     14
+    ],
+    [
+     "Lake Eola Heights",
+     14
+    ],
+    [
+     "Lake Fredrica",
+     14
+    ],
+    [
+     "Lawsona/Fern Creek",
+     14
+    ],
+    [
+     "Pineloch",
+     14
+    ],
+    [
+     "Holden Heights",
+     13
+    ],
+    [
+     "Johnson Village",
+     13
+    ],
+    [
+     "Lake Dot",
+     13
+    ],
+    [
+     "Richmond Estates",
+     13
+    ],
+    [
+     "Colonialtown North",
+     12
+    ],
+    [
+     "Lake Cherokee",
+     12
+    ],
+    [
+     "Wadeview Park",
+     12
+    ],
+    [
+     "Baldwin Park",
+     11
+    ],
+    [
+     "Dixie Belle",
+     11
+    ],
+    [
+     "Lake Mann Estates",
+     11
+    ],
+    [
+     "Lake Sunset",
+     11
+    ],
+    [
+     "Lake Underhill",
+     11
+    ],
+    [
+     "Richmond Heights",
+     11
+    ],
+    [
+     "Catalina",
+     10
+    ],
+    [
+     "Rock Lake",
+     10
+    ],
+    [
+     "Washington Shores",
+     10
+    ],
+    [
+     "Bryn Mawr",
+     9
+    ],
+    [
+     "Dover Shores East",
+     9
+    ],
+    [
+     "Audubon Park",
+     8
+    ],
+    [
+     "Clear Lake",
+     8
+    ],
+    [
+     "Kirkman North",
+     8
+    ],
+    [
+     "Kirkman South",
+     8
+    ],
+    [
+     "Lake Nona South",
+     8
+    ],
+    [
+     "Lake Richmond",
+     8
+    ],
+    [
+     "Lake Shore Village",
+     8
+    ],
+    [
+     "North Quarter",
+     8
+    ],
+    [
+     "South Eola",
+     8
+    ],
+    [
+     "Lake Mann Gardens",
+     7
+    ],
+    [
+     "Park Lake/Highland",
+     7
+    ],
+    [
+     "Westfield",
+     7
+    ],
+    [
+     "Carver Shores",
+     6
+    ],
+    [
+     "Dover Shores West",
+     6
+    ],
+    [
+     "Lake Formosa",
+     6
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     6
+    ],
+    [
+     "Rio Grande Park",
+     6
+    ],
+    [
+     "Seaboard Industrial",
+     6
+    ],
+    [
+     "Signal Hill",
+     6
+    ],
+    [
+     "Spring Lake",
+     6
+    ],
+    [
+     "Countryside",
+     5
+    ],
+    [
+     "Lake Terrace",
+     5
+    ],
+    [
+     "South Division",
+     5
+    ],
+    [
+     "Ventura",
+     5
+    ],
+    [
+     "Azalea Park",
+     4
+    ],
+    [
+     "Lake Copeland",
+     4
+    ],
+    [
+     "Orwin Manor",
+     4
+    ],
+    [
+     "Roosevelt Park",
+     4
+    ],
+    [
+     "Timberleaf",
+     4
+    ],
+    [
+     "Coytown",
+     3
+    ],
+    [
+     "Delaney Park",
+     3
+    ],
+    [
+     "Dover Estates",
+     3
+    ],
+    [
+     "Dover Manor",
+     3
+    ],
+    [
+     "Lake Davis/Greenwood",
+     3
+    ],
+    [
+     "Mariners Village",
+     3
+    ],
+    [
+     "Palomar",
+     3
+    ],
+    [
+     "Windhover",
+     3
+    ],
+    [
+     "Rowena Gardens",
+     2
+    ],
+    [
+     "Thornton Park",
+     2
+    ],
+    [
+     "Haralson Estates",
+     1
+    ],
+    [
+     "Lake Fairview",
+     1
+    ],
+    [
+     "New Malibu",
+     1
+    ],
+    [
+     "Orlando Executive Airport",
+     1
+    ],
+    [
+     "Pershing",
+     1
+    ],
+    [
+     "Rosemont North",
+     1
+    ],
+    [
+     "The Dovers",
+     1
+    ],
+    [
+     "The Willows",
+     1
+    ]
+   ]
+  },
+  "rutas_barrio": {
+   "unidad": "rutas de bus que paran en el barrio",
+   "fuente": "lynx_gtfs",
+   "puntos": [
+    [
+     "Central Business District",
+     32
+    ],
+    [
+     "Callahan",
+     12
+    ],
+    [
+     "Florida Center",
+     10
+    ],
+    [
+     "Holden/Parramore",
+     9
+    ],
+    [
+     "Lake Dot",
+     8
+    ],
+    [
+     "Lorna Doone",
+     8
+    ],
+    [
+     "West Colonial",
+     8
+    ],
+    [
+     "Colonialtown South",
+     7
+    ],
+    [
+     "Lake Cherokee",
+     7
+    ],
+    [
+     "Lake Eola Heights",
+     7
+    ],
+    [
+     "Colonial Town Center",
+     6
+    ],
+    [
+     "Florida Center North",
+     6
+    ],
+    [
+     "Millenia",
+     6
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     6
+    ],
+    [
+     "South Eola",
+     6
+    ],
+    [
+     "Washington Shores",
+     6
+    ],
+    [
+     "Holden Heights",
+     5
+    ],
+    [
+     "Johnson Village",
+     5
+    ],
+    [
+     "Kirkman South",
+     5
+    ],
+    [
+     "Rock Lake",
+     5
+    ],
+    [
+     "Rosemont",
+     5
+    ],
+    [
+     "Wadeview Park",
+     5
+    ],
+    [
+     "Airport North",
+     4
+    ],
+    [
+     "Catalina",
+     4
+    ],
+    [
+     "Clear Lake",
+     4
+    ],
+    [
+     "College Park",
+     4
+    ],
+    [
+     "Colonialtown North",
+     4
+    ],
+    [
+     "Engelwood Park",
+     4
+    ],
+    [
+     "Kirkman North",
+     4
+    ],
+    [
+     "Lake Como",
+     4
+    ],
+    [
+     "Lake Copeland",
+     4
+    ],
+    [
+     "Lake Sunset",
+     4
+    ],
+    [
+     "Metro West",
+     4
+    ],
+    [
+     "Milk District",
+     4
+    ],
+    [
+     "North Quarter",
+     4
+    ],
+    [
+     "Pineloch",
+     4
+    ],
+    [
+     "Princeton/Silver Star",
+     4
+    ],
+    [
+     "Richmond Estates",
+     4
+    ],
+    [
+     "Roosevelt Park",
+     4
+    ],
+    [
+     "South Orange",
+     4
+    ],
+    [
+     "Westfield",
+     4
+    ],
+    [
+     "Windhover",
+     4
+    ],
+    [
+     "33rd St. Industrial",
+     3
+    ],
+    [
+     "Bryn Mawr",
+     3
+    ],
+    [
+     "Coytown",
+     3
+    ],
+    [
+     "Dixie Belle",
+     3
+    ],
+    [
+     "Dover Shores East",
+     3
+    ],
+    [
+     "Haralson Estates",
+     3
+    ],
+    [
+     "Lake Fredrica",
+     3
+    ],
+    [
+     "Lake Mann Estates",
+     3
+    ],
+    [
+     "Lawsona/Fern Creek",
+     3
+    ],
+    [
+     "Malibu Groves",
+     3
+    ],
+    [
+     "Mercy Drive",
+     3
+    ],
+    [
+     "Monterey",
+     3
+    ],
+    [
+     "North Orange",
+     3
+    ],
+    [
+     "Park Lake/Highland",
+     3
+    ],
+    [
+     "Richmond Heights",
+     3
+    ],
+    [
+     "Seaboard Industrial",
+     3
+    ],
+    [
+     "South Semoran",
+     3
+    ],
+    [
+     "Spring Lake",
+     3
+    ],
+    [
+     "Thornton Park",
+     3
+    ],
+    [
+     "Audubon Park",
+     2
+    ],
+    [
+     "Azalea Park",
+     2
+    ],
+    [
+     "Baldwin Park",
+     2
+    ],
+    [
+     "Carver Shores",
+     2
+    ],
+    [
+     "Conway",
+     2
+    ],
+    [
+     "Dover Shores West",
+     2
+    ],
+    [
+     "Lake Davis/Greenwood",
+     2
+    ],
+    [
+     "Lake Mann Gardens",
+     2
+    ],
+    [
+     "Lake Nona South",
+     2
+    ],
+    [
+     "Lake Terrace",
+     2
+    ],
+    [
+     "Lake Underhill",
+     2
+    ],
+    [
+     "New Malibu",
+     2
+    ],
+    [
+     "The Willows",
+     2
+    ],
+    [
+     "Timberleaf",
+     2
+    ],
+    [
+     "Ventura",
+     2
+    ],
+    [
+     "Countryside",
+     1
+    ],
+    [
+     "Delaney Park",
+     1
+    ],
+    [
+     "Dover Estates",
+     1
+    ],
+    [
+     "Dover Manor",
+     1
+    ],
+    [
+     "Lake Fairview",
+     1
+    ],
+    [
+     "Lake Formosa",
+     1
+    ],
+    [
+     "Lake Richmond",
+     1
+    ],
+    [
+     "Lake Shore Village",
+     1
+    ],
+    [
+     "Mariners Village",
+     1
+    ],
+    [
+     "Orlando Executive Airport",
+     1
+    ],
+    [
+     "Orwin Manor",
+     1
+    ],
+    [
+     "Palomar",
+     1
+    ],
+    [
+     "Pershing",
+     1
+    ],
+    [
+     "Rio Grande Park",
+     1
+    ],
+    [
+     "Rosemont North",
+     1
+    ],
+    [
+     "Rowena Gardens",
+     1
+    ],
+    [
+     "Signal Hill",
+     1
+    ],
+    [
+     "South Division",
+     1
+    ],
+    [
+     "The Dovers",
+     1
+    ]
+   ]
+  },
+  "salidas_barrio": {
+   "unidad": "veces que para un bus en un día hábil",
+   "fuente": "lynx_gtfs",
+   "puntos": [
+    [
+     "Central Business District",
+     6498
+    ],
+    [
+     "Florida Center",
+     4347
+    ],
+    [
+     "Holden/Parramore",
+     2781
+    ],
+    [
+     "Callahan",
+     2504
+    ],
+    [
+     "West Colonial",
+     2204
+    ],
+    [
+     "Colonial Town Center",
+     1531
+    ],
+    [
+     "Metro West",
+     1450
+    ],
+    [
+     "Engelwood Park",
+     1334
+    ],
+    [
+     "South Orange",
+     1275
+    ],
+    [
+     "South Semoran",
+     1226
+    ],
+    [
+     "Airport North",
+     1186
+    ],
+    [
+     "Lake Dot",
+     1085
+    ],
+    [
+     "College Park",
+     1008
+    ],
+    [
+     "Florida Center North",
+     972
+    ],
+    [
+     "Lorna Doone",
+     928
+    ],
+    [
+     "Lake Eola Heights",
+     918
+    ],
+    [
+     "North Orange",
+     915
+    ],
+    [
+     "Princeton/Silver Star",
+     899
+    ],
+    [
+     "Rosemont",
+     799
+    ],
+    [
+     "Holden Heights",
+     783
+    ],
+    [
+     "Mercy Drive",
+     779
+    ],
+    [
+     "Washington Shores",
+     724
+    ],
+    [
+     "Pineloch",
+     713
+    ],
+    [
+     "Kirkman South",
+     642
+    ],
+    [
+     "Wadeview Park",
+     634
+    ],
+    [
+     "Colonialtown South",
+     615
+    ],
+    [
+     "Lake Fredrica",
+     606
+    ],
+    [
+     "Lake Como",
+     586
+    ],
+    [
+     "Lake Cherokee",
+     576
+    ],
+    [
+     "Millenia",
+     555
+    ],
+    [
+     "Rock Lake",
+     547
+    ],
+    [
+     "South Eola",
+     537
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     512
+    ],
+    [
+     "Monterey",
+     502
+    ],
+    [
+     "Milk District",
+     475
+    ],
+    [
+     "Colonialtown North",
+     473
+    ],
+    [
+     "Lawsona/Fern Creek",
+     469
+    ],
+    [
+     "Johnson Village",
+     458
+    ],
+    [
+     "North Quarter",
+     428
+    ],
+    [
+     "Richmond Heights",
+     402
+    ],
+    [
+     "Lake Sunset",
+     390
+    ],
+    [
+     "Kirkman North",
+     388
+    ],
+    [
+     "Park Lake/Highland",
+     381
+    ],
+    [
+     "Westfield",
+     361
+    ],
+    [
+     "Richmond Estates",
+     349
+    ],
+    [
+     "Lake Mann Estates",
+     343
+    ],
+    [
+     "Conway",
+     342
+    ],
+    [
+     "Baldwin Park",
+     330
+    ],
+    [
+     "Malibu Groves",
+     321
+    ],
+    [
+     "Spring Lake",
+     318
+    ],
+    [
+     "Lake Formosa",
+     298
+    ],
+    [
+     "Dixie Belle",
+     284
+    ],
+    [
+     "Lake Shore Village",
+     280
+    ],
+    [
+     "33rd St. Industrial",
+     251
+    ],
+    [
+     "Carver Shores",
+     228
+    ],
+    [
+     "Seaboard Industrial",
+     228
+    ],
+    [
+     "Azalea Park",
+     224
+    ],
+    [
+     "Clear Lake",
+     205
+    ],
+    [
+     "Countryside",
+     195
+    ],
+    [
+     "Dover Shores West",
+     182
+    ],
+    [
+     "Orwin Manor",
+     182
+    ],
+    [
+     "Lake Copeland",
+     178
+    ],
+    [
+     "Lake Nona South",
+     176
+    ],
+    [
+     "Roosevelt Park",
+     175
+    ],
+    [
+     "South Division",
+     175
+    ],
+    [
+     "Dover Shores East",
+     167
+    ],
+    [
+     "Catalina",
+     162
+    ],
+    [
+     "Palomar",
+     153
+    ],
+    [
+     "Windhover",
+     148
+    ],
+    [
+     "Bryn Mawr",
+     147
+    ],
+    [
+     "Lake Underhill",
+     147
+    ],
+    [
+     "Timberleaf",
+     144
+    ],
+    [
+     "Lake Davis/Greenwood",
+     138
+    ],
+    [
+     "Lake Richmond",
+     136
+    ],
+    [
+     "Lake Terrace",
+     136
+    ],
+    [
+     "Ventura",
+     119
+    ],
+    [
+     "Thornton Park",
+     117
+    ],
+    [
+     "Audubon Park",
+     116
+    ],
+    [
+     "Lake Mann Gardens",
+     115
+    ],
+    [
+     "Signal Hill",
+     105
+    ],
+    [
+     "Rio Grande Park",
+     103
+    ],
+    [
+     "Dover Estates",
+     102
+    ],
+    [
+     "Rowena Gardens",
+     102
+    ],
+    [
+     "Dover Manor",
+     99
+    ],
+    [
+     "Coytown",
+     94
+    ],
+    [
+     "Haralson Estates",
+     71
+    ],
+    [
+     "Mariners Village",
+     54
+    ],
+    [
+     "The Willows",
+     52
+    ],
+    [
+     "Delaney Park",
+     51
+    ],
+    [
+     "New Malibu",
+     36
+    ],
+    [
+     "Orlando Executive Airport",
+     18
+    ],
+    [
+     "Pershing",
+     17
+    ],
+    [
+     "Rosemont North",
+     15
+    ],
+    [
+     "Lake Fairview",
+     14
+    ],
+    [
+     "The Dovers",
+     13
+    ]
+   ]
+  },
+  "rutas_mas_frecuentes": {
+   "unidad": "paradas que hace la ruta dentro de la ciudad en un día hábil",
+   "fuente": "lynx_gtfs",
+   "puntos": [
+    [
+     "21 RALEIGH ST/KIRKMAN RD/ UNIV STUDIOS",
+     4418
+    ],
+    [
+     "125 SILVER STAR RD",
+     3600
+    ],
+    [
+     "08 W. OAK RIDGE RD/INTL. DR",
+     3453
+    ],
+    [
+     "15 CURRY FORD RD/VALENCIA COLLEGE EAST",
+     2914
+    ],
+    [
+     "40 AMERICANA BLVD/UNIVERSAL ORLANDO",
+     2788
+    ],
+    [
+     "436S S S.R. 436/FERNWOOD/OIA",
+     2496
+    ],
+    [
+     "19 RICHMOND HTS",
+     2482
+    ],
+    [
+     "28 E. COLONIAL DR/AZALEA PARK",
+     2264
+    ],
+    [
+     "37 PINE HILLS/FLORIDA MALL",
+     1980
+    ],
+    [
+     "20 MALIBU STREET/MERCY DR.",
+     1782
+    ],
+    [
+     "25 MERCY DR/SHADER RD",
+     1736
+    ],
+    [
+     "11 S. ORANGE AVE/ORLANDO INTL. AIRPORT",
+     1632
+    ]
+   ]
+  }
+ }
+}

@@ -1,0 +1,759 @@
+{
+ "tema": "escucha",
+ "probado": "2026-11-02",
+ "fuentes": [
+  {
+   "id": "wikimedia_pageviews",
+   "nombre": "Wikimedia Pageviews API · vistas mensuales del artículo de Orlando",
+   "url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/es.wikipedia/all-access/user/Orlando_(Florida)/monthly/20250301/20261031",
+   "estado": "vivo",
+   "licencia": "CC0",
+   "crudo": [
+    "crudo/sitio=en.wikipedia.org/fecha=2026-11-02/jacksonville-_florida-714edebc66.json.gz",
+    "crudo/sitio=en.wikipedia.org/fecha=2026-11-02/miami-ff5c91d84b.json.gz",
+    "crudo/sitio=en.wikipedia.org/fecha=2026-11-02/orlando-_florida-277d65fbb0.json.gz",
+    "crudo/sitio=en.wikipedia.org/fecha=2026-11-02/tampa-_florida-5e0e50f34f.json.gz",
+    "crudo/sitio=es.wikipedia.org/fecha=2026-11-02/jacksonville_-florida-c3d9684304.json.gz",
+    "crudo/sitio=es.wikipedia.org/fecha=2026-11-02/miami-99d304f5c5.json.gz",
+    "crudo/sitio=es.wikipedia.org/fecha=2026-11-02/orlando_-florida-fca5ab306c.json.gz",
+    "crudo/sitio=es.wikipedia.org/fecha=2026-11-02/tampa-27a5aae398.json.gz",
+    "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-en-wikipedia-5dc600e433.json.gz",
+    "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-en-wikipedia-60c6b8d663.json.gz",
+    "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-en-wikipedia-6ddecd3f0e.json.gz",
+    "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-en-wikipedia-a15a22a0c5.json.gz",
+    "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-es-wikipedia-90b1d81028.json.gz",
+    "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-es-wikipedia-bf63ede8fd.json.gz",
+    "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-es-wikipedia-d5dd074e43.json.gz",
+    "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-es-wikipedia-da60aecd40.json.gz"
+   ]
+  }
+ ],
+ "cifras": {
+  "vistas_ultimo_mes": {
+   "valor": 3761,
+   "unidad": "vistas de personas",
+   "vigencia": "2026-10",
+   "fuente": "wikimedia_pageviews"
+  },
+  "variacion_anual": {
+   "valor": 4.6,
+   "unidad": "%",
+   "vigencia": "2026-10",
+   "fuente": "wikimedia_pageviews"
+  },
+  "atencion_frente_a_pares": {
+   "valor": 0.64,
+   "unidad": "veces el promedio de Tampa, Miami y Jacksonville (12 meses)",
+   "vigencia": "2026-10",
+   "fuente": "wikimedia_pageviews"
+  },
+  "vistas_ingles_12_meses": {
+   "valor": 724030,
+   "unidad": "vistas de personas en Wikipedia en inglés (12 meses)",
+   "vigencia": "2026-10",
+   "fuente": "wikimedia_pageviews"
+  },
+  "puesto_ingles_entre_pares": {
+   "valor": 2,
+   "unidad": "puesto entre 4 ciudades en Wikipedia en inglés (12 meses)",
+   "vigencia": "2026-10",
+   "fuente": "wikimedia_pageviews"
+  },
+  "puesto_entre_pares": {
+   "valor": 2,
+   "unidad": "puesto entre 4 ciudades (1 = más vistas en 12 meses)",
+   "vigencia": "2026-10",
+   "fuente": "wikimedia_pageviews"
+  }
+ },
+ "series": {
+  "vistas_mensuales": {
+   "unidad": "vistas de personas",
+   "fuente": "wikimedia_pageviews",
+   "puntos": [
+    [
+     "2025-03",
+     5613
+    ],
+    [
+     "2025-04",
+     4721
+    ],
+    [
+     "2025-05",
+     4804
+    ],
+    [
+     "2025-06",
+     5439
+    ],
+    [
+     "2025-07",
+     4403
+    ],
+    [
+     "2025-08",
+     4385
+    ],
+    [
+     "2025-09",
+     3605
+    ],
+    [
+     "2025-10",
+     3595
+    ],
+    [
+     "2025-11",
+     3408
+    ],
+    [
+     "2025-12",
+     3267
+    ],
+    [
+     "2026-01",
+     3972
+    ],
+    [
+     "2026-02",
+     3611
+    ],
+    [
+     "2026-03",
+     4425
+    ],
+    [
+     "2026-04",
+     3586
+    ],
+    [
+     "2026-05",
+     3528
+    ],
+    [
+     "2026-06",
+     3007
+    ],
+    [
+     "2026-07",
+     3236
+    ],
+    [
+     "2026-08",
+     3312
+    ],
+    [
+     "2026-09",
+     2665
+    ],
+    [
+     "2026-10",
+     3761
+    ]
+   ]
+  },
+  "vistas_mensuales_tampa": {
+   "unidad": "vistas de personas",
+   "fuente": "wikimedia_pageviews",
+   "puntos": [
+    [
+     "2025-03",
+     3668
+    ],
+    [
+     "2025-04",
+     2944
+    ],
+    [
+     "2025-05",
+     2464
+    ],
+    [
+     "2025-06",
+     2425
+    ],
+    [
+     "2025-07",
+     2761
+    ],
+    [
+     "2025-08",
+     3110
+    ],
+    [
+     "2025-09",
+     2575
+    ],
+    [
+     "2025-10",
+     2494
+    ],
+    [
+     "2025-11",
+     5181
+    ],
+    [
+     "2025-12",
+     2605
+    ],
+    [
+     "2026-01",
+     2781
+    ],
+    [
+     "2026-02",
+     2298
+    ],
+    [
+     "2026-03",
+     1949
+    ],
+    [
+     "2026-04",
+     2704
+    ],
+    [
+     "2026-05",
+     2380
+    ],
+    [
+     "2026-06",
+     2034
+    ],
+    [
+     "2026-07",
+     2091
+    ],
+    [
+     "2026-08",
+     2050
+    ],
+    [
+     "2026-09",
+     1953
+    ],
+    [
+     "2026-10",
+     3913
+    ]
+   ]
+  },
+  "vistas_mensuales_miami": {
+   "unidad": "vistas de personas",
+   "fuente": "wikimedia_pageviews",
+   "puntos": [
+    [
+     "2025-03",
+     14999
+    ],
+    [
+     "2025-04",
+     12860
+    ],
+    [
+     "2025-05",
+     14411
+    ],
+    [
+     "2025-06",
+     15011
+    ],
+    [
+     "2025-07",
+     12923
+    ],
+    [
+     "2025-08",
+     13030
+    ],
+    [
+     "2025-09",
+     11245
+    ],
+    [
+     "2025-10",
+     11870
+    ],
+    [
+     "2025-11",
+     12173
+    ],
+    [
+     "2025-12",
+     12610
+    ],
+    [
+     "2026-01",
+     14362
+    ],
+    [
+     "2026-02",
+     10560
+    ],
+    [
+     "2026-03",
+     11557
+    ],
+    [
+     "2026-04",
+     10280
+    ],
+    [
+     "2026-05",
+     11597
+    ],
+    [
+     "2026-06",
+     11371
+    ],
+    [
+     "2026-07",
+     12539
+    ],
+    [
+     "2026-08",
+     9853
+    ],
+    [
+     "2026-09",
+     8817
+    ],
+    [
+     "2026-10",
+     8492
+    ]
+   ]
+  },
+  "vistas_mensuales_jacksonville": {
+   "unidad": "vistas de personas",
+   "fuente": "wikimedia_pageviews",
+   "puntos": [
+    [
+     "2025-03",
+     3822
+    ],
+    [
+     "2025-04",
+     2618
+    ],
+    [
+     "2025-05",
+     2765
+    ],
+    [
+     "2025-06",
+     2708
+    ],
+    [
+     "2025-07",
+     2804
+    ],
+    [
+     "2025-08",
+     3353
+    ],
+    [
+     "2025-09",
+     2679
+    ],
+    [
+     "2025-10",
+     3625
+    ],
+    [
+     "2025-11",
+     2863
+    ],
+    [
+     "2025-12",
+     2936
+    ],
+    [
+     "2026-01",
+     4045
+    ],
+    [
+     "2026-02",
+     2391
+    ],
+    [
+     "2026-03",
+     2016
+    ],
+    [
+     "2026-04",
+     2085
+    ],
+    [
+     "2026-05",
+     2038
+    ],
+    [
+     "2026-06",
+     1849
+    ],
+    [
+     "2026-07",
+     1991
+    ],
+    [
+     "2026-08",
+     2061
+    ],
+    [
+     "2026-09",
+     2074
+    ],
+    [
+     "2026-10",
+     2363
+    ]
+   ]
+  },
+  "vistas_ingles_orlando": {
+   "unidad": "vistas de personas (Wikipedia en inglés)",
+   "fuente": "wikimedia_pageviews",
+   "puntos": [
+    [
+     "2025-03",
+     73497
+    ],
+    [
+     "2025-04",
+     58042
+    ],
+    [
+     "2025-05",
+     56564
+    ],
+    [
+     "2025-06",
+     59532
+    ],
+    [
+     "2025-07",
+     56865
+    ],
+    [
+     "2025-08",
+     58793
+    ],
+    [
+     "2025-09",
+     49492
+    ],
+    [
+     "2025-10",
+     53100
+    ],
+    [
+     "2025-11",
+     53831
+    ],
+    [
+     "2025-12",
+     125574
+    ],
+    [
+     "2026-01",
+     58593
+    ],
+    [
+     "2026-02",
+     50628
+    ],
+    [
+     "2026-03",
+     52053
+    ],
+    [
+     "2026-04",
+     57689
+    ],
+    [
+     "2026-05",
+     59677
+    ],
+    [
+     "2026-06",
+     51731
+    ],
+    [
+     "2026-07",
+     48709
+    ],
+    [
+     "2026-08",
+     58012
+    ],
+    [
+     "2026-09",
+     58214
+    ],
+    [
+     "2026-10",
+     49319
+    ]
+   ]
+  },
+  "vistas_ingles_tampa": {
+   "unidad": "vistas de personas (Wikipedia en inglés)",
+   "fuente": "wikimedia_pageviews",
+   "puntos": [
+    [
+     "2025-03",
+     66574
+    ],
+    [
+     "2025-04",
+     41879
+    ],
+    [
+     "2025-05",
+     41780
+    ],
+    [
+     "2025-06",
+     38566
+    ],
+    [
+     "2025-07",
+     43212
+    ],
+    [
+     "2025-08",
+     42292
+    ],
+    [
+     "2025-09",
+     38680
+    ],
+    [
+     "2025-10",
+     39235
+    ],
+    [
+     "2025-11",
+     37961
+    ],
+    [
+     "2025-12",
+     40764
+    ],
+    [
+     "2026-01",
+     46157
+    ],
+    [
+     "2026-02",
+     40405
+    ],
+    [
+     "2026-03",
+     40274
+    ],
+    [
+     "2026-04",
+     46029
+    ],
+    [
+     "2026-05",
+     43174
+    ],
+    [
+     "2026-06",
+     37253
+    ],
+    [
+     "2026-07",
+     37623
+    ],
+    [
+     "2026-08",
+     38174
+    ],
+    [
+     "2026-09",
+     59690
+    ],
+    [
+     "2026-10",
+     53063
+    ]
+   ]
+  },
+  "vistas_ingles_miami": {
+   "unidad": "vistas de personas (Wikipedia en inglés)",
+   "fuente": "wikimedia_pageviews",
+   "puntos": [
+    [
+     "2025-03",
+     103901
+    ],
+    [
+     "2025-04",
+     91428
+    ],
+    [
+     "2025-05",
+     108520
+    ],
+    [
+     "2025-06",
+     92995
+    ],
+    [
+     "2025-07",
+     93018
+    ],
+    [
+     "2025-08",
+     94917
+    ],
+    [
+     "2025-09",
+     87151
+    ],
+    [
+     "2025-10",
+     87957
+    ],
+    [
+     "2025-11",
+     93761
+    ],
+    [
+     "2025-12",
+     116532
+    ],
+    [
+     "2026-01",
+     108034
+    ],
+    [
+     "2026-02",
+     82761
+    ],
+    [
+     "2026-03",
+     98684
+    ],
+    [
+     "2026-04",
+     82912
+    ],
+    [
+     "2026-05",
+     87758
+    ],
+    [
+     "2026-06",
+     91062
+    ],
+    [
+     "2026-07",
+     97388
+    ],
+    [
+     "2026-08",
+     82271
+    ],
+    [
+     "2026-09",
+     80197
+    ],
+    [
+     "2026-10",
+     78576
+    ]
+   ]
+  },
+  "vistas_ingles_jacksonville": {
+   "unidad": "vistas de personas (Wikipedia en inglés)",
+   "fuente": "wikimedia_pageviews",
+   "puntos": [
+    [
+     "2025-03",
+     72946
+    ],
+    [
+     "2025-04",
+     61899
+    ],
+    [
+     "2025-05",
+     61833
+    ],
+    [
+     "2025-06",
+     58078
+    ],
+    [
+     "2025-07",
+     61996
+    ],
+    [
+     "2025-08",
+     61887
+    ],
+    [
+     "2025-09",
+     57045
+    ],
+    [
+     "2025-10",
+     72193
+    ],
+    [
+     "2025-11",
+     59764
+    ],
+    [
+     "2025-12",
+     61615
+    ],
+    [
+     "2026-01",
+     80352
+    ],
+    [
+     "2026-02",
+     50257
+    ],
+    [
+     "2026-03",
+     52643
+    ],
+    [
+     "2026-04",
+     51868
+    ],
+    [
+     "2026-05",
+     58257
+    ],
+    [
+     "2026-06",
+     47510
+    ],
+    [
+     "2026-07",
+     47987
+    ],
+    [
+     "2026-08",
+     51007
+    ],
+    [
+     "2026-09",
+     52500
+    ],
+    [
+     "2026-10",
+     55020
+    ]
+   ]
+  }
+ }
+}

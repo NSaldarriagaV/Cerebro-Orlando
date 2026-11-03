@@ -1,0 +1,8 @@
+{
+ "bucket": "cerebro-orlando-lago-eafit",
+ "region": "us-east-1",
+ "cloudfront": "https://d1uzvgzpbvgblk.cloudfront.net",
+ "maquina": "arn:aws:states:us-east-1:025452941183:stateMachine:cerebro-orlando-semanal",
+ "lambda": "cerebro-orlando-actualizar",
+ "horario": "cron(0 6 ? * MON *) America/Bogota"
+}

@@ -10,10 +10,10 @@ Decisiones:
 - La comparación es entre dos periodos de 30 años (el primero y el último completos), no año contra año, porque un
   solo año caliente no dice nada del clima. Es una diferencia de promedios, no una tendencia ajustada."""
 import datetime
-from comun import get_json, fuente_lago, cifra, escribir_lago
+from comun import get_json, fuente_lago, cifra, escribir_lago, fecha_prueba
 
 ESTACION = "USW00012815"
-hoy = datetime.date.today()
+hoy = fecha_prueba()
 URL = ("https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-summary-of-the-year"
        f"&stations={ESTACION}&dataTypes=TAVG,PRCP&startDate=1940-01-01&endDate={hoy.year - 1}-12-31&format=json&units=standard")
 

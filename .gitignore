@@ -1,5 +1,7 @@
-# Los crudos nunca llegan al repositorio ni al despliegue
-lago/raw/
+# El lago SÍ va al repositorio (zonas cruda, curada y de consumo). En publico/ se copia al construir: no se versiona dos veces
+publico/lago/
+# Tablas de Athena con el nombre real del bucket (las genera publicar/subir_s3.py)
+publicar/athena_*.sql
 .env
 __pycache__/
 *.pyc

@@ -1,0 +1,3108 @@
+{
+ "tema": "permisos",
+ "probado": "2026-10-26",
+ "fuentes": [
+  {
+   "id": "orlando_permisos",
+   "nombre": "Orlando Open Data · Permit Applications (ryhf-m453)",
+   "url": "https://data.cityoforlando.net/resource/ryhf-m453.json",
+   "estado": "vivo",
+   "licencia": "no declara",
+   "crudo": [
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-ryhf-m453-2c94d5ec5d.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-yskk-n7cw-3fa55eb124.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-ryhf-m453-bae8e51e8c.json.gz"
+   ]
+  }
+ ],
+ "cifras": {
+  "permisos_emitidos_ultimo_anio_completo": {
+   "valor": 30721,
+   "unidad": "permisos emitidos (solicitudes con fecha de emisión)",
+   "vigencia": "2025",
+   "fuente": "orlando_permisos"
+  },
+  "permisos_emitidos_anio_en_curso": {
+   "valor": 23256,
+   "unidad": "permisos emitidos (solicitudes con fecha de emisión), año en curso a la fecha",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_permisos"
+  },
+  "barrios_mostrados_ultimo_anio": {
+   "valor": 122,
+   "unidad": "barrios",
+   "vigencia": "2025",
+   "fuente": "orlando_permisos"
+  },
+  "barrios_suprimidos_ultimo_anio": {
+   "valor": 3,
+   "unidad": "barrios con menos permisos que el umbral",
+   "vigencia": "2025",
+   "fuente": "orlando_permisos"
+  },
+  "permisos_sin_barrio_ultimo_anio": {
+   "valor": 401,
+   "unidad": "permisos emitidos (solicitudes con fecha de emisión), sin barrio asignado",
+   "vigencia": "2025",
+   "fuente": "orlando_permisos"
+  },
+  "umbral_minimo_por_barrio": {
+   "valor": 5,
+   "unidad": "permisos",
+   "vigencia": "2025",
+   "fuente": "orlando_permisos"
+  },
+  "coincidencia_nombres_con_capa_barrios": {
+   "valor": 99.2,
+   "unidad": "% de los barrios mostrados",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_permisos"
+  },
+  "variacion_ultimo_anio": {
+   "valor": -3.3,
+   "unidad": "%",
+   "vigencia": "2025",
+   "fuente": "orlando_permisos"
+  }
+ },
+ "series": {
+  "permisos_por_anio": {
+   "unidad": "permisos emitidos (solicitudes con fecha de emisión)",
+   "fuente": "orlando_permisos",
+   "puntos": [
+    [
+     "2000",
+     14969
+    ],
+    [
+     "2001",
+     16386
+    ],
+    [
+     "2002",
+     20153
+    ],
+    [
+     "2003",
+     25878
+    ],
+    [
+     "2004",
+     35594
+    ],
+    [
+     "2005",
+     39044
+    ],
+    [
+     "2006",
+     36409
+    ],
+    [
+     "2007",
+     26563
+    ],
+    [
+     "2008",
+     21263
+    ],
+    [
+     "2009",
+     16488
+    ],
+    [
+     "2010",
+     15660
+    ],
+    [
+     "2011",
+     17301
+    ],
+    [
+     "2012",
+     21446
+    ],
+    [
+     "2013",
+     25289
+    ],
+    [
+     "2014",
+     25590
+    ],
+    [
+     "2015",
+     27798
+    ],
+    [
+     "2016",
+     27703
+    ],
+    [
+     "2017",
+     27561
+    ],
+    [
+     "2018",
+     33728
+    ],
+    [
+     "2019",
+     32072
+    ],
+    [
+     "2020",
+     31687
+    ],
+    [
+     "2021",
+     33202
+    ],
+    [
+     "2022",
+     36499
+    ],
+    [
+     "2023",
+     35659
+    ],
+    [
+     "2024",
+     31774
+    ],
+    [
+     "2025",
+     30721
+    ]
+   ]
+  },
+  "permisos_por_barrio_ultimo_anio": {
+   "unidad": "permisos emitidos (solicitudes con fecha de emisión)",
+   "fuente": "orlando_permisos",
+   "puntos": [
+    [
+     "Vista Park",
+     2736
+    ],
+    [
+     "Lake Nona South",
+     2624
+    ],
+    [
+     "College Park",
+     2218
+    ],
+    [
+     "Florida Center",
+     1374
+    ],
+    [
+     "Southeastern Oaks",
+     1013
+    ],
+    [
+     "Meridian Park",
+     923
+    ],
+    [
+     "Baldwin Park",
+     837
+    ],
+    [
+     "Metro West",
+     757
+    ],
+    [
+     "Airport North",
+     674
+    ],
+    [
+     "Central Business District",
+     665
+    ],
+    [
+     "Colonialtown North",
+     588
+    ],
+    [
+     "Millenia",
+     484
+    ],
+    [
+     "North Orange",
+     476
+    ],
+    [
+     "Vista East",
+     446
+    ],
+    [
+     "Audubon Park",
+     421
+    ],
+    [
+     "Princeton/Silver Star",
+     420
+    ],
+    [
+     "Engelwood Park",
+     403
+    ],
+    [
+     "South Orange",
+     384
+    ],
+    [
+     "Florida Center North",
+     342
+    ],
+    [
+     "Lawsona/Fern Creek",
+     336
+    ],
+    [
+     "Rosemont",
+     330
+    ],
+    [
+     "Lake Eola Heights",
+     323
+    ],
+    [
+     "Lake Como",
+     308
+    ],
+    [
+     "Holden/Parramore",
+     303
+    ],
+    [
+     "Lake Nona Central",
+     285
+    ],
+    [
+     "Wadeview Park",
+     273
+    ],
+    [
+     "South Semoran",
+     259
+    ],
+    [
+     "Colonial Town Center",
+     250
+    ],
+    [
+     "Orwin Manor",
+     248
+    ],
+    [
+     "Lake Nona Estates",
+     246
+    ],
+    [
+     "Colonialtown South",
+     224
+    ],
+    [
+     "Park Lake/Highland",
+     223
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     222
+    ],
+    [
+     "Richmond Heights",
+     214
+    ],
+    [
+     "Kirkman North",
+     208
+    ],
+    [
+     "Boggy Creek",
+     198
+    ],
+    [
+     "Delaney Park",
+     197
+    ],
+    [
+     "Spring Lake",
+     196
+    ],
+    [
+     "Monterey",
+     196
+    ],
+    [
+     "Lake Whippoorwill",
+     193
+    ],
+    [
+     "Storey Park",
+     193
+    ],
+    [
+     "Holden Heights",
+     185
+    ],
+    [
+     "West Colonial",
+     179
+    ],
+    [
+     "Ventura",
+     178
+    ],
+    [
+     "East Park",
+     176
+    ],
+    [
+     "South Eola",
+     172
+    ],
+    [
+     "Lake Fairview",
+     168
+    ],
+    [
+     "Bryn Mawr",
+     163
+    ],
+    [
+     "Timberleaf",
+     156
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     155
+    ],
+    [
+     "Milk District",
+     149
+    ],
+    [
+     "LaVina",
+     138
+    ],
+    [
+     "Carver Shores",
+     136
+    ],
+    [
+     "Lake Davis/Greenwood",
+     136
+    ],
+    [
+     "Dover Shores West",
+     135
+    ],
+    [
+     "Dixie Belle",
+     133
+    ],
+    [
+     "Lancaster Park",
+     133
+    ],
+    [
+     "Lake Formosa",
+     130
+    ],
+    [
+     "Lake Underhill",
+     129
+    ],
+    [
+     "33rd St. Industrial",
+     125
+    ],
+    [
+     "Thornton Park",
+     125
+    ],
+    [
+     "Pineloch",
+     124
+    ],
+    [
+     "North Quarter",
+     122
+    ],
+    [
+     "Conway",
+     121
+    ],
+    [
+     "Kirkman South",
+     119
+    ],
+    [
+     "Dover Shores East",
+     118
+    ],
+    [
+     "Rose Isle",
+     114
+    ],
+    [
+     "Palomar",
+     113
+    ],
+    [
+     "Callahan",
+     112
+    ],
+    [
+     "Southport",
+     111
+    ],
+    [
+     "Randal Park",
+     110
+    ],
+    [
+     "Lake Cherokee",
+     108
+    ],
+    [
+     "Johnson Village",
+     103
+    ],
+    [
+     "Bel Air",
+     97
+    ],
+    [
+     "Rock Lake",
+     96
+    ],
+    [
+     "Malibu Groves",
+     91
+    ],
+    [
+     "Signal Hill",
+     89
+    ],
+    [
+     "Dover Estates",
+     88
+    ],
+    [
+     "Mercy Drive",
+     87
+    ],
+    [
+     "Windhover",
+     86
+    ],
+    [
+     "Mariners Village",
+     85
+    ],
+    [
+     "Southern Oaks",
+     83
+    ],
+    [
+     "Dover Manor",
+     81
+    ],
+    [
+     "Rosemont North",
+     80
+    ],
+    [
+     "Lake Terrace",
+     77
+    ],
+    [
+     "Azalea Park",
+     74
+    ],
+    [
+     "Lake Fredrica",
+     71
+    ],
+    [
+     "Richmond Estates",
+     69
+    ],
+    [
+     "Park Central",
+     67
+    ],
+    [
+     "Lake Mann Estates",
+     65
+    ],
+    [
+     "South Division",
+     64
+    ],
+    [
+     "Catalina",
+     64
+    ],
+    [
+     "Bal Bay",
+     62
+    ],
+    [
+     "Lorna Doone",
+     60
+    ],
+    [
+     "Sunbridge/ICP",
+     60
+    ],
+    [
+     "Clear Lake",
+     59
+    ],
+    [
+     "Lake Copeland",
+     58
+    ],
+    [
+     "Washington Shores",
+     53
+    ],
+    [
+     "Lake Weldona",
+     52
+    ],
+    [
+     "Seaboard Industrial",
+     52
+    ],
+    [
+     "Lake Richmond",
+     51
+    ],
+    [
+     "Countryside",
+     51
+    ],
+    [
+     "Rio Grande Park",
+     50
+    ],
+    [
+     "Orlando Executive Airport",
+     49
+    ],
+    [
+     "Coytown",
+     49
+    ],
+    [
+     "Beltway Commerce Center",
+     44
+    ],
+    [
+     "Rowena Gardens",
+     42
+    ],
+    [
+     "Lake Dot",
+     42
+    ],
+    [
+     "Wedgewood Groves",
+     42
+    ],
+    [
+     "Crescent Park",
+     41
+    ],
+    [
+     "Lake Sunset",
+     39
+    ],
+    [
+     "The Willows",
+     37
+    ],
+    [
+     "Roosevelt Park",
+     33
+    ],
+    [
+     "Westfield",
+     30
+    ],
+    [
+     "New Malibu",
+     29
+    ],
+    [
+     "The Dovers",
+     27
+    ],
+    [
+     "Lake Holden",
+     27
+    ],
+    [
+     "Lake Shore Village",
+     23
+    ],
+    [
+     "Hibiscus",
+     19
+    ],
+    [
+     "Haralson Estates",
+     18
+    ],
+    [
+     "Narcoossee Groves",
+     8
+    ],
+    [
+     "Lake Mann Gardens",
+     5
+    ]
+   ]
+  },
+  "permisos_barrio_2021": {
+   "unidad": "permisos emitidos en 2021",
+   "fuente": "orlando_permisos",
+   "puntos": [
+    [
+     "Lake Nona South",
+     4927
+    ],
+    [
+     "College Park",
+     1954
+    ],
+    [
+     "Storey Park",
+     1732
+    ],
+    [
+     "Beltway Commerce Center",
+     1284
+    ],
+    [
+     "Princeton/Silver Star",
+     1080
+    ],
+    [
+     "Meridian Park",
+     1027
+    ],
+    [
+     "Florida Center",
+     829
+    ],
+    [
+     "Central Business District",
+     824
+    ],
+    [
+     "Vista East",
+     728
+    ],
+    [
+     "Airport North",
+     724
+    ],
+    [
+     "Metro West",
+     714
+    ],
+    [
+     "Baldwin Park",
+     637
+    ],
+    [
+     "Engelwood Park",
+     621
+    ],
+    [
+     "South Orange",
+     586
+    ],
+    [
+     "Colonialtown North",
+     582
+    ],
+    [
+     "Randal Park",
+     449
+    ],
+    [
+     "Audubon Park",
+     420
+    ],
+    [
+     "Lake Como",
+     411
+    ],
+    [
+     "Rosemont",
+     373
+    ],
+    [
+     "Wadeview Park",
+     359
+    ],
+    [
+     "North Orange",
+     342
+    ],
+    [
+     "Millenia",
+     321
+    ],
+    [
+     "Lake Eola Heights",
+     299
+    ],
+    [
+     "Colonialtown South",
+     285
+    ],
+    [
+     "Kirkman South",
+     274
+    ],
+    [
+     "Lake Nona Central",
+     272
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     260
+    ],
+    [
+     "Colonial Town Center",
+     257
+    ],
+    [
+     "Mercy Drive",
+     248
+    ],
+    [
+     "Kirkman North",
+     234
+    ],
+    [
+     "Lake Nona Estates",
+     231
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     230
+    ],
+    [
+     "Florida Center North",
+     228
+    ],
+    [
+     "Park Lake/Highland",
+     227
+    ],
+    [
+     "Monterey",
+     219
+    ],
+    [
+     "Orwin Manor",
+     219
+    ],
+    [
+     "Delaney Park",
+     218
+    ],
+    [
+     "Pineloch",
+     209
+    ],
+    [
+     "Holden/Parramore",
+     208
+    ],
+    [
+     "Bryn Mawr",
+     208
+    ],
+    [
+     "Dover Shores West",
+     205
+    ],
+    [
+     "Conway",
+     193
+    ],
+    [
+     "Dover Shores East",
+     191
+    ],
+    [
+     "Ventura",
+     190
+    ],
+    [
+     "Lake Whippoorwill",
+     189
+    ],
+    [
+     "Spring Lake",
+     187
+    ],
+    [
+     "LaVina",
+     186
+    ],
+    [
+     "Boggy Creek",
+     186
+    ],
+    [
+     "Dixie Belle",
+     183
+    ],
+    [
+     "Richmond Heights",
+     183
+    ],
+    [
+     "Milk District",
+     177
+    ],
+    [
+     "South Semoran",
+     176
+    ],
+    [
+     "South Eola",
+     172
+    ],
+    [
+     "East Park",
+     168
+    ],
+    [
+     "Lawsona/Fern Creek",
+     164
+    ],
+    [
+     "Lake Formosa",
+     163
+    ],
+    [
+     "North Quarter",
+     161
+    ],
+    [
+     "Lake Sunset",
+     134
+    ],
+    [
+     "Lake Davis/Greenwood",
+     132
+    ],
+    [
+     "Dover Estates",
+     132
+    ],
+    [
+     "Lake Dot",
+     126
+    ],
+    [
+     "Lake Fredrica",
+     120
+    ],
+    [
+     "Catalina",
+     118
+    ],
+    [
+     "Mariners Village",
+     118
+    ],
+    [
+     "Lake Underhill",
+     109
+    ],
+    [
+     "Seaboard Industrial",
+     108
+    ],
+    [
+     "Lancaster Park",
+     108
+    ],
+    [
+     "Southport",
+     107
+    ],
+    [
+     "Lake Copeland",
+     106
+    ],
+    [
+     "Park Central",
+     106
+    ],
+    [
+     "West Colonial",
+     106
+    ],
+    [
+     "Holden Heights",
+     104
+    ],
+    [
+     "Carver Shores",
+     104
+    ],
+    [
+     "Callahan",
+     103
+    ],
+    [
+     "Rock Lake",
+     101
+    ],
+    [
+     "Signal Hill",
+     100
+    ],
+    [
+     "Lake Cherokee",
+     99
+    ],
+    [
+     "Rose Isle",
+     97
+    ],
+    [
+     "Bel Air",
+     92
+    ],
+    [
+     "Southern Oaks",
+     88
+    ],
+    [
+     "Timberleaf",
+     88
+    ],
+    [
+     "Palomar",
+     86
+    ],
+    [
+     "Lake Mann Estates",
+     85
+    ],
+    [
+     "Rosemont North",
+     85
+    ],
+    [
+     "Thornton Park",
+     82
+    ],
+    [
+     "33rd St. Industrial",
+     81
+    ],
+    [
+     "Dover Manor",
+     80
+    ],
+    [
+     "Lorna Doone",
+     76
+    ],
+    [
+     "Westfield",
+     72
+    ],
+    [
+     "Rowena Gardens",
+     70
+    ],
+    [
+     "South Division",
+     69
+    ],
+    [
+     "Malibu Groves",
+     69
+    ],
+    [
+     "Rio Grande Park",
+     68
+    ],
+    [
+     "Lake Richmond",
+     66
+    ],
+    [
+     "Wedgewood Groves",
+     66
+    ],
+    [
+     "Windhover",
+     65
+    ],
+    [
+     "Eagles Nest",
+     64
+    ],
+    [
+     "Bal Bay",
+     62
+    ],
+    [
+     "Azalea Park",
+     61
+    ],
+    [
+     "Lake Weldona",
+     60
+    ],
+    [
+     "Richmond Estates",
+     58
+    ],
+    [
+     "Washington Shores",
+     55
+    ],
+    [
+     "Roosevelt Park",
+     55
+    ],
+    [
+     "Lake Terrace",
+     54
+    ],
+    [
+     "Johnson Village",
+     54
+    ],
+    [
+     "Countryside",
+     46
+    ],
+    [
+     "Clear Lake",
+     46
+    ],
+    [
+     "Coytown",
+     45
+    ],
+    [
+     "Crescent Park",
+     43
+    ],
+    [
+     "The Willows",
+     33
+    ],
+    [
+     "Haralson Estates",
+     31
+    ],
+    [
+     "Lake Holden",
+     25
+    ],
+    [
+     "Lake Fairview",
+     25
+    ],
+    [
+     "Lake Mann Gardens",
+     25
+    ],
+    [
+     "Hibiscus",
+     22
+    ],
+    [
+     "Orlando Executive Airport",
+     19
+    ],
+    [
+     "The Dovers",
+     17
+    ],
+    [
+     "New Malibu",
+     13
+    ],
+    [
+     "Lake Shore Village",
+     6
+    ]
+   ]
+  },
+  "permisos_barrio_2022": {
+   "unidad": "permisos emitidos en 2022",
+   "fuente": "orlando_permisos",
+   "puntos": [
+    [
+     "Lake Nona South",
+     5211
+    ],
+    [
+     "Florida Center",
+     2472
+    ],
+    [
+     "College Park",
+     2028
+    ],
+    [
+     "Storey Park",
+     1944
+    ],
+    [
+     "Meridian Park",
+     1626
+    ],
+    [
+     "Beltway Commerce Center",
+     1449
+    ],
+    [
+     "Princeton/Silver Star",
+     1366
+    ],
+    [
+     "Central Business District",
+     1116
+    ],
+    [
+     "Metro West",
+     976
+    ],
+    [
+     "Baldwin Park",
+     842
+    ],
+    [
+     "Airport North",
+     752
+    ],
+    [
+     "Vista East",
+     713
+    ],
+    [
+     "Colonialtown North",
+     637
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     543
+    ],
+    [
+     "South Orange",
+     521
+    ],
+    [
+     "Engelwood Park",
+     475
+    ],
+    [
+     "Lake Como",
+     381
+    ],
+    [
+     "Audubon Park",
+     373
+    ],
+    [
+     "Millenia",
+     352
+    ],
+    [
+     "Kirkman South",
+     345
+    ],
+    [
+     "Lake Fredrica",
+     333
+    ],
+    [
+     "Colonial Town Center",
+     332
+    ],
+    [
+     "Lake Eola Heights",
+     303
+    ],
+    [
+     "Rosemont",
+     291
+    ],
+    [
+     "Wadeview Park",
+     283
+    ],
+    [
+     "North Orange",
+     276
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     267
+    ],
+    [
+     "Conway",
+     259
+    ],
+    [
+     "Lawsona/Fern Creek",
+     255
+    ],
+    [
+     "Florida Center North",
+     252
+    ],
+    [
+     "Lake Nona Estates",
+     246
+    ],
+    [
+     "Ventura",
+     245
+    ],
+    [
+     "Richmond Heights",
+     244
+    ],
+    [
+     "Bryn Mawr",
+     243
+    ],
+    [
+     "Colonialtown South",
+     242
+    ],
+    [
+     "Lake Nona Central",
+     236
+    ],
+    [
+     "Monterey",
+     231
+    ],
+    [
+     "Dover Shores East",
+     230
+    ],
+    [
+     "East Park",
+     227
+    ],
+    [
+     "South Semoran",
+     209
+    ],
+    [
+     "Spring Lake",
+     195
+    ],
+    [
+     "Park Lake/Highland",
+     190
+    ],
+    [
+     "Randal Park",
+     188
+    ],
+    [
+     "Delaney Park",
+     187
+    ],
+    [
+     "Holden/Parramore",
+     184
+    ],
+    [
+     "Orwin Manor",
+     178
+    ],
+    [
+     "Dover Shores West",
+     173
+    ],
+    [
+     "Mercy Drive",
+     170
+    ],
+    [
+     "Bal Bay",
+     154
+    ],
+    [
+     "Boggy Creek",
+     153
+    ],
+    [
+     "Lake Davis/Greenwood",
+     152
+    ],
+    [
+     "Mariners Village",
+     147
+    ],
+    [
+     "33rd St. Industrial",
+     141
+    ],
+    [
+     "LaVina",
+     141
+    ],
+    [
+     "Lake Whippoorwill",
+     135
+    ],
+    [
+     "Lake Formosa",
+     134
+    ],
+    [
+     "Signal Hill",
+     134
+    ],
+    [
+     "Lake Underhill",
+     123
+    ],
+    [
+     "Milk District",
+     120
+    ],
+    [
+     "Dover Estates",
+     119
+    ],
+    [
+     "Dixie Belle",
+     117
+    ],
+    [
+     "Pineloch",
+     115
+    ],
+    [
+     "Catalina",
+     111
+    ],
+    [
+     "Holden Heights",
+     110
+    ],
+    [
+     "Timberleaf",
+     107
+    ],
+    [
+     "Thornton Park",
+     95
+    ],
+    [
+     "Carver Shores",
+     95
+    ],
+    [
+     "Lancaster Park",
+     94
+    ],
+    [
+     "South Eola",
+     93
+    ],
+    [
+     "Bel Air",
+     93
+    ],
+    [
+     "Callahan",
+     90
+    ],
+    [
+     "Rock Lake",
+     89
+    ],
+    [
+     "Rose Isle",
+     87
+    ],
+    [
+     "Rowena Gardens",
+     85
+    ],
+    [
+     "North Quarter",
+     83
+    ],
+    [
+     "Southern Oaks",
+     83
+    ],
+    [
+     "Lake Mann Estates",
+     83
+    ],
+    [
+     "Clear Lake",
+     80
+    ],
+    [
+     "Dover Manor",
+     80
+    ],
+    [
+     "Southport",
+     77
+    ],
+    [
+     "Rio Grande Park",
+     77
+    ],
+    [
+     "Richmond Estates",
+     76
+    ],
+    [
+     "Lake Copeland",
+     75
+    ],
+    [
+     "Rosemont North",
+     74
+    ],
+    [
+     "Kirkman North",
+     74
+    ],
+    [
+     "Lake Cherokee",
+     73
+    ],
+    [
+     "Palomar",
+     68
+    ],
+    [
+     "Lake Sunset",
+     65
+    ],
+    [
+     "Crescent Park",
+     65
+    ],
+    [
+     "Azalea Park",
+     65
+    ],
+    [
+     "West Colonial",
+     64
+    ],
+    [
+     "Seaboard Industrial",
+     63
+    ],
+    [
+     "Lake Terrace",
+     63
+    ],
+    [
+     "Lake Richmond",
+     62
+    ],
+    [
+     "Wedgewood Groves",
+     62
+    ],
+    [
+     "Johnson Village",
+     58
+    ],
+    [
+     "Malibu Groves",
+     57
+    ],
+    [
+     "Park Central",
+     56
+    ],
+    [
+     "Roosevelt Park",
+     54
+    ],
+    [
+     "Orlando Executive Airport",
+     50
+    ],
+    [
+     "Washington Shores",
+     50
+    ],
+    [
+     "Lorna Doone",
+     50
+    ],
+    [
+     "The Willows",
+     48
+    ],
+    [
+     "South Division",
+     48
+    ],
+    [
+     "Eagles Nest",
+     47
+    ],
+    [
+     "Lake Dot",
+     46
+    ],
+    [
+     "Windhover",
+     46
+    ],
+    [
+     "Lake Weldona",
+     45
+    ],
+    [
+     "Coytown",
+     43
+    ],
+    [
+     "Countryside",
+     40
+    ],
+    [
+     "The Dovers",
+     38
+    ],
+    [
+     "Haralson Estates",
+     23
+    ],
+    [
+     "Lake Fairview",
+     21
+    ],
+    [
+     "New Malibu",
+     20
+    ],
+    [
+     "Westfield",
+     17
+    ],
+    [
+     "Lake Holden",
+     16
+    ],
+    [
+     "Hibiscus",
+     13
+    ],
+    [
+     "Pershing",
+     7
+    ],
+    [
+     "Lake Shore Village",
+     5
+    ]
+   ]
+  },
+  "permisos_barrio_2023": {
+   "unidad": "permisos emitidos en 2023",
+   "fuente": "orlando_permisos",
+   "puntos": [
+    [
+     "Lake Nona South",
+     4506
+    ],
+    [
+     "Florida Center",
+     3524
+    ],
+    [
+     "Storey Park",
+     2171
+    ],
+    [
+     "College Park",
+     1941
+    ],
+    [
+     "Meridian Park",
+     1498
+    ],
+    [
+     "Princeton/Silver Star",
+     1019
+    ],
+    [
+     "Central Business District",
+     905
+    ],
+    [
+     "Metro West",
+     860
+    ],
+    [
+     "Vista East",
+     675
+    ],
+    [
+     "Baldwin Park",
+     666
+    ],
+    [
+     "Engelwood Park",
+     661
+    ],
+    [
+     "Vista Park",
+     636
+    ],
+    [
+     "Airport North",
+     575
+    ],
+    [
+     "South Orange",
+     538
+    ],
+    [
+     "Colonialtown North",
+     487
+    ],
+    [
+     "Rosemont",
+     403
+    ],
+    [
+     "Audubon Park",
+     384
+    ],
+    [
+     "Florida Center North",
+     383
+    ],
+    [
+     "Millenia",
+     373
+    ],
+    [
+     "Wadeview Park",
+     365
+    ],
+    [
+     "Colonialtown South",
+     323
+    ],
+    [
+     "Beltway Commerce Center",
+     320
+    ],
+    [
+     "Ventura",
+     318
+    ],
+    [
+     "Lake Como",
+     306
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     300
+    ],
+    [
+     "Lake Eola Heights",
+     298
+    ],
+    [
+     "Kirkman South",
+     277
+    ],
+    [
+     "Boggy Creek",
+     270
+    ],
+    [
+     "East Park",
+     265
+    ],
+    [
+     "Park Lake/Highland",
+     265
+    ],
+    [
+     "Conway",
+     265
+    ],
+    [
+     "Richmond Heights",
+     258
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     256
+    ],
+    [
+     "North Orange",
+     249
+    ],
+    [
+     "Lawsona/Fern Creek",
+     238
+    ],
+    [
+     "Bryn Mawr",
+     233
+    ],
+    [
+     "Lake Nona Estates",
+     228
+    ],
+    [
+     "Dover Shores East",
+     224
+    ],
+    [
+     "Delaney Park",
+     219
+    ],
+    [
+     "Lake Nona Central",
+     209
+    ],
+    [
+     "Colonial Town Center",
+     207
+    ],
+    [
+     "South Semoran",
+     206
+    ],
+    [
+     "Spring Lake",
+     203
+    ],
+    [
+     "Lake Underhill",
+     184
+    ],
+    [
+     "Monterey",
+     179
+    ],
+    [
+     "Lake Whippoorwill",
+     179
+    ],
+    [
+     "Kirkman North",
+     173
+    ],
+    [
+     "Pineloch",
+     168
+    ],
+    [
+     "Dover Estates",
+     167
+    ],
+    [
+     "Lake Davis/Greenwood",
+     163
+    ],
+    [
+     "Orwin Manor",
+     161
+    ],
+    [
+     "Mariners Village",
+     160
+    ],
+    [
+     "Holden/Parramore",
+     158
+    ],
+    [
+     "Lake Formosa",
+     147
+    ],
+    [
+     "North Quarter",
+     145
+    ],
+    [
+     "Lake Terrace",
+     143
+    ],
+    [
+     "Dover Shores West",
+     143
+    ],
+    [
+     "Randal Park",
+     142
+    ],
+    [
+     "Signal Hill",
+     136
+    ],
+    [
+     "Clear Lake",
+     131
+    ],
+    [
+     "West Colonial",
+     129
+    ],
+    [
+     "LaVina",
+     121
+    ],
+    [
+     "Thornton Park",
+     115
+    ],
+    [
+     "Milk District",
+     115
+    ],
+    [
+     "Timberleaf",
+     112
+    ],
+    [
+     "Mercy Drive",
+     111
+    ],
+    [
+     "Carver Shores",
+     109
+    ],
+    [
+     "South Eola",
+     108
+    ],
+    [
+     "Callahan",
+     106
+    ],
+    [
+     "Southport",
+     105
+    ],
+    [
+     "Lake Cherokee",
+     105
+    ],
+    [
+     "Lake Fredrica",
+     102
+    ],
+    [
+     "Lancaster Park",
+     100
+    ],
+    [
+     "Catalina",
+     97
+    ],
+    [
+     "33rd St. Industrial",
+     95
+    ],
+    [
+     "Holden Heights",
+     95
+    ],
+    [
+     "Dixie Belle",
+     94
+    ],
+    [
+     "Crescent Park",
+     91
+    ],
+    [
+     "Rowena Gardens",
+     91
+    ],
+    [
+     "Johnson Village",
+     91
+    ],
+    [
+     "Park Central",
+     90
+    ],
+    [
+     "Lake Richmond",
+     89
+    ],
+    [
+     "Lake Mann Estates",
+     88
+    ],
+    [
+     "Southern Oaks",
+     88
+    ],
+    [
+     "Rock Lake",
+     87
+    ],
+    [
+     "Rosemont North",
+     85
+    ],
+    [
+     "Bel Air",
+     83
+    ],
+    [
+     "Lake Sunset",
+     77
+    ],
+    [
+     "Palomar",
+     73
+    ],
+    [
+     "Wedgewood Groves",
+     72
+    ],
+    [
+     "Dover Manor",
+     71
+    ],
+    [
+     "Rose Isle",
+     71
+    ],
+    [
+     "Lorna Doone",
+     70
+    ],
+    [
+     "Malibu Groves",
+     70
+    ],
+    [
+     "Richmond Estates",
+     66
+    ],
+    [
+     "Azalea Park",
+     62
+    ],
+    [
+     "Lake Dot",
+     60
+    ],
+    [
+     "Washington Shores",
+     58
+    ],
+    [
+     "Rio Grande Park",
+     57
+    ],
+    [
+     "Lake Copeland",
+     56
+    ],
+    [
+     "Coytown",
+     53
+    ],
+    [
+     "Bal Bay",
+     49
+    ],
+    [
+     "South Division",
+     48
+    ],
+    [
+     "Roosevelt Park",
+     43
+    ],
+    [
+     "Seaboard Industrial",
+     39
+    ],
+    [
+     "Countryside",
+     38
+    ],
+    [
+     "Eagles Nest",
+     37
+    ],
+    [
+     "Orlando Executive Airport",
+     36
+    ],
+    [
+     "The Willows",
+     36
+    ],
+    [
+     "The Dovers",
+     35
+    ],
+    [
+     "Lake Weldona",
+     34
+    ],
+    [
+     "Hibiscus",
+     27
+    ],
+    [
+     "Windhover",
+     25
+    ],
+    [
+     "Haralson Estates",
+     25
+    ],
+    [
+     "Lake Fairview",
+     24
+    ],
+    [
+     "New Malibu",
+     20
+    ],
+    [
+     "Lake Holden",
+     18
+    ],
+    [
+     "Lake Shore Village",
+     9
+    ],
+    [
+     "Southeastern Oaks",
+     8
+    ],
+    [
+     "Westfield",
+     7
+    ]
+   ]
+  },
+  "permisos_barrio_2024": {
+   "unidad": "permisos emitidos en 2024",
+   "fuente": "orlando_permisos",
+   "puntos": [
+    [
+     "Lake Nona South",
+     2997
+    ],
+    [
+     "Vista Park",
+     2880
+    ],
+    [
+     "College Park",
+     1960
+    ],
+    [
+     "Florida Center",
+     1787
+    ],
+    [
+     "Meridian Park",
+     1130
+    ],
+    [
+     "Metro West",
+     900
+    ],
+    [
+     "Central Business District",
+     839
+    ],
+    [
+     "Airport North",
+     809
+    ],
+    [
+     "Princeton/Silver Star",
+     746
+    ],
+    [
+     "Storey Park",
+     671
+    ],
+    [
+     "Baldwin Park",
+     578
+    ],
+    [
+     "Colonialtown North",
+     542
+    ],
+    [
+     "Vista East",
+     541
+    ],
+    [
+     "Florida Center North",
+     465
+    ],
+    [
+     "Lawsona/Fern Creek",
+     458
+    ],
+    [
+     "Millenia",
+     448
+    ],
+    [
+     "Rosemont",
+     438
+    ],
+    [
+     "South Orange",
+     396
+    ],
+    [
+     "Engelwood Park",
+     391
+    ],
+    [
+     "Lake Como",
+     385
+    ],
+    [
+     "Audubon Park",
+     368
+    ],
+    [
+     "Lake Eola Heights",
+     330
+    ],
+    [
+     "Wadeview Park",
+     321
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     284
+    ],
+    [
+     "North Orange",
+     276
+    ],
+    [
+     "South Semoran",
+     257
+    ],
+    [
+     "Park Lake/Highland",
+     254
+    ],
+    [
+     "Monterey",
+     246
+    ],
+    [
+     "Lake Nona Central",
+     237
+    ],
+    [
+     "Colonialtown South",
+     237
+    ],
+    [
+     "Lake Nona Estates",
+     235
+    ],
+    [
+     "Holden/Parramore",
+     234
+    ],
+    [
+     "Ventura",
+     226
+    ],
+    [
+     "Richmond Heights",
+     222
+    ],
+    [
+     "Bryn Mawr",
+     221
+    ],
+    [
+     "Spring Lake",
+     215
+    ],
+    [
+     "Boggy Creek",
+     204
+    ],
+    [
+     "South Eola",
+     199
+    ],
+    [
+     "Orwin Manor",
+     198
+    ],
+    [
+     "Delaney Park",
+     197
+    ],
+    [
+     "Colonial Town Center",
+     195
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     194
+    ],
+    [
+     "Lake Formosa",
+     181
+    ],
+    [
+     "North Quarter",
+     181
+    ],
+    [
+     "Kirkman North",
+     180
+    ],
+    [
+     "Conway",
+     170
+    ],
+    [
+     "Dover Shores West",
+     167
+    ],
+    [
+     "Milk District",
+     166
+    ],
+    [
+     "Lake Underhill",
+     162
+    ],
+    [
+     "Lake Whippoorwill",
+     161
+    ],
+    [
+     "Dover Shores East",
+     156
+    ],
+    [
+     "East Park",
+     153
+    ],
+    [
+     "Kirkman South",
+     149
+    ],
+    [
+     "Lake Davis/Greenwood",
+     148
+    ],
+    [
+     "West Colonial",
+     144
+    ],
+    [
+     "Carver Shores",
+     133
+    ],
+    [
+     "LaVina",
+     126
+    ],
+    [
+     "Palomar",
+     124
+    ],
+    [
+     "Mercy Drive",
+     124
+    ],
+    [
+     "Signal Hill",
+     120
+    ],
+    [
+     "Catalina",
+     120
+    ],
+    [
+     "Callahan",
+     117
+    ],
+    [
+     "Dixie Belle",
+     115
+    ],
+    [
+     "Thornton Park",
+     115
+    ],
+    [
+     "Lake Terrace",
+     114
+    ],
+    [
+     "Dover Manor",
+     114
+    ],
+    [
+     "Crescent Park",
+     112
+    ],
+    [
+     "Bel Air",
+     109
+    ],
+    [
+     "Johnson Village",
+     107
+    ],
+    [
+     "Park Central",
+     105
+    ],
+    [
+     "Holden Heights",
+     104
+    ],
+    [
+     "Dover Estates",
+     100
+    ],
+    [
+     "Lake Cherokee",
+     99
+    ],
+    [
+     "Randal Park",
+     98
+    ],
+    [
+     "33rd St. Industrial",
+     93
+    ],
+    [
+     "Southeastern Oaks",
+     93
+    ],
+    [
+     "Rose Isle",
+     88
+    ],
+    [
+     "Pineloch",
+     87
+    ],
+    [
+     "Rowena Gardens",
+     86
+    ],
+    [
+     "Windhover",
+     83
+    ],
+    [
+     "Southern Oaks",
+     81
+    ],
+    [
+     "Lake Mann Estates",
+     81
+    ],
+    [
+     "Clear Lake",
+     81
+    ],
+    [
+     "Mariners Village",
+     80
+    ],
+    [
+     "Southport",
+     76
+    ],
+    [
+     "Lancaster Park",
+     74
+    ],
+    [
+     "Rosemont North",
+     73
+    ],
+    [
+     "Malibu Groves",
+     73
+    ],
+    [
+     "Timberleaf",
+     71
+    ],
+    [
+     "Lake Copeland",
+     70
+    ],
+    [
+     "Lake Sunset",
+     69
+    ],
+    [
+     "Rock Lake",
+     67
+    ],
+    [
+     "Lake Richmond",
+     61
+    ],
+    [
+     "Lake Weldona",
+     57
+    ],
+    [
+     "South Division",
+     56
+    ],
+    [
+     "Seaboard Industrial",
+     56
+    ],
+    [
+     "Richmond Estates",
+     53
+    ],
+    [
+     "Lorna Doone",
+     52
+    ],
+    [
+     "Coytown",
+     50
+    ],
+    [
+     "Countryside",
+     46
+    ],
+    [
+     "Rio Grande Park",
+     44
+    ],
+    [
+     "Washington Shores",
+     44
+    ],
+    [
+     "Lake Dot",
+     40
+    ],
+    [
+     "The Dovers",
+     40
+    ],
+    [
+     "Roosevelt Park",
+     40
+    ],
+    [
+     "Wedgewood Groves",
+     39
+    ],
+    [
+     "Azalea Park",
+     39
+    ],
+    [
+     "Lake Fredrica",
+     37
+    ],
+    [
+     "Westfield",
+     36
+    ],
+    [
+     "Beltway Commerce Center",
+     36
+    ],
+    [
+     "Orlando Executive Airport",
+     33
+    ],
+    [
+     "The Willows",
+     26
+    ],
+    [
+     "New Malibu",
+     26
+    ],
+    [
+     "Lake Holden",
+     25
+    ],
+    [
+     "Lake Fairview",
+     18
+    ],
+    [
+     "Eagles Nest",
+     18
+    ],
+    [
+     "Hibiscus",
+     12
+    ],
+    [
+     "Haralson Estates",
+     11
+    ],
+    [
+     "Lake Shore Village",
+     9
+    ],
+    [
+     "Narcoossee Groves",
+     7
+    ],
+    [
+     "Bal Bay",
+     6
+    ]
+   ]
+  },
+  "permisos_barrio_2025": {
+   "unidad": "permisos emitidos en 2025",
+   "fuente": "orlando_permisos",
+   "puntos": [
+    [
+     "Vista Park",
+     2736
+    ],
+    [
+     "Lake Nona South",
+     2624
+    ],
+    [
+     "College Park",
+     2218
+    ],
+    [
+     "Florida Center",
+     1374
+    ],
+    [
+     "Southeastern Oaks",
+     1013
+    ],
+    [
+     "Meridian Park",
+     923
+    ],
+    [
+     "Baldwin Park",
+     837
+    ],
+    [
+     "Metro West",
+     757
+    ],
+    [
+     "Airport North",
+     674
+    ],
+    [
+     "Central Business District",
+     665
+    ],
+    [
+     "Colonialtown North",
+     588
+    ],
+    [
+     "Millenia",
+     484
+    ],
+    [
+     "North Orange",
+     476
+    ],
+    [
+     "Vista East",
+     446
+    ],
+    [
+     "Audubon Park",
+     421
+    ],
+    [
+     "Princeton/Silver Star",
+     420
+    ],
+    [
+     "Engelwood Park",
+     403
+    ],
+    [
+     "South Orange",
+     384
+    ],
+    [
+     "Florida Center North",
+     342
+    ],
+    [
+     "Lawsona/Fern Creek",
+     336
+    ],
+    [
+     "Rosemont",
+     330
+    ],
+    [
+     "Lake Eola Heights",
+     323
+    ],
+    [
+     "Lake Como",
+     308
+    ],
+    [
+     "Holden/Parramore",
+     303
+    ],
+    [
+     "Lake Nona Central",
+     285
+    ],
+    [
+     "Wadeview Park",
+     273
+    ],
+    [
+     "South Semoran",
+     259
+    ],
+    [
+     "Colonial Town Center",
+     250
+    ],
+    [
+     "Orwin Manor",
+     248
+    ],
+    [
+     "Lake Nona Estates",
+     246
+    ],
+    [
+     "Colonialtown South",
+     224
+    ],
+    [
+     "Park Lake/Highland",
+     223
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     222
+    ],
+    [
+     "Richmond Heights",
+     214
+    ],
+    [
+     "Kirkman North",
+     208
+    ],
+    [
+     "Boggy Creek",
+     198
+    ],
+    [
+     "Delaney Park",
+     197
+    ],
+    [
+     "Spring Lake",
+     196
+    ],
+    [
+     "Monterey",
+     196
+    ],
+    [
+     "Lake Whippoorwill",
+     193
+    ],
+    [
+     "Storey Park",
+     193
+    ],
+    [
+     "Holden Heights",
+     185
+    ],
+    [
+     "West Colonial",
+     179
+    ],
+    [
+     "Ventura",
+     178
+    ],
+    [
+     "East Park",
+     176
+    ],
+    [
+     "South Eola",
+     172
+    ],
+    [
+     "Lake Fairview",
+     168
+    ],
+    [
+     "Bryn Mawr",
+     163
+    ],
+    [
+     "Timberleaf",
+     156
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     155
+    ],
+    [
+     "Milk District",
+     149
+    ],
+    [
+     "LaVina",
+     138
+    ],
+    [
+     "Carver Shores",
+     136
+    ],
+    [
+     "Lake Davis/Greenwood",
+     136
+    ],
+    [
+     "Dover Shores West",
+     135
+    ],
+    [
+     "Dixie Belle",
+     133
+    ],
+    [
+     "Lancaster Park",
+     133
+    ],
+    [
+     "Lake Formosa",
+     130
+    ],
+    [
+     "Lake Underhill",
+     129
+    ],
+    [
+     "33rd St. Industrial",
+     125
+    ],
+    [
+     "Thornton Park",
+     125
+    ],
+    [
+     "Pineloch",
+     124
+    ],
+    [
+     "North Quarter",
+     122
+    ],
+    [
+     "Conway",
+     121
+    ],
+    [
+     "Kirkman South",
+     119
+    ],
+    [
+     "Dover Shores East",
+     118
+    ],
+    [
+     "Rose Isle",
+     114
+    ],
+    [
+     "Palomar",
+     113
+    ],
+    [
+     "Callahan",
+     112
+    ],
+    [
+     "Southport",
+     111
+    ],
+    [
+     "Randal Park",
+     110
+    ],
+    [
+     "Lake Cherokee",
+     108
+    ],
+    [
+     "Johnson Village",
+     103
+    ],
+    [
+     "Bel Air",
+     97
+    ],
+    [
+     "Rock Lake",
+     96
+    ],
+    [
+     "Malibu Groves",
+     91
+    ],
+    [
+     "Signal Hill",
+     89
+    ],
+    [
+     "Dover Estates",
+     88
+    ],
+    [
+     "Mercy Drive",
+     87
+    ],
+    [
+     "Windhover",
+     86
+    ],
+    [
+     "Mariners Village",
+     85
+    ],
+    [
+     "Southern Oaks",
+     83
+    ],
+    [
+     "Dover Manor",
+     81
+    ],
+    [
+     "Rosemont North",
+     80
+    ],
+    [
+     "Lake Terrace",
+     77
+    ],
+    [
+     "Azalea Park",
+     74
+    ],
+    [
+     "Lake Fredrica",
+     71
+    ],
+    [
+     "Richmond Estates",
+     69
+    ],
+    [
+     "Park Central",
+     67
+    ],
+    [
+     "Lake Mann Estates",
+     65
+    ],
+    [
+     "South Division",
+     64
+    ],
+    [
+     "Catalina",
+     64
+    ],
+    [
+     "Bal Bay",
+     62
+    ],
+    [
+     "Lorna Doone",
+     60
+    ],
+    [
+     "Sunbridge/ICP",
+     60
+    ],
+    [
+     "Clear Lake",
+     59
+    ],
+    [
+     "Lake Copeland",
+     58
+    ],
+    [
+     "Washington Shores",
+     53
+    ],
+    [
+     "Lake Weldona",
+     52
+    ],
+    [
+     "Seaboard Industrial",
+     52
+    ],
+    [
+     "Lake Richmond",
+     51
+    ],
+    [
+     "Countryside",
+     51
+    ],
+    [
+     "Rio Grande Park",
+     50
+    ],
+    [
+     "Orlando Executive Airport",
+     49
+    ],
+    [
+     "Coytown",
+     49
+    ],
+    [
+     "Beltway Commerce Center",
+     44
+    ],
+    [
+     "Rowena Gardens",
+     42
+    ],
+    [
+     "Lake Dot",
+     42
+    ],
+    [
+     "Wedgewood Groves",
+     42
+    ],
+    [
+     "Crescent Park",
+     41
+    ],
+    [
+     "Lake Sunset",
+     39
+    ],
+    [
+     "The Willows",
+     37
+    ],
+    [
+     "Roosevelt Park",
+     33
+    ],
+    [
+     "Westfield",
+     30
+    ],
+    [
+     "New Malibu",
+     29
+    ],
+    [
+     "The Dovers",
+     27
+    ],
+    [
+     "Lake Holden",
+     27
+    ],
+    [
+     "Lake Shore Village",
+     23
+    ],
+    [
+     "Hibiscus",
+     19
+    ],
+    [
+     "Haralson Estates",
+     18
+    ],
+    [
+     "Narcoossee Groves",
+     8
+    ],
+    [
+     "Lake Mann Gardens",
+     5
+    ]
+   ]
+  }
+ }
+}

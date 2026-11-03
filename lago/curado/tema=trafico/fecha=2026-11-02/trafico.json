@@ -1,0 +1,849 @@
+{
+ "tema": "trafico",
+ "probado": "2026-11-02",
+ "fuentes": [
+  {
+   "id": "fdot_aadt",
+   "nombre": "FDOT · Annual Average Daily Traffic (TDA): tráfico promedio diario por tramo de vía",
+   "url": "https://services1.arcgis.com/O1JpcwDW8sjYuddV/ArcGIS/rest/services/Annual_Average_Daily_Traffic_TDA/FeatureServer/0/query",
+   "estado": "vivo",
+   "licencia": "no declara (aviso de FDOT: datos «as is», sin garantías)",
+   "crudo": [
+    "crudo/sitio=services1.arcgis.com/fecha=2026-11-02/annual_average_daily_traffic_tda-0-2406545be8.json.gz"
+   ]
+  },
+  {
+   "id": "fdot_aadt_historico",
+   "nombre": "FDOT · Annual Average Daily Traffic Historical (TDA): el mismo conteo de años anteriores",
+   "url": "https://services1.arcgis.com/O1JpcwDW8sjYuddV/ArcGIS/rest/services/Annual_Average_Daily_Traffic_Historical_TDA/FeatureServer/0/query",
+   "estado": "vivo",
+   "licencia": "no declara (aviso de FDOT: datos «as is», sin garantías)",
+   "crudo": [
+    "crudo/sitio=services1.arcgis.com/fecha=2026-11-02/annual_average_daily_traffic_historical_tda-0-13c8ffbb61.json.gz",
+    "crudo/sitio=services1.arcgis.com/fecha=2026-11-02/annual_average_daily_traffic_historical_tda-0-1bc44c8993.json.gz",
+    "crudo/sitio=services1.arcgis.com/fecha=2026-11-02/annual_average_daily_traffic_historical_tda-0-29e90c52f7.json.gz",
+    "crudo/sitio=services1.arcgis.com/fecha=2026-11-02/annual_average_daily_traffic_historical_tda-0-98285a3c91.json.gz"
+   ]
+  },
+  {
+   "id": "fdot_nombres_vias",
+   "nombre": "FDOT · Roadway Characteristics Inventory, capa «Roadways with Local Names»",
+   "url": "https://gis.fdot.gov/arcgis/rest/services/RCI_Layers/FeatureServer/13/query",
+   "estado": "vivo",
+   "licencia": "no declara",
+   "crudo": [
+    "crudo/sitio=gis.fdot.gov/fecha=2026-11-02/rci_layers-13-4d50eef35f.json.gz",
+    "crudo/sitio=gis.fdot.gov/fecha=2026-11-02/rci_layers-13-b8a103df4f.json.gz"
+   ]
+  },
+  {
+   "id": "nhtsa_fars",
+   "nombre": "NHTSA · Fatality Analysis Reporting System (FARS): choques de tránsito con al menos un muerto",
+   "url": "https://geo.dot.gov/server/rest/services/NHTSA/FQAcc/MapServer",
+   "estado": "vivo",
+   "licencia": "Dominio público (obra del gobierno de EE. UU.)",
+   "crudo": [
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-10-5bcdb2d5f2.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-11-9dcc508810.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-11-b67a81512b.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-12-2e886f4546.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-12-69a27c5609.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-13-5a8890648c.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-13-738fb5f08a.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-14-1712c25909.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-14-339f624749.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-15-1325636b85.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-15-7e5dfd68d4.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-6-bb3618d4c8.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-7-34a8b6a29e.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-8-5b049158b8.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-9-75431e4b4f.json.gz",
+    "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-servicio-c612242782.json.gz"
+   ]
+  }
+ ],
+ "cifras": {
+  "anio_conteo": {
+   "valor": 2025,
+   "unidad": "año del conteo de FDOT",
+   "vigencia": "2025",
+   "fuente": "fdot_aadt"
+  },
+  "tramos_medidos": {
+   "valor": 502,
+   "unidad": "tramos de vía con conteo que tocan la ciudad",
+   "vigencia": "2025",
+   "fuente": "fdot_aadt"
+  },
+  "via_mas_cargada_aadt": {
+   "valor": 196500,
+   "unidad": "vehículos al día en su tramo más cargado (SR-408)",
+   "vigencia": "2025",
+   "fuente": "fdot_aadt"
+  },
+  "tramos_mas_de_100_mil": {
+   "valor": 26,
+   "unidad": "tramos con 100.000 vehículos al día o más",
+   "vigencia": "2025",
+   "fuente": "fdot_aadt"
+  },
+  "choques_mortales_ultimo_anio": {
+   "valor": 32,
+   "unidad": "choques con al menos un muerto en la ciudad",
+   "vigencia": "2024",
+   "fuente": "nhtsa_fars"
+  },
+  "muertes_ultimo_anio": {
+   "valor": 32,
+   "unidad": "personas muertas en choques de tránsito en la ciudad",
+   "vigencia": "2024",
+   "fuente": "nhtsa_fars"
+  },
+  "variacion_muertes_ultimo_anio": {
+   "valor": -15.8,
+   "unidad": "%",
+   "vigencia": "2024",
+   "fuente": "nhtsa_fars"
+  },
+  "muertes_cinco_anios": {
+   "valor": 219,
+   "unidad": "personas muertas en choques de tránsito",
+   "vigencia": "2020-2024",
+   "fuente": "nhtsa_fars"
+  },
+  "pct_choques_mortales_con_peaton": {
+   "valor": 33.5,
+   "unidad": "% de los choques mortales con un peatón involucrado",
+   "vigencia": "2020-2024",
+   "fuente": "nhtsa_fars"
+  },
+  "umbral_minimo_por_via": {
+   "valor": 5,
+   "unidad": "choques mortales en cinco años",
+   "vigencia": "2020-2024",
+   "fuente": "nhtsa_fars"
+  },
+  "vias_suprimidas": {
+   "valor": 108,
+   "unidad": "vías con menos choques que el umbral",
+   "vigencia": "2020-2024",
+   "fuente": "nhtsa_fars"
+  },
+  "mediana_aadt_ultimo_anio": {
+   "valor": 10350,
+   "unidad": "vehículos al día (mediana de las estaciones de conteo de la ciudad)",
+   "vigencia": "2025",
+   "fuente": "fdot_aadt_historico"
+  },
+  "variacion_mediana_aadt": {
+   "valor": -1.4,
+   "unidad": "%",
+   "vigencia": "2025",
+   "fuente": "fdot_aadt_historico"
+  }
+ },
+ "series": {
+  "vias_mas_cargadas": {
+   "unidad": "vehículos al día en el tramo más cargado de cada vía (2025)",
+   "fuente": "fdot_aadt",
+   "puntos": [
+    [
+     "SR-408",
+     196500
+    ],
+    [
+     "I-4",
+     181500
+    ],
+    [
+     "TPK MAINLINE SR 91",
+     151700
+    ],
+    [
+     "SR-528",
+     124000
+    ],
+    [
+     "SR-417",
+     111500
+    ],
+    [
+     "SEMORAN BLVD",
+     74000
+    ],
+    [
+     "COLONIAL DR",
+     63000
+    ],
+    [
+     "NARCOOSSEE RD",
+     59500
+    ],
+    [
+     "KIRKMAN RD",
+     59000
+    ],
+    [
+     "JEFF FUQUA BLVD",
+     53000
+    ],
+    [
+     "JOHN YOUNG PKWY",
+     53000
+    ],
+    [
+     "ORANGE BLOSSOM TRL",
+     52500
+    ]
+   ]
+  },
+  "trafico_max_barrio": {
+   "unidad": "vehículos al día en la vía más cargada que cruza el barrio (2025)",
+   "fuente": "fdot_aadt",
+   "puntos": [
+    [
+     "Holden/Parramore",
+     196500
+    ],
+    [
+     "Lake Cherokee",
+     196500
+    ],
+    [
+     "Lake Como",
+     196500
+    ],
+    [
+     "Lake Davis/Greenwood",
+     196500
+    ],
+    [
+     "South Division",
+     196500
+    ],
+    [
+     "South Orange",
+     196500
+    ],
+    [
+     "Florida Center",
+     181500
+    ],
+    [
+     "Lake Underhill",
+     172000
+    ],
+    [
+     "Florida Center North",
+     167000
+    ],
+    [
+     "Millenia",
+     167000
+    ],
+    [
+     "Dover Shores East",
+     165500
+    ],
+    [
+     "Monterey",
+     165500
+    ],
+    [
+     "North Orange",
+     165500
+    ],
+    [
+     "Orlando Executive Airport",
+     165500
+    ],
+    [
+     "The Dovers",
+     165500
+    ],
+    [
+     "Catalina",
+     160500
+    ],
+    [
+     "Rio Grande Park",
+     160500
+    ],
+    [
+     "North Quarter",
+     160000
+    ],
+    [
+     "Holden Heights",
+     159500
+    ],
+    [
+     "33rd St. Industrial",
+     154000
+    ],
+    [
+     "Central Business District",
+     143500
+    ],
+    [
+     "Kirkman South",
+     136000
+    ],
+    [
+     "Airport North",
+     124000
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     124000
+    ],
+    [
+     "Lake Sunset",
+     120000
+    ],
+    [
+     "Lorna Doone",
+     120000
+    ],
+    [
+     "Beltway Commerce Center",
+     111500
+    ],
+    [
+     "Lake Nona South",
+     68000
+    ],
+    [
+     "Colonial Town Center",
+     63000
+    ],
+    [
+     "Bal Bay",
+     59500
+    ],
+    [
+     "East Park",
+     59500
+    ],
+    [
+     "LaVina",
+     59500
+    ],
+    [
+     "Azalea Park",
+     58500
+    ],
+    [
+     "Countryside",
+     56000
+    ],
+    [
+     "Engelwood Park",
+     56000
+    ],
+    [
+     "Lake Fredrica",
+     56000
+    ],
+    [
+     "South Semoran",
+     56000
+    ],
+    [
+     "Princeton/Silver Star",
+     53000
+    ],
+    [
+     "Rosemont",
+     53000
+    ],
+    [
+     "Spring Lake",
+     53000
+    ],
+    [
+     "West Colonial",
+     53000
+    ],
+    [
+     "Kirkman North",
+     50500
+    ],
+    [
+     "Colonialtown South",
+     49500
+    ],
+    [
+     "Park Lake/Highland",
+     49500
+    ],
+    [
+     "Windhover",
+     40500
+    ],
+    [
+     "Park Central",
+     38500
+    ],
+    [
+     "Clear Lake",
+     35000
+    ],
+    [
+     "Boggy Creek",
+     33500
+    ],
+    [
+     "Pineloch",
+     33435
+    ],
+    [
+     "Wadeview Park",
+     33435
+    ],
+    [
+     "The Willows",
+     33000
+    ],
+    [
+     "Bryn Mawr",
+     32500
+    ],
+    [
+     "Conway",
+     32500
+    ],
+    [
+     "Mariners Village",
+     32500
+    ],
+    [
+     "Metro West",
+     32500
+    ],
+    [
+     "Dixie Belle",
+     32000
+    ],
+    [
+     "Ventura",
+     32000
+    ],
+    [
+     "College Park",
+     31000
+    ],
+    [
+     "Lake Dot",
+     31000
+    ],
+    [
+     "Rock Lake",
+     31000
+    ],
+    [
+     "Sunbridge/ICP",
+     31000
+    ],
+    [
+     "Callahan",
+     30500
+    ],
+    [
+     "Lake Copeland",
+     30500
+    ],
+    [
+     "Dover Estates",
+     29500
+    ],
+    [
+     "Lake Fairview",
+     29500
+    ],
+    [
+     "Colonialtown North",
+     26500
+    ],
+    [
+     "Lake Formosa",
+     26500
+    ],
+    [
+     "Milk District",
+     26500
+    ],
+    [
+     "Orwin Manor",
+     26500
+    ],
+    [
+     "Rose Isle",
+     26500
+    ],
+    [
+     "Lake Shore Village",
+     26000
+    ],
+    [
+     "Vista East",
+     25000
+    ],
+    [
+     "Malibu Groves",
+     24500
+    ],
+    [
+     "Westfield",
+     24500
+    ],
+    [
+     "Lake Nona Central",
+     21500
+    ],
+    [
+     "Mercy Drive",
+     21000
+    ],
+    [
+     "Pershing",
+     21000
+    ],
+    [
+     "Palomar",
+     19800
+    ],
+    [
+     "Baldwin Park",
+     19300
+    ],
+    [
+     "Lake Mann Gardens",
+     19200
+    ],
+    [
+     "Johnson Village",
+     17000
+    ],
+    [
+     "Richmond Heights",
+     17000
+    ],
+    [
+     "Roosevelt Park",
+     17000
+    ],
+    [
+     "Washington Shores",
+     17000
+    ],
+    [
+     "Lawsona/Fern Creek",
+     16400
+    ],
+    [
+     "Thornton Park",
+     16400
+    ],
+    [
+     "South Eola",
+     15000
+    ],
+    [
+     "Delaney Park",
+     14900
+    ],
+    [
+     "Lake Eola Heights",
+     14000
+    ],
+    [
+     "Bel Air",
+     12600
+    ],
+    [
+     "Dover Shores West",
+     12600
+    ],
+    [
+     "Lake Terrace",
+     12600
+    ],
+    [
+     "Lancaster Park",
+     12600
+    ],
+    [
+     "Audubon Park",
+     12100
+    ],
+    [
+     "Rowena Gardens",
+     12100
+    ],
+    [
+     "Coytown",
+     11900
+    ],
+    [
+     "Southport",
+     11900
+    ],
+    [
+     "Carver Shores",
+     11700
+    ],
+    [
+     "New Malibu",
+     11700
+    ],
+    [
+     "Eagles Nest",
+     11000
+    ],
+    [
+     "Lake Richmond",
+     11000
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     10500
+    ],
+    [
+     "Storey Park",
+     10500
+    ],
+    [
+     "Seaboard Industrial",
+     8800
+    ],
+    [
+     "Lake Weldona",
+     6400
+    ],
+    [
+     "Signal Hill",
+     6100
+    ],
+    [
+     "Southern Oaks",
+     6100
+    ],
+    [
+     "Wedgewood Groves",
+     5600
+    ],
+    [
+     "Randal Park",
+     5400
+    ],
+    [
+     "Dover Manor",
+     3700
+    ]
+   ]
+  },
+  "mediana_aadt_por_anio": {
+   "unidad": "vehículos al día (mediana de las mismas estaciones de conteo)",
+   "fuente": "fdot_aadt_historico",
+   "puntos": [
+    [
+     "2021",
+     10400
+    ],
+    [
+     "2022",
+     10000
+    ],
+    [
+     "2023",
+     10800
+    ],
+    [
+     "2024",
+     10500
+    ],
+    [
+     "2025",
+     10350
+    ]
+   ]
+  },
+  "choques_mortales_por_anio": {
+   "unidad": "choques con al menos un muerto en la ciudad",
+   "fuente": "nhtsa_fars",
+   "puntos": [
+    [
+     "2015",
+     32
+    ],
+    [
+     "2016",
+     34
+    ],
+    [
+     "2017",
+     33
+    ],
+    [
+     "2018",
+     32
+    ],
+    [
+     "2019",
+     36
+    ],
+    [
+     "2020",
+     42
+    ],
+    [
+     "2021",
+     49
+    ],
+    [
+     "2022",
+     48
+    ],
+    [
+     "2023",
+     38
+    ],
+    [
+     "2024",
+     32
+    ]
+   ]
+  },
+  "muertes_por_anio": {
+   "unidad": "personas muertas en choques de tránsito en la ciudad",
+   "fuente": "nhtsa_fars",
+   "puntos": [
+    [
+     "2015",
+     34
+    ],
+    [
+     "2016",
+     35
+    ],
+    [
+     "2017",
+     37
+    ],
+    [
+     "2018",
+     33
+    ],
+    [
+     "2019",
+     38
+    ],
+    [
+     "2020",
+     45
+    ],
+    [
+     "2021",
+     54
+    ],
+    [
+     "2022",
+     50
+    ],
+    [
+     "2023",
+     38
+    ],
+    [
+     "2024",
+     32
+    ]
+   ]
+  },
+  "choques_con_peaton_por_anio": {
+   "unidad": "choques mortales con un peatón involucrado",
+   "fuente": "nhtsa_fars",
+   "puntos": [
+    [
+     "2015",
+     12
+    ],
+    [
+     "2016",
+     15
+    ],
+    [
+     "2017",
+     14
+    ],
+    [
+     "2018",
+     8
+    ],
+    [
+     "2019",
+     19
+    ],
+    [
+     "2020",
+     11
+    ],
+    [
+     "2021",
+     20
+    ],
+    [
+     "2022",
+     17
+    ],
+    [
+     "2023",
+     15
+    ],
+    [
+     "2024",
+     7
+    ]
+   ]
+  },
+  "vias_con_mas_choques_mortales": {
+   "unidad": "choques mortales 2020-2024 (vías con 5 o más)",
+   "fuente": "nhtsa_fars",
+   "puntos": [
+    [
+     "I-4",
+     15
+    ],
+    [
+     "SR-435",
+     13
+    ],
+    [
+     "SR-50",
+     11
+    ],
+    [
+     "SR-408",
+     8
+    ],
+    [
+     "US-17",
+     8
+    ],
+    [
+     "SR-15",
+     6
+    ],
+    [
+     "SR-527",
+     6
+    ],
+    [
+     "SR-552",
+     5
+    ]
+   ]
+  }
+ }
+}

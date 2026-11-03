@@ -1,7 +1,7 @@
 [
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "tema",
   "nombre_original": "(lo fija el script)",
   "significado": "Nombre del tema del archivo.",
@@ -16,7 +16,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "probado",
   "nombre_original": "(día de la corrida)",
   "significado": "Día en que se comprobó que la fuente respondía y se escribió el archivo.",
@@ -31,7 +31,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "fuentes[].id",
   "nombre_original": "(catalogo/fuentes_lago.json)",
   "significado": "Identificador corto de la fuente, sin espacios.",
@@ -46,7 +46,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "fuentes[].nombre",
   "nombre_original": "(catalogo/fuentes_lago.json)",
   "significado": "Nombre legible de la fuente.",
@@ -61,7 +61,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "fuentes[].url",
   "nombre_original": "(URL consultada)",
   "significado": "Enlace exacto que el script consultó.",
@@ -76,7 +76,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "fuentes[].estado",
   "nombre_original": "(lo fija el script)",
   "significado": "Estado de la fuente en el contrato del lago.",
@@ -91,7 +91,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "fuentes[].licencia",
   "nombre_original": "(catalogo/fuentes_lago.json)",
   "significado": "Licencia de la fuente tal como la declara.",
@@ -106,7 +106,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "cifras.<nombre>.valor",
   "nombre_original": "(según la cifra)",
   "significado": "Valor numérico de una cifra.",
@@ -121,7 +121,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "cifras.<nombre>.unidad",
   "nombre_original": "(según la cifra)",
   "significado": "Unidad de medida de la cifra.",
@@ -136,7 +136,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "cifras.<nombre>.vigencia",
   "nombre_original": "(según la cifra)",
   "significado": "Periodo o día al que corresponde la cifra.",
@@ -151,7 +151,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "cifras.<nombre>.fuente",
   "nombre_original": "(id de la fuente)",
   "significado": "Fuente de la que sale la cifra.",
@@ -166,7 +166,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "series.<nombre>.unidad",
   "nombre_original": "(según la serie)",
   "significado": "Unidad de medida de los puntos de la serie.",
@@ -181,7 +181,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "series.<nombre>.fuente",
   "nombre_original": "(id de la fuente)",
   "significado": "Fuente de la que sale la serie.",
@@ -196,7 +196,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "series.<nombre>.puntos[].etiqueta",
   "nombre_original": "(según la serie)",
   "significado": "Etiqueta del punto: día, mes, trimestre, año, barrio o momento del pronóstico.",
@@ -211,7 +211,7 @@
  },
  {
   "fuente": "Todas",
-  "archivo": "los 6 archivos de lago/raw/<tema>/<tema>.json",
+  "archivo": "los 6 archivos de lago/curado/tema=<tema>/fecha=<AAAA-MM-DD>/<tema>.json",
   "campo": "series.<nombre>.puntos[].valor",
   "nombre_original": "(según la serie)",
   "significado": "Valor numérico del punto.",
@@ -226,7 +226,7 @@
  },
  {
   "fuente": "F71",
-  "archivo": "lago/raw/escucha/escucha.json",
+  "archivo": "lago/curado/tema=escucha/fecha=<AAAA-MM-DD>/escucha.json",
   "campo": "vistas_ultimo_mes",
   "nombre_original": "items[].views (último mes)",
   "significado": "Vistas del artículo de la ciudad en Wikipedia hechas por personas, en el último mes completo.",
@@ -241,7 +241,7 @@
  },
  {
   "fuente": "F71",
-  "archivo": "lago/raw/escucha/escucha.json",
+  "archivo": "lago/curado/tema=escucha/fecha=<AAAA-MM-DD>/escucha.json",
   "campo": "variacion_anual",
   "nombre_original": "items[].views (derivada)",
   "significado": "Cambio porcentual de las vistas frente al mismo mes del año anterior.",
@@ -256,7 +256,7 @@
  },
  {
   "fuente": "F71",
-  "archivo": "lago/raw/escucha/escucha.json",
+  "archivo": "lago/curado/tema=escucha/fecha=<AAAA-MM-DD>/escucha.json",
   "campo": "vistas_mensuales",
   "nombre_original": "items[].views e items[].timestamp",
   "significado": "Vistas mensuales del artículo de la ciudad, 20 meses completos.",
@@ -271,7 +271,7 @@
  },
  {
   "fuente": "F70",
-  "archivo": "lago/raw/empleo/empleo.json",
+  "archivo": "lago/curado/tema=empleo/fecha=<AAAA-MM-DD>/empleo.json",
   "campo": "indice_ultimo_dia",
   "nombre_original": "indeed_job_postings_index (último día)",
   "significado": "Índice de avisos de vacantes en Orlando el último día disponible.",
@@ -286,7 +286,7 @@
  },
  {
   "fuente": "F70",
-  "archivo": "lago/raw/empleo/empleo.json",
+  "archivo": "lago/curado/tema=empleo/fecha=<AAAA-MM-DD>/empleo.json",
   "campo": "variacion_12_meses",
   "nombre_original": "indeed_job_postings_index (derivada)",
   "significado": "Cambio porcentual del índice frente al mismo día un año antes.",
@@ -301,7 +301,7 @@
  },
  {
   "fuente": "F70",
-  "archivo": "lago/raw/empleo/empleo.json",
+  "archivo": "lago/curado/tema=empleo/fecha=<AAAA-MM-DD>/empleo.json",
   "campo": "indice_diario",
   "nombre_original": "indeed_job_postings_index y date",
   "significado": "Índice diario de vacantes de Orlando desde febrero de 2020.",
@@ -316,7 +316,7 @@
  },
  {
   "fuente": "F70",
-  "archivo": "lago/raw/empleo/empleo.json",
+  "archivo": "lago/curado/tema=empleo/fecha=<AAAA-MM-DD>/empleo.json",
   "campo": "indice_mensual",
   "nombre_original": "indeed_job_postings_index (promedio)",
   "significado": "Promedio mensual del índice de vacantes.",
@@ -331,7 +331,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "indice_ultimo_trimestre",
   "nombre_original": "ATNHPIUS36740Q (último valor)",
   "significado": "Índice de precios de la vivienda del área de Orlando en el último trimestre.",
@@ -346,7 +346,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "variacion_4_trimestres",
   "nombre_original": "ATNHPIUS36740Q (derivada)",
   "significado": "Cambio porcentual del índice frente al mismo trimestre del año anterior.",
@@ -361,7 +361,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "indice_trimestral",
   "nombre_original": "observation_date y ATNHPIUS36740Q",
   "significado": "Índice de precios de la vivienda de Orlando, trimestral, desde 1978.",
@@ -376,7 +376,7 @@
  },
  {
   "fuente": "F57",
-  "archivo": "lago/raw/clima/clima.json",
+  "archivo": "lago/curado/tema=clima/fecha=<AAAA-MM-DD>/clima.json",
   "campo": "temperatura_actual",
   "nombre_original": "properties.temperature.value (observations/latest)",
   "significado": "Temperatura observada en la estación cercana más reciente.",
@@ -391,7 +391,7 @@
  },
  {
   "fuente": "F57",
-  "archivo": "lago/raw/clima/clima.json",
+  "archivo": "lago/curado/tema=clima/fecha=<AAAA-MM-DD>/clima.json",
   "campo": "alertas_activas",
   "nombre_original": "features (alerts/active)",
   "significado": "Cantidad de alertas del servicio meteorológico vigentes en el punto de Orlando.",
@@ -406,7 +406,7 @@
  },
  {
   "fuente": "F57",
-  "archivo": "lago/raw/clima/clima.json",
+  "archivo": "lago/curado/tema=clima/fecha=<AAAA-MM-DD>/clima.json",
   "campo": "pronostico_temperatura",
   "nombre_original": "periods[].temperature y periods[].startTime",
   "significado": "Pronóstico de temperatura por periodos de la semana.",
@@ -421,7 +421,7 @@
  },
  {
   "fuente": "F57",
-  "archivo": "lago/raw/clima/clima.json",
+  "archivo": "lago/curado/tema=clima/fecha=<AAAA-MM-DD>/clima.json",
   "campo": "pronostico_lluvia",
   "nombre_original": "periods[].probabilityOfPrecipitation.value",
   "significado": "Probabilidad de lluvia por periodos de la semana.",
@@ -436,7 +436,7 @@
  },
  {
   "fuente": "F79",
-  "archivo": "lago/raw/permisos/permisos.json",
+  "archivo": "lago/curado/tema=permisos/fecha=<AAAA-MM-DD>/permisos.json",
   "campo": "permisos_emitidos_ultimo_anio_completo",
   "nombre_original": "count(*) agrupado por año de issue_permit_date",
   "significado": "Permisos emitidos en toda la ciudad durante el último año completo.",
@@ -451,7 +451,7 @@
  },
  {
   "fuente": "F79",
-  "archivo": "lago/raw/permisos/permisos.json",
+  "archivo": "lago/curado/tema=permisos/fecha=<AAAA-MM-DD>/permisos.json",
   "campo": "permisos_emitidos_anio_en_curso",
   "nombre_original": "count(*) del año en curso",
   "significado": "Permisos emitidos en lo que va del año.",
@@ -466,7 +466,7 @@
  },
  {
   "fuente": "F79",
-  "archivo": "lago/raw/permisos/permisos.json",
+  "archivo": "lago/curado/tema=permisos/fecha=<AAAA-MM-DD>/permisos.json",
   "campo": "barrios_mostrados_ultimo_anio",
   "nombre_original": "neighborhood (derivada)",
   "significado": "Barrios con permisos suficientes para mostrarse.",
@@ -481,7 +481,7 @@
  },
  {
   "fuente": "F79",
-  "archivo": "lago/raw/permisos/permisos.json",
+  "archivo": "lago/curado/tema=permisos/fecha=<AAAA-MM-DD>/permisos.json",
   "campo": "barrios_suprimidos_ultimo_anio",
   "nombre_original": "neighborhood (derivada)",
   "significado": "Barrios que no se muestran por tener menos permisos que el umbral.",
@@ -496,7 +496,7 @@
  },
  {
   "fuente": "F79",
-  "archivo": "lago/raw/permisos/permisos.json",
+  "archivo": "lago/curado/tema=permisos/fecha=<AAAA-MM-DD>/permisos.json",
   "campo": "permisos_sin_barrio_ultimo_anio",
   "nombre_original": "count(*) con neighborhood vacío",
   "significado": "Permisos emitidos que el portal no asigna a ningún barrio.",
@@ -511,7 +511,7 @@
  },
  {
   "fuente": "F79",
-  "archivo": "lago/raw/permisos/permisos.json",
+  "archivo": "lago/curado/tema=permisos/fecha=<AAAA-MM-DD>/permisos.json",
   "campo": "umbral_minimo_por_barrio",
   "nombre_original": "(constante del script)",
   "significado": "Mínimo de permisos que debe tener un barrio en el año para mostrarse.",
@@ -526,7 +526,7 @@
  },
  {
   "fuente": "F79",
-  "archivo": "lago/raw/permisos/permisos.json",
+  "archivo": "lago/curado/tema=permisos/fecha=<AAAA-MM-DD>/permisos.json",
   "campo": "coincidencia_nombres_con_capa_barrios",
   "nombre_original": "neighborhood frente a neighborhoodname (F90)",
   "significado": "Porcentaje de barrios mostrados cuyo nombre coincide con la capa de barrios.",
@@ -541,7 +541,7 @@
  },
  {
   "fuente": "F79",
-  "archivo": "lago/raw/permisos/permisos.json",
+  "archivo": "lago/curado/tema=permisos/fecha=<AAAA-MM-DD>/permisos.json",
   "campo": "variacion_ultimo_anio",
   "nombre_original": "count(*) por año (derivada)",
   "significado": "Cambio porcentual de los permisos frente al año completo anterior.",
@@ -556,7 +556,7 @@
  },
  {
   "fuente": "F79",
-  "archivo": "lago/raw/permisos/permisos.json",
+  "archivo": "lago/curado/tema=permisos/fecha=<AAAA-MM-DD>/permisos.json",
   "campo": "permisos_por_anio",
   "nombre_original": "issue_permit_date (año) y count(*)",
   "significado": "Permisos emitidos por año en toda la ciudad, sin el año en curso.",
@@ -571,7 +571,7 @@
  },
  {
   "fuente": "F79",
-  "archivo": "lago/raw/permisos/permisos.json",
+  "archivo": "lago/curado/tema=permisos/fecha=<AAAA-MM-DD>/permisos.json",
   "campo": "permisos_por_barrio_ultimo_anio",
   "nombre_original": "neighborhood y count(*)",
   "significado": "Permisos emitidos por barrio en el último año completo.",
@@ -586,7 +586,7 @@
  },
  {
   "fuente": "F88",
-  "archivo": "lago/raw/territorio/territorio.json",
+  "archivo": "lago/curado/tema=territorio/fecha=<AAAA-MM-DD>/territorio.json",
   "campo": "poligonos_limite_ciudad",
   "nombre_original": "(conteo de filas con the_geom)",
   "significado": "Cantidad de polígonos de la capa del límite de la ciudad.",
@@ -601,7 +601,7 @@
  },
  {
   "fuente": "F90",
-  "archivo": "lago/raw/territorio/territorio.json",
+  "archivo": "lago/curado/tema=territorio/fecha=<AAAA-MM-DD>/territorio.json",
   "campo": "poligonos_barrios",
   "nombre_original": "(conteo de filas con the_geom)",
   "significado": "Cantidad de polígonos de la capa de barrios.",
@@ -616,7 +616,7 @@
  },
  {
   "fuente": "F94",
-  "archivo": "lago/raw/territorio/territorio.json",
+  "archivo": "lago/curado/tema=territorio/fecha=<AAAA-MM-DD>/territorio.json",
   "campo": "poligonos_distritos_comisionados",
   "nombre_original": "(conteo de filas con the_geom)",
   "significado": "Cantidad de polígonos de la capa de distritos de comisionados.",
@@ -781,7 +781,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/economia/economia.json",
+  "archivo": "lago/curado/tema=economia/fecha=<AAAA-MM-DD>/economia.json",
   "campo": "desempleo_ultimo_mes",
   "nombre_original": "ORLA712UR",
   "significado": "Tasa de desempleo del área de Orlando en el último mes que tienen las cuatro áreas comparadas.",
@@ -796,7 +796,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/economia/economia.json",
+  "archivo": "lago/curado/tema=economia/fecha=<AAAA-MM-DD>/economia.json",
   "campo": "desempleo_hace_un_anio",
   "nombre_original": "ORLA712UR",
   "significado": "Tasa de desempleo del área de Orlando el mismo mes del año anterior.",
@@ -811,7 +811,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/economia/economia.json",
+  "archivo": "lago/curado/tema=economia/fecha=<AAAA-MM-DD>/economia.json",
   "campo": "diferencia_con_florida",
   "nombre_original": "ORLA712UR − FLURN",
   "significado": "Diferencia entre el desempleo de Orlando y el de Florida en el mismo mes.",
@@ -826,7 +826,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/economia/economia.json",
+  "archivo": "lago/curado/tema=economia/fecha=<AAAA-MM-DD>/economia.json",
   "campo": "puesto_desempleo_entre_pares",
   "nombre_original": "(calculado)",
   "significado": "Puesto de Orlando entre las cuatro áreas grandes de Florida por desempleo (1 = el menor).",
@@ -841,7 +841,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/economia/economia.json",
+  "archivo": "lago/curado/tema=economia/fecha=<AAAA-MM-DD>/economia.json",
   "campo": "empleo_total_ultimo_mes",
   "nombre_original": "ORLA712NA",
   "significado": "Empleos no agrícolas del área de Orlando en el último mes.",
@@ -856,7 +856,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/economia/economia.json",
+  "archivo": "lago/curado/tema=economia/fecha=<AAAA-MM-DD>/economia.json",
   "campo": "variacion_empleo_12_meses",
   "nombre_original": "(calculado)",
   "significado": "Cambio porcentual del empleo total frente al mismo mes del año anterior.",
@@ -871,7 +871,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/economia/economia.json",
+  "archivo": "lago/curado/tema=economia/fecha=<AAAA-MM-DD>/economia.json",
   "campo": "desempleo_<área>",
   "nombre_original": "ORLA712UR, TAMP312UR, MIAM112UR, JACK212UR, FLURN, UNRATENSA",
   "significado": "Seis series mensuales de desempleo desde 2000: orlando, tampa, miami, jacksonville, florida y eeuu.",
@@ -886,7 +886,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/economia/economia.json",
+  "archivo": "lago/curado/tema=economia/fecha=<AAAA-MM-DD>/economia.json",
   "campo": "empleo_total",
   "nombre_original": "ORLA712NA",
   "significado": "Serie mensual del empleo no agrícola del área desde 1990.",
@@ -901,7 +901,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/gente/gente.json",
+  "archivo": "lago/curado/tema=gente/fecha=<AAAA-MM-DD>/gente.json",
   "campo": "poblacion_condado_ultimo_anio",
   "nombre_original": "FLORAN0POP",
   "significado": "Población residente del condado de Orange (que contiene a Orlando) en el último año publicado.",
@@ -916,7 +916,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/gente/gente.json",
+  "archivo": "lago/curado/tema=gente/fecha=<AAAA-MM-DD>/gente.json",
   "campo": "crecimiento_condado_10_anios",
   "nombre_original": "(calculado)",
   "significado": "Cambio porcentual de la población del condado en diez años.",
@@ -931,7 +931,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/gente/gente.json",
+  "archivo": "lago/curado/tema=gente/fecha=<AAAA-MM-DD>/gente.json",
   "campo": "poblacion_area_metro_ultimo_anio",
   "nombre_original": "ORLPOP",
   "significado": "Población del área metropolitana de Orlando en el último año.",
@@ -946,7 +946,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/gente/gente.json",
+  "archivo": "lago/curado/tema=gente/fecha=<AAAA-MM-DD>/gente.json",
   "campo": "ingreso_mediano_condado",
   "nombre_original": "MHIFL12095A052NCEN",
   "significado": "Ingreso mediano de los hogares del condado de Orange.",
@@ -961,7 +961,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/gente/gente.json",
+  "archivo": "lago/curado/tema=gente/fecha=<AAAA-MM-DD>/gente.json",
   "campo": "ingreso_frente_a_florida",
   "nombre_original": "(calculado)",
   "significado": "Cuánto más (o menos) es el ingreso mediano del condado frente al de Florida.",
@@ -976,7 +976,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/gente/gente.json",
+  "archivo": "lago/curado/tema=gente/fecha=<AAAA-MM-DD>/gente.json",
   "campo": "pobreza_condado",
   "nombre_original": "PPAAFL12095A156NCEN",
   "significado": "Porcentaje de personas en pobreza en el condado de Orange.",
@@ -991,7 +991,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/gente/gente.json",
+  "archivo": "lago/curado/tema=gente/fecha=<AAAA-MM-DD>/gente.json",
   "campo": "puesto_ingreso_entre_pares",
   "nombre_original": "(calculado)",
   "significado": "Puesto del condado de Orange por ingreso mediano entre Orange, Hillsborough, Duval y Miami-Dade.",
@@ -1006,7 +1006,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/gente/gente.json",
+  "archivo": "lago/curado/tema=gente/fecha=<AAAA-MM-DD>/gente.json",
   "campo": "poblacion_condado / poblacion_area_metro",
   "nombre_original": "FLORAN0POP, ORLPOP",
   "significado": "Series anuales de población del condado (desde 1970) y del área (desde 2000).",
@@ -1021,7 +1021,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/gente/gente.json",
+  "archivo": "lago/curado/tema=gente/fecha=<AAAA-MM-DD>/gente.json",
   "campo": "ingreso_mediano_<condado> / pobreza_<condado>",
   "nombre_original": "MHIFL…A052NCEN, PPAAFL…A156NCEN",
   "significado": "Series anuales de ingreso mediano y pobreza de orange, hillsborough, duval, miami_dade y florida.",
@@ -1036,7 +1036,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "precio_mediano_lista_ultimo_mes",
   "nombre_original": "MEDLISPRI36740",
   "significado": "Precio mediano de las viviendas en venta en el área en el último mes (Realtor.com).",
@@ -1051,7 +1051,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "variacion_precio_lista_12_meses",
   "nombre_original": "(calculado)",
   "significado": "Cambio porcentual del precio mediano de lista frente al mismo mes del año anterior.",
@@ -1066,7 +1066,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "casas_en_venta_ultimo_mes / variacion_casas_en_venta_12_meses",
   "nombre_original": "ACTLISCOU36740",
   "significado": "Viviendas en venta en el área en el último mes y su cambio en 12 meses.",
@@ -1081,7 +1081,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "dias_en_mercado_ultimo_mes",
   "nombre_original": "MEDDAYONMAR36740",
   "significado": "Días que tarda en venderse una vivienda (mediana) en el último mes.",
@@ -1096,7 +1096,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "viviendas_autorizadas_12_meses / variacion_viviendas_autorizadas",
   "nombre_original": "ORLA712BPPRIVSA",
   "significado": "Viviendas nuevas autorizadas en el área en los últimos 12 meses y su cambio frente a los 12 anteriores.",
@@ -1111,7 +1111,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "indice_trimestral_<ciudad>",
   "nombre_original": "ATNHPIUS45300Q, ATNHPIUS27260Q, ATNHPIUS33124Q",
   "significado": "Índice de precios de vivienda de tampa, jacksonville y miami (división Miami-Miami Beach-Kendall). Tampa se detiene en 2024-Q4.",
@@ -1126,7 +1126,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "precio_mediano_lista / casas_en_venta / dias_en_mercado",
   "nombre_original": "MEDLISPRI36740, ACTLISCOU36740, MEDDAYONMAR36740",
   "significado": "Series mensuales del inventario de Realtor.com desde 2016-07.",
@@ -1141,7 +1141,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "viviendas_autorizadas",
   "nombre_original": "ORLA712BPPRIVSA",
   "significado": "Serie mensual de viviendas nuevas autorizadas por permisos en el área desde 2000.",
@@ -1156,7 +1156,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/turismo/turismo.json",
+  "archivo": "lago/curado/tema=turismo/fecha=<AAAA-MM-DD>/turismo.json",
   "campo": "empleo_ocio_ultimo_mes / variacion_empleo_ocio_12_meses",
   "nombre_original": "ORLA712LEIH",
   "significado": "Empleos en ocio y hotelería del área en el último mes y su cambio en 12 meses.",
@@ -1171,7 +1171,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/turismo/turismo.json",
+  "archivo": "lago/curado/tema=turismo/fecha=<AAAA-MM-DD>/turismo.json",
   "campo": "participacion_ocio_ultimo_mes",
   "nombre_original": "ORLA712LEIH / ORLA712NA",
   "significado": "Qué parte del empleo total es de ocio y hotelería.",
@@ -1186,7 +1186,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/turismo/turismo.json",
+  "archivo": "lago/curado/tema=turismo/fecha=<AAAA-MM-DD>/turismo.json",
   "campo": "empleo_ocio_hoteleria / participacion_ocio_en_empleo",
   "nombre_original": "ORLA712LEIH, ORLA712NA",
   "significado": "Series mensuales desde 1990 del empleo en ocio y hotelería y de su participación.",
@@ -1201,7 +1201,7 @@
  },
  {
   "fuente": "F85",
-  "archivo": "lago/raw/turismo/turismo.json",
+  "archivo": "lago/curado/tema=turismo/fecha=<AAAA-MM-DD>/turismo.json",
   "campo": "alquiler_corto_activas / alquiler_corto_total_historico",
   "nombre_original": "license_status",
   "significado": "Licencias de alquiler de corto plazo activas hoy, y todas las registradas.",
@@ -1216,7 +1216,7 @@
  },
  {
   "fuente": "F85",
-  "archivo": "lago/raw/turismo/turismo.json",
+  "archivo": "lago/curado/tema=turismo/fecha=<AAAA-MM-DD>/turismo.json",
   "campo": "alquiler_corto_emitidas_por_anio",
   "nombre_original": "issued_date",
   "significado": "Licencias de alquiler de corto plazo emitidas por año (años completos).",
@@ -1231,7 +1231,7 @@
  },
  {
   "fuente": "F106",
-  "archivo": "lago/raw/seguridad/seguridad.json",
+  "archivo": "lago/curado/tema=seguridad/fecha=<AAAA-MM-DD>/seguridad.json",
   "campo": "delitos_ultimo_anio / variacion_ultimo_anio",
   "nombre_original": "CaseType, CaseDate",
   "significado": "Casos de los tres grupos de delitos en el último año completo y su cambio frente al anterior.",
@@ -1246,7 +1246,7 @@
  },
  {
   "fuente": "F106",
-  "archivo": "lago/raw/seguridad/seguridad.json",
+  "archivo": "lago/curado/tema=seguridad/fecha=<AAAA-MM-DD>/seguridad.json",
   "campo": "hurtos_ultimo_anio / violencia_ultimo_anio / drogas_ultimo_anio",
   "nombre_original": "CaseType",
   "significado": "Casos de cada grupo en el último año completo.",
@@ -1261,7 +1261,7 @@
  },
  {
   "fuente": "F106",
-  "archivo": "lago/raw/seguridad/seguridad.json",
+  "archivo": "lago/curado/tema=seguridad/fecha=<AAAA-MM-DD>/seguridad.json",
   "campo": "delitos_anio_en_curso",
   "nombre_original": "CaseDate",
   "significado": "Casos de los tres grupos en lo que va del año.",
@@ -1276,7 +1276,7 @@
  },
  {
   "fuente": "F106",
-  "archivo": "lago/raw/seguridad/seguridad.json",
+  "archivo": "lago/curado/tema=seguridad/fecha=<AAAA-MM-DD>/seguridad.json",
   "campo": "barrios_suprimidos_ultimo_anio / casos_sin_barrio_ultimo_anio / umbral_minimo_por_barrio",
   "nombre_original": "NeighborhoodName",
   "significado": "Cuántos barrios no se muestran por el umbral, cuántos casos no traen barrio y cuál es el umbral.",
@@ -1291,7 +1291,7 @@
  },
  {
   "fuente": "F106",
-  "archivo": "lago/raw/seguridad/seguridad.json",
+  "archivo": "lago/curado/tema=seguridad/fecha=<AAAA-MM-DD>/seguridad.json",
   "campo": "<grupo>_por_anio",
   "nombre_original": "CaseType, CaseDate",
   "significado": "Series anuales de hurtos, violencia y drogas para toda la ciudad desde 2022.",
@@ -1306,7 +1306,7 @@
  },
  {
   "fuente": "F106",
-  "archivo": "lago/raw/seguridad/seguridad.json",
+  "archivo": "lago/curado/tema=seguridad/fecha=<AAAA-MM-DD>/seguridad.json",
   "campo": "delitos_barrio_<AAAA>",
   "nombre_original": "NeighborhoodName",
   "significado": "Casos de los tres grupos por barrio y año (2022 en adelante). Barrios con menos de 5 casos no aparecen.",
@@ -1321,7 +1321,7 @@
  },
  {
   "fuente": "F106",
-  "archivo": "lago/raw/seguridad/seguridad.json",
+  "archivo": "lago/curado/tema=seguridad/fecha=<AAAA-MM-DD>/seguridad.json",
   "campo": "<grupo>_barrio_<AAAA>",
   "nombre_original": "NeighborhoodName",
   "significado": "Casos de hurtos, violencia o drogas por barrio en el último año completo. Barrios con menos de 5 casos no aparecen.",
@@ -1336,7 +1336,7 @@
  },
  {
   "fuente": "F106",
-  "archivo": "lago/raw/seguridad/seguridad.json",
+  "archivo": "lago/curado/tema=seguridad/fecha=<AAAA-MM-DD>/seguridad.json",
   "campo": "tipos_<AAAA>",
   "nombre_original": "CaseType",
   "significado": "Casos por tipo de delito en toda la ciudad en el último año, con el nombre en español.",
@@ -1351,7 +1351,7 @@
  },
  {
   "fuente": "F83",
-  "archivo": "lago/raw/codigo/codigo.json",
+  "archivo": "lago/curado/tema=codigo/fecha=<AAAA-MM-DD>/codigo.json",
   "campo": "casos_ultimo_anio / variacion_ultimo_anio / casos_anio_en_curso",
   "nombre_original": "case_open_year",
   "significado": "Casos de código urbano abiertos en el último año completo, su cambio y los del año en curso.",
@@ -1366,7 +1366,7 @@
  },
  {
   "fuente": "F83",
-  "archivo": "lago/raw/codigo/codigo.json",
+  "archivo": "lago/curado/tema=codigo/fecha=<AAAA-MM-DD>/codigo.json",
   "campo": "quejas_ultimo_anio",
   "nombre_original": "src = Citizen",
   "significado": "Casos de código abiertos por queja ciudadana en el último año completo.",
@@ -1381,7 +1381,7 @@
  },
  {
   "fuente": "F83",
-  "archivo": "lago/raw/codigo/codigo.json",
+  "archivo": "lago/curado/tema=codigo/fecha=<AAAA-MM-DD>/codigo.json",
   "campo": "barrios_suprimidos_ultimo_anio / casos_sin_barrio_ultimo_anio / umbral_minimo_por_barrio / coincidencia_nombres_con_capa_barrios",
   "nombre_original": "nbrhd_descript",
   "significado": "Control de la publicación por barrio: suprimidos, sin barrio, umbral y coincidencia de nombres con la capa de barrios.",
@@ -1396,7 +1396,7 @@
  },
  {
   "fuente": "F83",
-  "archivo": "lago/raw/codigo/codigo.json",
+  "archivo": "lago/curado/tema=codigo/fecha=<AAAA-MM-DD>/codigo.json",
   "campo": "casos_por_anio / quejas_por_anio",
   "nombre_original": "case_open_year, src",
   "significado": "Series anuales de casos de código (desde 2017) y de quejas ciudadanas (desde que el origen se anota, 2020).",
@@ -1411,7 +1411,7 @@
  },
  {
   "fuente": "F83",
-  "archivo": "lago/raw/codigo/codigo.json",
+  "archivo": "lago/curado/tema=codigo/fecha=<AAAA-MM-DD>/codigo.json",
   "campo": "casos_barrio_<AAAA> / quejas_barrio_<AAAA>",
   "nombre_original": "nbrhd_descript",
   "significado": "Casos de código y quejas ciudadanas por barrio y año. Barrios con menos de 5 casos no aparecen.",
@@ -1426,7 +1426,7 @@
  },
  {
   "fuente": "F83",
-  "archivo": "lago/raw/codigo/codigo.json",
+  "archivo": "lago/curado/tema=codigo/fecha=<AAAA-MM-DD>/codigo.json",
   "campo": "tipos_<AAAA>",
   "nombre_original": "case_type",
   "significado": "Casos de código por tipo en toda la ciudad en el último año, con el nombre en español.",
@@ -1441,7 +1441,7 @@
  },
  {
   "fuente": "F81",
-  "archivo": "lago/raw/negocios/negocios.json",
+  "archivo": "lago/curado/tema=negocios/fecha=<AAAA-MM-DD>/negocios.json",
   "campo": "negocios_vigentes / restaurantes_vigentes / hospedajes_vigentes / negocios_sin_barrio",
   "nombre_original": "license_status, license_category",
   "significado": "Licencias de negocio vigentes en la ciudad: todas, restaurantes (RESTAU) y hospedajes (LODGES), y cuántas no traen barrio.",
@@ -1456,7 +1456,7 @@
  },
  {
   "fuente": "F81",
-  "archivo": "lago/raw/negocios/negocios.json",
+  "archivo": "lago/curado/tema=negocios/fecha=<AAAA-MM-DD>/negocios.json",
   "campo": "barrios_suprimidos_negocios / barrios_suprimidos_hospedajes / umbral_minimo_por_barrio",
   "nombre_original": "neighborhood_name",
   "significado": "Barrios que no se muestran por tener menos de 5 licencias, y el umbral.",
@@ -1471,7 +1471,7 @@
  },
  {
   "fuente": "F81",
-  "archivo": "lago/raw/negocios/negocios.json",
+  "archivo": "lago/curado/tema=negocios/fecha=<AAAA-MM-DD>/negocios.json",
   "campo": "negocios_barrio / restaurantes_barrio / hospedajes_barrio",
   "nombre_original": "neighborhood_name",
   "significado": "Licencias vigentes por barrio: todas, restaurantes y hospedajes. Barrios con menos de 5 no aparecen.",
@@ -1486,7 +1486,7 @@
  },
  {
   "fuente": "F81",
-  "archivo": "lago/raw/negocios/negocios.json",
+  "archivo": "lago/curado/tema=negocios/fecha=<AAAA-MM-DD>/negocios.json",
   "campo": "categorias_ciudad",
   "nombre_original": "license_category",
   "significado": "Licencias vigentes por categoría en toda la ciudad, con nombre en español (nuestra lectura del código).",
@@ -1501,7 +1501,7 @@
  },
  {
   "fuente": "F81",
-  "archivo": "lago/raw/negocios/negocios.json",
+  "archivo": "lago/curado/tema=negocios/fecha=<AAAA-MM-DD>/negocios.json",
   "campo": "aperturas_por_anio",
   "nombre_original": "business_open_date",
   "significado": "Licencias con fecha de apertura en cada año desde 2000 (vigentes o cerradas).",
@@ -1516,7 +1516,7 @@
  },
  {
   "fuente": "F58",
-  "archivo": "lago/raw/clima_historico/clima_historico.json",
+  "archivo": "lago/curado/tema=clima_historico/fecha=<AAAA-MM-DD>/clima_historico.json",
   "campo": "temperatura_media_ultimo_anio / lluvia_ultimo_anio",
   "nombre_original": "TAVG, PRCP",
   "significado": "Temperatura media y lluvia total del último año completo en el aeropuerto de Orlando.",
@@ -1531,7 +1531,7 @@
  },
  {
   "fuente": "F58",
-  "archivo": "lago/raw/clima_historico/clima_historico.json",
+  "archivo": "lago/curado/tema=clima_historico/fecha=<AAAA-MM-DD>/clima_historico.json",
   "campo": "promedio_primeros_30 / promedio_ultimos_30 / diferencia_entre_periodos",
   "nombre_original": "TAVG",
   "significado": "Promedio de la temperatura media en los primeros y en los últimos 30 años con dato, y su diferencia.",
@@ -1546,7 +1546,7 @@
  },
  {
   "fuente": "F58",
-  "archivo": "lago/raw/clima_historico/clima_historico.json",
+  "archivo": "lago/curado/tema=clima_historico/fecha=<AAAA-MM-DD>/clima_historico.json",
   "campo": "anio_mas_caliente",
   "nombre_original": "TAVG",
   "significado": "Año con la temperatura media más alta del registro.",
@@ -1561,7 +1561,7 @@
  },
  {
   "fuente": "F58",
-  "archivo": "lago/raw/clima_historico/clima_historico.json",
+  "archivo": "lago/curado/tema=clima_historico/fecha=<AAAA-MM-DD>/clima_historico.json",
   "campo": "temperatura_anual / lluvia_anual",
   "nombre_original": "TAVG, PRCP",
   "significado": "Series anuales desde 1953 de temperatura media y lluvia total.",
@@ -1576,7 +1576,7 @@
  },
  {
   "fuente": "F70",
-  "archivo": "lago/raw/empleo/empleo.json",
+  "archivo": "lago/curado/tema=empleo/fecha=<AAAA-MM-DD>/empleo.json",
   "campo": "indice_mensual_<ciudad>",
   "nombre_original": "indeed_job_postings_index (cbsa_code 45300, 33100, 27260)",
   "significado": "Promedio mensual del índice de avisos de tampa, miami y jacksonville, con la misma base.",
@@ -1591,7 +1591,7 @@
  },
  {
   "fuente": "F70",
-  "archivo": "lago/raw/empleo/empleo.json",
+  "archivo": "lago/curado/tema=empleo/fecha=<AAAA-MM-DD>/empleo.json",
   "campo": "puesto_entre_pares",
   "nombre_original": "(calculado)",
   "significado": "Puesto de Orlando entre las cuatro áreas por índice de avisos en el último mes completo (1 = el más alto).",
@@ -1606,7 +1606,7 @@
  },
  {
   "fuente": "F71",
-  "archivo": "lago/raw/escucha/escucha.json",
+  "archivo": "lago/curado/tema=escucha/fecha=<AAAA-MM-DD>/escucha.json",
   "campo": "vistas_mensuales_<ciudad>",
   "nombre_original": "views",
   "significado": "Vistas mensuales de los artículos de tampa, miami y jacksonville en Wikipedia en español, mismo periodo.",
@@ -1621,7 +1621,7 @@
  },
  {
   "fuente": "F71",
-  "archivo": "lago/raw/escucha/escucha.json",
+  "archivo": "lago/curado/tema=escucha/fecha=<AAAA-MM-DD>/escucha.json",
   "campo": "atencion_frente_a_pares / puesto_entre_pares",
   "nombre_original": "(calculado)",
   "significado": "Vistas de Orlando en 12 meses frente al promedio de los pares, y su puesto entre las cuatro ciudades.",
@@ -1636,7 +1636,7 @@
  },
  {
   "fuente": "F79",
-  "archivo": "lago/raw/permisos/permisos.json",
+  "archivo": "lago/curado/tema=permisos/fecha=<AAAA-MM-DD>/permisos.json",
   "campo": "permisos_barrio_<AAAA>",
   "nombre_original": "neighborhood, issue_permit_date",
   "significado": "Permisos emitidos por barrio en cada uno de los últimos 5 años completos. Barrios con menos de 5 no aparecen.",
@@ -1651,7 +1651,7 @@
  },
  {
   "fuente": "F93",
-  "archivo": "lago/raw/territorio/territorio.json",
+  "archivo": "lago/curado/tema=territorio/fecha=<AAAA-MM-DD>/territorio.json",
   "campo": "poligonos_lagos",
   "nombre_original": "(conteo)",
   "significado": "Cantidad de polígonos de la capa de lagos.",
@@ -1681,7 +1681,7 @@
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "poblacion_ciudad / poblacion_barrio / poblacion_ciudades",
   "nombre_original": "B01003001",
   "significado": "Habitantes de Orlando (cifra oficial), de cada barrio (estimado) y de las ciudades pares.",
@@ -1691,12 +1691,12 @@
   "puede_vacio": "No",
   "rango": "≥ 0",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos); los conteos se reparten por la fracción del sector que cae en cada barrio",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos); los conteos se reparten por la fracción del sector que cae en cada barrio",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "ingreso_mediano_ciudad / ingreso_mediano_barrio / ingreso_mediano_ciudades",
   "nombre_original": "B19013001",
   "significado": "Ingreso mediano de los hogares. En barrios es una mediana aproximada (promedio de las medianas de los sectores, ponderado por población).",
@@ -1706,12 +1706,12 @@
   "puede_vacio": "Sí",
   "rango": "5 000 a 300 000",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos); barrios con menos de 200 habitantes quedan vacíos",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos); barrios con menos de 200 habitantes quedan vacíos",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "arriendo_mediano_ciudad / arriendo_mediano_barrio / arriendo_mediano_ciudades",
   "nombre_original": "B25064001",
   "significado": "Arriendo bruto mediano (incluye servicios) que pagan los hogares que arriendan.",
@@ -1721,12 +1721,12 @@
   "puede_vacio": "Sí",
   "rango": "200 a 5 000",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos); mediana aproximada en barrios",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos); mediana aproximada en barrios",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "valor_vivienda_ciudad / valor_vivienda_barrio / valor_vivienda_ciudades",
   "nombre_original": "B25077001",
   "significado": "Valor mediano de la vivienda propia según sus dueños.",
@@ -1736,12 +1736,12 @@
   "puede_vacio": "Sí",
   "rango": "10 000 a 3 000 000",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos); mediana aproximada en barrios",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos); mediana aproximada en barrios",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "edad_mediana_ciudad / edad_mediana_barrio / edad_mediana_ciudades",
   "nombre_original": "B01002001",
   "significado": "Edad mediana de los habitantes.",
@@ -1751,12 +1751,12 @@
   "puede_vacio": "Sí",
   "rango": "10 a 90",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos); mediana aproximada en barrios",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos); mediana aproximada en barrios",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "pct_arrendatarios_ciudad / pct_arrendatarios_barrio / pct_arrendatarios_ciudades",
   "nombre_original": "B25003003 / B25003001",
   "significado": "Hogares que arriendan sobre el total de hogares.",
@@ -1766,12 +1766,12 @@
   "puede_vacio": "Sí",
   "rango": "0 a 100",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos); el porcentaje se calcula después de sumar numerador y denominador por barrio",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos); el porcentaje se calcula después de sumar numerador y denominador por barrio",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "pct_carga_arriendo_ciudad / pct_carga_arriendo_barrio / pct_carga_arriendo_ciudades",
   "nombre_original": "B25070007…010 / (B25070001 − B25070011)",
   "significado": "Hogares que arriendan y gastan 30 % o más de su ingreso en arriendo, sobre los que tienen el dato calculado.",
@@ -1781,12 +1781,12 @@
   "puede_vacio": "Sí",
   "rango": "0 a 100",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos)",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos)",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "pct_sin_carro_ciudad / pct_sin_carro_barrio / pct_sin_carro_ciudades",
   "nombre_original": "B08201002 / B08201001",
   "significado": "Hogares sin ningún vehículo disponible.",
@@ -1796,12 +1796,12 @@
   "puede_vacio": "Sí",
   "rango": "0 a 100",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos)",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos)",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "minutos_al_trabajo_ciudad / minutos_al_trabajo_barrio / minutos_al_trabajo_ciudades",
   "nombre_original": "B08013001 / B08303001",
   "significado": "Minutos promedio de viaje al trabajo (tiempo total de viaje dividido por trabajadores que no trabajan en casa).",
@@ -1811,12 +1811,12 @@
   "puede_vacio": "Sí",
   "rango": "5 a 90",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos)",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos)",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "pct_pobreza_ciudad / pct_pobreza_barrio / pct_pobreza_ciudades",
   "nombre_original": "(C17002002 + C17002003) / C17002001",
   "significado": "Personas con ingreso por debajo de la línea de pobreza.",
@@ -1826,12 +1826,12 @@
   "puede_vacio": "Sí",
   "rango": "0 a 100",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos)",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos)",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "pct_universitarios_ciudad / pct_universitarios_barrio / pct_universitarios_ciudades",
   "nombre_original": "B15003022…025 / B15003001",
   "significado": "Personas de 25 años o más con título universitario (pregrado, maestría, profesional o doctorado).",
@@ -1841,12 +1841,12 @@
   "puede_vacio": "Sí",
   "rango": "0 a 100",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos)",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos)",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "pct_espanol_ciudad / pct_espanol_barrio / pct_espanol_ciudades",
   "nombre_original": "C16001003 / C16001001",
   "significado": "Personas de 5 años o más que hablan español en casa.",
@@ -1856,12 +1856,12 @@
   "puede_vacio": "Sí",
   "rango": "0 a 100",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos)",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos)",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "pct_vacantes_ciudad / pct_vacantes_barrio / pct_vacantes_ciudades",
   "nombre_original": "B25002003 / B25002001",
   "significado": "Viviendas desocupadas sobre el total de viviendas.",
@@ -1871,18 +1871,18 @@
   "puede_vacio": "Sí",
   "rango": "0 a 100",
   "clasificacion": "Pública",
-  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 150 m sin lagos)",
+  "transformacion": "Promedio ACS 2020-2024; barrios: reparto por superficie compartida (rejilla de 40 m sin lagos)",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F12",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "poblacion_estimada_en_barrios / diferencia_con_cifra_oficial / barrios_con_estimacion / sectores_usados / minimo_habitantes_por_barrio",
   "nombre_original": "(calculado)",
   "significado": "Control de la estimación por barrio: suma de los barrios, su diferencia con la cifra oficial, cuántos barrios y sectores entran y el mínimo de habitantes para publicar porcentajes y medianas.",
   "tipo": "Decimal",
   "unidad": "personas / % / barrios / sectores",
-  "ejemplo": "313636",
+  "ejemplo": "314042",
   "puede_vacio": "No",
   "rango": "≥ 0",
   "clasificacion": "Pública",
@@ -1891,22 +1891,22 @@
  },
  {
   "fuente": "F78",
-  "archivo": "lago/raw/censo/censo.json",
+  "archivo": "lago/curado/tema=censo/fecha=<AAAA-MM-DD>/censo.json",
   "campo": "cobertura_barrio",
   "nombre_original": "(calculado con TIGER 2024)",
   "significado": "Qué parte del barrio queda cubierta por sectores censales con dato.",
   "tipo": "Decimal",
   "unidad": "% del barrio",
-  "ejemplo": "33rd St. Industrial → 100.0",
+  "ejemplo": "Airport North → 100.0",
   "puede_vacio": "No",
   "rango": "0 a 100",
   "clasificacion": "Pública",
-  "transformacion": "Rejilla de 150 m sin lagos",
+  "transformacion": "Rejilla de 40 m sin lagos",
   "pregunta": "¿Quién vive en cada barrio y qué tiene cerca?"
  },
  {
   "fuente": "F108",
-  "archivo": "lago/raw/riesgo/riesgo.json",
+  "archivo": "lago/curado/tema=riesgo/fecha=<AAAA-MM-DD>/riesgo.json",
   "campo": "riesgo_total_barrio / riesgo_total_promedio_barrios",
   "nombre_original": "RISK_SCORE",
   "significado": "Puntaje de riesgo total de FEMA: percentil nacional de 0 a 100 (más alto, más riesgo).",
@@ -1921,7 +1921,7 @@
  },
  {
   "fuente": "F108",
-  "archivo": "lago/raw/riesgo/riesgo.json",
+  "archivo": "lago/curado/tema=riesgo/fecha=<AAAA-MM-DD>/riesgo.json",
   "campo": "riesgo_huracan_barrio / riesgo_inundacion_barrio / riesgo_calor_barrio / riesgo_tornado_barrio",
   "nombre_original": "HRCN_RISKS, IFLD_RISKS, HWAV_RISKS, TRND_RISKS",
   "significado": "Puntaje de riesgo por peligro: huracán, inundación fluvial, ola de calor y tornado.",
@@ -1936,13 +1936,13 @@
  },
  {
   "fuente": "F108",
-  "archivo": "lago/raw/riesgo/riesgo.json",
+  "archivo": "lago/curado/tema=riesgo/fecha=<AAAA-MM-DD>/riesgo.json",
   "campo": "riesgo_<peligro>_promedio_barrios",
   "nombre_original": "(calculado)",
   "significado": "Promedio de los barrios para cada peligro.",
   "tipo": "Decimal",
   "unidad": "puntaje de 0 a 100",
-  "ejemplo": "55.1",
+  "ejemplo": "55.0",
   "puede_vacio": "No",
   "rango": "0 a 100",
   "clasificacion": "Pública",
@@ -1951,13 +1951,13 @@
  },
  {
   "fuente": "F108",
-  "archivo": "lago/raw/riesgo/riesgo.json",
+  "archivo": "lago/curado/tema=riesgo/fecha=<AAAA-MM-DD>/riesgo.json",
   "campo": "vulnerabilidad_social_barrio / vulnerabilidad_social_promedio_barrios",
   "nombre_original": "SOVI_SCORE",
   "significado": "Vulnerabilidad social de FEMA (qué tan difícil le es a la gente prepararse y recuperarse), percentil nacional.",
   "tipo": "Decimal",
   "unidad": "puntaje de 0 a 100",
-  "ejemplo": "Bryn Mawr → 95.8",
+  "ejemplo": "Bryn Mawr → 95.9",
   "puede_vacio": "Sí",
   "rango": "0 a 100",
   "clasificacion": "Pública",
@@ -1966,13 +1966,13 @@
  },
  {
   "fuente": "F108",
-  "archivo": "lago/raw/riesgo/riesgo.json",
+  "archivo": "lago/curado/tema=riesgo/fecha=<AAAA-MM-DD>/riesgo.json",
   "campo": "perdida_anual_esperada_barrio / perdida_anual_esperada_ciudad",
   "nombre_original": "EAL_VALT",
   "significado": "Pérdida económica que se espera en promedio cada año por todos los peligros.",
   "tipo": "Decimal",
   "unidad": "dólares al año",
-  "ejemplo": "Metro West → 6498456",
+  "ejemplo": "Metro West → 6480488",
   "puede_vacio": "Sí",
   "rango": "≥ 0",
   "clasificacion": "Pública",
@@ -1981,7 +1981,7 @@
  },
  {
   "fuente": "F107",
-  "archivo": "lago/raw/servicios/servicios.json",
+  "archivo": "lago/curado/tema=servicios/fecha=<AAAA-MM-DD>/servicios.json",
   "campo": "parques_barrio / parques_km2_barrio / parques_ciudad / parques_km2_ciudad / barrios_sin_parque",
   "nombre_original": "TYPE (OrlandoParks)",
   "significado": "Parques de la ciudad dentro de cada barrio, su superficie y cuántos barrios no tienen ninguno.",
@@ -1996,7 +1996,7 @@
  },
  {
   "fuente": "F107",
-  "archivo": "lago/raw/servicios/servicios.json",
+  "archivo": "lago/curado/tema=servicios/fecha=<AAAA-MM-DD>/servicios.json",
   "campo": "colegios_barrio / charter_barrio / colegios_ciudad / charter_ciudad / barrios_sin_colegio_publico / colegios_fuera_de_la_ciudad",
   "nombre_original": "FAC_TYPE (Schools)",
   "significado": "Colegios públicos y chárter por barrio. Solo se pide el tipo: el director y el teléfono no se descargan.",
@@ -2011,7 +2011,7 @@
  },
  {
   "fuente": "F107",
-  "archivo": "lago/raw/servicios/servicios.json",
+  "archivo": "lago/curado/tema=servicios/fecha=<AAAA-MM-DD>/servicios.json",
   "campo": "sunrail_barrio / sunrail_ciudad",
   "nombre_original": "StationNameAlt",
   "significado": "Estaciones de SunRail (tren regional) dentro de cada barrio.",
@@ -2026,7 +2026,7 @@
  },
  {
   "fuente": "F107",
-  "archivo": "lago/raw/servicios/servicios.json",
+  "archivo": "lago/curado/tema=servicios/fecha=<AAAA-MM-DD>/servicios.json",
   "campo": "ciclovias_km_barrio / ciclovias_km_ciudad",
   "nombre_original": "Type (OrlandoBikeRoutes)",
   "significado": "Kilómetros de ciclovía y ruta para bicicleta.",
@@ -2041,28 +2041,28 @@
  },
  {
   "fuente": "F107",
-  "archivo": "lago/raw/planeacion/planeacion.json",
+  "archivo": "lago/curado/tema=planeacion/fecha=<AAAA-MM-DD>/planeacion.json",
   "campo": "poblacion_2017_barrio / poblacion_2045_barrio / poblacion_2017_ciudad / poblacion_2045_ciudad",
   "nombre_original": "ResPop2017, ResPop2045",
   "significado": "Residentes en 2017 y proyectados por la ciudad a 2045 (zonas de análisis de tránsito).",
   "tipo": "Decimal",
   "unidad": "personas",
-  "ejemplo": "Metro West → 19951",
+  "ejemplo": "Metro West → 20201",
   "puede_vacio": "Sí",
   "rango": "≥ 0",
   "clasificacion": "Pública",
-  "transformacion": "Cada zona se reparte entre barrios por superficie (rejilla de 150 m)",
+  "transformacion": "Cada zona se reparte entre barrios por superficie (rejilla de 40 m)",
   "pregunta": "¿Hacia dónde va cada barrio: crecimiento proyectado, proyectos e incentivos?"
  },
  {
   "fuente": "F107",
-  "archivo": "lago/raw/planeacion/planeacion.json",
+  "archivo": "lago/curado/tema=planeacion/fecha=<AAAA-MM-DD>/planeacion.json",
   "campo": "empleo_2017_barrio / empleo_2045_barrio / empleo_2017_ciudad / empleo_2045_ciudad",
   "nombre_original": "EmpPop2017, EmpPop2045",
   "significado": "Empleos en 2017 y proyectados a 2045.",
   "tipo": "Decimal",
   "unidad": "empleos",
-  "ejemplo": "Central Business District → 34499",
+  "ejemplo": "Central Business District → 34195",
   "puede_vacio": "Sí",
   "rango": "≥ 0",
   "clasificacion": "Pública",
@@ -2071,13 +2071,13 @@
  },
  {
   "fuente": "F107",
-  "archivo": "lago/raw/planeacion/planeacion.json",
+  "archivo": "lago/curado/tema=planeacion/fecha=<AAAA-MM-DD>/planeacion.json",
   "campo": "crecimiento_poblacion_2045_barrio / crecimiento_empleo_2045_barrio / crecimiento_poblacion_2045_ciudad / crecimiento_empleo_2045_ciudad",
   "nombre_original": "(calculado)",
   "significado": "Cambio porcentual proyectado entre 2017 y 2045.",
   "tipo": "Decimal",
   "unidad": "%",
-  "ejemplo": "Princeton/Silver Star → 1168.8",
+  "ejemplo": "Princeton/Silver Star → 1153.9",
   "puede_vacio": "Sí",
   "rango": "−100 a 5 000",
   "clasificacion": "Pública",
@@ -2086,7 +2086,7 @@
  },
  {
   "fuente": "F107",
-  "archivo": "lago/raw/planeacion/planeacion.json",
+  "archivo": "lago/curado/tema=planeacion/fecha=<AAAA-MM-DD>/planeacion.json",
   "campo": "zona_oportunidad_barrio / main_street_barrio / cra_barrio / barrios_en_zona_oportunidad / barrios_en_main_street / barrios_en_cra",
   "nombre_original": "NAME, BUISNESSNE, CRAName",
   "significado": "Qué parte de cada barrio está en una Zona de Oportunidad federal, un distrito Main Street o un Área de Redesarrollo (CRA), y cuántos barrios tocan cada programa.",
@@ -2096,12 +2096,12 @@
   "puede_vacio": "Sí",
   "rango": "0 a 100",
   "clasificacion": "Pública",
-  "transformacion": "Rejilla de 150 m; se publica desde 5 % del barrio",
+  "transformacion": "Rejilla de 40 m; se publica desde 5 % del barrio",
   "pregunta": "¿Hacia dónde va cada barrio: crecimiento proyectado, proyectos e incentivos?"
  },
  {
   "fuente": "F86",
-  "archivo": "lago/raw/planeacion/planeacion.json",
+  "archivo": "lago/curado/tema=planeacion/fecha=<AAAA-MM-DD>/planeacion.json",
   "campo": "solicitudes_barrio_<AAAA>",
   "nombre_original": "neighborhood, application_date",
   "significado": "Solicitudes de planeación por barrio y año (2021 a 2025). Barrios con menos de 5 no aparecen.",
@@ -2116,7 +2116,7 @@
  },
  {
   "fuente": "F86",
-  "archivo": "lago/raw/planeacion/planeacion.json",
+  "archivo": "lago/curado/tema=planeacion/fecha=<AAAA-MM-DD>/planeacion.json",
   "campo": "proyectos_grandes_barrio",
   "nombre_original": "substring(application_number,1,3)",
   "significado": "Solicitudes de proyectos grandes en los dos últimos años: planes maestros, subdivisiones, rezonificaciones, enmiendas al plan, anexiones y desarrollos de impacto regional (MPL, SUB, ZON, GMP, ANX, DRI).",
@@ -2131,7 +2131,7 @@
  },
  {
   "fuente": "F86",
-  "archivo": "lago/raw/planeacion/planeacion.json",
+  "archivo": "lago/curado/tema=planeacion/fecha=<AAAA-MM-DD>/planeacion.json",
   "campo": "solicitudes_abiertas_barrio / solicitudes_abiertas",
   "nombre_original": "application_status",
   "significado": "Solicitudes en estado abierto o en espera (Open, Hold, Hardhold).",
@@ -2146,7 +2146,7 @@
  },
  {
   "fuente": "F86",
-  "archivo": "lago/raw/planeacion/planeacion.json",
+  "archivo": "lago/curado/tema=planeacion/fecha=<AAAA-MM-DD>/planeacion.json",
   "campo": "solicitudes_por_anio / tipos_2025 / solicitudes_ultimo_anio / barrios_suprimidos_solicitudes / umbral_minimo_por_barrio",
   "nombre_original": "application_date, application_number",
   "significado": "Solicitudes de toda la ciudad por año y por tipo (en español), y control del umbral.",
@@ -2161,7 +2161,7 @@
  },
  {
   "fuente": "F96",
-  "archivo": "lago/raw/planeacion/planeacion.json",
+  "archivo": "lago/curado/tema=planeacion/fecha=<AAAA-MM-DD>/planeacion.json",
   "campo": "anexiones_por_decada / anexiones_10_anios / acres_anexados_10_anios",
   "nombre_original": "year, legaldescriptionacres",
   "significado": "Cuántas anexiones tuvo la ciudad por década y cuántos acres sumó en los últimos 10 años.",
@@ -2176,7 +2176,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/gente/gente.json",
+  "archivo": "lago/curado/tema=gente/fecha=<AAAA-MM-DD>/gente.json",
   "campo": "poblacion_<condado> / crecimiento_10_anios_condados / puesto_crecimiento_entre_pares",
   "nombre_original": "FLHILL7POP, FLDUVA0POP, FLMIAM6POP, FLPOP",
   "significado": "Población anual de Orange, Hillsborough, Duval, Miami-Dade y Florida, su crecimiento en diez años y el puesto de Orange.",
@@ -2191,7 +2191,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/gente/gente.json",
+  "archivo": "lago/curado/tema=gente/fecha=<AAAA-MM-DD>/gente.json",
   "campo": "ingreso_por_persona_<condado> / ingreso_por_persona_condado / puesto_ingreso_por_persona",
   "nombre_original": "PCPI12095, PCPI12057, PCPI12031, PCPI12086, FLPCPI",
   "significado": "Ingreso personal por habitante (BEA): todo el ingreso del condado dividido por su gente.",
@@ -2206,7 +2206,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/gente/gente.json",
+  "archivo": "lago/curado/tema=gente/fecha=<AAAA-MM-DD>/gente.json",
   "campo": "ipc_sur_anual / ingreso_real_10_anios",
   "nombre_original": "CUUR0300SA0",
   "significado": "Índice de precios al consumidor de la región Sur (promedio anual) y cambio del ingreso de los hogares de Orange en diez años, ya sin inflación.",
@@ -2221,7 +2221,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/economia/economia.json",
+  "archivo": "lago/curado/tema=economia/fecha=<AAAA-MM-DD>/economia.json",
   "campo": "salario_hora_<área> / salario_hora_ultimo_mes / variacion_salario_12_meses / puesto_salario_entre_pares / salario_frente_a_pares",
   "nombre_original": "SMU12367400500000003, SMU12453000500000003, SMU12331000500000003, SMU12272600500000003",
   "significado": "Salario promedio por hora del sector privado en Orlando, Tampa, Miami y Jacksonville; cambio en 12 meses y comparación.",
@@ -2236,7 +2236,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/economia/economia.json",
+  "archivo": "lago/curado/tema=economia/fecha=<AAAA-MM-DD>/economia.json",
   "campo": "solicitudes_negocio_florida / solicitudes_negocio_eeuu / solicitudes_negocio_florida_12_meses / variacion_solicitudes_negocio_florida / participacion_florida_en_negocios_eeuu",
   "nombre_original": "BABATOTALSAFL, BABATOTALSAUS",
   "significado": "Solicitudes de registro de nuevos negocios (Census, Business Formation Statistics) en Florida y EE. UU.",
@@ -2251,7 +2251,7 @@
  },
  {
   "fuente": "F41",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "arriendo_tipico_<área> / arriendo_tipico_ultimo_mes / variacion_arriendo_12_meses",
   "nombre_original": "ZORI (RegionName)",
   "significado": "Arriendo típico al mes (índice de Zillow, viviendas de todo tipo) en Orlando, Tampa, Miami, Jacksonville y EE. UU.",
@@ -2266,7 +2266,7 @@
  },
  {
   "fuente": "F41",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "valor_tipico_<área> / valor_tipico_ultimo_mes / variacion_valor_12_meses / rentabilidad_bruta_arriendo",
   "nombre_original": "ZHVI (RegionName)",
   "significado": "Valor típico de la vivienda (índice de Zillow, tercio medio del mercado) y rentabilidad bruta del arriendo (arriendo de un año sobre el valor).",
@@ -2281,7 +2281,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "rebajas / rebajas_<área> / pct_con_rebaja_ultimo_mes / pct_con_rebaja_hace_un_anio / precio_pie2",
   "nombre_original": "PRIREDCOU36740, MEDLISPRIPERSQUFEE36740",
   "significado": "Viviendas en venta que bajaron de precio en el mes (Realtor.com) y su peso en el inventario; precio de lista por pie cuadrado.",
@@ -2296,7 +2296,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/vivienda/vivienda.json",
+  "archivo": "lago/curado/tema=vivienda/fecha=<AAAA-MM-DD>/vivienda.json",
   "campo": "precio_mediano_lista_<área> / dias_en_mercado_<área> / casas_en_venta_<área>",
   "nombre_original": "MEDLISPRI, MEDDAYONMAR, ACTLISCOU (45300, 33100, 27260)",
   "significado": "Inventario de Realtor.com de Tampa, Miami y Jacksonville para comparar el mercado.",
@@ -2311,7 +2311,7 @@
  },
  {
   "fuente": "F14",
-  "archivo": "lago/raw/turismo/turismo.json",
+  "archivo": "lago/curado/tema=turismo/fecha=<AAAA-MM-DD>/turismo.json",
   "campo": "participacion_ocio_<área> / puesto_ocio_entre_pares",
   "nombre_original": "TAMP312LEIH/TAMP312NA, MIAM112LEIH/MIAM112NA, JACK212LEIH/JACK212NA",
   "significado": "Peso del empleo en ocio y hotelería en Tampa, Miami y Jacksonville, y el puesto de Orlando.",
@@ -2326,7 +2326,7 @@
  },
  {
   "fuente": "F71",
-  "archivo": "lago/raw/escucha/escucha.json",
+  "archivo": "lago/curado/tema=escucha/fecha=<AAAA-MM-DD>/escucha.json",
   "campo": "vistas_ingles_<ciudad> / vistas_ingles_12_meses / puesto_ingles_entre_pares",
   "nombre_original": "views (en.wikipedia)",
   "significado": "Vistas mensuales de los artículos de las cuatro ciudades en Wikipedia en inglés.",
@@ -2341,7 +2341,7 @@
  },
  {
   "fuente": "F81",
-  "archivo": "lago/raw/negocios/negocios.json",
+  "archivo": "lago/curado/tema=negocios/fecha=<AAAA-MM-DD>/negocios.json",
   "campo": "comercio_barrio / belleza_barrio / profesionales_barrio / cuidado_infantil_barrio / automotor_barrio",
   "nombre_original": "license_category (MERCNT, PARLOR, PROFES, CHILDC, AUTOMO)",
   "significado": "Licencias vigentes por barrio de comercio, salones de belleza, servicios profesionales, cuidado infantil y talleres. Barrios con menos de 5 no aparecen.",
@@ -2356,7 +2356,7 @@
  },
  {
   "fuente": "F81",
-  "archivo": "lago/raw/negocios/negocios.json",
+  "archivo": "lago/curado/tema=negocios/fecha=<AAAA-MM-DD>/negocios.json",
   "campo": "aperturas_barrio_<AAAA>",
   "nombre_original": "business_open_date",
   "significado": "Negocios con fecha de apertura en el último año completo, por barrio. Barrios con menos de 5 no aparecen.",
@@ -2368,5 +2368,155 @@
   "clasificacion": "Sensible",
   "transformacion": "Filtro de fecha en el servidor; supresión bajo el umbral",
   "pregunta": "¿Dónde conviene abrir un negocio?"
+ },
+ {
+  "fuente": "F25",
+  "archivo": "lago/curado/tema=trafico/fecha=<AAAA-MM-DD>/trafico.json",
+  "campo": "vias_mas_cargadas",
+  "nombre_original": "AADT, ROADWAY + NAME (RCI)",
+  "significado": "Vehículos al día en el tramo más cargado de cada vía con nombre que toca la ciudad",
+  "tipo": "Entero",
+  "unidad": "vehículos al día",
+  "ejemplo": "SR-408 → 196500",
+  "puede_vacio": "No",
+  "rango": "> 0",
+  "clasificacion": "Pública",
+  "transformacion": "Máximo del AADT por vía; nombre por solape de kilometraje (BEGIN_POST/END_POST) con la capa de nombres",
+  "pregunta": "¿Cómo se mueve la gente?"
+ },
+ {
+  "fuente": "F25",
+  "archivo": "lago/curado/tema=trafico/fecha=<AAAA-MM-DD>/trafico.json",
+  "campo": "trafico_max_barrio",
+  "nombre_original": "AADT + línea del tramo",
+  "significado": "Tráfico de la vía más cargada que cruza cada barrio",
+  "tipo": "Entero",
+  "unidad": "vehículos al día",
+  "ejemplo": "Florida Center → 181500",
+  "puede_vacio": "Sí (barrio sin vía con conteo)",
+  "rango": "> 0",
+  "clasificacion": "Pública",
+  "transformacion": "Punto en polígono con los vértices y puntos medios de cada tramo",
+  "pregunta": "¿Qué pasa en cada barrio?"
+ },
+ {
+  "fuente": "F25",
+  "archivo": "lago/curado/tema=trafico/fecha=<AAAA-MM-DD>/trafico.json",
+  "campo": "mediana_aadt_por_anio",
+  "nombre_original": "AADT (capa histórica), COSITE, YEAR_",
+  "significado": "Mediana del tráfico diario de las mismas estaciones de conteo de la ciudad, por año",
+  "tipo": "Entero",
+  "unidad": "vehículos al día",
+  "ejemplo": "2025 → 10350",
+  "puede_vacio": "No",
+  "rango": "> 0",
+  "clasificacion": "Pública",
+  "transformacion": "Solo años con al menos la mitad de las estaciones",
+  "pregunta": "¿Cómo se mueve la gente?"
+ },
+ {
+  "fuente": "F109",
+  "archivo": "lago/curado/tema=trafico/fecha=<AAAA-MM-DD>/trafico.json",
+  "campo": "muertes_por_anio",
+  "nombre_original": "FATALS (suma)",
+  "significado": "Personas muertas en choques de tránsito dentro de la ciudad, por año",
+  "tipo": "Entero",
+  "unidad": "personas",
+  "ejemplo": "2024 → 32",
+  "puede_vacio": "No",
+  "rango": "≥ 0",
+  "clasificacion": "Sensible",
+  "transformacion": "Estadística pedida al servidor por año (CITY = 2360); nunca se baja un choque",
+  "pregunta": "¿Qué tan seguras son las vías?"
+ },
+ {
+  "fuente": "F109",
+  "archivo": "lago/curado/tema=trafico/fecha=<AAAA-MM-DD>/trafico.json",
+  "campo": "choques_mortales_por_anio",
+  "nombre_original": "ST_CASE (conteo)",
+  "significado": "Choques con al menos un muerto dentro de la ciudad, por año",
+  "tipo": "Entero",
+  "unidad": "choques",
+  "ejemplo": "2024 → 32",
+  "puede_vacio": "No",
+  "rango": "≥ 0",
+  "clasificacion": "Sensible",
+  "transformacion": "Estadística por año en el servidor",
+  "pregunta": "¿Qué tan seguras son las vías?"
+ },
+ {
+  "fuente": "F109",
+  "archivo": "lago/curado/tema=trafico/fecha=<AAAA-MM-DD>/trafico.json",
+  "campo": "choques_con_peaton_por_anio",
+  "nombre_original": "A_PED = 1",
+  "significado": "Choques mortales con un peatón involucrado, por año",
+  "tipo": "Entero",
+  "unidad": "choques",
+  "ejemplo": "2024 → 7",
+  "puede_vacio": "No",
+  "rango": "≥ 0",
+  "clasificacion": "Sensible",
+  "transformacion": "Estadística agrupada por A_PED en el servidor",
+  "pregunta": "¿Qué tan seguras son las vías?"
+ },
+ {
+  "fuente": "F109",
+  "archivo": "lago/curado/tema=trafico/fecha=<AAAA-MM-DD>/trafico.json",
+  "campo": "vias_con_mas_choques_mortales",
+  "nombre_original": "TWAY_ID",
+  "significado": "Choques mortales de los últimos cinco años en cada vía (solo vías con 5 o más)",
+  "tipo": "Entero",
+  "unidad": "choques",
+  "ejemplo": "I-4 → 15",
+  "puede_vacio": "No",
+  "rango": "≥ 5",
+  "clasificacion": "Sensible",
+  "transformacion": "Estadística agrupada por vía; supresión bajo 5",
+  "pregunta": "¿Qué tan seguras son las vías?"
+ },
+ {
+  "fuente": "F21",
+  "archivo": "lago/curado/tema=transporte/fecha=<AAAA-MM-DD>/transporte.json",
+  "campo": "paradas_barrio",
+  "nombre_original": "stops.txt (stop_lat, stop_lon)",
+  "significado": "Paradas de bus dentro de cada barrio",
+  "tipo": "Entero",
+  "unidad": "paradas",
+  "ejemplo": "Florida Center → 60",
+  "puede_vacio": "Sí (barrio sin paradas)",
+  "rango": "≥ 1",
+  "clasificacion": "Pública",
+  "transformacion": "Punto en polígono",
+  "pregunta": "¿Cómo se mueve la gente?"
+ },
+ {
+  "fuente": "F21",
+  "archivo": "lago/curado/tema=transporte/fecha=<AAAA-MM-DD>/transporte.json",
+  "campo": "salidas_barrio",
+  "nombre_original": "stop_times.txt + trips.txt + calendar",
+  "significado": "Veces que para un bus en el barrio un miércoles normal del horario",
+  "tipo": "Entero",
+  "unidad": "paradas de bus en un día hábil",
+  "ejemplo": "Central Business District → 6498",
+  "puede_vacio": "Sí (barrio sin paradas)",
+  "rango": "≥ 1",
+  "clasificacion": "Pública",
+  "transformacion": "Primer miércoles sin excepciones dentro de la vigencia del feed",
+  "pregunta": "¿Cómo se mueve la gente?"
+ },
+ {
+  "fuente": "F21",
+  "archivo": "lago/curado/tema=transporte/fecha=<AAAA-MM-DD>/transporte.json",
+  "campo": "rutas_barrio",
+  "nombre_original": "trips.txt (route_id)",
+  "significado": "Rutas de bus distintas que paran en el barrio",
+  "tipo": "Entero",
+  "unidad": "rutas",
+  "ejemplo": "Central Business District → 32",
+  "puede_vacio": "Sí (barrio sin paradas)",
+  "rango": "≥ 1",
+  "clasificacion": "Pública",
+  "transformacion": "Rutas con al menos un viaje ese día",
+  "pregunta": "¿Cómo se mueve la gente?"
  }
 ]

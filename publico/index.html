@@ -1,0 +1,1283 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cerebro Orlando</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Siete preguntas sobre Orlando, Florida, respondidas con datos abiertos: gente, economía y vivienda, barrios, seguridad, turismo, clima y movilidad. Cada cifra con su fuente.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Overpass:wght@400..900&family=Overpass+Mono:wght@400;600&display=swap">
+<style>/* El punto medio (·) de Overpass no deja espacio a los lados (está hecho para la ele geminada del catalán): este
+   punto, sacado de Overpass Mono (licencia SIL OFL; renombrado «Punto» como pide la licencia) y centrado en 0,32 em,
+   lo reemplaza solo a él (unicode-range). Pesa 1 KB. */
+@font-face { font-family: "Punto"; src: url(data:font/woff;base64,d09GRgABAAAAAAQUAA4AAAAABLAAAQABAAAAAAAAAAAAAAAAAAAAAAAAAABHUE9TAAADnAAAACAAAAAgRHZMdUdTVUIAAAO8AAAALwAAADAjfiSMT1MvMgAAAbQAAABTAAAAYHUHYntTVEFUAAAD7AAAACcAAAAqeZNq5WNtYXAAAAIQAAAAKQAAADQADAEKZ2FzcAAAA5QAAAAIAAAACAAAABBnbHlmAAACRAAAAC4AAAAuzUNx72hlYWQAAAFEAAAANgAAADYlyJocaGhlYQAAAXwAAAAgAAAAJAloAn9obXR4AAACCAAAAAgAAAAIB1ABQmxvY2EAAAI8AAAABgAAAAYAFwAAbWF4cAAAAZwAAAAXAAAAIAAEAA1uYW1lAAACdAAAAQUAAAHOKYNH8XBvc3QAAAN8AAAAFgAAACD/RwCpAAEAAAAEAABVsfwUXw889QADB9AAAAAA3R+3KQAAAADnD5iyAKoCJwHWA08AAAAGAAIAAAAAAAB4nGNgZGBge/aXiYGB5QLDKoZVjNcYgCIogAkAfLoE73icY2BkYGBgYuBhANEMUBIJAAAByQASAHicY2BhOc8UwcDKwMAqwrKBgYFhGoRm2sOwgikVSHMzcDIzMTMxsQDlmBiQgIurTxjDAYbtDNvZnv0FynDyMH0BCjOC5Jj/sVYAKQUGFgBl2w1OAATQAJgCgACqeJxjYGBgYmBgYAZiESDJCKZZGBSANAsQgvjb//+HkP+9wHwGAFxFBxMAAAAAAAAAABcAAAABAKoCJwHWA08ACwAAASImNTQ2MzIWFRQGAT9AVVVAQFdXAidYOztaWjs7WAAAAHicXZDNSsNQEIW/2CooUlyLiyx1oVYpLlz5A+JCUFR07W9aSU1JUsGNz9S1T+Bz+CDil9uIJQyXOXNm5px7L7DEBy2i9iIw8UxxJD+p8RwdPmvcmuHbM3ieVb5qvMAa3zXusMfPFEewHPVq3GYlOuCYjBHv5AxI6FMSs0vXsyO6lnkyn/Nmzp28ozBiLqwyXmQfws4hY3NfLg/99aBVulGwz7aR6FBNjLlny62MoeylCo+cqlvq8mwM7A2sU7tN3w19x7w6m4XNxCq1l3MT5go3M/sxPT26If43NrlyaujMkVWqb/OOhd7VT4xkCxUqvdRcvSoJ9znhjFtV/n6rofgLA4dFoQAAAHicY2BmAIP/LgwrgBQjAxoAACxaAfAAAAABAAH//wAPAAEAAAAKABwAHgABREZMVAAIAAQAAAAA//8AAAAAAAB4nGNgZGBg4GLQYdBjYHZx8wlhEEmuLMphkMtJLMljkGNgAcoy/P/PAAcArlkHTgB4nGNgZGBk4ABiBgYRMCnDwFSenlECYjIwgUUYGFmYIhgYACwCAlwA) format("woff"); unicode-range: U+00B7; font-weight: 100 900; }
+/* Cerebro Orlando · v5 «señal y lago»
+   Diseño: una barra con las siete preguntas; cada vista abre con la respuesta en una frase y debajo la evidencia.
+   Overpass (de la letra de las señales viales de EE. UU.) para títulos, cifras y etiquetas; Atkinson Hyperlegible para leer.
+   Color solo en los datos: el verde azulado de lago para Orlando, el ámbar (sol) para lo comparado, rojo y verde para peor
+   y mejor. Superficies planas: una línea de 1px separa; la sombra queda para lo que flota (diálogos, globos, controles). */
+:root {
+  --bg: #f2f6f5;
+  --surface: #ffffff;
+  --surface-2: #e8efee;
+  --ink: #0f272c;
+  --ink-2: #43585c;
+  --muted: #5a6e71;
+  --line: #d3dfdd;
+  --accent: #0b6e7f;
+  --accent-ink: #ffffff;
+  --accent-soft: #d9eef0;
+  --sun: #d48a00; --sun-ink: #8a5a00;   /* el ámbar como texto: AA sobre blanco */
+  --good: #0a760a;
+  --warn: #9a6a00;
+  --bad: #c23434;
+  --seq-1: #d2ebee; --seq-2: #9ad0d8; --seq-3: #57adba; --seq-4: #1f8496; --seq-5: #0a5664;
+  --nodata: #e6ecea; --hatch: #a9b8b9;
+  --traf-1: #9fb3b6; --traf-2: #e7b631; --traf-3: #e88a2d; --traf-4: #d9502a; --traf-5: #a8231f;
+  --water: #a8d3e2; --water-line: #7db8cb;
+  --peer: #9aa9ab;
+  --c1: #2a78d6; --c2: #eb6834; --c3: #1baf7a;
+  --day: #eb6834; --night: #2a78d6;
+  --cold-3: #104281; --cold-2: #3987e5; --cold-1: #b7d3f6; --mid: #f0efec; --warm-1: #f6c3b4; --warm-2: #e34948; --warm-3: #8f1d1d;
+  --shadow: 0 2px 4px rgb(15 39 44 / .08), 0 12px 32px rgb(15 39 44 / .12);   /* solo para lo que flota */
+  --font-display: "Punto", "Overpass", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "Overpass Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  /* escala fija (razón ~1,2): metadato, etiqueta, cuerpo, subtítulo, respuesta, título, cifra, portada */
+  --t-1: .8125rem; --t-2: .875rem; --t-3: 1rem; --t-4: 1.125rem; --t-5: 1.375rem; --t-6: 1.75rem; --t-7: 2.25rem; --t-8: 3.5rem;
+  --r: 12px;         /* tarjetas y paneles */
+  --r-ctl: 8px;      /* botones, selectores y campos */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --dur-1: 120ms; --dur-2: 200ms;
+  --mov: 6px;        /* cuánto se desplaza lo que entra; 0 con movimiento reducido */
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1618; --surface: #112125; --surface-2: #172c31; --ink: #e3eeec; --ink-2: #a6babc; --muted: #7d9396;
+    --line: #243a3f; --accent: #46b6c7; --accent-ink: #052328; --accent-soft: #15383e; --sun: #f2b53f; --sun-ink: #f2b53f;
+    --good: #45c545; --warn: #f2b53f; --bad: #ef7070;
+    --seq-1: #16363c; --seq-2: #1c5560; --seq-3: #237b88; --seq-4: #36a3b3; --seq-5: #84d6e0;
+    --nodata: #18292d; --hatch: #3e5559; --water: #163f4b; --water-line: #23606f; --peer: #5f7477;
+    --traf-1: #4b6468; --traf-2: #e3b440; --traf-3: #f0913f; --traf-4: #f26b45; --traf-5: #ff9a8f;
+    --c1: #3987e5; --c2: #d95926; --c3: #199e70; --day: #d95926; --night: #3987e5;
+    --cold-3: #9ec5f4; --cold-2: #3987e5; --cold-1: #1c4f8a; --mid: #383835; --warm-1: #7a2e24; --warm-2: #e66767; --warm-3: #f6c3b4;
+    --shadow: 0 2px 4px rgb(0 0 0 / .35), 0 12px 32px rgb(0 0 0 / .35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1618; --surface: #112125; --surface-2: #172c31; --ink: #e3eeec; --ink-2: #a6babc; --muted: #7d9396;
+  --line: #243a3f; --accent: #46b6c7; --accent-ink: #052328; --accent-soft: #15383e; --sun: #f2b53f; --sun-ink: #f2b53f;
+  --good: #45c545; --warn: #f2b53f; --bad: #ef7070;
+  --seq-1: #16363c; --seq-2: #1c5560; --seq-3: #237b88; --seq-4: #36a3b3; --seq-5: #84d6e0;
+  --nodata: #18292d; --hatch: #3e5559; --water: #163f4b; --water-line: #23606f; --peer: #5f7477;
+  --traf-1: #4b6468; --traf-2: #e3b440; --traf-3: #f0913f; --traf-4: #f26b45; --traf-5: #ff9a8f;
+  --c1: #3987e5; --c2: #d95926; --c3: #199e70; --day: #d95926; --night: #3987e5;
+  --cold-3: #9ec5f4; --cold-2: #3987e5; --cold-1: #1c4f8a; --mid: #383835; --warm-1: #7a2e24; --warm-2: #e66767; --warm-3: #f6c3b4;
+  --shadow: 0 2px 4px rgb(0 0 0 / .35), 0 12px 32px rgb(0 0 0 / .35);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-padding-top: 130px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.55 var(--font-body); -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--surface); }
+a { color: var(--accent); text-underline-offset: 3px; }
+::selection { background: var(--accent-soft); color: var(--ink); }
+html { caret-color: var(--accent); scrollbar-color: var(--hatch) transparent; accent-color: var(--accent); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: var(--t-8); line-height: 1; font-weight: 900; letter-spacing: -0.02em; }
+h2 { font-size: var(--t-6); line-height: 1.12; font-weight: 800; }
+h3 { font-size: var(--t-4); line-height: 1.2; font-weight: 700; }
+@media (max-width: 720px) { h1 { font-size: var(--t-7); } h2 { font-size: var(--t-5); } }
+p { margin: 0; text-wrap: pretty; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); font-size: .82em; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+svg.i { width: 1.1em; height: 1.1em; flex: none; vertical-align: -0.18em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.muted { color: var(--muted); }
+.peq { font-size: var(--t-2); color: var(--ink-2); }
+
+/* ---------- barra superior ---------- */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--surface) 93%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; gap: 10px 16px; padding-block: 10px; flex-wrap: wrap; }
+.marca { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); margin-right: auto; min-width: 0; }
+.marca svg { width: 34px; height: 34px; flex: none; }
+.marca b { font: 900 1.25rem/1 var(--font-display); letter-spacing: -0.01em; display: block; }
+.marca small { display: block; font-size: .78rem; color: var(--muted); line-height: 1.2; margin-top: 2px; }
+.estado-lago { display: inline-flex; align-items: center; gap: 6px; font-size: .82rem; color: var(--ink-2); background: var(--surface-2); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px 5px 9px; cursor: pointer; }
+.estado-lago .pt { width: 8px; height: 8px; border-radius: 50%; background: var(--good); box-shadow: 0 0 0 3px color-mix(in srgb, var(--good) 22%, transparent); }
+.icono-btn { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; height: 38px; min-width: 38px; display: inline-grid; grid-auto-flow: column; gap: 6px; place-items: center; padding: 0 10px; cursor: pointer; font-weight: 700; font-size: .9rem; }
+.icono-btn.prim { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+nav.preguntas { width: 100%; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; margin-inline: -4px; padding: 2px 4px; }
+nav.preguntas::-webkit-scrollbar { display: none; }
+nav.preguntas a { flex: none; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; color: var(--ink-2); padding: 8px 10px; border-radius: 999px; font: 700 var(--t-2)/1.2 var(--font-display); white-space: nowrap; }
+nav.preguntas a svg { color: currentColor; opacity: .8; }
+nav.preguntas a:hover { background: var(--surface-2); color: var(--ink); }
+nav.preguntas a[aria-current="page"] { background: var(--ink); color: var(--surface); }
+nav.preguntas a[aria-current="page"] svg { color: var(--surface); }
+@media (max-width: 720px) { .marca small { display: none; } .estado-lago .largo, .icono-btn .largo { display: none; } }
+@media (max-width: 420px) { .estado-lago { display: none; } }
+/* en celular y tableta la marca cede espacio para que los botones quepan en la misma fila
+   (antes el de tema caía solo a una segunda fila en celular, y en tableta los botones se partían en dos filas) */
+@media (max-width: 1023px) { .marca small { display: none; } .top .wrap { column-gap: 8px; } .marca { flex: 1 1 0; } }
+
+/* ---------- vistas ---------- */
+main { padding-block: 26px 64px; }
+.vista { display: grid; gap: 28px; }
+.cabeza { display: grid; gap: 12px; max-width: 74ch; }
+/* metadato breve (ficha, parada, lámina): nunca como etiqueta encima de un título de sección */
+.eyebrow { font: 600 var(--t-2)/1.3 var(--font-display); color: var(--ink-2); display: flex; gap: 8px; align-items: center; }
+.lead { font-size: var(--t-4); color: var(--ink-2); max-width: 60ch; }
+.respuesta { font: 600 var(--t-5)/1.32 var(--font-display); color: var(--ink); max-width: 52ch; }
+@media (max-width: 720px) { .respuesta { font-size: var(--t-4); } }
+.titulo-bloque { font: 800 var(--t-4)/1.2 var(--font-display); color: var(--ink); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 20px; min-width: 0; }
+.panel { display: grid; gap: 14px; align-content: start; }
+.grid-3 { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.grid-2 { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); }
+.seccion { display: grid; gap: 14px; }
+.seccion > h2, .seccion > .barra-graf > h2 { font-size: var(--t-5); }
+
+/* respuestas y cifras */
+.resp { display: flex; flex-direction: column; gap: 12px; position: relative; transition: border-color var(--dur-1) ease; }
+@media (hover: hover) { .resp:hover { border-color: color-mix(in srgb, var(--ink) 35%, var(--line)); } }
+.resp .tema { display: flex; align-items: center; gap: 8px; font: 700 var(--t-2)/1.2 var(--font-display); color: var(--ink-2); }
+.ic { color: var(--ink-2); display: inline-grid; place-items: center; flex: none; }
+.resp .pregunta { font: 700 var(--t-4)/1.25 var(--font-display); }
+.resp .frase { color: var(--ink-2); font-size: .98rem; }
+.cifra { display: flex; align-items: baseline; gap: 6px 10px; flex-wrap: wrap; }
+.cifra b { font: 800 var(--t-7)/1 var(--font-display); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.cifra span { color: var(--ink-2); font-size: .93rem; }
+.vig { font: 400 .76rem/1.25 var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.resp .pie { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.resp > svg { margin-top: auto; flex: none; }
+.resp > svg + .pie { margin-top: 0; }
+.ver { font: 700 var(--t-2)/1.2 var(--font-display); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; display: inline-flex; gap: 6px; align-items: center; }
+.resp .ver::after { content: ""; position: absolute; inset: 0; border-radius: var(--r); }
+.resp .fuente, .resp .term { position: relative; z-index: 1; }
+.spark { width: 100%; height: 52px; display: block; }
+.tend { display: inline-flex; align-items: center; gap: 5px; font: 700 .82rem/1.2 var(--font-display); font-variant-numeric: tabular-nums; border-radius: 999px; padding: 3px 10px 3px 8px; border: 1px solid; white-space: nowrap; }
+.tend.sube { color: var(--good); border-color: color-mix(in srgb, var(--good) 40%, transparent); background: color-mix(in srgb, var(--good) 9%, transparent); }
+.tend.baja { color: var(--bad); border-color: color-mix(in srgb, var(--bad) 40%, transparent); background: color-mix(in srgb, var(--bad) 8%, transparent); }
+.tend.igual, .tend.neutra { color: var(--ink-2); border-color: var(--line); background: var(--surface-2); }
+.fuente { display: inline-flex; align-items: center; gap: 6px; font: 600 .76rem/1.25 var(--font-display); color: var(--ink-2); background: transparent; border: 1px dashed var(--hatch); border-radius: 8px; padding: 4px 8px; cursor: pointer; text-align: left; }
+@media (hover: hover) { .fuente:hover { border-style: solid; border-color: var(--accent); color: var(--ink); } }
+.fuente svg { color: var(--accent); }
+.term { border: 0; background: none; padding: 0; color: inherit; font: inherit; cursor: help; text-decoration: underline dotted var(--muted); text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+.nota { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; font-size: .94rem; color: var(--ink-2); background: var(--surface-2); border-radius: 12px; padding: 12px 14px; }
+.nota svg { margin-top: 3px; color: var(--accent); }
+.nota b { color: var(--ink); }
+.nota.privada svg { color: var(--sun); }
+.kpis { display: flex; gap: 14px 24px; flex-wrap: wrap; }
+.kpi small { display: block; color: var(--ink-2); font: 600 var(--t-2)/1.3 var(--font-display); }
+.kpi b { font: 800 var(--t-6)/1.1 var(--font-display); font-variant-numeric: tabular-nums; }
+.kpi .vig { display: block; margin-top: 2px; }
+.kpi .fila { display: flex; align-items: center; gap: 6px 10px; flex-wrap: wrap; }
+
+/* bloques (texto a la izquierda, gráfico a la derecha) */
+.bloque { display: grid; gap: 18px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 980px) { .bloque { grid-template-columns: minmax(250px, 330px) minmax(0, 1fr); gap: 28px; } }
+.bloque .lado { display: grid; gap: 14px; align-content: start; }
+.grafico { display: grid; gap: 10px; min-width: 0; align-content: start; }
+.barra-graf { display: flex; justify-content: space-between; align-items: center; gap: 8px 10px; flex-wrap: wrap; }
+.barra-graf h3 { font: 700 var(--t-3)/1.3 var(--font-display); }
+.seg { display: inline-flex; background: var(--surface-2); border-radius: calc(var(--r-ctl) + 3px); padding: 3px; gap: 2px; flex-wrap: wrap; }
+.seg button { border: 0; background: transparent; padding: 6px 11px; border-radius: var(--r-ctl); font: 700 var(--t-2)/1.2 var(--font-display); color: var(--ink-2); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
+.chart { width: 100%; min-height: 200px; position: relative; touch-action: pan-y; }
+.chart svg { display: block; width: 100%; overflow: visible; }
+.chart text { font: 500 12px var(--font-display); font-variant-numeric: tabular-nums; fill: var(--muted); }
+.chart .grid line { stroke: var(--line); }
+.chart .ref { stroke: var(--muted); stroke-dasharray: 4 4; }
+.chart .ref-t { fill: var(--ink-2); }
+.chart .anot { fill: var(--ink-2); font-family: var(--font-display); font-size: 12.5px; font-weight: 700; }
+.chart .etq { font-family: var(--font-display); font-size: 12.5px; font-weight: 700; }
+.chart .cruz { stroke: var(--ink-2); stroke-width: 1; }
+.leyenda { display: flex; gap: 6px 14px; flex-wrap: wrap; font: 600 var(--t-2)/1.3 var(--font-display); color: var(--ink-2); align-items: center; }
+.leyenda i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
+.leyenda button { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 3px 10px; font-size: .84rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.leyenda button[aria-pressed="false"] { opacity: .5; text-decoration: line-through; }
+.multiples { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.multiples .chart { min-height: 160px; }
+
+/* listas de barras */
+.ranking { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; }
+.ranking button, .ranking .fila { width: 100%; display: grid; grid-template-columns: 1.9em minmax(0, 1fr) auto; gap: 3px 10px; align-items: center; border: 0; background: transparent; text-align: left; padding: 6px 8px; border-radius: 10px; }
+.ranking button { cursor: pointer; }
+.ranking button:hover, .ranking button[aria-pressed="true"] { background: var(--surface-2); }
+.ranking .pos { color: var(--muted); font: 400 .8rem var(--font-mono); }
+.ranking .nom { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 700 var(--t-2)/1.3 var(--font-display); }
+.ranking .val { font: 700 var(--t-2)/1.3 var(--font-display); font-variant-numeric: tabular-nums; }
+.ranking .bar { grid-column: 2 / 4; height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.ranking .bar i { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+.ranking .yo .nom { color: var(--accent); }
+.ranking .par .bar i { background: var(--peer); }
+.ranking.sinpos button, .ranking.sinpos .fila { grid-template-columns: minmax(0, 1fr) auto; }
+.ranking.sinpos .pos { display: none; }
+.ranking.sinpos .bar { grid-column: 1 / 3; }
+
+/* ---------- inicio ---------- */
+.hero { display: grid; gap: 22px; align-items: center; }
+@media (min-width: 1020px) { .hero { grid-template-columns: minmax(0, .95fr) minmax(0, 1.3fr); } }
+.hero .texto { display: grid; gap: 16px; }
+.hero .linea { display: flex; gap: 8px 16px; flex-wrap: wrap; align-items: center; color: var(--ink-2); font-size: var(--t-2); }
+.hero .linea span { display: inline-flex; align-items: center; gap: 6px; }
+.acciones { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--surface); padding: 9px 15px; border-radius: var(--r-ctl); font: 700 var(--t-3)/1.2 var(--font-display); cursor: pointer; text-decoration: none; color: var(--ink); }
+@media (hover: hover) { .btn:hover { border-color: color-mix(in srgb, var(--ink) 40%, var(--line)); } .btn.oscuro:hover, .btn.prim:hover { border-color: transparent; filter: brightness(1.12); } }
+.btn.prim { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.oscuro { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.contra { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.contra .card { padding: 16px; display: grid; gap: 10px; align-content: start; }
+.contra h3 { font: 700 var(--t-3)/1.3 var(--font-display); }
+.pendientes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.pend { display: grid; gap: 6px; padding: 16px; border: 1px dashed var(--hatch); border-radius: var(--r); align-content: start; }
+.pend b { font: 700 var(--t-3)/1.3 var(--font-display); }
+.pend p { font-size: .92rem; color: var(--ink-2); }
+.como { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.como div { display: grid; grid-template-columns: auto 1fr; gap: 10px; font-size: .94rem; color: var(--ink-2); }
+.como svg { width: 22px; height: 22px; color: var(--ink-2); }
+.minimapa { width: 100%; height: 150px; display: block; }
+.minimapa path { stroke: var(--surface); stroke-width: .6; vector-effect: non-scaling-stroke; }
+
+/* ---------- mapa 3D ---------- */
+.atlas { position: relative; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+.atlas .lienzo3d { width: 100%; height: 100%; }
+.atlas .superior { position: absolute; left: calc(12px + env(safe-area-inset-left, 0px)); right: calc(12px + env(safe-area-inset-right, 0px)); top: 12px; display: flex; gap: 8px; flex-wrap: wrap; z-index: 3; pointer-events: none; }
+.atlas .superior > * { pointer-events: auto; }
+.lentes { display: inline-flex; flex-wrap: wrap; gap: 4px; background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(6px); border: 1px solid var(--line); border-radius: 12px; padding: 4px; box-shadow: var(--shadow); }
+.lentes button { border: 0; background: transparent; border-radius: 9px; padding: 6px 10px; font-size: .85rem; font-weight: 700; color: var(--ink-2); cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+.lentes button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+.atlas .controles { position: absolute; right: calc(12px + env(safe-area-inset-right, 0px)); bottom: 12px; display: grid; gap: 6px; z-index: 3; }
+.atlas .controles button { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); display: grid; place-items: center; cursor: pointer; box-shadow: var(--shadow); font: 700 .78rem var(--font-mono); }
+.atlas .ley3d { position: absolute; left: calc(12px + env(safe-area-inset-left, 0px)); bottom: 12px; z-index: 3; background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(6px); border: 1px solid var(--line); border-radius: 12px; padding: 8px 10px; font-size: .78rem; color: var(--ink-2); max-width: min(330px, calc(100% - 80px)); display: grid; gap: 5px; }
+.atlas .ley3d b { color: var(--ink); font-size: .82rem; }
+.atlas .ley3d .esc { display: flex; gap: 2px; }
+.atlas .ley3d .esc i { flex: 1; height: 8px; border-radius: 2px; }
+.atlas .ley3d .esc-t { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: .7rem; }
+.atlas .relato { position: absolute; left: 50%; transform: translateX(-50%); bottom: 14px; z-index: 4; width: min(520px, calc(100% - 24px)); background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; box-shadow: var(--shadow); display: grid; gap: 8px; }
+.atlas .relato .pasos { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.atlas .aviso3d { position: absolute; inset: 0; display: grid; place-items: center; padding: 20px; text-align: center; color: var(--ink-2); }
+.et-dist { font: 600 11px var(--font-mono); color: var(--ink); background: var(--surface); border: 1.2px solid var(--ink); border-radius: 999px; padding: 1px 6px; pointer-events: none; white-space: nowrap; }
+.maplibregl-map { overflow: hidden; position: relative; -webkit-tap-highlight-color: transparent; }
+.maplibregl-canvas { left: 0; position: absolute; top: 0; }
+.maplibregl-canvas-container.maplibregl-interactive { cursor: grab; user-select: none; }
+.maplibregl-canvas-container.maplibregl-interactive:active { cursor: grabbing; }
+.maplibregl-canvas-container.maplibregl-touch-zoom-rotate, .maplibregl-canvas-container.maplibregl-touch-zoom-rotate .maplibregl-canvas { touch-action: pan-x pan-y; }
+.maplibregl-canvas-container.maplibregl-touch-drag-pan, .maplibregl-canvas-container.maplibregl-touch-drag-pan .maplibregl-canvas { touch-action: pinch-zoom; }
+.maplibregl-canvas-container.maplibregl-touch-zoom-rotate.maplibregl-touch-drag-pan, .maplibregl-canvas-container.maplibregl-touch-zoom-rotate.maplibregl-touch-drag-pan .maplibregl-canvas { touch-action: none; }
+.maplibregl-canvas-container.maplibregl-touch-drag-pan.maplibregl-cooperative-gestures, .maplibregl-canvas-container.maplibregl-touch-drag-pan.maplibregl-cooperative-gestures .maplibregl-canvas { touch-action: pan-x pan-y; }
+.maplibregl-marker { left: 0; position: absolute; top: 0; will-change: transform; }
+.maplibregl-cooperative-gesture-screen { align-items: center; background: rgb(8 22 26 / .55); color: #fff; display: flex; font-size: 1.05rem; inset: 0; justify-content: center; line-height: 1.3; opacity: 0; padding: 1rem; pointer-events: none; position: absolute; text-align: center; transition: opacity 1s ease 1s; z-index: 5; }
+.maplibregl-cooperative-gesture-screen.maplibregl-show { opacity: 1; transition: opacity .05s; }
+.maplibregl-cooperative-gesture-screen .maplibregl-mobile-message { display: none; }
+@media (hover: none), (max-width: 480px) { .maplibregl-cooperative-gesture-screen .maplibregl-desktop-message { display: none; } .maplibregl-cooperative-gesture-screen .maplibregl-mobile-message { display: block; } }
+
+/* ---------- barrios (atlas) ---------- */
+.atlas-layout { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 1040px) { .atlas-layout { grid-template-columns: minmax(0, 1.65fr) minmax(330px, 1fr); } }
+.controles-atlas { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.anio { display: inline-flex; align-items: center; gap: 8px; background: var(--surface-2); border-radius: 10px; padding: 4px 10px 4px 6px; }
+.anio input[type="range"] { width: 120px; accent-color: var(--accent); }
+.anio b { font: 700 .95rem var(--font-mono); min-width: 3.2em; }
+.anio button { border: 0; background: var(--surface); border-radius: 8px; width: 30px; height: 30px; display: grid; place-items: center; cursor: pointer; }
+.buscar { position: relative; flex: 1 1 200px; min-width: 0; }
+.buscar input { width: 100%; padding: 9px 12px 9px 36px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.buscar svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+.ficha-barrio { display: grid; gap: 12px; }
+.ficha-barrio .titulo { display: flex; justify-content: space-between; gap: 10px; align-items: start; }
+.ficha-barrio h3 { font-size: 1.45rem; }
+.medidas { display: grid; gap: 2px; }
+.medida { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 2px 10px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: .93rem; }
+.medida:last-child { border-bottom: 0; }
+.medida .n { color: var(--ink-2); min-width: 0; }
+.medida .v { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
+.medida .v2 { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; color: var(--sun-ink); min-width: 4.2em; }
+.medida .r { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 8px; font-size: .78rem; color: var(--muted); }
+.medida .rb { height: 5px; background: var(--surface-2); border-radius: 3px; grid-column: 1 / -1; position: relative; overflow: hidden; }
+.medida .rb i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); border-radius: 3px; }
+.medida .rb u { position: absolute; top: -1px; bottom: -1px; width: 3px; background: var(--sun); border-radius: 2px; text-decoration: none; }
+select.sel { padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); max-width: 100%; }
+.pesos { display: grid; gap: 14px; align-content: start; }
+.peso { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; }
+.peso label { font-weight: 700; font-size: .94rem; }
+.peso output { font: 600 .85rem var(--font-mono); color: var(--ink-2); }
+.peso input { grid-column: 1 / -1; width: 100%; accent-color: var(--accent); margin: 2px 0 0; }
+.indice-layout { display: grid; gap: 18px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 980px) { .indice-layout { grid-template-columns: minmax(260px, 320px) minmax(0, 1fr) minmax(0, 1fr); } }
+.svgmapa { width: 100%; height: auto; display: block; }
+.svgmapa .b { stroke: var(--surface); stroke-width: .7; vector-effect: non-scaling-stroke; cursor: pointer; }
+.svgmapa .b:hover { stroke: var(--ink); stroke-width: 1.6; }
+.svgmapa .lago { fill: var(--water); stroke: none; pointer-events: none; }
+.svgmapa .lim { fill: none; stroke: var(--ink); stroke-width: 1; vector-effect: non-scaling-stroke; pointer-events: none; }
+.svgmapa .dist { fill: none; stroke: var(--ink); stroke-opacity: .45; stroke-width: 1; vector-effect: non-scaling-stroke; pointer-events: none; }
+.svgmapa .marca { fill: none; stroke-width: 3; stroke-linejoin: round; vector-effect: non-scaling-stroke; pointer-events: none; }
+.svgmapa .marca.sel { stroke: var(--ink); }
+.svgmapa .marca.comp { stroke: var(--sun); }
+.svgmapa .marca.halo { stroke: var(--surface); stroke-width: 6; stroke-opacity: .85; }
+.leyenda-comp .quien { display: inline-flex; vertical-align: middle; }
+.ley-mapa { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; font-size: .82rem; color: var(--ink-2); }
+.ley-mapa .sw { display: inline-flex; gap: 6px; align-items: center; }
+.ley-mapa .sw i { width: 16px; height: 12px; border-radius: 3px; display: inline-block; border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent); }
+.ley-mapa .sw i.nd { background: repeating-linear-gradient(45deg, var(--nodata) 0 3px, var(--hatch) 3px 4.5px); }
+.tabla-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { padding: 7px 9px; border-bottom: 1px solid var(--line); text-align: left; }
+th { font: 700 var(--t-1) var(--font-display); color: var(--ink-2); white-space: nowrap; }
+th button { all: unset; cursor: pointer; }
+th button:focus-visible { outline: 3px solid var(--sun); }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+details > summary { cursor: pointer; font-weight: 700; color: var(--accent); list-style: none; display: inline-flex; gap: 8px; align-items: center; }
+details > summary::-webkit-details-marker { display: none; }
+details > summary::before { content: "+"; font: 600 1rem var(--font-mono); width: 1.2em; }
+details[open] > summary::before { content: "–"; }
+
+/* ---------- clima ---------- */
+.ahora { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+.ahora .t { font: 760 4.2rem/0.9 var(--font-display); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.ahora .t sup { font-size: .4em; vertical-align: top; position: relative; top: .25em; margin-left: 2px; }
+.alerta { justify-self: start; display: inline-flex; gap: 8px; align-items: center; font-weight: 700; padding: 8px 14px; border-radius: 999px; }
+.alerta.ok { color: var(--good); background: color-mix(in srgb, var(--good) 10%, transparent); }
+.alerta.mal { color: var(--bad); background: color-mix(in srgb, var(--bad) 10%, transparent); }
+.dias { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(118px, 1fr); gap: 10px; overflow-x: auto; padding-bottom: 6px; }
+.dia { display: grid; gap: 6px; justify-items: start; padding: 14px; }
+.dia .nombre { font-weight: 700; }
+.dia .fecha { color: var(--muted); font-size: .8rem; margin-top: -6px; }
+.dia .ico { width: 32px; height: 32px; color: var(--accent); }
+.dia .tt { font: 700 1.2rem/1.1 var(--font-display); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dia .tt span { color: var(--muted); font-weight: 600; }
+.dia .c { font-size: .8rem; color: var(--ink-2); }
+.lluvia { width: 100%; height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.lluvia i { display: block; height: 100%; background: var(--night); }
+.franjas { width: 100%; display: block; border-radius: 10px; overflow: hidden; }
+.franjas rect { shape-rendering: crispEdges; }
+.tira { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.tira div { display: grid; justify-items: center; gap: 4px; padding: 9px 4px; border-radius: 10px; background: var(--surface-2); text-align: center; }
+.tira span { font-size: .8rem; font-weight: 700; color: var(--ink-2); text-transform: capitalize; }
+.tira svg { width: 22px; height: 22px; color: var(--accent); }
+.tira b { font: 700 1.05rem/1 var(--font-display); }
+.tira small { font-size: .72rem; color: var(--muted); }
+
+/* ---------- fuentes ---------- */
+.embudo { display: flex; height: 44px; border-radius: 12px; overflow: hidden; gap: 2px; background: var(--surface); }
+.embudo div { display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .85rem; min-width: 0; white-space: nowrap; overflow: hidden; cursor: pointer; }
+.e-integrado { background: var(--accent); color: var(--accent-ink); }
+.e-candidato { background: var(--seq-2); color: var(--ink); }
+.e-excluido { background: var(--surface-2); color: var(--ink-2); }
+.e-caido, .e-inexistente { background: color-mix(in srgb, var(--sun) 35%, var(--surface)); color: var(--ink); }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: .76rem; font-weight: 700; border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+.ley-embudo { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .9rem; color: var(--ink-2); }
+.ley-embudo span { display: inline-flex; align-items: center; gap: 7px; }
+.ley-embudo i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.usadas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.usada { display: grid; gap: 8px; align-content: start; padding: 16px; }
+.usada .id { font: 500 .76rem var(--font-mono); color: var(--accent); }
+.usada h3 { font-size: 1rem; font-family: var(--font-body); font-weight: 700; }
+.usada p { font-size: .9rem; color: var(--ink-2); }
+.usada .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.usada ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.usada li { display: grid; gap: 4px; font-size: .86rem; color: var(--ink-2); justify-items: start; }
+@media (min-width: 700px) { .usada.varias { grid-column: span 2; } .usada.varias ul { grid-template-columns: 1fr 1fr; gap: 10px 16px; } }
+.filtros { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.chip { border: 1px solid var(--line); background: var(--surface); padding: 6px 12px; border-radius: 999px; font: 700 var(--t-2)/1.2 var(--font-display); cursor: pointer; color: var(--ink-2); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.lista-fichas { display: grid; gap: 6px; }
+.ficha { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.ficha > summary { display: grid; grid-template-columns: 3.4em minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; padding: 11px 14px; color: var(--ink); font-weight: 400; width: 100%; }
+.ficha > summary::before { display: none; }
+.ficha .fid { font: 500 .8rem var(--font-mono); color: var(--muted); }
+.ficha .fnom { font-weight: 700; min-width: 0; overflow-wrap: anywhere; }
+.ficha .fent { grid-column: 2; font-size: .84rem; color: var(--muted); }
+.ficha .cuerpo { padding: 2px 14px 14px; display: grid; gap: 10px; }
+.ficha dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 8px 16px; margin: 0; }
+.ficha dt { font: 700 var(--t-1) var(--font-display); color: var(--ink-2); }
+.ficha dd { margin: 0; font-size: .92rem; overflow-wrap: anywhere; }
+.ficha .obs { font-size: .88rem; color: var(--ink-2); }
+.barras-simples { display: grid; gap: 8px; }
+.barras-simples .f { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; font-size: .9rem; }
+.barras-simples .f .bar { grid-column: 1 / -1; height: 8px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
+.barras-simples .f .bar i { display: block; height: 100%; background: var(--ink-2); border-radius: 4px; }
+.ia { display: grid; gap: 6px; }
+.ia details { border-bottom: 1px solid var(--line); padding: 10px 2px; }
+.ia summary { color: var(--ink); font-weight: 700; display: grid; grid-template-columns: 1.6em minmax(0, 1fr) auto; gap: 10px; width: 100%; }
+.ia summary::before { display: none; }
+.ia .r-Correcto { color: var(--good); }
+.ia .r-Parcial { color: var(--warn); }
+.ia .det { display: grid; gap: 8px; padding: 8px 0 4px 2.2em; font-size: .92rem; color: var(--ink-2); }
+
+/* ---------- pie, trazabilidad, globo, presentación ---------- */
+footer { border-top: 1px solid var(--line); background: var(--surface); padding-block: 26px 40px; font-size: .9rem; color: var(--ink-2); }
+footer .wrap { display: grid; gap: 14px; }
+footer .cols { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+footer b { color: var(--ink); }
+dialog#traza, dialog#verCrudo { border: 0; padding: 0; margin: 0 0 0 auto; height: 100%; max-height: 100%; width: min(480px, 100%); background: var(--surface); color: var(--ink); box-shadow: -10px 0 40px rgb(0 0 0 / .18); }
+dialog#traza::backdrop, dialog#verCrudo::backdrop, dialog#buscador::backdrop { background: rgb(8 22 26 / .45); }
+dialog#traza .in, dialog#verCrudo .in { display: grid; gap: 16px; padding: calc(20px + env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) calc(28px + env(safe-area-inset-bottom, 0px)) 20px; }
+dialog#traza .cerrar, dialog#verCrudo .cerrar { justify-self: end; }
+dialog#traza dl, dialog#verCrudo dl { display: grid; gap: 10px; margin: 0; }
+dialog#traza dt, dialog#verCrudo dt { font: 700 var(--t-1) var(--font-display); color: var(--ink-2); }
+dialog#traza dd, dialog#verCrudo dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+dialog#traza .campo { border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; background: var(--surface-2); }
+#globo { position: fixed; z-index: 80; pointer-events: none; background: var(--ink); color: var(--surface); padding: 8px 11px; border-radius: 10px; font-size: .86rem; line-height: 1.35; max-width: 290px; box-shadow: var(--shadow); opacity: 0; transition: opacity .12s; }
+#globo.on { opacity: 1; }
+#globo .s { opacity: .75; font-size: .8rem; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--surface); padding: 10px 16px; border-radius: 10px; font-weight: 700; z-index: 90; }
+#presentacion { position: fixed; inset: 0; z-index: 70; background: var(--bg); display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+#presentacion .barra { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: calc(12px + env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) 12px max(20px, env(safe-area-inset-left, 0px)); border-bottom: 1px solid var(--line); background: var(--surface); }
+#presentacion .lamina { overflow: auto; padding: clamp(18px, 4vw, 48px) max(20px, env(safe-area-inset-right, 0px)) 24px max(20px, env(safe-area-inset-left, 0px)); }
+#presentacion .contenido { max-width: 1180px; margin: 0 auto; display: grid; gap: 22px; align-items: center; min-height: 100%; }
+@media (min-width: 980px) { #presentacion .contenido.dos { grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr); } }
+#presentacion .q { font: 900 clamp(2rem, 1.3rem + 3vw, 3.6rem)/1.02 var(--font-display); letter-spacing: -0.02em; }
+#presentacion .grande { font: 800 clamp(3rem, 2rem + 4vw, 5.6rem)/1 var(--font-display); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+#presentacion .pie { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px max(20px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px)); border-top: 1px solid var(--line); background: var(--surface); }
+#presentacion .puntos { display: flex; gap: 6px; flex-wrap: wrap; }
+#presentacion .puntos button { width: 10px; height: 10px; border-radius: 50%; border: 0; background: var(--line); cursor: pointer; padding: 0; }
+#presentacion .puntos button[aria-current="true"] { background: var(--accent); width: 26px; border-radius: 5px; }
+
+.btn:disabled, .btn[disabled] { opacity: .4; cursor: default; box-shadow: none; }
+
+/* Alturas del mapa 3D: en el teléfono el mapa necesita aire, porque lentes y leyenda flotan encima */
+#atlasInicio { height: clamp(460px, 52vw, 540px); }
+#atlasBarrios { height: clamp(520px, 62vw, 640px); }
+.panel > *, .barra-graf > * { min-width: 0; }
+.filtros .sel { min-width: 0; flex: 1 1 220px; }
+@media (max-width: 700px) {
+  .atlas .lentes { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .atlas .lentes::-webkit-scrollbar { display: none; }
+  .atlas .lentes button { flex: none; padding: 6px 9px; }
+  .atlas .ley3d { max-width: calc(100% - 76px); padding: 6px 8px; gap: 3px; }
+  .atlas .ley3d .ex { display: none; }
+  .atlas .relato { bottom: 8px; padding: 12px; }
+  .atlas .relato .peq { font-size: .84rem; }
+}
+
+/* ================= v3: decidir y comparar ================= */
+.perfiles-inicio { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.perfil-card { display: grid; gap: 10px; align-content: start; padding: 18px; border-radius: var(--r); border: 1px solid var(--line); background: var(--surface);
+  text-decoration: none; color: var(--ink); position: relative; overflow: hidden; transition: border-color var(--dur-1) ease, transform var(--dur-1) var(--ease-out); }
+@media (hover: hover) { .perfil-card:hover { border-color: color-mix(in srgb, var(--ink) 35%, var(--line)); } }
+.perfil-card .ic { display: block; color: var(--ink-2); }
+.perfil-card .ic .i { width: 24px; height: 24px; }
+.perfil-card b { font: 800 var(--t-4)/1.2 var(--font-display); }
+.perfil-card p { font-size: .93rem; color: var(--ink-2); }
+.perfil-card .dato { font: 700 1.05rem var(--font-display); color: var(--accent); }
+.perfil-card .dato small { display: block; font: 400 .8rem var(--font-body); color: var(--muted); }
+
+.perfiles { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+.perfiles button { display: flex; gap: 10px; align-items: center; text-align: left; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line);
+  background: var(--surface); cursor: pointer; font-weight: 700; color: var(--ink-2); }
+.perfiles button .i { width: 22px; height: 22px; flex: none; }
+.perfiles button span { display: grid; }
+.perfiles button small { font-weight: 400; font-size: .8rem; color: var(--muted); }
+.perfiles button[aria-selected="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.perfiles button[aria-selected="true"] small { color: color-mix(in srgb, var(--surface) 75%, transparent); }
+.panel-decidir { display: grid; gap: 16px; }
+.decidir-top { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1000px) { .decidir-top { grid-template-columns: minmax(280px, 360px) minmax(0, 1fr); } }
+.controles-dec { display: grid; gap: 14px; align-content: start; }
+.controles-dec .grupo { display: grid; gap: 8px; }
+.controles-dec .grupo > b { font-size: .95rem; }
+.controles-dec .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.rango { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; align-items: center; }
+.rango input { grid-column: 1 / -1; width: 100%; accent-color: var(--accent); margin: 0; }
+.rango output { font: 700 1rem var(--font-display); }
+.prioridad { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 10px; align-items: center; font-size: .92rem; }
+.prioridad input { grid-column: 1 / -1; width: 100%; accent-color: var(--accent); margin: 0; }
+.prioridad output { font: 600 .8rem var(--font-mono); color: var(--ink-2); }
+.recos { display: grid; gap: 10px; }
+.reco { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 4px 14px; align-items: start; padding: 14px 16px; border-radius: 12px;
+  border: 1px solid var(--line); background: var(--surface); }
+.reco .n { font: 800 1.6rem/1 var(--font-display); color: var(--accent); min-width: 1.4em; }
+.reco h4 { margin: 0; font: 700 1.08rem/1.25 var(--font-display); }
+.reco ul { margin: 6px 0 0; padding-left: 18px; color: var(--ink-2); font-size: .92rem; display: grid; gap: 3px; }
+.reco .puntaje { font: 700 .82rem var(--font-mono); color: var(--ink-2); text-align: right; }
+.reco .puntaje b { display: block; font: 800 1.3rem var(--font-display); color: var(--ink); }
+.reco .acciones-r { grid-column: 2 / -1; display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+.etq-z { display: inline-flex; gap: 4px; align-items: center; font-size: .76rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+@media (max-width: 560px) { .reco { grid-template-columns: auto minmax(0, 1fr); } .reco .puntaje { grid-column: 2; text-align: left; } }
+.senal { display: grid; gap: 4px; padding: 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); }
+.senal .t { font-size: .84rem; color: var(--muted); }
+.senal .v { font: 800 1.5rem/1.1 var(--font-display); }
+.senal .c { font-size: .88rem; color: var(--ink-2); }
+.senales { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+.veredicto { display: flex; gap: 14px; align-items: center; padding: 16px 18px; border-radius: var(--r); border: 1px solid var(--line); background: var(--surface); }
+.veredicto .bola { width: 46px; height: 46px; border-radius: 50%; flex: none; display: grid; place-items: center; color: #fff; }
+.veredicto .bola .i { width: 24px; height: 24px; }
+.veredicto b { font: 700 1.2rem/1.25 var(--font-display); }
+.alertas { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+.alerta-item { display: grid; gap: 6px; align-content: start; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); border-left: 4px solid var(--sun); background: var(--surface); }
+.alerta-item h4 { margin: 0; display: flex; gap: 8px; align-items: center; font: 700 1rem var(--font-display); }
+.alerta-item p { font-size: .9rem; color: var(--ink-2); }
+.alerta-item .barrios-a { display: flex; flex-wrap: wrap; gap: 6px; }
+.alerta-item .barrios-a button { border: 1px solid var(--line); background: var(--surface-2); border-radius: 999px; padding: 3px 10px; font-size: .82rem; font-weight: 700; cursor: pointer; color: var(--ink); }
+.alerta-item .barrios-a button:hover { border-color: var(--accent); }
+.alerta-item.ok { border-left-color: var(--good); }
+.como-calc { font-size: .9rem; color: var(--ink-2); }
+.como-calc summary { cursor: pointer; font-weight: 700; color: var(--accent); }
+.como-calc ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 4px; }
+.limites { display: grid; gap: 6px; padding: 14px 16px; border: 1px dashed var(--hatch); border-radius: 12px; font-size: .9rem; color: var(--ink-2); }
+.limites b { color: var(--ink); }
+.limites ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
+.seg.grande button { padding: 9px 16px; font-size: .95rem; }
+
+/* comparador */
+.tabla-comp { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.tabla-comp th, .tabla-comp td { padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.tabla-comp td.med { min-width: 180px; }
+.tabla-comp td.med small { display: block; color: var(--muted); font-size: .76rem; }
+.tabla-comp td.v { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.tabla-comp td.gana { text-align: center; white-space: nowrap; font-size: .82rem; font-weight: 700; }
+.tabla-comp td.barra { min-width: 120px; width: 26%; }
+.duo { display: grid; gap: 3px; }
+.duo i { display: block; height: 7px; border-radius: 4px; }
+.gana .si { color: var(--good); } .gana .no { color: var(--bad); } .gana .igual { color: var(--muted); }
+.marcador { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; font: 700 1.15rem var(--font-display); }
+.marcador .big { font-size: 2.4rem; line-height: 1; }
+.heat td.v { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.heat td.v[data-k] { cursor: default; }
+.lado-a-lado { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1000px) { .lado-a-lado { grid-template-columns: minmax(0, 1.4fr) minmax(300px, 1fr); } }
+.grupo-med { margin-top: 6px; }
+.grupo-med > h4 { margin: 10px 0 4px; font: 700 var(--t-2) var(--font-display); color: var(--ink-2); }
+.fila-b { display: grid; grid-template-columns: minmax(130px, 1.1fr) repeat(var(--n, 2), minmax(0, 1fr)); gap: 6px 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
+.fila-b .val { display: grid; gap: 3px; }
+.fila-b .val b { font-variant-numeric: tabular-nums; }
+.fila-b .val span { height: 6px; border-radius: 3px; background: var(--surface-2); position: relative; overflow: visible; }
+.fila-b .val span i { position: absolute; inset: 0 auto 0 0; border-radius: 3px; }
+.fila-b .val span u { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--ink); opacity: .55; }
+.fila-b.cab { font: 700 .82rem var(--font-body); color: var(--ink); border-bottom: 2px solid var(--line); }
+.ciudades { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.ciudades .card { padding: 16px; display: grid; gap: 8px; align-content: start; }
+.ciudades h3 { font-size: .98rem; font-family: var(--font-body); }
+.leyenda-sel { display: flex; gap: 12px; flex-wrap: wrap; font-size: .85rem; color: var(--ink-2); }
+.leyenda-sel i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+.selector-b { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.selector-b .sel { flex: 1 1 200px; min-width: 0; }
+.atlas .lente-sel { pointer-events: auto; max-width: 100%; font-weight: 700; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 94%, transparent); box-shadow: var(--shadow); color: var(--ink); }
+.grupo-ficha { border-top: 1px solid var(--line); padding-top: 6px; }
+.grupo-ficha > summary { cursor: pointer; font: 700 var(--t-2) var(--font-display); color: var(--ink); padding: 6px 0; }
+.medida .rb u.med { background: var(--muted); opacity: .9; }
+.etiquetas-b { display: flex; flex-wrap: wrap; gap: 6px; }
+.etiquetas-b:empty { display: none; }
+.seg button:disabled { opacity: .35; cursor: not-allowed; }
+
+/* v3 · ajustes tras revisar capturas */
+#panelComparar, .panel-decidir, .panel-decidir > * { min-width: 0; }
+#panelComparar { display: grid; gap: 16px; }
+.heat th { white-space: normal; vertical-align: bottom; min-width: 64px; max-width: 120px; line-height: 1.3; }
+.heat td:first-child .btn { white-space: nowrap; }
+.casilla { display: flex; gap: 10px; align-items: flex-start; font-size: .92rem; cursor: pointer; }
+.casilla input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--accent); flex: none; }
+.chips-f { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.contra { grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); }
+.pendientes { grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); }
+@media (min-width: 1000px) { .lado-a-lado > .card:last-child { position: sticky; top: 132px; align-self: start; } }
+@media (max-width: 640px) {
+  .fila-b { grid-template-columns: repeat(var(--n, 2), minmax(0, 1fr)); gap: 4px 10px; }
+  .fila-b > span:first-child { grid-column: 1 / -1; font-weight: 600; font-size: .85rem; color: var(--ink-2); }
+  .fila-b.cab > span:first-child { display: none; }
+  .fila-b .val b { font-size: .86rem; overflow-wrap: anywhere; }
+}
+@media (max-width: 640px) {
+  .perfiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .perfiles button small { display: none; }
+  .tabla-comp thead { display: none; }
+  .tabla-comp tr { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; align-items: end; border-bottom: 1px solid var(--line); padding: 8px 0; }
+  .tabla-comp td { border: 0; padding: 2px 4px; }
+  .tabla-comp td.med, .tabla-comp td.barra { grid-column: 1 / -1; }
+  .tabla-comp td.barra { order: 5; }
+  .tabla-comp td.v { text-align: left; }
+  .tabla-comp td.v[data-l]::before { content: attr(data-l); display: block; font: 600 .74rem var(--font-display); color: var(--ink-2); }
+  .card.tabla-wrap:has(.tabla-comp) { overflow-x: visible; }
+}
+@media (max-width: 640px) {
+  .perfiles-inicio { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .perfil-card { padding: 14px; gap: 6px; }
+  .perfil-card p, .perfil-card .dato small { display: none; }
+  .perfil-card .ic { width: 36px; height: 36px; }
+  .perfil-card b { font-size: 1rem; }
+  .perfil-card .dato { font-size: .92rem; }
+}
+
+/* v3.1 · comparar: cada elemento con su color, nombrado siempre junto al color */
+.quien { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--ink); }
+.quien i { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+.fila-b .val b em.mejor { font: 700 .74rem var(--font-display); font-style: normal; color: var(--accent); background: var(--accent-soft); padding: 1px 7px; border-radius: 999px; vertical-align: 2px; }
+.leyenda-fija { position: sticky; top: var(--alto-top, 118px); z-index: 5; background: var(--surface); padding: 8px 0; }
+.barra-graf .leyenda-fija { padding: 6px 10px; border-radius: 10px; border: 1px solid var(--line); }
+#globo { transition: opacity .12s, visibility 0s linear .12s; }
+#globo.on { transition: opacity .12s, visibility 0s; }
+#globo:not(.on) { visibility: hidden; }
+
+/* ================= v4: datos, lago y buscador ================= */
+dialog#verCrudo { width: min(760px, 100%); }
+.crudo-pre, .mini-pre { font: 500 .78rem/1.45 var(--font-mono); background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 52vh; overflow: auto; color: var(--ink); }
+.mini-pre { max-height: 140px; font-size: .74rem; padding: 8px 10px; }
+.mini { border: 1px solid var(--line); background: var(--surface); border-radius: 7px; padding: 2px 8px; font: 700 .74rem var(--font-body); cursor: pointer; color: var(--accent); text-decoration: none; white-space: nowrap; }
+.mini:hover { border-color: var(--accent); }
+.tres-preg { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.preg { display: grid; gap: 10px; align-content: start; position: relative; border-top: 3px solid var(--accent); }
+.preg .n { position: absolute; top: 14px; right: 16px; font: 800 2.2rem/1 var(--font-display); color: var(--accent-soft); }
+.preg .tema { display: flex; gap: 10px; align-items: center; padding-right: 36px; }
+.preg h3 { font-size: 1.12rem; margin: 0; }
+.preg p { margin: 0; color: var(--ink-2); font-size: .96rem; }
+.preg .btn { justify-self: start; font-size: .88rem; padding: 7px 12px; }
+.flujo-wrap { overflow-x: auto; margin: 0 -6px; padding: 0 6px; }
+.flujo { display: block; width: 100%; min-width: 720px; height: auto; }
+@media (max-width: 720px) { .flujo { min-width: 880px; } }
+.solo-cel { display: none; margin: 0 0 6px; }
+@media (max-width: 720px) { .solo-cel { display: block; } }
+.flujo text { font: 600 12.5px var(--font-body); fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; }
+.flujo .cnt { font: 500 11px var(--font-mono); fill: var(--muted); }
+.flujo .nd { cursor: pointer; outline: none; }
+.flujo .nd rect { transition: opacity .2s; }
+.flujo .nd.z1 rect { fill: var(--c1); } .flujo .nd.z2 rect { fill: var(--accent); } .flujo .nd.z3 rect { fill: var(--c2); }
+.flujo .nd:focus-visible rect { stroke: var(--ink); stroke-width: 2px; }
+.flujo .lk { fill: none; stroke-opacity: .28; transition: stroke-opacity .2s; }
+.flujo .lk.z1 { stroke: var(--c1); } .flujo .lk.z2 { stroke: var(--accent); }
+.flujo.foco .lk { stroke-opacity: .06; } .flujo.foco .lk.on { stroke-opacity: .55; }
+.flujo.foco .nd rect { opacity: .25; } .flujo.foco .nd.on rect { opacity: 1; }
+.flujo.foco .nd text { opacity: .35; } .flujo.foco .nd.on text { opacity: 1; }
+.flujo-ley { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; font-size: .86rem; color: var(--ink-2); margin-top: 8px; }
+.flujo-ley i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.flujo-ley i.z1 { background: var(--c1); } .flujo-ley i.z2 { background: var(--accent); } .flujo-ley i.z3 { background: var(--c2); }
+.flujo-ley .btn { padding: 4px 10px; font-size: .82rem; margin-left: auto; }
+.flujo-det:not(:empty) { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 12px; display: grid; gap: 8px; animation: entrar .25s ease; }
+.flujo-det h3 { margin: 0; font-size: 1.08rem; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.flujo-det p { margin: 0; }
+.lista-crudo { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; max-height: 280px; overflow: auto; }
+.lista-crudo li { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; font-size: .86rem; padding: 4px 0; border-bottom: 1px dashed var(--line); }
+.lista-crudo .mono { font-size: .8rem; }
+.zonas { display: grid; gap: 10px; grid-template-columns: 1fr; align-items: stretch; }
+@media (min-width: 980px) { .zonas { grid-template-columns: minmax(0, 1fr) 92px minmax(0, 1fr) 92px minmax(0, 1fr); } }
+.zona { display: grid; gap: 8px; align-content: start; position: relative; }
+.zona h3 { margin: 0; font-size: 1.15rem; }
+.zona p { margin: 0; font-size: .94rem; color: var(--ink-2); }
+.zona .paso { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font: 800 .95rem var(--font-display); color: #fff; }
+.zona.z1 .paso { background: var(--c1); } .zona.z2 .paso { background: var(--accent); } .zona.z3 .paso { background: var(--c2); }
+.zona.z1 { border-top: 3px solid var(--c1); } .zona.z2 { border-top: 3px solid var(--accent); } .zona.z3 { border-top: 3px solid var(--c2); }
+.puerta { display: grid; justify-items: center; align-content: center; gap: 4px; color: var(--muted); font: 500 .72rem/1.3 var(--font-mono); text-align: center; }
+.puerta svg { color: var(--accent); width: 26px; height: 26px; }
+@media (max-width: 979px) { .puerta { grid-auto-flow: column; justify-content: center; gap: 8px; } .puerta svg { transform: rotate(90deg); } .puerta br { display: none; } }
+.donde { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.donde-i { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; background: var(--surface-2); border-radius: 12px; padding: 14px; }
+.donde-i p { margin: 4px 0 0; }
+.cadena { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 0; }
+.paso-c { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-content: start; padding-bottom: 16px; position: relative; opacity: .12; transform: translateY(8px); transition: opacity .45s ease, transform .45s ease; }
+.paso-c.on { opacity: 1; transform: none; }
+.paso-c::before { content: ""; position: absolute; left: 16px; top: 34px; bottom: 0; width: 2px; background: linear-gradient(var(--accent), var(--line)); }
+.paso-c:last-child::before { display: none; }
+.paso-c .num { width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font: 800 .95rem var(--font-display); z-index: 1; }
+.paso-c h4 { margin: 4px 0 6px; font-size: 1rem; }
+.paso-c p { margin: 0 0 4px; }
+.paso-c .grande { font: 800 1.9rem/1.1 var(--font-display); }
+.paso-c .grande small { font: 500 .9rem var(--font-body); color: var(--ink-2); }
+.paso-c .ruta { font-size: .78rem; color: var(--ink-2); overflow-wrap: anywhere; }
+@media (min-width: 980px) { .cadena { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+  .paso-c { grid-template-columns: 1fr; border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: var(--surface-2); }
+  .paso-c::before { left: auto; right: -12px; top: 30px; bottom: auto; width: 12px; height: 2px; background: var(--accent); } }
+td.sube { color: var(--good); font-weight: 700; white-space: nowrap; } td.baja { color: var(--bad, #c2410c); font-weight: 700; white-space: nowrap; }
+td.num { font-family: var(--font-mono); white-space: nowrap; }
+#tablaCrudo td, #tablaCambios td { vertical-align: top; }
+#tablaCrudo .url { display: inline-block; max-width: 46ch; overflow-wrap: anywhere; text-decoration: none; }
+.pill.priv { background: var(--accent-soft); color: var(--accent); }
+.pill.priv svg { width: 13px; height: 13px; }
+.toggle { display: inline-flex; gap: 6px; align-items: center; font-size: .88rem; color: var(--ink-2); cursor: pointer; }
+.explorar-filtros { margin-bottom: 10px; }
+.explorar-filtros .sel { flex: 0 1 220px; }
+.ia-regla { display: grid; gap: 10px; align-content: start; border-left: 4px solid var(--accent); }
+.ia-regla h3 { display: flex; gap: 8px; align-items: center; margin: 0; }
+.ia-regla p { margin: 0; color: var(--ink-2); font-size: .95rem; }
+.ia-regla b { color: var(--ink); }
+.barra-ia { display: flex; border-radius: 10px; overflow: hidden; margin: 10px 0; min-height: 52px; }
+.barra-ia > div { display: grid; place-items: center; text-align: center; color: #fff; font-size: .9rem; padding: 6px; }
+.barra-ia .r-Correcto { background: var(--good); } .barra-ia .r-Parcial { background: var(--warn); } .barra-ia .r-Incorrecto { background: var(--bad, #c2410c); }
+.barra-ia b { font: 800 1.3rem var(--font-display); margin-right: 4px; }
+.cambio-link { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-weight: 700; text-decoration: none; border-bottom: 1px dashed var(--accent); }
+dialog#buscador { border: 1px solid var(--line); border-radius: 16px; padding: 0; width: min(620px, calc(100% - 24px)); margin: max(9vh, 60px) auto auto; background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+.buscador-in { display: grid; gap: 10px; padding: 14px; }
+.buscador-in .buscar input { font-size: 1.05rem; padding: 12px 12px 12px 38px; }
+.buscador-res { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; max-height: 52vh; overflow: auto; }
+.buscador-res li { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: center; padding: 8px 10px; border-radius: 10px; cursor: pointer; }
+.buscador-res li .vig { grid-column: 2; }
+.buscador-res li .pill { background: var(--surface-2); color: var(--ink-2); grid-row: span 2; }
+.buscador-res li[aria-selected="true"], .buscador-res li:hover { background: var(--accent-soft); }
+.buscador-res li.vacio { display: block; color: var(--ink-2); cursor: default; }
+@keyframes entrar { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .paso-c, .flujo .lk, .flujo .nd rect { transition: none; } .flujo-det:not(:empty) { animation: none; } }
+.pista { font: 500 .74rem var(--font-mono); color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 1px 6px; }
+.hallazgo { display: grid; gap: 10px; margin-top: 6px; }
+.hall { display: grid; gap: 4px; font-size: .9rem; }
+.hall .hb { position: relative; height: 12px; background: var(--surface-2); border-radius: 6px; overflow: hidden; }
+.hall .hb i, .hall .hb b { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 6px; }
+.hall .hb i { background: var(--seq-2); } .hall .hb b { background: var(--accent); }
+
+/* Movilidad: mapa de carreteras y recorridos de bus */
+.grid-vias { display: grid; gap: 24px; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); align-items: start; }
+@media (max-width: 900px) { .grid-vias { grid-template-columns: 1fr; } }
+.mapa-vias .b { fill: var(--surface-2); cursor: default; }
+.mapa-vias .b:hover { stroke: var(--surface); stroke-width: .7; }
+.mapa-vias .v { fill: none; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; cursor: pointer; }
+.mapa-vias .v.toque { stroke: transparent; stroke-width: 12; }
+.mapa-vias .v.fuera { stroke-opacity: .18; }
+.mapa-vias .v.resalto { stroke: var(--ink); }
+.ley-mapa .sw i.linea { height: 4px; border: 0; border-radius: 2px; }
+
+/* ================= v5 · retícula y jerarquía ================= */
+.cabeza h2 { font-size: var(--t-7); line-height: 1.08; }
+@media (max-width: 720px) { .cabeza h2 { font-size: var(--t-6); } }
+/* las siete preguntas y la casilla de los datos: 4 + 4 en escritorio, 2 por fila en tableta, 1 en el teléfono */
+.grid-preguntas { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) { .grid-preguntas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .grid-preguntas { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.resp .pie { margin-top: auto; }
+
+/* ================= v5 · movimiento: solo lo que responde a una acción (transform y opacity) =================
+   Se anima: el cambio de pestaña, la ficha de un barrio al cambiar, las marcas del mapa plano, los diálogos, los avisos y
+   el gesto de presionar. No se anima: cifras, textos de datos, gráficas, globos de ayuda ni el recoloreo de los mapas. */
+@media (prefers-reduced-motion: reduce) { :root { --mov: 0px; } }
+@keyframes entra-suave { from { opacity: 0; transform: translateY(var(--mov)); } }
+@keyframes aparece { from { opacity: 0; } }
+.vista:not([hidden]) { animation: entra-suave 180ms var(--ease-out); }
+#fichaSel > * { animation: aparece var(--dur-1) ease-out; }
+.svgmapa .marcas > * { animation: aparece var(--dur-1) ease-out; }
+dialog[open] { animation: entra-suave var(--dur-2) var(--ease-out); }
+dialog[open]::backdrop { animation: aparece var(--dur-2) ease-out; }
+.toast { animation: toast-entra var(--dur-2) var(--ease-out); transition: opacity 150ms ease; }
+.toast.sale { opacity: 0; }
+@keyframes toast-entra { from { opacity: 0; transform: translate(-50%, calc(var(--mov) + 2px)); } }
+.btn, .icono-btn, .chip, .seg button, .perfil-card, .perfiles button, .leyenda button {
+  transition: transform var(--dur-1) var(--ease-out), background-color var(--dur-1) ease, border-color var(--dur-1) ease, color var(--dur-1) ease; }
+.btn:active, .icono-btn:active, .chip:active, .seg button:active, .perfiles button:active, .leyenda button:active { transform: scale(.97); }
+.perfil-card:active { transform: scale(.985); }
+@media (prefers-reduced-motion: reduce) {
+  .btn:active, .icono-btn:active, .chip:active, .seg button:active, .perfiles button:active, .leyenda button:active, .perfil-card:active { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-sube" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></symbol>
+    <symbol id="i-baja" viewBox="0 0 24 24"><path d="M7 7l10 10M17 9v8H9"/></symbol>
+    <symbol id="i-igual" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-fuente" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+    <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-buscar" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol>
+    <symbol id="i-mas" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-menos" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-centrar" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+    <symbol id="i-copiar" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+    <symbol id="i-cerrar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-alerta" viewBox="0 0 24 24"><path d="M12 4 2.5 20h19L12 4Z"/><path d="M12 10v4M12 17h.01"/></symbol>
+    <symbol id="i-gente" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.3 6-5.3s5.4 1.9 6 5.3"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.6c2.6.2 4.3 2 4.8 5.4"/></symbol>
+    <symbol id="i-empleo" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"/></symbol>
+    <symbol id="i-casa" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7M6 9.5V20h12V9.5M10 20v-5h4v5"/></symbol>
+    <symbol id="i-ojo" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-pesas" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M4 8h16M6 8l-3 6a3 3 0 0 0 6 0zM18 8l-3 6a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-grua" viewBox="0 0 24 24"><path d="M6 21V4l12 3H6M10 4v3M6 21h6M18 7v5M16.5 12h3v3h-3z"/></symbol>
+    <symbol id="i-mapa" viewBox="0 0 24 24"><path d="m3 6 6-2 6 2 6-2v14l-6 2-6-2-6 2V6Z"/><path d="M9 4v14M15 6v14"/></symbol>
+    <symbol id="i-sirena" viewBox="0 0 24 24"><path d="M6 18v-6a6 6 0 0 1 12 0v6M4 18h16v3H4zM12 2v2M4.2 5.2l1.4 1.4M19.8 5.2l-1.4 1.4"/></symbol>
+    <symbol id="i-maleta" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V5h6v2M8 19v2M16 19v2M9 11v4M15 11v4"/></symbol>
+    <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
+    <symbol id="i-nube-sol" viewBox="0 0 24 24"><path d="M9 4.5v1.5M4.5 9H3M5.6 5.6l1 1M12.7 6.6l1-1"/><path d="M6.4 11.4A3.5 3.5 0 0 1 12.6 8"/><path d="M8 19h9a3.5 3.5 0 0 0 .4-7 5 5 0 0 0-9.6 1.4A2.8 2.8 0 0 0 8 19Z"/></symbol>
+    <symbol id="i-lluvia" viewBox="0 0 24 24"><path d="M7 15h10a4 4 0 0 0 .5-8 5.5 5.5 0 0 0-10.6 1.6A3.2 3.2 0 0 0 7 15Z"/><path d="M8 18.5 7 21M12 18.5 11 21M16 18.5 15 21"/></symbol>
+    <symbol id="i-tema" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17a8.5 8.5 0 0 0 0-17Z" fill="currentColor"/></symbol>
+    <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-atras" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-hueco" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-dasharray="3 3"/><path d="M12 8v4.5M12 16h.01"/></symbol>
+    <symbol id="i-pantalla" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M10 8l4 2-4 2z"/></symbol>
+    <symbol id="i-ruta" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h6a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+    <symbol id="i-pausa" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-brujula" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-comparar" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-tienda" viewBox="0 0 24 24"><path d="M4 9.5 5.5 4h13L20 9.5M4 9.5V20h16V9.5M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0M10 20v-5h4v5"/></symbol>
+    <symbol id="i-llave" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l2 2M15 8l2 2"/></symbol>
+    <symbol id="i-capitolio" viewBox="0 0 24 24"><path d="M3 21h18M5 21v-8M9 21v-8M15 21v-8M19 21v-8M3 13h18M5 13a7 7 0 0 1 14 0M12 3v3"/></symbol>
+    <symbol id="i-arbol" viewBox="0 0 24 24"><path d="M12 21v-6M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zM9.5 18H14.5"/></symbol>
+    <symbol id="i-escuela" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c2 1.7 4 2.5 6 2.5s4-.8 6-2.5v-5M22 9v6"/></symbol>
+    <symbol id="i-bus" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="15" rx="3"/><path d="M5 11h14M8 21v-3M16 21v-3M8.5 14.5h.01M15.5 14.5h.01M9 6.5h6"/></symbol>
+    <symbol id="i-carro" viewBox="0 0 24 24"><path d="M5 16V12l2-5h10l2 5v4M5 16h14M5 16v2.5M19 16v2.5M3.5 11.5H5M19 11.5h1.5"/><circle cx="8" cy="13.5" r=".6"/><circle cx="16" cy="13.5" r=".6"/></symbol>
+    <symbol id="i-tren" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="14" rx="3"/><path d="M6 11h12M9 21l1.5-4M15 21l-1.5-4M9.5 14h.01M14.5 14h.01"/></symbol>
+    <symbol id="i-gota" viewBox="0 0 24 24"><path d="M12 3.5s6.5 7 6.5 11.2A6.5 6.5 0 0 1 5.5 14.7C5.5 10.5 12 3.5 12 3.5z"/></symbol>
+    <symbol id="i-viento" viewBox="0 0 24 24"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h7"/></symbol>
+    <symbol id="i-capas" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></symbol>
+    <symbol id="i-robot" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9.5 16h5"/></symbol>
+    <symbol id="i-nube" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8 5.5 5.5 0 0 0-10.6 1.6A3.2 3.2 0 0 0 7 18Z"/></symbol>
+    <symbol id="i-git" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="12" r="2.2"/><path d="M6 8.2v7.6M8.2 6H12a4 4 0 0 1 4 4v0"/></symbol>
+    <symbol id="i-futuro" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Cerebro Orlando, inicio">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="1" y="1" width="38" height="38" rx="11" fill="var(--accent)"/>
+        <path d="M8 25c3.5-2.6 6.5-2.6 10 0s6.5 2.6 10 0 4.2-2.2 4.2-2.2" fill="none" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M11 30.5c2.6-1.8 5-1.8 7.6 0s5 1.8 7.6 0" fill="none" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round" opacity=".6"/>
+        <path d="M20 21V10M20 10c-2.5 1.2-3.6 3.6-3.4 6.4M20 10c2.5 1.2 3.6 3.6 3.4 6.4" fill="none" stroke="var(--sun)" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span><b>Cerebro Orlando</b><small>Datos abiertos de la ciudad para decidir, con la fuente de cada cifra</small></span>
+    </a>
+    <button class="estado-lago" id="estadoLago" type="button" aria-label="Ver cómo se comprobaron los datos"><span class="pt"></span><span id="estadoTxt"></span></button>
+    <button class="icono-btn" id="buscarBtn" type="button" aria-label="Buscar barrios, temas y fuentes (atajo: /)"><svg class="i"><use href="#i-buscar"/></svg><span class="largo">Buscar</span></button>
+    <button class="icono-btn prim" id="presentarBtn" type="button" aria-label="Abrir el modo presentación"><svg class="i"><use href="#i-pantalla"/></svg><span class="largo">Presentar</span></button>
+    <button class="icono-btn" id="temaBtn" type="button" aria-label="Cambiar entre modo claro y oscuro"><svg class="i"><use href="#i-tema"/></svg></button>
+    <nav class="preguntas" aria-label="Preguntas que responde el tablero">
+      <a href="#inicio" data-v="inicio">Resumen</a>
+      <a href="#decidir" data-v="decidir"><svg class="i"><use href="#i-brujula"/></svg>Decidir</a>
+      <a href="#comparar" data-v="comparar"><svg class="i"><use href="#i-comparar"/></svg>Comparar</a>
+      <a href="#gente" data-v="gente"><svg class="i"><use href="#i-gente"/></svg>Gente</a>
+      <a href="#economia" data-v="economia"><svg class="i"><use href="#i-empleo"/></svg>Economía y vivienda</a>
+      <a href="#barrios" data-v="barrios"><svg class="i"><use href="#i-mapa"/></svg>Barrios</a>
+      <a href="#seguridad" data-v="seguridad"><svg class="i"><use href="#i-sirena"/></svg>Seguridad</a>
+      <a href="#turismo" data-v="turismo"><svg class="i"><use href="#i-maleta"/></svg>Turismo</a>
+      <a href="#clima" data-v="clima"><svg class="i"><use href="#i-sol"/></svg>Clima</a>
+      <a href="#movilidad" data-v="movilidad"><svg class="i"><use href="#i-bus"/></svg>Movilidad</a>
+      <a href="#fuentes" data-v="fuentes"><svg class="i"><use href="#i-fuente"/></svg>Datos y fuentes</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ================= RESUMEN ================= -->
+<section class="vista" data-vista="inicio" aria-labelledby="t-inicio">
+  <div class="hero">
+    <div class="texto">
+      <h1 id="t-inicio">¿Cómo va Orlando?</h1>
+      <p class="lead">Siete preguntas sobre la ciudad y cuatro decisiones (emprender, vivir, comprar, gobernar) respondidas con datos abiertos. Cada cifra trae su fuente, su vigencia y la fecha en que la comprobamos: tócala y lo ves.</p>
+      <div class="linea" id="lineaInicio"></div>
+      <div class="acciones">
+        <button class="btn oscuro" type="button" id="recorridoBtn"><svg class="i"><use href="#i-ruta"/></svg>Recorrido por 6 barrios</button>
+        <button class="btn" type="button" id="presentarBtn2"><svg class="i"><use href="#i-pantalla"/></svg>Presentar</button>
+        <button class="btn" type="button" id="copiarResumen"><svg class="i"><use href="#i-copiar"/></svg>Copiar resumen</button>
+      </div>
+    </div>
+    <div class="atlas" id="atlasInicio"></div>
+  </div>
+
+  <div class="seccion">
+    <div class="barra-graf"><h2>¿Qué quieres decidir?</h2><span class="peq">Cada perfil arma su respuesta con los mismos datos</span></div>
+    <div class="perfiles-inicio" id="perfilesInicio"></div>
+  </div>
+
+  <div class="seccion">
+    <div class="barra-graf"><h2>Siete preguntas, siete respuestas</h2><span class="peq">Toca una tarjeta para ver la evidencia</span></div>
+    <div class="grid-preguntas" id="tarjetas"></div>
+  </div>
+
+  <div class="seccion">
+    <div class="barra-graf"><h2>Orlando contra ciudades parecidas</h2><span class="peq">Un número solo no dice si es mucho o poco</span></div>
+    <div class="contra" id="contra"></div>
+  </div>
+
+  <div class="seccion">
+    <h2>Lo que el cerebro no sabe, lo dice</h2>
+    <p class="peq" style="max-width:72ch">Estas preguntas no tienen respuesta con datos abiertos que podamos usar hoy. Decirlo también es parte del sistema.</p>
+    <div class="pendientes" id="pendientes"></div>
+  </div>
+
+  <div class="seccion">
+    <h2>Cómo leer este tablero</h2>
+    <div class="como">
+      <div><svg class="i"><use href="#i-sube"/></svg><p><b>Flechas con palabras.</b> «Sube», «Baja» o «Estable» comparan con el mismo momento del año anterior; no hace falta interpretar colores.</p></div>
+      <div><svg class="i"><use href="#i-fuente"/></svg><p><b>Toda cifra tiene dueño.</b> Las etiquetas con borde punteado abren la fuente, la licencia, el enlace exacto y el campo del diccionario.</p></div>
+      <div><svg class="i"><use href="#i-info"/></svg><p><b>Palabras subrayadas.</b> Pasa el cursor o tócalas para ver qué significan en lenguaje sencillo.</p></div>
+      <div><svg class="i"><use href="#i-escudo"/></svg><p><b>Nadie aparece con nombre.</b> Todo lo que viene de personas está contado por barrio, y los barrios con menos de 5 casos se ocultan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DECIDIR ================= -->
+<section class="vista" data-vista="decidir" aria-labelledby="t-decidir" hidden>
+  <div class="cabeza">
+    <h2 id="t-decidir">¿Qué decisión quieres tomar en Orlando?</h2>
+    <p class="respuesta" id="r-decidir"></p>
+  </div>
+  <div class="perfiles" id="perfiles" role="tablist" aria-label="Perfil"></div>
+  <div id="panelDecidir" class="panel-decidir" role="tabpanel" aria-live="polite"></div>
+  <div class="nota"><svg class="i"><use href="#i-info"/></svg><p><b>Cómo leer esto.</b> Cada recomendación es una regla escrita a la vista (puedes abrir «Cómo se calcula») que ordena barrios o lee señales con datos abiertos. Sirve para decidir <b>dónde mirar primero</b>, no reemplaza una visita, un estudio de mercado ni un asesor. Nada aquí es asesoría financiera ni legal.</p></div>
+</section>
+
+<!-- ================= COMPARAR ================= -->
+<section class="vista" data-vista="comparar" aria-labelledby="t-comparar" hidden>
+  <div class="cabeza">
+    <h2 id="t-comparar">¿Orlando está mejor o peor que…?</h2>
+    <p class="respuesta" id="r-comparar"></p>
+  </div>
+  <div class="seg grande" id="modoComparar" role="group" aria-label="Qué comparar">
+    <button type="button" data-m="ciudades" aria-pressed="true">Ciudades</button><button type="button" data-m="distritos" aria-pressed="false">Distritos</button><button type="button" data-m="barrios" aria-pressed="false">Barrios</button>
+  </div>
+  <div id="panelComparar"></div>
+</section>
+
+<!-- ================= GENTE ================= -->
+<section class="vista" data-vista="gente" aria-labelledby="t-gente" hidden>
+  <div class="cabeza">
+    <h2 id="t-gente">¿Cuánta gente vive aquí y cómo le va frente a ciudades parecidas?</h2>
+    <p class="respuesta" id="r-gente"></p>
+  </div>
+  <article class="card bloque">
+    <div class="lado"><h3 class="titulo-bloque">Población</h3><div class="kpis" id="k-poblacion"></div>
+      <div class="nota"><svg class="i"><use href="#i-info"/></svg><p id="notaEscala"><b>Escala:</b> la ciudad de Orlando no tiene serie anual de población abierta y sin llave. El condado de Orange la contiene; el área metropolitana suma además los condados de Osceola, Seminole y Lake.</p></div></div>
+    <div class="grafico"><div class="barra-graf"><h3>Población residente, en millones de personas</h3></div><div class="chart" id="g-poblacion"></div><div class="barra-graf"><span class="leyenda" id="ley-poblacion"></span><span id="f-poblacion"></span></div></div>
+  </article>
+  <div class="grid-2">
+    <article class="card grafico"><div class="barra-graf"><h3>Ingreso mediano de los hogares (dólares al año)</h3></div><p class="peq" id="r-ingreso"></p><div class="chart" id="g-ingreso"></div><div class="barra-graf"><span class="leyenda" id="ley-ingreso"></span><span id="f-ingreso"></span></div></article>
+    <article class="card grafico"><div class="barra-graf"><h3>Personas en pobreza (%)</h3></div><p class="peq" id="r-pobreza"></p><div class="chart" id="g-pobreza"></div><div class="barra-graf"><span class="leyenda" id="ley-pobreza"></span><span id="f-pobreza"></span></div></article>
+  </div>
+  <div class="grid-2">
+    <article class="card grafico"><div class="barra-graf"><h3>Ingreso por persona (dólares al año)</h3></div><p class="peq" id="r-pcpi"></p><div class="chart" id="g-pcpi"></div><div class="barra-graf"><span class="leyenda"></span><span id="f-pcpi"></span></div></article>
+    <article class="card panel"><div class="barra-graf"><h3>Crecimiento de la población en 10 años</h3><span id="f-crec"></span></div><p class="peq" id="r-crec"></p><ol class="ranking sinpos" id="rankCrec"></ol>
+      <div class="kpis" id="k-real"></div></article>
+  </div>
+  <div class="seccion">
+    <div class="barra-graf"><h2>Ciudad contra ciudad</h2><span id="f-ciudades"></span></div>
+    <p class="peq" id="r-ciudades" style="max-width:80ch"></p>
+    <div class="ciudades" id="ciudadesACS"></div>
+  </div>
+  <article class="card panel">
+    <div class="barra-graf"><h2 style="font-size:1.45rem">¿Quién vive en cada barrio?</h2><div class="seg" id="segGente" role="group" aria-label="Qué mostrar"></div></div>
+    <p class="peq" id="r-quien" style="max-width:80ch"></p>
+    <div class="grid-2" style="align-items:start"><div><svg class="svgmapa" id="mapaGente" role="img" aria-label="Mapa de barrios"></svg><div class="ley-mapa" id="leyGente"></div></div><ol class="ranking" id="rankGente"></ol></div>
+    <div class="nota"><svg class="i"><use href="#i-info"/></svg><p id="notaGente"></p></div>
+  </article>
+</section>
+
+<!-- ================= ECONOMÍA Y VIVIENDA ================= -->
+<section class="vista" data-vista="economia" aria-labelledby="t-eco" hidden>
+  <div class="cabeza">
+    <h2 id="t-eco">¿Cómo se mueve la economía de Orlando y cuánto cuesta vivir aquí?</h2>
+    <p class="respuesta" id="r-eco"></p>
+  </div>
+  <article class="card bloque">
+    <div class="lado"><h3 class="titulo-bloque">Desempleo</h3><p class="respuesta" id="r-desempleo" style="font-size:1.2rem"></p><div class="kpis" id="k-desempleo"></div></div>
+    <div class="grafico"><div class="barra-graf"><h3>Tasa de desempleo (%), sin ajuste estacional</h3><div class="seg" data-rango="desempleo" role="group" aria-label="Periodo"><button type="button" data-r="3">3 años</button><button type="button" data-r="10" aria-pressed="true">10 años</button><button type="button" data-r="0">Desde 2000</button></div></div>
+      <div class="chart" id="g-desempleo"></div><div class="barra-graf"><span class="leyenda" id="ley-desempleo"></span><span id="f-desempleo"></span></div></div>
+  </article>
+  <article class="card bloque">
+    <div class="lado"><h3 class="titulo-bloque">Avisos de empleo</h3><p class="respuesta" id="r-empleo" style="font-size:1.2rem"></p><div class="kpis" id="k-empleo"></div>
+      <div class="nota"><svg class="i"><use href="#i-info"/></svg><p><b>Lo que no dice:</b> cuenta avisos publicados en Indeed, no personas empleadas ni salarios.</p></div></div>
+    <div class="grafico"><div class="barra-graf"><h3>Avisos de empleo en Indeed, <button class="term" data-term="indice100">índice</button> (feb 2020 = 100)</h3></div>
+      <div class="chart" id="g-empleo"></div><div class="barra-graf"><span class="leyenda" id="ley-empleo"></span><span id="f-empleo"></span></div></div>
+  </article>
+  <article class="card bloque">
+    <div class="lado"><h3 class="titulo-bloque">Salarios</h3><p class="respuesta" id="r-salario" style="font-size:1.2rem"></p><div class="kpis" id="k-salario"></div></div>
+    <div class="grafico"><div class="barra-graf"><h3>Salario promedio por hora, sector privado (dólares)</h3></div><div class="chart" id="g-salario"></div><div class="barra-graf"><span class="leyenda" id="ley-salario"></span><span id="f-salario"></span></div></div>
+  </article>
+  <article class="card bloque">
+    <div class="lado"><h3 class="titulo-bloque">Precio de la vivienda</h3><p class="respuesta" id="r-vivienda" style="font-size:1.2rem"></p><div class="kpis" id="k-vivienda"></div></div>
+    <div class="grafico"><div class="barra-graf"><h3 id="t-vivienda">Precio de la vivienda</h3><div class="seg" data-rango="vivienda" role="group" aria-label="Vista"><button type="button" data-r="pares" aria-pressed="true">Contra pares</button><button type="button" data-r="largo">Orlando desde 1978</button></div></div>
+      <div class="chart" id="g-vivienda"></div><div class="barra-graf"><span class="leyenda" id="ley-vivienda"></span><span id="f-vivienda"></span></div></div>
+  </article>
+  <div class="seccion">
+    <div class="barra-graf"><h2>El mercado de hoy</h2><span id="f-realtor"></span></div>
+    <p class="peq" id="r-mercado"></p>
+    <div class="multiples">
+      <div class="card grafico"><h3 style="font-size:1rem;font-family:var(--font-body)">Precio mediano de lista (dólares)</h3><div class="chart" id="g-lista"></div></div>
+      <div class="card grafico"><h3 style="font-size:1rem;font-family:var(--font-body)">Viviendas en venta</h3><div class="chart" id="g-inventario"></div></div>
+      <div class="card grafico"><h3 style="font-size:1rem;font-family:var(--font-body)">Días en el mercado (mediana)</h3><div class="chart" id="g-dias"></div></div>
+    </div>
+    <p class="vig">Datos de Realtor.com, Housing Inventory, vía FRED (Copyrighted: Citation Required).</p>
+  </div>
+  <div class="grid-2">
+    <article class="card grafico"><div class="barra-graf"><h3>Arriendo típico al mes (dólares)</h3></div><p class="peq" id="r-zori"></p><div class="chart" id="g-zori"></div><div class="barra-graf"><span class="leyenda" id="ley-zori"></span><span id="f-zori"></span></div></article>
+    <article class="card panel"><div class="barra-graf"><h3>¿Mercado de compradores o de vendedores?</h3><span id="f-mercado2"></span></div><p class="peq" id="r-mercado2"></p><div class="tabla-wrap"><table id="tablaMercado"><thead></thead><tbody></tbody></table></div></article>
+  </div>
+  <div class="grid-2">
+    <article class="card grafico"><div class="barra-graf"><h3>Viviendas nuevas autorizadas en el área, por año</h3></div><p class="peq" id="r-autorizadas"></p><div class="chart" id="g-autorizadas"></div><div class="barra-graf"><span class="leyenda"><span><i style="background:var(--accent);height:10px;width:10px"></i>Último año completo</span></span><span id="f-autorizadas"></span></div></article>
+    <article class="card grafico"><div class="barra-graf"><h3>Permisos de construcción emitidos en la ciudad, por año</h3></div><p class="peq" id="r-permisosanio"></p><div class="chart" id="g-permisosanio"></div><div class="barra-graf"><a class="ver" href="#barrios">Ver por barrio en el mapa</a><span id="f-permisosanio"></span></div></article>
+  </div>
+  <article class="card bloque">
+    <div class="lado"><h3 class="titulo-bloque">Empleo total</h3><p class="respuesta" id="r-empleototal" style="font-size:1.2rem"></p></div>
+    <div class="grafico"><div class="barra-graf"><h3>Empleos no agrícolas del área, en miles</h3></div><div class="chart" id="g-empleototal"></div><div class="barra-graf"><span></span><span id="f-empleototal"></span></div></div>
+  </article>
+  <article class="card bloque">
+    <div class="lado"><h3 class="titulo-bloque">Nuevos negocios</h3><p class="respuesta" id="r-bfs" style="font-size:1.2rem"></p></div>
+    <div class="grafico"><div class="barra-graf"><h3>Solicitudes de nuevos negocios en Florida, por mes</h3></div><div class="chart" id="g-bfs"></div><div class="barra-graf"><span></span><span id="f-bfs"></span></div></div>
+  </article>
+  <div class="nota"><svg class="i"><use href="#i-hueco"/></svg><p><b>Lo que falta:</b> el PIB del área. Las series de FRED (NGMP36740 y RGMP36740) están descontinuadas y no las reemplazamos por un número viejo.</p></div>
+</section>
+
+<!-- ================= BARRIOS ================= -->
+<section class="vista" data-vista="barrios" aria-labelledby="t-barrios" hidden>
+  <div class="cabeza">
+    <h2 id="t-barrios">¿Qué pasa en cada barrio: dónde se construye, dónde hay más casos y dónde se concentran los negocios?</h2>
+    <p class="respuesta" id="r-barrios"></p>
+  </div>
+  <div class="controles-atlas">
+    <div class="seg" id="segMedida" role="group" aria-label="Qué medir"><button type="button" data-m="total" aria-pressed="true">Total</button><button type="button" data-m="km2">Por km²</button><button type="button" data-m="hab">Por 1.000 hab.</button></div>
+    <div class="anio" id="anioCaja"><button type="button" id="anioPlay" aria-label="Reproducir los años"><svg class="i"><use href="#i-play"/></svg></button><label class="sr" for="anioRango">Año</label><input type="range" id="anioRango" min="2021" max="2025" step="1" value="2025"><b id="anioTxt">2025</b></div>
+    <div class="buscar"><label class="sr" for="buscarBarrio">Buscar un barrio</label><svg class="i"><use href="#i-buscar"/></svg><input id="buscarBarrio" list="listaBarrios" placeholder="Busca un barrio, p. ej. Downtown" autocomplete="off"><datalist id="listaBarrios"></datalist></div>
+  </div>
+  <div class="atlas-layout">
+    <div class="atlas" id="atlasBarrios"></div>
+    <div class="panel">
+      <div class="card ficha-barrio" id="fichaSel" aria-live="polite"></div>
+      <div class="card panel"><div class="barra-graf"><h3 id="tRanking"></h3></div><ol class="ranking" id="ranking"></ol></div>
+    </div>
+  </div>
+  <div class="nota privada"><svg class="i"><use href="#i-escudo"/></svg><p id="notaPrivBarrios"></p></div>
+
+  <article class="card panel" id="indice">
+    <div class="barra-graf"><h2 style="font-size:1.45rem">¿Qué barrios piden atención primero?</h2><span class="pill" style="background:var(--surface-2)"><button class="term" data-term="indice">Índice derivado</button></span></div>
+    <p class="peq" style="max-width:80ch">Combina cuatro señales por km² del último año: construcción, casos de policía, quejas ciudadanas de código y negocios. Cada barrio recibe un puntaje de 0 a 100 en cada señal según su puesto entre los 125. Tú decides cuánto pesa cada una: <b>los pesos son una decisión, no un dato</b>.</p>
+    <div class="indice-layout">
+      <div class="pesos" id="pesos"></div>
+      <div class="grafico"><svg class="svgmapa" id="mapaIndice" role="img" aria-label="Mapa del índice de atención por barrio"></svg><div class="ley-mapa" id="leyIndice"></div></div>
+      <div class="panel"><p class="respuesta" id="r-indice" style="font-size:1.1rem"></p><ol class="ranking" id="rankIndice"></ol></div>
+    </div>
+  </article>
+
+  <article class="card panel" id="correlaciones">
+    <div class="barra-graf"><h2 style="font-size:1.45rem">¿Van juntas dos cosas en los barrios?</h2>
+      <div class="filtros"><label class="sr" for="corrX">Eje horizontal</label><select class="sel" id="corrX"></select><span class="muted">contra</span><label class="sr" for="corrY">Eje vertical</label><select class="sel" id="corrY"></select></div></div>
+    <p class="respuesta" id="r-corr" style="font-size:1.1rem"></p>
+    <div class="chart" id="g-corr" style="min-height:360px"></div>
+    <div class="nota"><svg class="i"><use href="#i-info"/></svg><p><b>Asociación, no causa.</b> Que dos cosas suban juntas en los barrios no quiere decir que una provoque la otra: los barrios comerciales y céntricos tienen más de casi todo. Cada punto es un barrio; los ejes están en escala logarítmica (cada marca multiplica por 10) porque unos pocos barrios tienen valores muy altos.</p></div>
+  </article>
+
+  <details class="card"><summary id="sumTabla">Ver todos los barrios en una tabla</summary>
+    <div class="tabla-wrap" style="margin-top:12px"><table id="tablaBarrios"><thead></thead><tbody></tbody></table></div></details>
+</section>
+
+<!-- ================= SEGURIDAD ================= -->
+<section class="vista" data-vista="seguridad" aria-labelledby="t-seg" hidden>
+  <div class="cabeza">
+    <h2 id="t-seg">¿Qué pasa con la seguridad y la convivencia en cada barrio?</h2>
+    <p class="respuesta" id="r-seg"></p>
+  </div>
+  <article class="card bloque">
+    <div class="lado"><div class="kpis" id="k-seg"></div>
+      <div class="nota"><svg class="i"><use href="#i-info"/></svg><p><b>Un caso no es un delito comprobado:</b> es un reporte que la policía abrió. La tasa por 1.000 habitantes usa la población <button class="term" data-term="estimacion">estimada</button> de cada barrio: en barrios con poca gente y mucho movimiento (centro, zonas comerciales, aeropuerto) se dispara, porque los casos los generan también quienes no viven allí.</p></div></div>
+    <div class="grafico"><div class="barra-graf"><h3>Casos por año en toda la ciudad</h3></div><div class="chart" id="g-seg"></div><div class="barra-graf"><span class="leyenda" id="ley-seg"></span><span id="f-seg"></span></div></div>
+  </article>
+  <div class="grid-2">
+    <article class="card panel"><div class="barra-graf"><h3 id="t-mapaseg">Casos por km² en cada barrio</h3><div class="seg" id="segGrupo" role="group" aria-label="Grupo de delitos"></div></div>
+      <div class="seg" id="segMedidaSeg" role="group" aria-label="Medida"><button type="button" data-m="km2" aria-pressed="true">Por km²</button><button type="button" data-m="hab" aria-pressed="false">Por 1.000 hab.</button></div>
+      <svg class="svgmapa" id="mapaSeg" role="img" aria-label="Mapa de casos de policía por barrio"></svg><div class="ley-mapa" id="leySeg"></div>
+      <a class="ver" href="#barrios" id="verSeg3d">Verlo en el mapa 3D de barrios</a></article>
+    <article class="card panel"><div class="barra-graf"><h3 id="t-rankseg">Barrios con más casos</h3></div><ol class="ranking" id="rankSeg"></ol></article>
+  </div>
+  <article class="card panel"><div class="barra-graf"><h3>Los tipos de caso más comunes (toda la ciudad)</h3><span id="f-tipos"></span></div><div class="barras-simples" id="tiposSeg"></div></article>
+  <div class="nota privada"><svg class="i"><use href="#i-escudo"/></svg><p id="notaPrivSeg"></p></div>
+  <div class="cabeza" style="margin-top:8px"><h2 style="font-size:1.5rem">¿Dónde se queja la gente por el estado de los predios?</h2><p class="respuesta" id="r-codigo" style="font-size:1.2rem"></p></div>
+  <div class="grid-2">
+    <article class="card grafico"><div class="barra-graf"><h3>Casos de código urbano por año</h3></div><div class="chart" id="g-codigo"></div><div class="barra-graf"><span class="leyenda" id="ley-codigo"></span><span id="f-codigo"></span></div></article>
+    <article class="card panel"><div class="barra-graf"><h3>Barrios con más quejas ciudadanas</h3></div><ol class="ranking" id="rankQuejas"></ol></article>
+  </div>
+  <article class="card panel"><div class="barra-graf"><h3>Por qué se abren los casos de código</h3></div><div class="barras-simples" id="tiposCodigo"></div>
+    <div class="nota"><svg class="i"><use href="#i-hueco"/></svg><p id="notaCodigo"></p></div></article>
+</section>
+
+<!-- ================= TURISMO ================= -->
+<section class="vista" data-vista="turismo" aria-labelledby="t-tur" hidden>
+  <div class="cabeza">
+    <h2 id="t-tur">¿Cuánto pesa el turismo en la ciudad?</h2>
+    <p class="respuesta" id="r-tur"></p>
+  </div>
+  <article class="card bloque">
+    <div class="lado"><div class="kpis" id="k-tur"></div>
+      <div class="nota"><svg class="i"><use href="#i-info"/></svg><p><b>Ocio y hotelería</b> es la categoría oficial de empleo que incluye hoteles, restaurantes, parques y entretenimiento. Es el mejor reflejo abierto del turismo; no separa al turista del residente.</p></div></div>
+    <div class="grafico"><div class="barra-graf"><h3 id="t-ocio">Empleos en ocio y hotelería en el área (miles)</h3><div class="seg" data-rango="ocio" role="group" aria-label="Medida"><button type="button" data-r="empleos" aria-pressed="true">Empleos</button><button type="button" data-r="part">% del empleo total</button></div></div><div class="chart" id="g-ocio"></div><div class="barra-graf"><span></span><span id="f-ocio"></span></div></div>
+  </article>
+  <div class="grid-2">
+    <article class="card panel"><div class="barra-graf"><h3>Hospedajes con licencia vigente, por barrio</h3><span id="f-hosp"></span></div><svg class="svgmapa" id="mapaHosp" role="img" aria-label="Mapa de hospedajes con licencia por barrio"></svg><div class="ley-mapa" id="leyHosp"></div><ol class="ranking" id="rankHosp"></ol></article>
+    <article class="card panel"><div class="barra-graf"><h3>Restaurantes con licencia vigente, por barrio</h3><span id="f-rest"></span></div><ol class="ranking" id="rankRest"></ol>
+      <div class="nota"><svg class="i"><use href="#i-info"/></svg><p id="notaNegocios"></p></div></article>
+  </div>
+  <div class="grid-2">
+    <article class="card grafico"><div class="barra-graf"><h3>Alquileres de corto plazo con licencia</h3><span id="f-str"></span></div><p class="peq" id="r-str"></p><div class="chart" id="g-str"></div></article>
+    <article class="card grafico"><div class="barra-graf"><h3>Cuánta gente busca cada ciudad en Wikipedia en español</h3></div><p class="peq" id="r-escucha"></p><div class="chart" id="g-escucha"></div><div class="barra-graf"><span class="leyenda" id="ley-escucha"></span><span id="f-escucha"></span></div></article>
+  </div>
+  <div class="grid-2">
+    <article class="card grafico"><div class="barra-graf"><h3>Peso del ocio y la hotelería en el empleo (%)</h3></div><p class="peq" id="r-ociopares"></p><div class="chart" id="g-ociopares"></div><div class="barra-graf"><span class="leyenda" id="ley-ociopares"></span><span id="f-ociopares"></span></div></article>
+    <article class="card grafico"><div class="barra-graf"><h3>Cuánta gente busca cada ciudad en Wikipedia en inglés</h3></div><p class="peq" id="r-escuchaen"></p><div class="chart" id="g-escuchaen"></div><div class="barra-graf"><span class="leyenda" id="ley-escuchaen"></span><span id="f-escuchaen"></span></div></article>
+  </div>
+  <div class="nota"><svg class="i"><use href="#i-hueco"/></svg><p><b>Lo que falta:</b> visitantes por año y pasajeros del aeropuerto (MCO) vienen en PDF o en notas de prensa (F23, F51); ocupación hotelera y Airbnb son de plataformas privadas que no dejan reutilizar sus datos (F31, F32).</p></div>
+</section>
+
+<!-- ================= CLIMA ================= -->
+<section class="vista" data-vista="clima" aria-labelledby="t-clima" hidden>
+  <div class="cabeza">
+    <h2 id="t-clima">¿Qué clima hay hoy y cómo está cambiando?</h2>
+    <p class="respuesta" id="r-clima"></p>
+  </div>
+  <div class="card ahora" id="ahora"></div>
+  <div class="seccion"><div class="barra-graf"><h3>Los próximos días</h3><span id="f-clima2"></span></div><div class="dias" id="dias"></div></div>
+  <article class="card panel">
+    <div class="barra-graf"><h2 style="font-size:1.45rem" id="t-franjas">Setenta años de calor en Orlando</h2><span id="f-franjas"></span></div>
+    <p class="respuesta" id="r-franjas" style="font-size:1.15rem"></p>
+    <svg class="franjas" id="franjas" role="img"></svg>
+    <div class="barra-graf"><span class="leyenda" id="ley-franjas"></span><span class="vig" id="vig-franjas"></span></div>
+  </article>
+  <div class="grid-2">
+    <article class="card grafico"><div class="barra-graf"><h3>Temperatura media de cada año (°F)</h3></div><div class="chart" id="g-temp"></div><div class="barra-graf"><span class="leyenda" id="ley-temp"></span><span id="f-temp"></span></div></article>
+    <article class="card grafico"><div class="barra-graf"><h3>Lluvia total de cada año (pulgadas)</h3></div><div class="chart" id="g-lluvia"></div><div class="barra-graf"><span></span><span id="f-lluvia"></span></div></article>
+  </div>
+  <article class="card panel">
+    <div class="barra-graf"><h2 style="font-size:1.45rem">¿Qué barrios están más expuestos?</h2><div class="seg" id="segRiesgo" role="group" aria-label="Peligro"></div></div>
+    <p class="respuesta" id="r-riesgo" style="font-size:1.12rem"></p>
+    <div class="grid-2" style="align-items:start"><div><svg class="svgmapa" id="mapaRiesgo" role="img" aria-label="Mapa de riesgo por barrio"></svg><div class="ley-mapa" id="leyRiesgo"></div></div><ol class="ranking" id="rankRiesgo"></ol></div>
+    <div class="nota"><svg class="i"><use href="#i-info"/></svg><p id="notaRiesgo"></p></div>
+  </article>
+  <div class="nota"><svg class="i"><use href="#i-info"/></svg><p id="notaClima"></p></div>
+</section>
+
+<!-- ================= MOVILIDAD ================= -->
+<section class="vista" data-vista="movilidad" aria-labelledby="t-mov" hidden>
+  <div class="cabeza">
+    <h2 id="t-mov">¿Cómo se mueve la gente y qué tan seguras son las vías?</h2>
+    <p class="respuesta" id="r-mov"></p>
+  </div>
+  <article class="card panel"><div class="kpis" id="k-mov"></div></article>
+  <article class="card panel">
+    <div class="barra-graf"><h2 style="font-size:1.45rem" id="t-vias">Las carreteras de Orlando</h2><div class="seg" id="segVias" role="group" aria-label="Qué mostrar sobre las vías"><button type="button" data-m="trafico" aria-pressed="true">Tráfico</button><button type="button" data-m="buses" aria-pressed="false">Rutas de bus</button></div></div>
+    <p class="respuesta" id="r-vias" style="font-size:1.12rem"></p>
+    <div class="grid-vias">
+      <div><svg class="svgmapa mapa-vias" id="mapaVias" role="img" aria-label="Mapa de las vías de Orlando"></svg><div class="ley-mapa" id="leyVias"></div></div>
+      <div><h3 id="t-rankVias">Las vías más cargadas</h3><p class="peq" id="r-rankVias"></p><ol class="ranking" id="rankVias"></ol><span id="f-vias"></span></div>
+    </div>
+  </article>
+  <div class="grid-2">
+    <article class="card grafico"><div class="barra-graf"><h3>Muertes en choques de tránsito en la ciudad, por año</h3></div><p class="peq" id="r-fars"></p><div class="chart" id="g-fars"></div><div class="barra-graf"><span class="leyenda" id="ley-fars"></span><span id="f-fars"></span></div></article>
+    <article class="card panel"><div class="barra-graf"><h3>Vías con más choques mortales</h3><span id="f-viasfars"></span></div><p class="peq" id="r-viasfars"></p><ol class="ranking" id="rankViasFars"></ol></article>
+  </div>
+  <div class="grid-2" style="align-items:start">
+    <article class="card grafico"><div class="barra-graf"><h3>Tráfico típico de la ciudad (vehículos al día)</h3></div><p class="peq" id="r-aadtanio"></p><div class="chart" id="g-aadt"></div><div class="barra-graf"><span></span><span id="f-aadtanio"></span></div></article>
+    <article class="card panel">
+      <div class="barra-graf"><h3>¿Qué barrios tienen bus?</h3><div class="seg" id="segBus" role="group" aria-label="Medida"><button type="button" data-m="salidasBus" aria-pressed="true">Buses al día</button><button type="button" data-m="paradas" aria-pressed="false">Paradas</button><button type="button" data-m="traficoMax" aria-pressed="false">Tráfico</button></div></div>
+      <p class="peq" id="r-bus"></p>
+      <svg class="svgmapa" id="mapaBus" role="img" aria-label="Mapa de movilidad por barrio"></svg><div class="ley-mapa" id="leyBus"></div>
+      <ol class="ranking" id="rankBus" style="margin-top:14px"></ol><span id="f-bus"></span>
+    </article>
+  </div>
+  <div class="nota"><svg class="i"><use href="#i-hueco"/></svg><p id="notaMov"></p></div>
+</section>
+
+<!-- ================= FUENTES ================= -->
+<section class="vista" data-vista="fuentes" aria-labelledby="t-fue" hidden>
+  <div class="cabeza">
+    <h2 id="t-fue">¿De dónde sale cada dato y dónde vive?</h2>
+    <p class="respuesta" id="r-datos"></p>
+  </div>
+  <div class="tres-preg" id="tresPreg"></div>
+
+  <div class="seccion" id="sec-flujo">
+    <div class="barra-graf"><h2>El recorrido de los datos</h2><span class="peq">Toca un sitio, un tema o una pestaña para ver sus archivos</span></div>
+    <div class="card panel flujo-card"><p class="peq solo-cel">Desliza a los lados para ver todo el recorrido →</p><div class="flujo-wrap"><svg id="flujo" class="flujo" role="img" aria-label="Diagrama de flujo de los datos"></svg></div>
+      <div class="flujo-ley"><span><i class="z1"></i>Sitio que respondió</span><span><i class="z2"></i>Tema del lago (zona curada)</span><span><i class="z3"></i>Pestaña del tablero</span><button type="button" class="btn" id="flujoTodo" hidden>Ver todo</button></div>
+      <div id="flujoDet" class="flujo-det" aria-live="polite"></div></div>
+  </div>
+
+  <div class="seccion" id="sec-lago">
+    <div class="barra-graf"><h2>El lago, zona por zona</h2><span class="peq" id="lagoSub"></span></div>
+    <div class="zonas" id="zonas"></div>
+    <div class="donde" id="donde"></div>
+  </div>
+
+  <div class="seccion" id="sec-seguir">
+    <div class="barra-graf"><h2>Sigue un número hasta su origen</h2><span class="peq">Del tablero a la respuesta que dio la fuente, paso a paso</span></div>
+    <div class="card panel"><div class="filtros"><label class="sr" for="seguirSel">Escoge un número</label><select id="seguirSel" class="sel"></select><button class="btn prim" type="button" id="seguirPlay"><svg class="i"><use href="#i-play"/></svg>Seguir el rastro</button></div>
+      <ol class="cadena" id="cadena"></ol></div>
+  </div>
+
+  <div class="seccion" id="sec-cambios">
+    <div class="barra-graf"><h2>Qué cambió entre una foto y la siguiente</h2><span class="peq" id="cambiosSub"></span></div>
+    <div class="card panel"><p class="peq" id="cambiosTxt"></p><div class="filtros" id="cambiosFiltro" role="group" aria-label="Filtrar por tema"></div>
+      <div class="tabla-wrap"><table id="tablaCambios"><thead><tr><th>Tema</th><th>Dato</th><th>Antes</th><th>Ahora</th><th>Cambio</th></tr></thead><tbody></tbody></table></div></div>
+  </div>
+
+  <div class="seccion" id="sec-explorar">
+    <div class="barra-graf"><h2>Explorador de la zona cruda</h2><span class="peq" id="explSub"></span></div>
+    <div class="card panel">
+      <div class="filtros explorar-filtros">
+        <div class="filtros" id="explFechas" role="group" aria-label="Fecha de la foto"></div>
+        <label class="sr" for="explSitio">Sitio</label><select id="explSitio" class="sel"></select>
+        <label class="sr" for="explTema">Tema</label><select id="explTema" class="sel"></select>
+        <div class="buscar" style="max-width:260px"><label class="sr" for="explBuscar">Buscar en las URL</label><svg class="i"><use href="#i-buscar"/></svg><input id="explBuscar" placeholder="Buscar en las URL" autocomplete="off"></div>
+        <label class="toggle"><input type="checkbox" id="explRetirado"> Solo con datos de personas retirados</label>
+      </div>
+      <div class="tabla-wrap"><table id="tablaCrudo"><thead><tr><th>Sitio</th><th>Respuesta</th><th>Tema</th><th>Tamaño</th><th>Cómo se pidió</th><th></th></tr></thead><tbody></tbody></table></div>
+      <p class="peq" id="explCuenta"></p>
+    </div>
+  </div>
+
+  <div class="seccion" id="sec-ia">
+    <div class="barra-graf"><h2>Qué hizo la inteligencia artificial y qué no</h2><span class="peq">Cada encargo, qué respondió y cómo lo comprobamos</span></div>
+    <div class="grid-2">
+      <div class="card panel ia-regla" id="iaRegla"></div>
+      <div class="card panel"><h3>Cómo salió cada encargo</h3><div id="iaBarra" class="ia-barra"></div><p class="peq" id="iaTxt"></p>
+        <h3 style="margin-top:18px">Quién encontró cada fuente</h3><p class="peq" id="iaHallTxt"></p><div class="hallazgo" id="iaHallazgo"></div></div>
+    </div>
+    <div class="card panel"><div class="ia" id="bitacora"></div></div>
+  </div>
+
+  <div class="seccion"><h2>Las fuentes que revisamos</h2><p class="peq" id="r-fuentes" style="max-width:72ch"></p></div>
+  <div class="card panel"><div class="embudo" id="embudo" role="img"></div><div class="ley-embudo" id="leyEmbudo"></div></div>
+  <div class="nota" id="notaVerif"><svg class="i"><use href="#i-ok"/></svg><p></p></div>
+  <div class="nota" id="notaLicencias"><svg class="i"><use href="#i-escudo"/></svg><p><b>¿Por qué usamos fuentes que no declaran licencia?</b> Las de la Ciudad de Orlando (permisos, negocios, código urbano, policía, solicitudes de planeación y su SIG) no traen licencia en su ficha, y por eso la verificación deja avisos. Las usamos porque son registros públicos de un gobierno local de Florida: la Constitución de Florida (art. I, sección 24) y el <a href="https://www.flsenate.gov/Laws/Statutes/2022/Chapter119/All">capítulo 119 de los Estatutos de Florida</a> dan a cualquier persona el derecho a consultarlos y copiarlos, y un tribunal de apelaciones de Florida decidió en <a href="https://en.wikipedia.org/wiki/Microdecisions,_Inc._v._Skinner"><i>Microdecisions v. Skinner</i> (2004)</a> que una entidad pública no puede exigir licencia ni reclamar derechos de autor sobre sus registros si una ley no la autoriza. Aun así, citamos a la ciudad junto a cada dato, solo publicamos conteos agregados y revisamos la ficha de cada fuente en cada actualización: si la ciudad publicara una licencia restrictiva, la anotaríamos en el catálogo y retiraríamos o ajustaríamos esa fuente. Zillow tampoco declara licencia: publica sus archivos para análisis propios y lo citamos en cada gráfico. Esto es el criterio del equipo, no un concepto jurídico.</p></div>
+  <div class="seccion"><h2>Las fuentes que alimentan el tablero</h2><div class="usadas" id="usadas"></div></div>
+  <div class="grid-2">
+    <div class="card panel"><h3>Por qué descartamos fuentes</h3><p class="peq" id="txtDescarte"></p><div class="barras-simples" id="motivos"></div></div>
+    <div class="card panel"><h3>¿Traen datos de personas?</h3><p class="peq">Lo que dice cada ficha del catálogo. Las que sí traen y están en uso entran al lago solo como conteos.</p><div class="barras-simples" id="personas"></div></div>
+  </div>
+  <div class="seccion">
+    <h2>Catálogo completo</h2>
+    <div class="filtros"><div class="buscar" style="max-width:340px"><label class="sr" for="buscarFicha">Buscar en el catálogo</label><svg class="i"><use href="#i-buscar"/></svg><input id="buscarFicha" placeholder="Busca por nombre, entidad o ID" autocomplete="off"></div><div class="filtros" id="chipsEstado" role="group" aria-label="Filtrar por estado"></div></div>
+    <p id="cuentaFichas" class="peq"></p>
+    <div class="lista-fichas" id="fichas"></div>
+  </div>
+  <div class="grid-2">
+    <div class="card panel"><h3>Diccionario de datos</h3><p class="peq">Cada campo del lago con su significado. Si un campo no está aquí, el tablero no lo usa.</p>
+      <details><summary id="sumDic">Ver los campos</summary><div class="tabla-wrap" style="margin-top:10px"><table id="tablaDic"><thead><tr><th>Ficha</th><th>Campo</th><th>Qué significa</th><th>Clase</th></tr></thead><tbody></tbody></table></div></details></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <p><b>Cerebro Orlando</b> · Taller de datos de Tópicos de Sistemas de Información (Gobernanza de datos), Universidad EAFIT. Profesor Santiago Jiménez Londoño.<br>Equipo: Juan Esteban Alzate, Nicolás Saldarriaga y Mateo Villada.</p>
+      <p><b>Atribuciones.</b> Avisos de empleo: Indeed Hiring Lab, Job Postings Index (CC BY 4.0). Vivienda: U.S. Federal Housing Finance Agency y Realtor.com (Housing Inventory), vía FRED. Desempleo y empleo: U.S. Bureau of Labor Statistics, vía FRED. Población, ingreso y pobreza: U.S. Census Bureau, vía FRED. Salarios: BLS; ingreso por persona: BEA; solicitudes de negocios: U.S. Census Bureau (BFS), todos vía FRED. Población, ingreso, arriendo e idioma por barrio y ciudad: U.S. Census Bureau, American Community Survey 2020-2024, vía Census Reporter. Riesgo: FEMA, National Risk Index. Arriendo y valor típico: Zillow Research. Visitas: Wikimedia Foundation. Clima: National Weather Service y NOAA NCEI. Barrios, permisos, código, negocios, planeación, parques, SunRail y ciclovías: City of Orlando; colegios: Orange County Public Schools. Tráfico: Florida Department of Transportation (FDOT). Choques mortales: NHTSA, Fatality Analysis Reporting System. Buses: LYNX (Central Florida Regional Transit Authority), horario GTFS.</p>
+      <p><b>Cómo se construye.</b> <span class="mono">reconstruir.py</span> trae los datos, <span class="mono">verificar.py</span> los revisa (con un solo fallo no se publica) y <span class="mono">vista/construir_vista.py</span> arma esta página. <a id="linkRepo" href="#" target="_blank" rel="noopener">Repositorio</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<dialog id="traza" aria-labelledby="trazaT"><div class="in" id="trazaIn"></div></dialog>
+<dialog id="verCrudo" aria-labelledby="verCrudoT"><div class="in" id="verCrudoIn"></div></dialog>
+<dialog id="buscador" aria-label="Buscar en el tablero"><div class="in buscador-in"><div class="buscar"><svg class="i"><use href="#i-buscar"/></svg><input id="buscadorIn" placeholder="Barrio, tema, fuente o número…" autocomplete="off" aria-label="Buscar barrios, temas y fuentes"></div><ul id="buscadorRes" class="buscador-res" role="listbox"></ul><p class="peq">Enter abre el primero · Esc cierra · atajo: tecla /</p></div></dialog>
+<div id="globo" role="tooltip"></div>
+<div id="presentacion" hidden role="dialog" aria-modal="true" aria-label="Modo presentación">
+  <div class="barra"><b style="font-family:var(--font-display)">Cerebro Orlando · presentación</b><span class="vig" id="pres-n"></span><button class="btn" type="button" id="pres-cerrar"><svg class="i"><use href="#i-cerrar"/></svg>Salir</button></div>
+  <div class="lamina" id="pres-lamina"></div>
+  <div class="pie"><button class="btn" type="button" id="pres-ant"><svg class="i"><use href="#i-atras"/></svg><span class="largo">Anterior</span></button><div class="puntos" id="pres-puntos"></div><button class="btn prim" type="button" id="pres-sig"><span class="largo">Siguiente</span><svg class="i"><use href="#i-flecha"/></svg></button></div>
+</div>
+
+<script id="datos" type="application/json"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.js"></script>
+<script>const leer = u => fetch(u, {cache: "no-cache"}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+const NUBE = "https://d1uzvgzpbvgblk.cloudfront.net", VERSION = "9e425fd232b1";
+// Primero la última foto que publicó la actualización semanal en AWS (CloudFront); si no responde o salió de otra versión
+// del código, la copia que viene con esta página
+(NUBE ? leer(NUBE + "/consumo/tablero/tablero.json").then(d => { if (d.version_vista !== VERSION) throw new Error("otra versión"); window.__LAGO = NUBE + "/"; return d; }) : Promise.reject())
+  .catch(() => leer("lago/consumo/tablero/tablero.json").then(d => { window.__LAGO = "lago/"; return d; }))
+  .then(d => { window.__D = d; const s = document.createElement("script"); s.src = "app.js?v=" + encodeURIComponent(d.generado); document.body.append(s); })
+  .catch(e => { document.querySelector("main").insertAdjacentHTML("afterbegin", '<div class="wrap" style="padding:40px 0"><h2>No se pudo leer el lago</h2><p>La página lee sus datos de lago/consumo/tablero/tablero.json y no respondió (' + e.message + '). Pruebe recargar.</p></div>'); });</script>
+</body>
+</html>

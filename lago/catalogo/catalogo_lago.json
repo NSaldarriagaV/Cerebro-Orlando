@@ -1,0 +1,2349 @@
+{
+ "fechas": [
+  "2026-10-26",
+  "2026-11-02"
+ ],
+ "zonas": {
+  "catalogo": {
+   "archivos": 2,
+   "bytes": 199309,
+   "descripcion": "Manifiesto de lo crudo, fuentes e inventario del lago"
+  },
+  "consumo": {
+   "archivos": 5,
+   "bytes": 1876918,
+   "descripcion": "Tablas planas para SQL y el archivo que lee el tablero"
+  },
+  "crudo": {
+   "archivos": 240,
+   "bytes": 28803777,
+   "descripcion": "Lo que respondió cada fuente, tal cual (comprimido); solo se retiran datos de personas al guardar"
+  },
+  "curado": {
+   "archivos": 36,
+   "bytes": 1988530,
+   "descripcion": "Un archivo por tema y fecha con la forma del contrato, verificado, con el linaje a lo crudo"
+  },
+  "territorio": {
+   "archivos": 6,
+   "bytes": 573193,
+   "descripcion": "Capas geográficas de referencia (barrios, distritos, límite, lagos, vías con su tráfico y recorridos de bus) en WGS84"
+  }
+ },
+ "crudo": {
+  "respuestas": 240,
+  "bytes_originales": 162604225,
+  "con_campos_retirados": 16,
+  "bloqueadas": 0,
+  "sitios": [
+   "api.censusreporter.org",
+   "api.weather.gov",
+   "data.cityoforlando.net",
+   "en.wikipedia.org",
+   "es.wikipedia.org",
+   "files.mobilitydatabase.org",
+   "files.zillowstatic.com",
+   "fred.stlouisfed.org",
+   "geo.dot.gov",
+   "gis.fdot.gov",
+   "gis.orlando.gov",
+   "raw.githubusercontent.com",
+   "services.arcgis.com",
+   "services1.arcgis.com",
+   "wikimedia.org",
+   "www.ncei.noaa.gov"
+  ]
+ },
+ "archivos": [
+  {
+   "ruta": "catalogo/fuentes/fuentes.jsonl",
+   "zona": "catalogo",
+   "bytes": 22923,
+   "sha256": "023a316915b8c835c700875218e1117aef3aca6ec04a71e048ca92ef88e88139"
+  },
+  {
+   "ruta": "catalogo/manifiesto_crudo/manifiesto.jsonl",
+   "zona": "catalogo",
+   "bytes": 176386,
+   "sha256": "72785a78fb35f544a80691a62a047e32b9780e330f18b49165554d7ee4cba979"
+  },
+  {
+   "ruta": "consumo/cifras/fecha=2026-10-26/cifras.jsonl.gz",
+   "zona": "consumo",
+   "bytes": 4168,
+   "sha256": "8597b7dafc42282111c36cda428c5952340e3d3d137e3bb36332576a0b42d75d",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "consumo/cifras/fecha=2026-11-02/cifras.jsonl.gz",
+   "zona": "consumo",
+   "bytes": 4743,
+   "sha256": "5962acea499791d03a2159653517f1d29d362912078416b13de923bbb56a5d01",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "consumo/series/fecha=2026-10-26/series.jsonl.gz",
+   "zona": "consumo",
+   "bytes": 145863,
+   "sha256": "b513527cdc8b218b2e0b0a99790e2980f0176e2f2ef54fff154379beb8bd6760",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "consumo/series/fecha=2026-11-02/series.jsonl.gz",
+   "zona": "consumo",
+   "bytes": 149762,
+   "sha256": "d9078f6f8858b6d2c4c686dca1add7ef4bb7aa7430bcb63a80eb0572561ed008",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "consumo/tablero/tablero.json",
+   "zona": "consumo",
+   "bytes": 1572382,
+   "sha256": "6d23e9512655b17386bb6a9fd9e21fa3885fc8df2d35837dd89cc0a3d7336713"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-10-26/censo-b01003-01e1e79a28.json.gz",
+   "zona": "crudo",
+   "bytes": 41308,
+   "sha256": "a25c6c6b8b33d8fca33c9ccb5b173913dd07e9613ead94a9384ed0148625d9de",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-10-26/censo-b01003-02221a7cb3.json.gz",
+   "zona": "crudo",
+   "bytes": 2200,
+   "sha256": "3bec7ee5657fabf975696c969cc7dd30555a3904c62dec288e8613cf70c6f1e6",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-10-26/censo-b08201-443a6fc89d.json.gz",
+   "zona": "crudo",
+   "bytes": 84715,
+   "sha256": "584df360fa0e17ebef7bb5b958cae17dedaa23ee43fb30e47937d601f86826f9",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-10-26/censo-b08201-f8abe76a07.json.gz",
+   "zona": "crudo",
+   "bytes": 4308,
+   "sha256": "d67a35c8acfba45cb28cfa99e532880835dc9876979ade5c29051ad6cd42489b",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-10-26/censo-b15003-11f24011ca.json.gz",
+   "zona": "crudo",
+   "bytes": 4656,
+   "sha256": "4d11567302af3cb5995ed5eb9613c11c70d077cb24ccd8a28f3272c64d389c23",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-10-26/censo-b15003-3221962042.json.gz",
+   "zona": "crudo",
+   "bytes": 64855,
+   "sha256": "fff6fb539c73881e67863ff8764e81c4c493cebeb3aad61d0dab599eb5f3f3d4",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-10-26/censo-geo-a85535d953.json.gz",
+   "zona": "crudo",
+   "bytes": 69835,
+   "sha256": "3f31daf1b5f9530cd01e6525e44aaf1a6a124d3dbfefc1ec6054d3cd45c8c2b6",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-11-02/censo-b01003-01e1e79a28.json.gz",
+   "zona": "crudo",
+   "bytes": 41308,
+   "sha256": "a25c6c6b8b33d8fca33c9ccb5b173913dd07e9613ead94a9384ed0148625d9de",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-11-02/censo-b01003-02221a7cb3.json.gz",
+   "zona": "crudo",
+   "bytes": 2200,
+   "sha256": "3bec7ee5657fabf975696c969cc7dd30555a3904c62dec288e8613cf70c6f1e6",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-11-02/censo-b08201-443a6fc89d.json.gz",
+   "zona": "crudo",
+   "bytes": 84715,
+   "sha256": "584df360fa0e17ebef7bb5b958cae17dedaa23ee43fb30e47937d601f86826f9",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-11-02/censo-b08201-f8abe76a07.json.gz",
+   "zona": "crudo",
+   "bytes": 4308,
+   "sha256": "d67a35c8acfba45cb28cfa99e532880835dc9876979ade5c29051ad6cd42489b",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-11-02/censo-b15003-11f24011ca.json.gz",
+   "zona": "crudo",
+   "bytes": 4656,
+   "sha256": "4d11567302af3cb5995ed5eb9613c11c70d077cb24ccd8a28f3272c64d389c23",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-11-02/censo-b15003-3221962042.json.gz",
+   "zona": "crudo",
+   "bytes": 64855,
+   "sha256": "fff6fb539c73881e67863ff8764e81c4c493cebeb3aad61d0dab599eb5f3f3d4",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=api.censusreporter.org/fecha=2026-11-02/censo-geo-a85535d953.json.gz",
+   "zona": "crudo",
+   "bytes": 69835,
+   "sha256": "3f31daf1b5f9530cd01e6525e44aaf1a6a124d3dbfefc1ec6054d3cd45c8c2b6",
+   "sitio": "api.censusreporter.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=api.weather.gov/fecha=2026-10-26/28-5383--81-3792-d0e73946f2.json.gz",
+   "zona": "crudo",
+   "bytes": 985,
+   "sha256": "62ea24fc65f4f7a675dcb91cdd4b805816d57b2df7e467503a380d6050c54e4d",
+   "sitio": "api.weather.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=api.weather.gov/fecha=2026-10-26/active-23b1b8087c.json.gz",
+   "zona": "crudo",
+   "bytes": 191,
+   "sha256": "e541a07adbd3579cd9b08c27bb5c5f2f427c411d29f3c39ecb7185a2880c0a71",
+   "sitio": "api.weather.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=api.weather.gov/fecha=2026-10-26/forecast-561f4a7dad.json.gz",
+   "zona": "crudo",
+   "bytes": 1565,
+   "sha256": "362d8a201cdaadeb2b95e797b11ede193767fa3ad34eb366406b8aefafb53f55",
+   "sitio": "api.weather.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=api.weather.gov/fecha=2026-10-26/latest-32a12a697f.json.gz",
+   "zona": "crudo",
+   "bytes": 986,
+   "sha256": "f5bcece0522e23ecce2c79c6b75cec2c0af7794868dd7c642133329682d1d7bc",
+   "sitio": "api.weather.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=api.weather.gov/fecha=2026-10-26/stations-10fb1e6dd6.json.gz",
+   "zona": "crudo",
+   "bytes": 3743,
+   "sha256": "bf1e010b29c3bdb5c06c4d2e5450f16233406f95ff756a6b7c648805cc5ff928",
+   "sitio": "api.weather.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=api.weather.gov/fecha=2026-11-02/28-5383--81-3792-d0e73946f2.json.gz",
+   "zona": "crudo",
+   "bytes": 989,
+   "sha256": "58eca749cdf006f2a65a186cafbada832b75e2263d7786f21e7bd54399fbe996",
+   "sitio": "api.weather.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=api.weather.gov/fecha=2026-11-02/active-23b1b8087c.json.gz",
+   "zona": "crudo",
+   "bytes": 1657,
+   "sha256": "7216c76af24851f570df933da8e93dfedb8541311a1054264980755669950951",
+   "sitio": "api.weather.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=api.weather.gov/fecha=2026-11-02/forecast-561f4a7dad.json.gz",
+   "zona": "crudo",
+   "bytes": 1615,
+   "sha256": "2e8772ba846f6e4b8f652f85785fa7b22ce8b28430ff5566c56eab6ed344836c",
+   "sitio": "api.weather.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=api.weather.gov/fecha=2026-11-02/latest-32a12a697f.json.gz",
+   "zona": "crudo",
+   "bytes": 1058,
+   "sha256": "6de3420745b33cf44649beb8fea7bc6d64ba017189e43f4c2e6d29bd9dd7eb46",
+   "sitio": "api.weather.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=api.weather.gov/fecha=2026-11-02/stations-10fb1e6dd6.json.gz",
+   "zona": "crudo",
+   "bytes": 3750,
+   "sha256": "690e734e20affe1e0a69249b6d689c20cb36666177f0ca301f68a1dc866a48dc",
+   "sitio": "api.weather.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-1f59bc0c23.json.gz",
+   "zona": "crudo",
+   "bytes": 1112,
+   "sha256": "1af2b21b393905128e1833448bead9ed73ba915459ccc13a459cf5ef7c5cf9da",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-6e4f90ba62.json.gz",
+   "zona": "crudo",
+   "bytes": 697,
+   "sha256": "fe3cfa3c2c15d4d81011b27fab8ce715e65d3334eb8783d1c652c1b9e9ca140a",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-7a9d73f7db.json.gz",
+   "zona": "crudo",
+   "bytes": 730,
+   "sha256": "ab81e3e473afba0998b86f2b67f9fe2006bcbbd8f510360cd7da7fd51837c1b7",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-7aae5b95ca.json.gz",
+   "zona": "crudo",
+   "bytes": 752,
+   "sha256": "6bd2f2aa95974b3fe64b6efae175c45afad59fccff75c5ccf99ff840c3567b60",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-7b10e544a8.json.gz",
+   "zona": "crudo",
+   "bytes": 868,
+   "sha256": "522f3cc0550ca8314dd6ef9ade75adf70c4ec807977af3e3d8f42998d40cc35b",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-8d67b2ce82.json.gz",
+   "zona": "crudo",
+   "bytes": 1103,
+   "sha256": "c69b8fea661f7f18312c70c8b733e0fa735ef677b9e8ee2ae5338f268eea12e4",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-b07e3d88e1.json.gz",
+   "zona": "crudo",
+   "bytes": 493,
+   "sha256": "91b47e6c8b18ae5c6a2294d44695c33601c37345307f0b8bb7611588da184847",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-c6750ef24b.json.gz",
+   "zona": "crudo",
+   "bytes": 532,
+   "sha256": "70c9b3902a00000366a41d034bf10daec89abc18e46490763e4811d9a62c7ff0",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-c8b6b50aaf.json.gz",
+   "zona": "crudo",
+   "bytes": 330,
+   "sha256": "d9e7f62c83b104d777ea00bf71bc71e1ea6bc54160980db8812d3e98b339949f",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-d836ef7d2d.json.gz",
+   "zona": "crudo",
+   "bytes": 983,
+   "sha256": "4de82295ee5da79468894ccd7a62431c86d9397f95e404e86a616cb2d60c50af",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-7388-4re5-f4f3a6c1fd.json.gz",
+   "zona": "crudo",
+   "bytes": 1375,
+   "sha256": "84d4b5fcae8381bbb8ce51283fe0af65d2aae6c9315f7b840d163f8037809e64",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-adpi-29a3-5e26339304.json.gz",
+   "zona": "crudo",
+   "bytes": 64336,
+   "sha256": "f877157a7df0906b46eccfe0bc88fcf319d9158fccf0ca52462eb24f301bd7ef",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-bhxy-4rji-15332e96f1.json.gz",
+   "zona": "crudo",
+   "bytes": 1199,
+   "sha256": "32fdd25ded0626c304c09abdcb433ae7a0f526cb15954f6ac18ec6904a638c98",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-bhxy-4rji-991a507e63.json.gz",
+   "zona": "crudo",
+   "bytes": 25943,
+   "sha256": "63e13d12972d7f24214a66cf6614292221aef38ff036db41dbe680792388fe36",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-iy8d-dzv4-a55f4cd575.json.gz",
+   "zona": "crudo",
+   "bytes": 140081,
+   "sha256": "6e020fb6fa06011b9141ea87989bf71afef078b1a9b9119f19503f9d704b44e5",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-j3uy-fhhx-cbd7c818d8.json.gz",
+   "zona": "crudo",
+   "bytes": 2177674,
+   "sha256": "52ec699766cd05497352a41eccc65b447e3edfbe08ef028f0bf58ab534595db1",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-jg52-dz4p-85cce7f0b2.json.gz",
+   "zona": "crudo",
+   "bytes": 673,
+   "sha256": "648be93418133cc8f9537edb298368f51673d19b72468e7b9e3ad51033a794bd",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-k6e8-nw6w-1ebb864b0e.json.gz",
+   "zona": "crudo",
+   "bytes": 4442,
+   "sha256": "0725cccaa10cac7d6fd5d977001df89a24a27b52f9bc5b6d99b96dec6d117280",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-k6e8-nw6w-7ffcff4905.json.gz",
+   "zona": "crudo",
+   "bytes": 125,
+   "sha256": "845eb361f83ff447c4820ecb18d09e40aa870b8e6b247420aee8c641658f0341",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-k6e8-nw6w-9fd58216f5.json.gz",
+   "zona": "crudo",
+   "bytes": 1301,
+   "sha256": "ce387cc339cdd29128c54a8015cb25a092d5ef7ef63ec0ea9c08c317f7dc3e16",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-k6e8-nw6w-f499a2bc6e.json.gz",
+   "zona": "crudo",
+   "bytes": 248,
+   "sha256": "ef46ffe99a1ea09fb423309db2c2ae6922a25cf57856334daf945d2daa92ba34",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-k6e8-nw6w-f952688645.json.gz",
+   "zona": "crudo",
+   "bytes": 245,
+   "sha256": "cc510c59bd645ddfa5c36f2f9ff068f5cb737ba81bc9d16cf32e6e5a4acca850",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-ryhf-m453-2c94d5ec5d.json.gz",
+   "zona": "crudo",
+   "bytes": 37721,
+   "sha256": "c78964bc649fc4d841b33415759b61d4513f29db8f210dfe3941810493365d73",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-ssrj-rbua-d8465a9a97.json.gz",
+   "zona": "crudo",
+   "bytes": 84,
+   "sha256": "636d824260c92c767c26ad793eb664c786fb40e9fba5e416b9be11ccf50c3b65",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-ssrj-rbua-e323007c9b.json.gz",
+   "zona": "crudo",
+   "bytes": 103,
+   "sha256": "fbeaac6e1ea378f3beb2e43252fd6027a9d7f16b97e8515184ec71ffbb9f59d2",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-yskk-n7cw-02c6416e73.json.gz",
+   "zona": "crudo",
+   "bytes": 178726,
+   "sha256": "df48006e242a23094c54ec7fc0ff4fa0c2d674f5a601db74881eaaad398f5dd1",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-yskk-n7cw-3fa55eb124.json.gz",
+   "zona": "crudo",
+   "bytes": 990,
+   "sha256": "7df6f4c5364f106f28b9b3afa1f1fc9eccfcdaa88edaf5f40d77d2bdb1978cbc",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-7388-4re5-2a0e3ad3a8.json.gz",
+   "zona": "crudo",
+   "bytes": 2382,
+   "sha256": "e5d5dcd0da8a916bc2a0bcdad5224fe2469e232ca690d0a27586a7b67a3f5738",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-adpi-29a3-7ded21cfc0.json.gz",
+   "zona": "crudo",
+   "bytes": 869,
+   "sha256": "9dd756cf6c9f21480cc9e2dc33d096dde4e008cb72aabb96147377f8afdc1db2",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-iy8d-dzv4-bc7b155045.json.gz",
+   "zona": "crudo",
+   "bytes": 900,
+   "sha256": "b115f566312279a77dc6377d20f91f0d7d1b091c96e3c6bff7b5a849cf42f063",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-j3uy-fhhx-28d3ce92b9.json.gz",
+   "zona": "crudo",
+   "bytes": 888,
+   "sha256": "6422972062eb96a8bdf51af3b62826b8a4a3e30a04d11e6bc93da5298e711086",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-ryhf-m453-bae8e51e8c.json.gz",
+   "zona": "crudo",
+   "bytes": 2254,
+   "sha256": "803ef13232a87b522721eb9efd4e2f3dbcdaac3791156011a7a3fe38af14ff93",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-ssrj-rbua-362fd18b44.json.gz",
+   "zona": "crudo",
+   "bytes": 2151,
+   "sha256": "33fdc38149e240d0bea409cc191c6ac7a8c920e87bd92f1265acda1ab1bb52ab",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-yskk-n7cw-b4ceff44b2.json.gz",
+   "zona": "crudo",
+   "bytes": 905,
+   "sha256": "2531ddd177f9ee62a1e0218dcc898790b26a82ed3a838a0fa06bdb2707ae0114",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-7388-4re5-1f59bc0c23.json.gz",
+   "zona": "crudo",
+   "bytes": 1113,
+   "sha256": "cb29122d956a014db64b9f3c7376d97cfefa149172cc79af2d28cf09d7edea54",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-7388-4re5-6e4f90ba62.json.gz",
+   "zona": "crudo",
+   "bytes": 697,
+   "sha256": "0bcfb6420acdd03d8ffe4ac0ceb0dde1ccbe09cb2ff8fdbecc294a30b8d8b10d",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-7388-4re5-7a9d73f7db.json.gz",
+   "zona": "crudo",
+   "bytes": 730,
+   "sha256": "5fcead6c3886ef54128d09150d1a579d3c411b2814b56608b6be090ff49cff17",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-7388-4re5-7aae5b95ca.json.gz",
+   "zona": "crudo",
+   "bytes": 749,
+   "sha256": "90da745a8caf358a7906079e4c9f4b968f0e51c0d5217b96e7dfe6b336240e11",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-7388-4re5-7b10e544a8.json.gz",
+   "zona": "crudo",
+   "bytes": 868,
+   "sha256": "8b3c5d6ca15e84ac83c999d69ebaf5ff3a741e60faa9f89452e2345d1169e622",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-7388-4re5-8d67b2ce82.json.gz",
+   "zona": "crudo",
+   "bytes": 1102,
+   "sha256": "514c4a34f1d8ee87f767f939a0252f5ccbcfe2ba96ef0052981360a22b4dddeb",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-7388-4re5-b07e3d88e1.json.gz",
+   "zona": "crudo",
+   "bytes": 493,
+   "sha256": "91b47e6c8b18ae5c6a2294d44695c33601c37345307f0b8bb7611588da184847",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-7388-4re5-c6750ef24b.json.gz",
+   "zona": "crudo",
+   "bytes": 532,
+   "sha256": "70c9b3902a00000366a41d034bf10daec89abc18e46490763e4811d9a62c7ff0",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-7388-4re5-c8b6b50aaf.json.gz",
+   "zona": "crudo",
+   "bytes": 327,
+   "sha256": "e332f220e943c3e69e8eaf8af2c522a00286ee2d9163cbb6a37f95f191b4a1f4",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-7388-4re5-d836ef7d2d.json.gz",
+   "zona": "crudo",
+   "bytes": 984,
+   "sha256": "22dd49e103f1ea00e10435f81757c78042526dd9953139dcf12b124f5562d2c6",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-7388-4re5-f4f3a6c1fd.json.gz",
+   "zona": "crudo",
+   "bytes": 1371,
+   "sha256": "5f8267bbb751a234e209212d69e4cca7097f7914abac2d2f8ec42ffbf566ba8a",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-adpi-29a3-5e26339304.json.gz",
+   "zona": "crudo",
+   "bytes": 64336,
+   "sha256": "f877157a7df0906b46eccfe0bc88fcf319d9158fccf0ca52462eb24f301bd7ef",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-bhxy-4rji-15332e96f1.json.gz",
+   "zona": "crudo",
+   "bytes": 1199,
+   "sha256": "93e47aad6d35b10031bf80ac15b9697b90a6e2468ae9413c9ce7e3133d90e93e",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-bhxy-4rji-991a507e63.json.gz",
+   "zona": "crudo",
+   "bytes": 25975,
+   "sha256": "13f8c87da91558b65c43558153ec7a3a76dca0df9ad1dfd0302488bcec6dc19f",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-iy8d-dzv4-a55f4cd575.json.gz",
+   "zona": "crudo",
+   "bytes": 140081,
+   "sha256": "6e020fb6fa06011b9141ea87989bf71afef078b1a9b9119f19503f9d704b44e5",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-j3uy-fhhx-cbd7c818d8.json.gz",
+   "zona": "crudo",
+   "bytes": 2177674,
+   "sha256": "52ec699766cd05497352a41eccc65b447e3edfbe08ef028f0bf58ab534595db1",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-jg52-dz4p-85cce7f0b2.json.gz",
+   "zona": "crudo",
+   "bytes": 673,
+   "sha256": "648be93418133cc8f9537edb298368f51673d19b72468e7b9e3ad51033a794bd",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-k6e8-nw6w-1ebb864b0e.json.gz",
+   "zona": "crudo",
+   "bytes": 4442,
+   "sha256": "0725cccaa10cac7d6fd5d977001df89a24a27b52f9bc5b6d99b96dec6d117280",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-k6e8-nw6w-7ffcff4905.json.gz",
+   "zona": "crudo",
+   "bytes": 125,
+   "sha256": "95aa644686abc21ee05490b90b444209d6c604fe5e2a51bdf0cf76a7ab3482bf",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-k6e8-nw6w-9fd58216f5.json.gz",
+   "zona": "crudo",
+   "bytes": 1303,
+   "sha256": "0a1d4b895c82677fc15eb52fdfa1a58965807f6774fbe61c107b2016b69c76f6",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-k6e8-nw6w-f499a2bc6e.json.gz",
+   "zona": "crudo",
+   "bytes": 248,
+   "sha256": "f9e7a27048bb64d48101462556b42aacadd7b17e5592d665172716f09b8c44a1",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-k6e8-nw6w-f952688645.json.gz",
+   "zona": "crudo",
+   "bytes": 245,
+   "sha256": "cc510c59bd645ddfa5c36f2f9ff068f5cb737ba81bc9d16cf32e6e5a4acca850",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-ryhf-m453-2c94d5ec5d.json.gz",
+   "zona": "crudo",
+   "bytes": 37735,
+   "sha256": "1ea322ffe41e08c4700485e4174fbc170b2a5f8aa18681056ec60751a30791f0",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-ssrj-rbua-d8465a9a97.json.gz",
+   "zona": "crudo",
+   "bytes": 85,
+   "sha256": "b7d35ce43808a234febc3b0e25487c66a8764ae3f274a98643cdd9e9a5efd373",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-ssrj-rbua-e323007c9b.json.gz",
+   "zona": "crudo",
+   "bytes": 102,
+   "sha256": "e0bddd8ef80e0572962493d4e2124dd9e08120282780a6d3f1ca3d95d27ccb2c",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-yskk-n7cw-02c6416e73.json.gz",
+   "zona": "crudo",
+   "bytes": 178726,
+   "sha256": "df48006e242a23094c54ec7fc0ff4fa0c2d674f5a601db74881eaaad398f5dd1",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/datos-yskk-n7cw-3fa55eb124.json.gz",
+   "zona": "crudo",
+   "bytes": 990,
+   "sha256": "7df6f4c5364f106f28b9b3afa1f1fc9eccfcdaa88edaf5f40d77d2bdb1978cbc",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/ficha-7388-4re5-2a0e3ad3a8.json.gz",
+   "zona": "crudo",
+   "bytes": 2380,
+   "sha256": "7485378fbbc2566cb33fe086488617af8fcbf68d46c3dae36fc9afe0fbcf13d5",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/ficha-adpi-29a3-7ded21cfc0.json.gz",
+   "zona": "crudo",
+   "bytes": 870,
+   "sha256": "c271a663dec42004c47d556874b5d91221d4ecd49ed3e1840776927d35e56b60",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/ficha-iy8d-dzv4-bc7b155045.json.gz",
+   "zona": "crudo",
+   "bytes": 901,
+   "sha256": "8ff0caaac291ad8431bb451b35fea8b57c365c4065bc40ff45c99ab080dc3585",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/ficha-j3uy-fhhx-28d3ce92b9.json.gz",
+   "zona": "crudo",
+   "bytes": 888,
+   "sha256": "bb26ece26e46eb87cf9c4a1eb5bfa6317e205cc9a23cf201f66e7051ef3158db",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/ficha-ryhf-m453-bae8e51e8c.json.gz",
+   "zona": "crudo",
+   "bytes": 2254,
+   "sha256": "fa4eff1dba6c67f836f2c030561df8c7be9ea035549906a500fc2ea5fc084f71",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/ficha-ssrj-rbua-362fd18b44.json.gz",
+   "zona": "crudo",
+   "bytes": 2150,
+   "sha256": "59f9cab23b8b9d74710a41ae4a673b3c99ef5673f1d5243d985dfcd30c061e21",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=data.cityoforlando.net/fecha=2026-11-02/ficha-yskk-n7cw-b4ceff44b2.json.gz",
+   "zona": "crudo",
+   "bytes": 906,
+   "sha256": "50020fbab70d8f57888aae92d538bb15e9f236aa60d40813b525813bdb0de3a4",
+   "sitio": "data.cityoforlando.net",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=en.wikipedia.org/fecha=2026-10-26/jacksonville-_florida-714edebc66.json.gz",
+   "zona": "crudo",
+   "bytes": 1050,
+   "sha256": "b70cc302f83140b3fb7615af860feea5520ea7757c0c9cbd56f2fdc4f314a1c3",
+   "sitio": "en.wikipedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=en.wikipedia.org/fecha=2026-10-26/miami-ff5c91d84b.json.gz",
+   "zona": "crudo",
+   "bytes": 912,
+   "sha256": "7188ff47c8c85bb64f3b85305bc4f79ed48257084ceedd6cc2c872f95d93b62b",
+   "sitio": "en.wikipedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=en.wikipedia.org/fecha=2026-10-26/orlando-_florida-277d65fbb0.json.gz",
+   "zona": "crudo",
+   "bytes": 852,
+   "sha256": "d0b5bf7b46ac3b4f6768be4166299daacbd4546bdbc30af41243c6d546556785",
+   "sitio": "en.wikipedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=en.wikipedia.org/fecha=2026-10-26/tampa-_florida-5e0e50f34f.json.gz",
+   "zona": "crudo",
+   "bytes": 940,
+   "sha256": "6c053873b6a6d4baaa315b30b3ca572439bab4022092bc2e6d59701bb1a168a2",
+   "sitio": "en.wikipedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=en.wikipedia.org/fecha=2026-11-02/jacksonville-_florida-714edebc66.json.gz",
+   "zona": "crudo",
+   "bytes": 1052,
+   "sha256": "09de95d22616b4901e597bd57e379fd9ceab79d7f8519306b28f55d2ed725e5d",
+   "sitio": "en.wikipedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=en.wikipedia.org/fecha=2026-11-02/miami-ff5c91d84b.json.gz",
+   "zona": "crudo",
+   "bytes": 909,
+   "sha256": "59a6cb59f5261710975a22410f3e4b02334a8f89941817d25a339c820c207c76",
+   "sitio": "en.wikipedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=en.wikipedia.org/fecha=2026-11-02/orlando-_florida-277d65fbb0.json.gz",
+   "zona": "crudo",
+   "bytes": 853,
+   "sha256": "956e2e256e63b08b0d581823fecbe9d1e3d045dc13892f956ee953d4774ee28d",
+   "sitio": "en.wikipedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=en.wikipedia.org/fecha=2026-11-02/tampa-_florida-5e0e50f34f.json.gz",
+   "zona": "crudo",
+   "bytes": 914,
+   "sha256": "105726fcf22fd323229773d259dcb74fee81a70f34e86e9416fc8c6b4235df5d",
+   "sitio": "en.wikipedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=es.wikipedia.org/fecha=2026-10-26/jacksonville_-florida-c3d9684304.json.gz",
+   "zona": "crudo",
+   "bytes": 1033,
+   "sha256": "3f82ee3693ea4d5d915e1e166dc936928e470b41f7b9d0851b155d7421683fe0",
+   "sitio": "es.wikipedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=es.wikipedia.org/fecha=2026-10-26/miami-99d304f5c5.json.gz",
+   "zona": "crudo",
+   "bytes": 1081,
+   "sha256": "3d87e1b72b4c71ca9809f685053b7393fd0aa41d8c21d6251a2b7865d6bc872d",
+   "sitio": "es.wikipedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=es.wikipedia.org/fecha=2026-10-26/orlando_-florida-fca5ab306c.json.gz",
+   "zona": "crudo",
+   "bytes": 1001,
+   "sha256": "01d20ba7e4b21636a3b9c057291506cf796a6db76d49bd1e0db758e5719abffa",
+   "sitio": "es.wikipedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=es.wikipedia.org/fecha=2026-10-26/tampa-27a5aae398.json.gz",
+   "zona": "crudo",
+   "bytes": 1034,
+   "sha256": "bb8e804d22776925c32a32836b872f74f8732ef58f3e9409c992936753859dd3",
+   "sitio": "es.wikipedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=es.wikipedia.org/fecha=2026-11-02/jacksonville_-florida-c3d9684304.json.gz",
+   "zona": "crudo",
+   "bytes": 1034,
+   "sha256": "b7d741deaf60c6014c7421bdb7e944262d90dec3fa9be22b3fb728a0640a85a5",
+   "sitio": "es.wikipedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=es.wikipedia.org/fecha=2026-11-02/miami-99d304f5c5.json.gz",
+   "zona": "crudo",
+   "bytes": 1082,
+   "sha256": "7306bf4054b64daff15297c44625d9401eec8f3759fc4083b05001e965f30a7d",
+   "sitio": "es.wikipedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=es.wikipedia.org/fecha=2026-11-02/orlando_-florida-fca5ab306c.json.gz",
+   "zona": "crudo",
+   "bytes": 998,
+   "sha256": "5d59012a38c759b60679594b428d88ebc786dca3ff05257ad95aa23184b5728b",
+   "sitio": "es.wikipedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=es.wikipedia.org/fecha=2026-11-02/tampa-27a5aae398.json.gz",
+   "zona": "crudo",
+   "bytes": 1033,
+   "sha256": "022c21f5e0985dabe14d244e1d54542acbf07cd45616e2e71d7eaccc1a26e1be",
+   "sitio": "es.wikipedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=files.mobilitydatabase.org/fecha=2026-11-02/latest-zip-9241f4e8de.zip.gz",
+   "zona": "crudo",
+   "bytes": 1559225,
+   "sha256": "b0699d4111185a66a7f8431a05e824b926f8bb974d3dd18a0acc5a20f1875537",
+   "sitio": "files.mobilitydatabase.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=files.zillowstatic.com/fecha=2026-10-26/metro_zhvi_uc_sfrcondo_tier_0-33_0-67_sm_sa_month--34e4bc2cef.csv.gz",
+   "zona": "crudo",
+   "bytes": 2177601,
+   "sha256": "efb941ee5a84ff7ad47a99ed350ffae0aadff7b923cc8c9feed50323622e9432",
+   "sitio": "files.zillowstatic.com",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=files.zillowstatic.com/fecha=2026-10-26/metro_zori_uc_sfrcondomfr_sm_month-csv-2dc0806bd7.csv.gz",
+   "zona": "crudo",
+   "bytes": 503573,
+   "sha256": "36f4c23d37a75dd9956ca57dc018ea6d1225b20bb2e381ac8666a67cbb5919c6",
+   "sitio": "files.zillowstatic.com",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=files.zillowstatic.com/fecha=2026-11-02/metro_zhvi_uc_sfrcondo_tier_0-33_0-67_sm_sa_month--34e4bc2cef.csv.gz",
+   "zona": "crudo",
+   "bytes": 2177601,
+   "sha256": "efb941ee5a84ff7ad47a99ed350ffae0aadff7b923cc8c9feed50323622e9432",
+   "sitio": "files.zillowstatic.com",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=files.zillowstatic.com/fecha=2026-11-02/metro_zori_uc_sfrcondomfr_sm_month-csv-2dc0806bd7.csv.gz",
+   "zona": "crudo",
+   "bytes": 503573,
+   "sha256": "36f4c23d37a75dd9956ca57dc018ea6d1225b20bb2e381ac8666a67cbb5919c6",
+   "sitio": "files.zillowstatic.com",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-atnhpius36740q-981669d03b.csv.gz",
+   "zona": "crudo",
+   "bytes": 1129,
+   "sha256": "5fbc0aa02e93575584dbf418aed0ea0ae414f03f811aecc3ba3a39e782a4997d",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-atnhpius45300q-95c00b0986.csv.gz",
+   "zona": "crudo",
+   "bytes": 2479,
+   "sha256": "2bf664cdd58c07d13a76848002e89242ce7f7f8722e189042e92acac19bb62cf",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-babatotalsafl-9b2177be97.csv.gz",
+   "zona": "crudo",
+   "bytes": 2451,
+   "sha256": "99fa1ce984b70468d024eebddf86e8ae5ceecc3d45aa17cd023f2d7defe88cfa",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-cuur0300sa0-185edd3c74.csv.gz",
+   "zona": "crudo",
+   "bytes": 3307,
+   "sha256": "63fe2a02cda1e8ac2a32f831e9d96ff53a543797f580a30cfe41eba2816b2d37",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-flhill7pop-b4b746ec00.csv.gz",
+   "zona": "crudo",
+   "bytes": 1660,
+   "sha256": "f029af4767826d5c4aa6dc7d763c83ec3afac86b550c80ef7c89610e087106ab",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-floran0pop-cfb52ff695.csv.gz",
+   "zona": "crudo",
+   "bytes": 581,
+   "sha256": "7681df35820147d59a337a8b9c4e0859a79c8f407b5cc246dc3250fee26fe481",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-medlispri36740-eca335375f.csv.gz",
+   "zona": "crudo",
+   "bytes": 1219,
+   "sha256": "a2f30a6b55938679f9f4117b8b6eef283ee07122287c6dcc9dcb721bb8f3aa03",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-medlispri45300-b1ab04c42d.csv.gz",
+   "zona": "crudo",
+   "bytes": 3940,
+   "sha256": "585e921860324ba29c608c61489f7b216299f517c9743b432d47bdc82ae6f153",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-mhifl12095a052ncen-7b413e26f2.csv.gz",
+   "zona": "crudo",
+   "bytes": 995,
+   "sha256": "f22b8aab4295e929318012bb0455f691bf21ffd0df7e9a23952cefbd9efd75b4",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-orla712bpprivsa-db662c84e1.csv.gz",
+   "zona": "crudo",
+   "bytes": 5562,
+   "sha256": "14c54aa15deec3ac2bf6b09002e760db35811dddd7fcd71470bfd36613c1c136",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-orla712leih-eb62d5964c.csv.gz",
+   "zona": "crudo",
+   "bytes": 5869,
+   "sha256": "9f6882d2ad18ed9558fd7d8db57e102e1daa25d00ca108d8fbf3fba4353cbb8d",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-orla712na-b2bfefea98.csv.gz",
+   "zona": "crudo",
+   "bytes": 2163,
+   "sha256": "8dc26b85d26b441c7e044c0046604461cf85364fc02a0215a60547ee7ff939d0",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-orla712ur-eaca8e4fdb.csv.gz",
+   "zona": "crudo",
+   "bytes": 6154,
+   "sha256": "05553256cc556918605b00785839d821b49d5a50fab90bb8f69cd2705a9d37f2",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-pcpi12095-6b89009310.csv.gz",
+   "zona": "crudo",
+   "bytes": 1302,
+   "sha256": "5d13ba00d4c64df6504383a6f1fcb49c505cfd9427913b2e3263c573c45a790a",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-priredcou36740-1a41e9b209.csv.gz",
+   "zona": "crudo",
+   "bytes": 820,
+   "sha256": "82f387f7b5556d9c02dc332a284bc86e5aa8619c17296f8fdc809279ec0b1afe",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-smu12367400500000003-4b8a4209f9.csv.gz",
+   "zona": "crudo",
+   "bytes": 2667,
+   "sha256": "eecc84b928eb0eef32e34a9386a14e1d3efe80ebf4d76fb2f640072e78f2f21c",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-10-26/fred-tamp312leih-d5cb8eebf1.csv.gz",
+   "zona": "crudo",
+   "bytes": 15155,
+   "sha256": "28cc411055efa2dd94d0eeab64cd150b7b5c6c4f0693da9ccd73db09cd86cb02",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-atnhpius36740q-981669d03b.csv.gz",
+   "zona": "crudo",
+   "bytes": 1129,
+   "sha256": "5fbc0aa02e93575584dbf418aed0ea0ae414f03f811aecc3ba3a39e782a4997d",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-atnhpius45300q-95c00b0986.csv.gz",
+   "zona": "crudo",
+   "bytes": 2479,
+   "sha256": "2bf664cdd58c07d13a76848002e89242ce7f7f8722e189042e92acac19bb62cf",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-babatotalsafl-9b2177be97.csv.gz",
+   "zona": "crudo",
+   "bytes": 2451,
+   "sha256": "99fa1ce984b70468d024eebddf86e8ae5ceecc3d45aa17cd023f2d7defe88cfa",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-cuur0300sa0-185edd3c74.csv.gz",
+   "zona": "crudo",
+   "bytes": 3307,
+   "sha256": "63fe2a02cda1e8ac2a32f831e9d96ff53a543797f580a30cfe41eba2816b2d37",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-flhill7pop-b4b746ec00.csv.gz",
+   "zona": "crudo",
+   "bytes": 1660,
+   "sha256": "f029af4767826d5c4aa6dc7d763c83ec3afac86b550c80ef7c89610e087106ab",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-floran0pop-cfb52ff695.csv.gz",
+   "zona": "crudo",
+   "bytes": 581,
+   "sha256": "7681df35820147d59a337a8b9c4e0859a79c8f407b5cc246dc3250fee26fe481",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-medlispri36740-eca335375f.csv.gz",
+   "zona": "crudo",
+   "bytes": 1219,
+   "sha256": "a2f30a6b55938679f9f4117b8b6eef283ee07122287c6dcc9dcb721bb8f3aa03",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-medlispri45300-b1ab04c42d.csv.gz",
+   "zona": "crudo",
+   "bytes": 3940,
+   "sha256": "585e921860324ba29c608c61489f7b216299f517c9743b432d47bdc82ae6f153",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-mhifl12095a052ncen-7b413e26f2.csv.gz",
+   "zona": "crudo",
+   "bytes": 995,
+   "sha256": "f22b8aab4295e929318012bb0455f691bf21ffd0df7e9a23952cefbd9efd75b4",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-orla712bpprivsa-db662c84e1.csv.gz",
+   "zona": "crudo",
+   "bytes": 5577,
+   "sha256": "71468844c0f17610c37ee309c7c8963bd39a957b16c871a0de44194a78de7268",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-orla712leih-eb62d5964c.csv.gz",
+   "zona": "crudo",
+   "bytes": 5869,
+   "sha256": "9f6882d2ad18ed9558fd7d8db57e102e1daa25d00ca108d8fbf3fba4353cbb8d",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-orla712na-b2bfefea98.csv.gz",
+   "zona": "crudo",
+   "bytes": 2163,
+   "sha256": "8dc26b85d26b441c7e044c0046604461cf85364fc02a0215a60547ee7ff939d0",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-orla712ur-eaca8e4fdb.csv.gz",
+   "zona": "crudo",
+   "bytes": 6156,
+   "sha256": "356d6849cc6250a2e312e24dc8cdda7d45cd2d38e1030559f7d72ca4323fce16",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-pcpi12095-6b89009310.csv.gz",
+   "zona": "crudo",
+   "bytes": 1302,
+   "sha256": "5d13ba00d4c64df6504383a6f1fcb49c505cfd9427913b2e3263c573c45a790a",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-priredcou36740-1a41e9b209.csv.gz",
+   "zona": "crudo",
+   "bytes": 820,
+   "sha256": "82f387f7b5556d9c02dc332a284bc86e5aa8619c17296f8fdc809279ec0b1afe",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-smu12367400500000003-4b8a4209f9.csv.gz",
+   "zona": "crudo",
+   "bytes": 2667,
+   "sha256": "eecc84b928eb0eef32e34a9386a14e1d3efe80ebf4d76fb2f640072e78f2f21c",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=fred.stlouisfed.org/fecha=2026-11-02/fred-tamp312leih-d5cb8eebf1.csv.gz",
+   "zona": "crudo",
+   "bytes": 15155,
+   "sha256": "28cc411055efa2dd94d0eeab64cd150b7b5c6c4f0693da9ccd73db09cd86cb02",
+   "sitio": "fred.stlouisfed.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-10-5bcdb2d5f2.json.gz",
+   "zona": "crudo",
+   "bytes": 186,
+   "sha256": "8f878054364ec34d47d6563ab8cf0792af7355fdc705419daf0159b167e33130",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-11-9dcc508810.json.gz",
+   "zona": "crudo",
+   "bytes": 458,
+   "sha256": "4a7e684084741ddad31b13b57d54fe20648d702d9b04d898b2dad1f79adb09a5",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-11-b67a81512b.json.gz",
+   "zona": "crudo",
+   "bytes": 184,
+   "sha256": "b6bf185597dd566d6ea6a374ec928cbfffc3de273f765a1609ec5838c0414f23",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-12-2e886f4546.json.gz",
+   "zona": "crudo",
+   "bytes": 185,
+   "sha256": "847e675c43914754d7a3ea14db1a17488347b2367c474a8a4a3d026b11c9dcab",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-12-69a27c5609.json.gz",
+   "zona": "crudo",
+   "bytes": 409,
+   "sha256": "06cd0f6a7eac515895baa5bc920c7b4a809bbcaf5cba24181edaad3562cabff9",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-13-5a8890648c.json.gz",
+   "zona": "crudo",
+   "bytes": 186,
+   "sha256": "7756a771b00325df84de9933dd4647560d8130873a0004ce4f528c36f5629b40",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-13-738fb5f08a.json.gz",
+   "zona": "crudo",
+   "bytes": 478,
+   "sha256": "1bd5690c6dfeb3b1e56cce9626285f953834cae09e66dec9d798295421e04c24",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-14-1712c25909.json.gz",
+   "zona": "crudo",
+   "bytes": 487,
+   "sha256": "b58ffb02d0428615304c9b663d7131c408feb48a809c13f68b9b04d00153939c",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-14-339f624749.json.gz",
+   "zona": "crudo",
+   "bytes": 186,
+   "sha256": "a8bc19511b7702d89b54ad25201d02711a76d4b7a5a7c82d31536466cf003bb7",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-15-1325636b85.json.gz",
+   "zona": "crudo",
+   "bytes": 456,
+   "sha256": "1f22f58da24ad01454b97def8dd058dc204c06d7cad5663c296cf53cc062ac4d",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-15-7e5dfd68d4.json.gz",
+   "zona": "crudo",
+   "bytes": 185,
+   "sha256": "2ac669d5266822f2220e78d36bb04b75515fc15d89dc863da078d2b66e67bbca",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-6-bb3618d4c8.json.gz",
+   "zona": "crudo",
+   "bytes": 185,
+   "sha256": "f2187de680e90e191c260f52bfec39395fb50c0adf9321bf85dece64e97155fd",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-7-34a8b6a29e.json.gz",
+   "zona": "crudo",
+   "bytes": 186,
+   "sha256": "cba9ac33d1c547505fc4779f81fbe852363254d68353ca794d3abcb2acd2cb83",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-8-5b049158b8.json.gz",
+   "zona": "crudo",
+   "bytes": 185,
+   "sha256": "7e324311952945fc955972ac2909ddf6b894809b01c298f727000e39678c6bdf",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-9-75431e4b4f.json.gz",
+   "zona": "crudo",
+   "bytes": 185,
+   "sha256": "45755298094a192db0fc2f92e0e8edab1aa3686c790eb57158942d83d5fac1d1",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=geo.dot.gov/fecha=2026-11-02/fqacc-servicio-c612242782.json.gz",
+   "zona": "crudo",
+   "bytes": 1579,
+   "sha256": "2d4d7eab8b115ae84bf1cf21ecb20364bcc4330e283b416ecb36c644b1d9f845",
+   "sitio": "geo.dot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.fdot.gov/fecha=2026-11-02/rci_layers-13-4d50eef35f.json.gz",
+   "zona": "crudo",
+   "bytes": 144,
+   "sha256": "e6b2cfcec862065df8aeb5c751b4cd4717463561cd3380c8bcd953099301fc06",
+   "sitio": "gis.fdot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.fdot.gov/fecha=2026-11-02/rci_layers-13-b8a103df4f.json.gz",
+   "zona": "crudo",
+   "bytes": 13514,
+   "sha256": "fa1908645319ecfe8ab3490fb19678dbcc629f908da658586e76d20ec5f84d58",
+   "sitio": "gis.fdot.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-07431a0669.json.gz",
+   "zona": "crudo",
+   "bytes": 1142,
+   "sha256": "74e190e625cd0fb4b4b0130a8987ce261951dcaa946c76ad8770ce5bcb6e983c",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-2a58769e4f.json.gz",
+   "zona": "crudo",
+   "bytes": 1397,
+   "sha256": "a103adac697e730ad25c74934bad36aadeecf9ab5486417e5f03ebf5515b9d24",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-50f08731e3.json.gz",
+   "zona": "crudo",
+   "bytes": 1409,
+   "sha256": "7b6c7abff081f338333b8e25a6fafdc1c933003919612a25705cadd577267595",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-5cfc5aff76.json.gz",
+   "zona": "crudo",
+   "bytes": 1359,
+   "sha256": "19171d7f39a1446898d037e9a9cbf4eaccc529ccf2212202abaf7668a7894683",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-70863c4c9b.json.gz",
+   "zona": "crudo",
+   "bytes": 1086,
+   "sha256": "5a00248db769238bc66f1df47f116b53781b37f95f007a1d298cd87d216610e3",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-7a4238bbb5.json.gz",
+   "zona": "crudo",
+   "bytes": 1356,
+   "sha256": "6a43160776639151d0ad955f9b17a4f3db76f1939cd7870bd3858f84c36eb765",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-8933c2a9f7.json.gz",
+   "zona": "crudo",
+   "bytes": 1395,
+   "sha256": "b91b894a3f9db7e4679fcf84de1c42c37257b6c32a2deb4ef4f6003675607386",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-92ab66d4b6.json.gz",
+   "zona": "crudo",
+   "bytes": 1395,
+   "sha256": "04b8df7aa7b05b8ba2b7fe18be1e3f7d2459f6302edf3b6a79e97b3e715c3add",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-aa2da66bee.json.gz",
+   "zona": "crudo",
+   "bytes": 1049,
+   "sha256": "44158f725d93b07df6eba3b3e74dbb238c33e7ce5f45aea78c07f35efe5756a7",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-cdda4450a4.json.gz",
+   "zona": "crudo",
+   "bytes": 518,
+   "sha256": "32274688892f5cb3aa77223658bb59c422769c58a50c5c56bc67c7e7579d8419",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-ce0bc085d0.json.gz",
+   "zona": "crudo",
+   "bytes": 526,
+   "sha256": "aed49b9048115ed549706a097431f75cbb0d986ef7a4c078bdf86f67affa556f",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-d1d945fd5e.json.gz",
+   "zona": "crudo",
+   "bytes": 1379,
+   "sha256": "ecb8bdea6fe42598ed5f59601c779db39ebabc3a564ddbfdc2744bbc33b21736",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-d8f55d5ff4.json.gz",
+   "zona": "crudo",
+   "bytes": 1173,
+   "sha256": "729ac8f1f3794b01bbe9083a2e5923a8b36ebc6f31443bf759aadd581722d69d",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-de002808d4.json.gz",
+   "zona": "crudo",
+   "bytes": 147,
+   "sha256": "2eaadb09795f29fa18c4a66884c5dd281f9d5e7c931606e45dc5f911fac298ec",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/opd_cases_viewing-0-f544dcd841.json.gz",
+   "zona": "crudo",
+   "bytes": 1343,
+   "sha256": "ab877e8f58b06c70ac9e3860ba68bf508ccee963a2313777caaeb07fb060006a",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/orlandobikeroutes-0-249dc7e4bf.json.gz",
+   "zona": "crudo",
+   "bytes": 15930,
+   "sha256": "b5bf3aad1180dc716c4ecdfa9f1fecf763d4a1597e8f7f70caa7f3410d3d81c9",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/orlandoincentiveprograms-2-67b5f04600.json.gz",
+   "zona": "crudo",
+   "bytes": 4269,
+   "sha256": "2fb0592292c3617cbb2c6eeb9eb4ba65308aa09638edfdc2c56628a8b7102481",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/orlandoincentiveprograms-4-a3d921a705.json.gz",
+   "zona": "crudo",
+   "bytes": 2080,
+   "sha256": "0210cf3a65fa36ebcf7f1352b74999ebdb7a61289a8891eff00f63120b67d333",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/orlandolanduseplanning-11-b740e50cc2.json.gz",
+   "zona": "crudo",
+   "bytes": 22767,
+   "sha256": "14a25b51af7b30931ce3749dda6125be12e09ca9b19333b5471fefca5180b7b9",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/orlandolanduseplanning-8-4aa44e919a.json.gz",
+   "zona": "crudo",
+   "bytes": 1010,
+   "sha256": "30df9beeb7c3c1c8b9cec5d5ecb41df8eeba4bda61ff91b35223816db6baa0e3",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/orlandoparks-0-ccaae68281.json.gz",
+   "zona": "crudo",
+   "bytes": 7097,
+   "sha256": "f55313e4686af587977d32f5b230013444a88f3e8f59499508b1719771b804a7",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/schools-1-3b5cb49841.json.gz",
+   "zona": "crudo",
+   "bytes": 643,
+   "sha256": "4c6ebdee79b02ddfd54951c5dcd0a6a670e0bd16954a66759c0836aa828d8aae",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/schools-3-bded12ec06.json.gz",
+   "zona": "crudo",
+   "bytes": 1900,
+   "sha256": "c993e38cc4aa7e9d8dc2d2de9f82224e1d964727a923417d7b56fd71cb6575d6",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/transportation-27-f34464ab6c.json.gz",
+   "zona": "crudo",
+   "bytes": 550,
+   "sha256": "74ed164e40590d3a7e82e32632784b45c40b6269d9d6803509cc3286d8ab1952",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-07431a0669.json.gz",
+   "zona": "crudo",
+   "bytes": 1142,
+   "sha256": "74e190e625cd0fb4b4b0130a8987ce261951dcaa946c76ad8770ce5bcb6e983c",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-2a58769e4f.json.gz",
+   "zona": "crudo",
+   "bytes": 1397,
+   "sha256": "a103adac697e730ad25c74934bad36aadeecf9ab5486417e5f03ebf5515b9d24",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-50f08731e3.json.gz",
+   "zona": "crudo",
+   "bytes": 1409,
+   "sha256": "7b6c7abff081f338333b8e25a6fafdc1c933003919612a25705cadd577267595",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-5cfc5aff76.json.gz",
+   "zona": "crudo",
+   "bytes": 1359,
+   "sha256": "19171d7f39a1446898d037e9a9cbf4eaccc529ccf2212202abaf7668a7894683",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-70863c4c9b.json.gz",
+   "zona": "crudo",
+   "bytes": 1086,
+   "sha256": "5a00248db769238bc66f1df47f116b53781b37f95f007a1d298cd87d216610e3",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-7a4238bbb5.json.gz",
+   "zona": "crudo",
+   "bytes": 1356,
+   "sha256": "6a43160776639151d0ad955f9b17a4f3db76f1939cd7870bd3858f84c36eb765",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-8933c2a9f7.json.gz",
+   "zona": "crudo",
+   "bytes": 1395,
+   "sha256": "b91b894a3f9db7e4679fcf84de1c42c37257b6c32a2deb4ef4f6003675607386",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-92ab66d4b6.json.gz",
+   "zona": "crudo",
+   "bytes": 1395,
+   "sha256": "04b8df7aa7b05b8ba2b7fe18be1e3f7d2459f6302edf3b6a79e97b3e715c3add",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-aa2da66bee.json.gz",
+   "zona": "crudo",
+   "bytes": 1049,
+   "sha256": "44158f725d93b07df6eba3b3e74dbb238c33e7ce5f45aea78c07f35efe5756a7",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-cdda4450a4.json.gz",
+   "zona": "crudo",
+   "bytes": 512,
+   "sha256": "5eeda776f2be7c313510ec369f2ec1313fdf0c283d74f99615c86cda5861c41f",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-ce0bc085d0.json.gz",
+   "zona": "crudo",
+   "bytes": 526,
+   "sha256": "aed49b9048115ed549706a097431f75cbb0d986ef7a4c078bdf86f67affa556f",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-d1d945fd5e.json.gz",
+   "zona": "crudo",
+   "bytes": 1379,
+   "sha256": "ecb8bdea6fe42598ed5f59601c779db39ebabc3a564ddbfdc2744bbc33b21736",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-d8f55d5ff4.json.gz",
+   "zona": "crudo",
+   "bytes": 1173,
+   "sha256": "729ac8f1f3794b01bbe9083a2e5923a8b36ebc6f31443bf759aadd581722d69d",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-de002808d4.json.gz",
+   "zona": "crudo",
+   "bytes": 147,
+   "sha256": "2eaadb09795f29fa18c4a66884c5dd281f9d5e7c931606e45dc5f911fac298ec",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/opd_cases_viewing-0-f544dcd841.json.gz",
+   "zona": "crudo",
+   "bytes": 1343,
+   "sha256": "ab877e8f58b06c70ac9e3860ba68bf508ccee963a2313777caaeb07fb060006a",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/orlandobikeroutes-0-249dc7e4bf.json.gz",
+   "zona": "crudo",
+   "bytes": 15930,
+   "sha256": "b5bf3aad1180dc716c4ecdfa9f1fecf763d4a1597e8f7f70caa7f3410d3d81c9",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/orlandoincentiveprograms-2-67b5f04600.json.gz",
+   "zona": "crudo",
+   "bytes": 4269,
+   "sha256": "2fb0592292c3617cbb2c6eeb9eb4ba65308aa09638edfdc2c56628a8b7102481",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/orlandoincentiveprograms-4-a3d921a705.json.gz",
+   "zona": "crudo",
+   "bytes": 2080,
+   "sha256": "0210cf3a65fa36ebcf7f1352b74999ebdb7a61289a8891eff00f63120b67d333",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/orlandolanduseplanning-11-b740e50cc2.json.gz",
+   "zona": "crudo",
+   "bytes": 22767,
+   "sha256": "14a25b51af7b30931ce3749dda6125be12e09ca9b19333b5471fefca5180b7b9",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/orlandolanduseplanning-8-4aa44e919a.json.gz",
+   "zona": "crudo",
+   "bytes": 1010,
+   "sha256": "30df9beeb7c3c1c8b9cec5d5ecb41df8eeba4bda61ff91b35223816db6baa0e3",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/orlandoparks-0-ccaae68281.json.gz",
+   "zona": "crudo",
+   "bytes": 7097,
+   "sha256": "f55313e4686af587977d32f5b230013444a88f3e8f59499508b1719771b804a7",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/schools-1-3b5cb49841.json.gz",
+   "zona": "crudo",
+   "bytes": 643,
+   "sha256": "4c6ebdee79b02ddfd54951c5dcd0a6a670e0bd16954a66759c0836aa828d8aae",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/schools-3-bded12ec06.json.gz",
+   "zona": "crudo",
+   "bytes": 1900,
+   "sha256": "c993e38cc4aa7e9d8dc2d2de9f82224e1d964727a923417d7b56fd71cb6575d6",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=gis.orlando.gov/fecha=2026-11-02/transportation-27-f34464ab6c.json.gz",
+   "zona": "crudo",
+   "bytes": 550,
+   "sha256": "74ed164e40590d3a7e82e32632784b45c40b6269d9d6803509cc3286d8ab1952",
+   "sitio": "gis.orlando.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=raw.githubusercontent.com/fecha=2026-10-26/metro_job_postings_us-csv-22d742400b.csv.gz",
+   "zona": "crudo",
+   "bytes": 7722392,
+   "sha256": "734af03ffb060e679756352c40cb06f5f97001338762ed1d81e9d22e4e603c23",
+   "sitio": "raw.githubusercontent.com",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=raw.githubusercontent.com/fecha=2026-11-02/metro_job_postings_us-csv-22d742400b.csv.gz",
+   "zona": "crudo",
+   "bytes": 7742035,
+   "sha256": "c05543dfbb40c6f669fcdd05f63b9358e8661e502572b5ac7872f25f6892e57c",
+   "sitio": "raw.githubusercontent.com",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=services.arcgis.com/fecha=2026-10-26/national_risk_index_census_tracts-0-974115991c.json.gz",
+   "zona": "crudo",
+   "bytes": 28434,
+   "sha256": "86dcb06bd518809cf82fafb179221e0a017ccf89421a57462ae840f67cfc7599",
+   "sitio": "services.arcgis.com",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=services.arcgis.com/fecha=2026-11-02/national_risk_index_census_tracts-0-974115991c.json.gz",
+   "zona": "crudo",
+   "bytes": 28434,
+   "sha256": "86dcb06bd518809cf82fafb179221e0a017ccf89421a57462ae840f67cfc7599",
+   "sitio": "services.arcgis.com",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=services1.arcgis.com/fecha=2026-11-02/annual_average_daily_traffic_historical_tda-0-13c8ffbb61.json.gz",
+   "zona": "crudo",
+   "bytes": 10775,
+   "sha256": "f3217da233c66eeec275a43c524d4297174c10c352499e15ef4d232d977c9e09",
+   "sitio": "services1.arcgis.com",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=services1.arcgis.com/fecha=2026-11-02/annual_average_daily_traffic_historical_tda-0-1bc44c8993.json.gz",
+   "zona": "crudo",
+   "bytes": 4838,
+   "sha256": "544eeb68bf123154018adf04dced374464ed84d375c4e60a1d626cdb312a0fdc",
+   "sitio": "services1.arcgis.com",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=services1.arcgis.com/fecha=2026-11-02/annual_average_daily_traffic_historical_tda-0-29e90c52f7.json.gz",
+   "zona": "crudo",
+   "bytes": 10735,
+   "sha256": "c403df674f445e01ea60aaf06f8c557ff78dbbdb2a6e6ddd131b0c4f16c6bd57",
+   "sitio": "services1.arcgis.com",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=services1.arcgis.com/fecha=2026-11-02/annual_average_daily_traffic_historical_tda-0-98285a3c91.json.gz",
+   "zona": "crudo",
+   "bytes": 10776,
+   "sha256": "e14420e82c0b1d9181102abce435b2f8c3307663bb51cc3167ff8cc66090953d",
+   "sitio": "services1.arcgis.com",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=services1.arcgis.com/fecha=2026-11-02/annual_average_daily_traffic_tda-0-2406545be8.json.gz",
+   "zona": "crudo",
+   "bytes": 154955,
+   "sha256": "5ef74957b574072ad135358068882e343e085a1f7423186537ec80715eb06037",
+   "sitio": "services1.arcgis.com",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-10-26/vistas-pageviews-per-article-en-wikipedia-045124de84.json.gz",
+   "zona": "crudo",
+   "bytes": 302,
+   "sha256": "78b7e6eb78cb65650940cf37044956510f4e6cc4c5aadb8147a0a90247d33459",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-10-26/vistas-pageviews-per-article-en-wikipedia-10f7c24750.json.gz",
+   "zona": "crudo",
+   "bytes": 312,
+   "sha256": "768a14fe9d9efa03e34cfa716a2f69d0d38d49b3d98ce9a3ad812ff6f7d1987f",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-10-26/vistas-pageviews-per-article-en-wikipedia-ad18d87de5.json.gz",
+   "zona": "crudo",
+   "bytes": 310,
+   "sha256": "8b0fe21f731643d49fdb7b788b0832b06cb7d49383172ef5b543cb740b691754",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-10-26/vistas-pageviews-per-article-en-wikipedia-e105f9dbbc.json.gz",
+   "zona": "crudo",
+   "bytes": 299,
+   "sha256": "2743780ec0678cd008b4381f9e0d49739cdd7fa912d92a55081e245200aaf78a",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-10-26/vistas-pageviews-per-article-es-wikipedia-238d9626e7.json.gz",
+   "zona": "crudo",
+   "bytes": 306,
+   "sha256": "34d7a0a19db51aa231c0cc32d29371c43f56202dbc2caea6bac044d3c7c8f8f1",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-10-26/vistas-pageviews-per-article-es-wikipedia-603a394f80.json.gz",
+   "zona": "crudo",
+   "bytes": 285,
+   "sha256": "ae8a67b01cb367504a79bd1eb609d56d258f9b93d97926d4e4bfeb556d394458",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-10-26/vistas-pageviews-per-article-es-wikipedia-70777fd510.json.gz",
+   "zona": "crudo",
+   "bytes": 292,
+   "sha256": "f1fd7306ededfd8e418377365dc88caf3ee08f35125b250b19f7c13899b6ca86",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-10-26/vistas-pageviews-per-article-es-wikipedia-e2a45e4494.json.gz",
+   "zona": "crudo",
+   "bytes": 303,
+   "sha256": "b2f8fe24bd2d1ee40af532f3fb07f0ead56ccd6bcd1997ffc9c903ed93eb9a37",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-en-wikipedia-5dc600e433.json.gz",
+   "zona": "crudo",
+   "bytes": 310,
+   "sha256": "62ed0b76aae89db5c4eb437deae771788ceadefbf8df802f3b59176e1b786968",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-en-wikipedia-60c6b8d663.json.gz",
+   "zona": "crudo",
+   "bytes": 300,
+   "sha256": "269a640ddf496612dfb1d91a8c488c61d34d2c529d4cb4e5f65e3239e9add183",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-en-wikipedia-6ddecd3f0e.json.gz",
+   "zona": "crudo",
+   "bytes": 302,
+   "sha256": "93088bcd10bcf34d5e63b48d8fa317764d2e1333bd5b74d4f7d384d26652eee1",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-en-wikipedia-a15a22a0c5.json.gz",
+   "zona": "crudo",
+   "bytes": 313,
+   "sha256": "9c84d0d7987f7da2751d7283506dc240f39bf61ec68e9c73537202700d8e4135",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-es-wikipedia-90b1d81028.json.gz",
+   "zona": "crudo",
+   "bytes": 299,
+   "sha256": "32194f0c13178111fd80340908efb08c87ca217428bb91e8008d42c8dacbab75",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-es-wikipedia-bf63ede8fd.json.gz",
+   "zona": "crudo",
+   "bytes": 286,
+   "sha256": "24933c9df0352063a8b5592063a1c9280a9d617497b5471408c48d03c336917e",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-es-wikipedia-d5dd074e43.json.gz",
+   "zona": "crudo",
+   "bytes": 307,
+   "sha256": "adb31c83ff99077f39176a37f292b5ec1721820dba991a492f8aa3ddfaf07077",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=wikimedia.org/fecha=2026-11-02/vistas-pageviews-per-article-es-wikipedia-da60aecd40.json.gz",
+   "zona": "crudo",
+   "bytes": 291,
+   "sha256": "c2a80f010ef06a940bafddcf89d780b2b48f7dd4ef6e9b9276b6241fc0c51525",
+   "sitio": "wikimedia.org",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "crudo/sitio=www.ncei.noaa.gov/fecha=2026-10-26/v1-4045fa524e.json.gz",
+   "zona": "crudo",
+   "bytes": 669,
+   "sha256": "e43094350f035e61ed08d537983f2ab58b126cfbdf1014a28b9916ef5154887a",
+   "sitio": "www.ncei.noaa.gov",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "crudo/sitio=www.ncei.noaa.gov/fecha=2026-11-02/v1-4045fa524e.json.gz",
+   "zona": "crudo",
+   "bytes": 669,
+   "sha256": "e43094350f035e61ed08d537983f2ab58b126cfbdf1014a28b9916ef5154887a",
+   "sitio": "www.ncei.noaa.gov",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=censo/fecha=2026-10-26/censo.json",
+   "zona": "curado",
+   "bytes": 87505,
+   "sha256": "95c433dc0407403abcd61e630bea5af8f461311d0338fb684bf311176a8566b3",
+   "tema": "censo",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=censo/fecha=2026-11-02/censo.json",
+   "zona": "curado",
+   "bytes": 87505,
+   "sha256": "69897ab1e3fcd7b893a314791e1dadfbd99e40235ec63b83caf60425b942d0f4",
+   "tema": "censo",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=clima/fecha=2026-10-26/clima.json",
+   "zona": "curado",
+   "bytes": 2529,
+   "sha256": "0d630f7cded3bbe5b66ca7b23da8519b96c383ec0ad6a0466fa659166a8355af",
+   "tema": "clima",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=clima/fecha=2026-11-02/clima.json",
+   "zona": "curado",
+   "bytes": 2527,
+   "sha256": "2403ca5814387e6bbb789ac5755e0435579abdfbd19fb900bea9f7aea1563aae",
+   "tema": "clima",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=clima_historico/fecha=2026-10-26/clima_historico.json",
+   "zona": "curado",
+   "bytes": 6719,
+   "sha256": "54e060bb6977671854f3bcaa97930e4b4ebb81c3fc94998ecdcacd0aa237de91",
+   "tema": "clima_historico",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=clima_historico/fecha=2026-11-02/clima_historico.json",
+   "zona": "curado",
+   "bytes": 6719,
+   "sha256": "8886ff76595107abc1b28894e757ab6acd597252a4f09504fe0724eb7780543b",
+   "tema": "clima_historico",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=codigo/fecha=2026-10-26/codigo.json",
+   "zona": "curado",
+   "bytes": 34554,
+   "sha256": "b8f8a431241a9567202d98089e6dd17fa0e4d74dca7582cb645b7bebb50e3079",
+   "tema": "codigo",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=codigo/fecha=2026-11-02/codigo.json",
+   "zona": "curado",
+   "bytes": 34554,
+   "sha256": "6713e22b676a942985eb2f73b67e5aa3758bdccbd4da323304418ae9de0f0418",
+   "tema": "codigo",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=economia/fecha=2026-10-26/economia.json",
+   "zona": "curado",
+   "bytes": 143687,
+   "sha256": "cb39f4321384fbacf093a3972b8eb2cbf36dabf19cca0e4480db596452cdd981",
+   "tema": "economia",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=economia/fecha=2026-11-02/economia.json",
+   "zona": "curado",
+   "bytes": 143838,
+   "sha256": "0cd1580df5f197f8e1ba83d78b861e6b10889ccd90f73d6331f2f6e511c7100f",
+   "tema": "economia",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=empleo/fecha=2026-10-26/empleo.json",
+   "zona": "curado",
+   "bytes": 121884,
+   "sha256": "4a8f1462796fccb1e095153a49de2829d205e8e8f89fe33f5d14b3e7808dcc14",
+   "tema": "empleo",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=empleo/fecha=2026-11-02/empleo.json",
+   "zona": "curado",
+   "bytes": 122185,
+   "sha256": "ab6524a721b394035d2d67068b9d0957425bc8c0eaa4c2a75912c34952644981",
+   "tema": "empleo",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=escucha/fecha=2026-10-26/escucha.json",
+   "zona": "curado",
+   "bytes": 10455,
+   "sha256": "85f1dc5c67069c221d61d79f2b800284849ecca42a253f294ff358c29323b057",
+   "tema": "escucha",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=escucha/fecha=2026-11-02/escucha.json",
+   "zona": "curado",
+   "bytes": 10452,
+   "sha256": "672e0f9d29264d3efb79ee1c48b7b12a33e47a6e898047111c90f82b1f36af0f",
+   "tema": "escucha",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=gente/fecha=2026-10-26/gente.json",
+   "zona": "curado",
+   "bytes": 38641,
+   "sha256": "fce8fbdec89a8d2225055cceb4fcc5493008df29e33cdf65d88d009b32d3e9a8",
+   "tema": "gente",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=gente/fecha=2026-11-02/gente.json",
+   "zona": "curado",
+   "bytes": 38641,
+   "sha256": "5e11c6120f5e41c7505b80f92f46b01c69370c18558efd117c608a7e31c29147",
+   "tema": "gente",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=negocios/fecha=2026-10-26/negocios.json",
+   "zona": "curado",
+   "bytes": 26344,
+   "sha256": "0f6e634ae4562660aba847c994e14a7bb038b5eed3e508880793ed10f29907eb",
+   "tema": "negocios",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=negocios/fecha=2026-11-02/negocios.json",
+   "zona": "curado",
+   "bytes": 26346,
+   "sha256": "fa4ac1153e5db036ab74dd838c302bc46087a89343e1b678e7dd74bef5e61d54",
+   "tema": "negocios",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=permisos/fecha=2026-10-26/permisos.json",
+   "zona": "curado",
+   "bytes": 35563,
+   "sha256": "5f612cfcf0ecf8fb02870baef4438e153a6837e8c9313147619ac8ce2b2d0f45",
+   "tema": "permisos",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=permisos/fecha=2026-11-02/permisos.json",
+   "zona": "curado",
+   "bytes": 35563,
+   "sha256": "776a3964ed890375389a5f45e31f1d85db0817a54b1cf776cc6bc97331f80123",
+   "tema": "permisos",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=planeacion/fecha=2026-10-26/planeacion.json",
+   "zona": "curado",
+   "bytes": 62046,
+   "sha256": "fefee4419eee5ab1b4f574e9001a0c9e3a66e14ade5259ad48e2d2186bc9011d",
+   "tema": "planeacion",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=planeacion/fecha=2026-11-02/planeacion.json",
+   "zona": "curado",
+   "bytes": 62046,
+   "sha256": "37ecf0593bdb7abc773f13310cf360e6f64c6c813760415e7f76b52190ed2285",
+   "tema": "planeacion",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=riesgo/fecha=2026-10-26/riesgo.json",
+   "zona": "curado",
+   "bytes": 43668,
+   "sha256": "864fe098ec4b87397bc1c2b838a7a3d593777c54bc1b20f0db2082d5dbcad090",
+   "tema": "riesgo",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=riesgo/fecha=2026-11-02/riesgo.json",
+   "zona": "curado",
+   "bytes": 43668,
+   "sha256": "a7197ea01d8fa2ead90fc517b9edc755a61b3cac800a2589a8638db2f7cfe541",
+   "tema": "riesgo",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=seguridad/fecha=2026-10-26/seguridad.json",
+   "zona": "curado",
+   "bytes": 37552,
+   "sha256": "939a06acb159538c09dd305f1435350fd011e3769fdce40aadbb6378bb845b5f",
+   "tema": "seguridad",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=seguridad/fecha=2026-11-02/seguridad.json",
+   "zona": "curado",
+   "bytes": 37552,
+   "sha256": "64dafa71526375b3cf228b65e11c46fc0487df36141e20297c5cb250cf8329b5",
+   "tema": "seguridad",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=servicios/fecha=2026-10-26/servicios.json",
+   "zona": "curado",
+   "bytes": 15516,
+   "sha256": "d754685c384a5958cd815d466a9dd15a1e617104837eec6561138d7c681a761c",
+   "tema": "servicios",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=servicios/fecha=2026-11-02/servicios.json",
+   "zona": "curado",
+   "bytes": 15516,
+   "sha256": "deddfccd79c58eb8321da44d3c2831ecfa35f5d3b935db76ee498ac6be4799e7",
+   "tema": "servicios",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=territorio/fecha=2026-10-26/territorio.json",
+   "zona": "curado",
+   "bytes": 2380,
+   "sha256": "fb05f4d7d776a825b788d7ed35ba0cee6669aa4e31e163df3562d0d6447089a7",
+   "tema": "territorio",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=territorio/fecha=2026-11-02/territorio.json",
+   "zona": "curado",
+   "bytes": 2380,
+   "sha256": "e1b232affc767defebd9831db66004bceed1bed70266874b14993145bdc04c1b",
+   "tema": "territorio",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=trafico/fecha=2026-11-02/trafico.json",
+   "zona": "curado",
+   "bytes": 13715,
+   "sha256": "12d07be2ee2c67de024ecafa8cb58f41cc2f2645709b1d040869e1362bb32d7e",
+   "tema": "trafico",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=transporte/fecha=2026-11-02/transporte.json",
+   "zona": "curado",
+   "bytes": 15039,
+   "sha256": "5dd019f17c75fddcfe78925cb1fca452bdee0068de486e34137f5cfe65120644",
+   "tema": "transporte",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=turismo/fecha=2026-10-26/turismo.json",
+   "zona": "curado",
+   "bytes": 89394,
+   "sha256": "a3a9de0e9794f52308cfc9c80b45cc182f0cf7e3f6eecbc994a8372a80db95ff",
+   "tema": "turismo",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=turismo/fecha=2026-11-02/turismo.json",
+   "zona": "curado",
+   "bytes": 89394,
+   "sha256": "ad78c9f28e3d290d697f56e72d6b97f0fcd60574edd352f54e7a84edd0188895",
+   "tema": "turismo",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "curado/tema=vivienda/fecha=2026-10-26/vivienda.json",
+   "zona": "curado",
+   "bytes": 221206,
+   "sha256": "47be2426e06115f3ea07098513233d04845b491f8526bacb66a0f8323e4c6798",
+   "tema": "vivienda",
+   "fecha": "2026-10-26"
+  },
+  {
+   "ruta": "curado/tema=vivienda/fecha=2026-11-02/vivienda.json",
+   "zona": "curado",
+   "bytes": 221247,
+   "sha256": "90adfbaa641d6266a313521d8666582bdc6d8c6cf7695d0f0c88494870a343d9",
+   "tema": "vivienda",
+   "fecha": "2026-11-02"
+  },
+  {
+   "ruta": "territorio/barrios.geojson",
+   "zona": "territorio",
+   "bytes": 103943,
+   "sha256": "24a353a32d9fd00b4afe2c7db420c31ab0314c875fcc51cc4f986b8aa29ecb62"
+  },
+  {
+   "ruta": "territorio/distritos_comisionados.geojson",
+   "zona": "territorio",
+   "bytes": 62944,
+   "sha256": "e7de972a32430331ebd51f348ccc5756e6ccd7b28e67df0aeae4b80978fbe0f6"
+  },
+  {
+   "ruta": "territorio/lagos.geojson",
+   "zona": "territorio",
+   "bytes": 121912,
+   "sha256": "aabafa5434825ee2fa3703d0a0950cb9cdc935369845293f61122f5c1a199306"
+  },
+  {
+   "ruta": "territorio/limite_ciudad.geojson",
+   "zona": "territorio",
+   "bytes": 55602,
+   "sha256": "bf6ca335b3cbddd5054d90fb7a4e857520a1b56865c8b625edce5cd917d277a5"
+  },
+  {
+   "ruta": "territorio/rutas_bus.geojson",
+   "zona": "territorio",
+   "bytes": 75516,
+   "sha256": "7ccfe158c730d65f769ee3fad3e860a431d2e46416af0cb1bbb810f3e8d4e51f"
+  },
+  {
+   "ruta": "territorio/vias_trafico.geojson",
+   "zona": "territorio",
+   "bytes": 153276,
+   "sha256": "523788656aa17640c25a6b4919f61c2456d45de6a0c178b708593209211375a4"
+  }
+ ]
+}

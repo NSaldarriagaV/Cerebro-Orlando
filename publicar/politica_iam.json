@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CrearYConfigurarElBucketDelLago",
+      "Effect": "Allow",
+      "Action": ["s3:CreateBucket", "s3:PutBucketPublicAccessBlock", "s3:PutEncryptionConfiguration",
+                 "s3:PutBucketVersioning", "s3:PutBucketTagging", "s3:PutLifecycleConfiguration",
+                 "s3:ListBucket", "s3:GetBucketLocation"],
+      "Resource": "arn:aws:s3:::cerebro-orlando-lago-eafit"
+    },
+    {
+      "Sid": "LeerYSubirArchivosSinBorrar",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:PutObject"],
+      "Resource": "arn:aws:s3:::cerebro-orlando-lago-eafit/*"
+    },
+    {
+      "Sid": "ConsultarElLagoConAthena",
+      "Effect": "Allow",
+      "Action": ["athena:StartQueryExecution", "athena:GetQueryExecution", "athena:GetQueryResults", "athena:StopQueryExecution",
+                 "athena:GetWorkGroup", "glue:CreateDatabase", "glue:GetDatabase", "glue:GetDatabases", "glue:CreateTable",
+                 "glue:UpdateTable", "glue:GetTable", "glue:GetTables", "glue:GetPartitions"],
+      "Resource": "*"
+    }
+  ]
+}

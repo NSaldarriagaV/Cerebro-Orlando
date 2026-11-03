@@ -1,0 +1,77 @@
+{
+ "tema": "territorio",
+ "probado": "2026-10-26",
+ "fuentes": [
+  {
+   "id": "orlando_limites",
+   "nombre": "Orlando Open Data · Orlando City Limits (adpi-29a3)",
+   "url": "https://data.cityoforlando.net/resource/adpi-29a3.json",
+   "estado": "vivo",
+   "licencia": "no declara",
+   "crudo": [
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-adpi-29a3-5e26339304.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-adpi-29a3-7ded21cfc0.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-iy8d-dzv4-bc7b155045.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-j3uy-fhhx-28d3ce92b9.json.gz",
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/ficha-yskk-n7cw-b4ceff44b2.json.gz"
+   ]
+  },
+  {
+   "id": "orlando_barrios",
+   "nombre": "Orlando Open Data · Orlando Neighborhoods (yskk-n7cw)",
+   "url": "https://data.cityoforlando.net/resource/yskk-n7cw.json",
+   "estado": "vivo",
+   "licencia": "no declara",
+   "crudo": [
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-yskk-n7cw-02c6416e73.json.gz"
+   ]
+  },
+  {
+   "id": "orlando_distritos",
+   "nombre": "Orlando Open Data · Orlando Commissioner Districts (iy8d-dzv4)",
+   "url": "https://data.cityoforlando.net/resource/iy8d-dzv4.json",
+   "estado": "vivo",
+   "licencia": "no declara",
+   "crudo": [
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-iy8d-dzv4-a55f4cd575.json.gz"
+   ]
+  },
+  {
+   "id": "orlando_lagos",
+   "nombre": "Orlando Open Data · OrlandoHydrology (j3uy-fhhx)",
+   "url": "https://data.cityoforlando.net/resource/j3uy-fhhx.json",
+   "estado": "vivo",
+   "licencia": "no declara",
+   "crudo": [
+    "crudo/sitio=data.cityoforlando.net/fecha=2026-10-26/datos-j3uy-fhhx-cbd7c818d8.json.gz"
+   ]
+  }
+ ],
+ "cifras": {
+  "poligonos_limite_ciudad": {
+   "valor": 1,
+   "unidad": "polígonos",
+   "vigencia": "2026-10-09",
+   "fuente": "orlando_limites"
+  },
+  "poligonos_barrios": {
+   "valor": 125,
+   "unidad": "polígonos",
+   "vigencia": "2026-10-09",
+   "fuente": "orlando_barrios"
+  },
+  "poligonos_distritos_comisionados": {
+   "valor": 6,
+   "unidad": "polígonos",
+   "vigencia": "2026-10-09",
+   "fuente": "orlando_distritos"
+  },
+  "poligonos_lagos": {
+   "valor": 133,
+   "unidad": "polígonos",
+   "vigencia": "2016-03-24",
+   "fuente": "orlando_lagos"
+  }
+ },
+ "series": {}
+}

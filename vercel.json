@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "rm -rf publico/lago && cp -r lago publico/lago",
+  "outputDirectory": "publico",
+  "headers": [
+    {"source": "/lago/(.*)", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Cache-Control", "value": "public, max-age=600"}]},
+    {"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}]}
+  ]
+}

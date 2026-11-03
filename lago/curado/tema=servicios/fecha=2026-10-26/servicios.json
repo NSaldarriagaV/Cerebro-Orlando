@@ -1,0 +1,1210 @@
+{
+ "tema": "servicios",
+ "probado": "2026-10-26",
+ "fuentes": [
+  {
+   "id": "orlando_sig",
+   "nombre": "SIG de la Ciudad de Orlando (gis.orlando.gov): parques, colegios, SunRail, ciclovías, proyecciones 2045 y zonas con incentivos",
+   "url": "https://gis.orlando.gov/server/rest/services/Socrata_OpenData/OrlandoParks/MapServer/0/query?where=1%3D1&outSR=4326&f=json&returnGeometry=true&outFields=TYPE&maxAllowableOffset=0.0002&geometryPrecision=5",
+   "estado": "vivo",
+   "licencia": "no declara",
+   "crudo": [
+    "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/orlandobikeroutes-0-249dc7e4bf.json.gz",
+    "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/orlandoparks-0-ccaae68281.json.gz",
+    "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/schools-1-3b5cb49841.json.gz",
+    "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/schools-3-bded12ec06.json.gz",
+    "crudo/sitio=gis.orlando.gov/fecha=2026-10-26/transportation-27-f34464ab6c.json.gz"
+   ]
+  }
+ ],
+ "cifras": {
+  "parques_ciudad": {
+   "valor": 134,
+   "unidad": "parques de la ciudad (por su centro) en los barrios de la ciudad",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_sig"
+  },
+  "parques_km2_ciudad": {
+   "valor": 8.8,
+   "unidad": "km² de parque (por el centro del parque) en los barrios de la ciudad",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_sig"
+  },
+  "colegios_ciudad": {
+   "valor": 47,
+   "unidad": "colegios públicos de OCPS en los barrios de la ciudad",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_sig"
+  },
+  "charter_ciudad": {
+   "valor": 15,
+   "unidad": "escuelas chárter de OCPS en los barrios de la ciudad",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_sig"
+  },
+  "sunrail_ciudad": {
+   "valor": 5,
+   "unidad": "estaciones de SunRail en los barrios de la ciudad",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_sig"
+  },
+  "ciclovias_km_ciudad": {
+   "valor": 389.0,
+   "unidad": "km de ciclovía existente en los barrios de la ciudad",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_sig"
+  },
+  "barrios_sin_parque": {
+   "valor": 60,
+   "unidad": "barrios sin un parque de la ciudad adentro",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_sig"
+  },
+  "barrios_sin_colegio_publico": {
+   "valor": 90,
+   "unidad": "barrios sin colegio público adentro",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_sig"
+  },
+  "colegios_fuera_de_la_ciudad": {
+   "valor": 158,
+   "unidad": "colegios públicos de la capa que quedan fuera de los barrios (la capa cubre el condado)",
+   "vigencia": "2026-10-26",
+   "fuente": "orlando_sig"
+  }
+ },
+ "series": {
+  "parques_barrio": {
+   "unidad": "parques de la ciudad (por su centro) · por barrio",
+   "fuente": "orlando_sig",
+   "puntos": [
+    [
+     "College Park",
+     11
+    ],
+    [
+     "Engelwood Park",
+     6
+    ],
+    [
+     "Malibu Groves",
+     4
+    ],
+    [
+     "Lake Cherokee",
+     4
+    ],
+    [
+     "Lawsona/Fern Creek",
+     4
+    ],
+    [
+     "Callahan",
+     4
+    ],
+    [
+     "Lake Formosa",
+     4
+    ],
+    [
+     "Lake Fairview",
+     4
+    ],
+    [
+     "Holden/Parramore",
+     3
+    ],
+    [
+     "Audubon Park",
+     3
+    ],
+    [
+     "Central Business District",
+     3
+    ],
+    [
+     "Park Lake/Highland",
+     3
+    ],
+    [
+     "Colonialtown North",
+     3
+    ],
+    [
+     "Milk District",
+     3
+    ],
+    [
+     "Johnson Village",
+     3
+    ],
+    [
+     "Rosemont",
+     3
+    ],
+    [
+     "Baldwin Park",
+     3
+    ],
+    [
+     "Lake Davis/Greenwood",
+     2
+    ],
+    [
+     "Eagles Nest",
+     2
+    ],
+    [
+     "Orwin Manor",
+     2
+    ],
+    [
+     "South Eola",
+     2
+    ],
+    [
+     "Orlando Executive Airport",
+     2
+    ],
+    [
+     "Richmond Heights",
+     2
+    ],
+    [
+     "Washington Shores",
+     2
+    ],
+    [
+     "Lorna Doone",
+     2
+    ],
+    [
+     "Rowena Gardens",
+     2
+    ],
+    [
+     "Monterey",
+     2
+    ],
+    [
+     "Richmond Estates",
+     2
+    ],
+    [
+     "Colonial Town Center",
+     2
+    ],
+    [
+     "South Orange",
+     2
+    ],
+    [
+     "Lake Richmond",
+     2
+    ],
+    [
+     "Lake Underhill",
+     2
+    ],
+    [
+     "Lake Weldona",
+     2
+    ],
+    [
+     "Rock Lake",
+     2
+    ],
+    [
+     "Lake Como",
+     2
+    ],
+    [
+     "Rosemont North",
+     1
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     1
+    ],
+    [
+     "Countryside",
+     1
+    ],
+    [
+     "South Semoran",
+     1
+    ],
+    [
+     "Lake Dot",
+     1
+    ],
+    [
+     "Rio Grande Park",
+     1
+    ],
+    [
+     "The Willows",
+     1
+    ],
+    [
+     "Lake Sunset",
+     1
+    ],
+    [
+     "Lake Nona South",
+     1
+    ],
+    [
+     "North Orange",
+     1
+    ],
+    [
+     "Carver Shores",
+     1
+    ],
+    [
+     "Delaney Park",
+     1
+    ],
+    [
+     "Clear Lake",
+     1
+    ],
+    [
+     "Lake Mann Estates",
+     1
+    ],
+    [
+     "Timberleaf",
+     1
+    ],
+    [
+     "Wadeview Park",
+     1
+    ],
+    [
+     "Mercy Drive",
+     1
+    ],
+    [
+     "Dover Shores East",
+     1
+    ],
+    [
+     "North Quarter",
+     1
+    ],
+    [
+     "East Park",
+     1
+    ],
+    [
+     "New Malibu",
+     1
+    ],
+    [
+     "Colonialtown South",
+     1
+    ],
+    [
+     "Spring Lake",
+     1
+    ],
+    [
+     "Lancaster Park",
+     1
+    ],
+    [
+     "Southport",
+     1
+    ],
+    [
+     "Airport North",
+     1
+    ],
+    [
+     "West Colonial",
+     1
+    ],
+    [
+     "Princeton/Silver Star",
+     1
+    ],
+    [
+     "Holden Heights",
+     1
+    ],
+    [
+     "Metro West",
+     1
+    ]
+   ]
+  },
+  "parques_km2_barrio": {
+   "unidad": "km² de parque (por el centro del parque) · por barrio",
+   "fuente": "orlando_sig",
+   "puntos": [
+    [
+     "Metro West",
+     1.2
+    ],
+    [
+     "Baldwin Park",
+     1.13
+    ],
+    [
+     "Eagles Nest",
+     1.07
+    ],
+    [
+     "Lake Fairview",
+     0.49
+    ],
+    [
+     "College Park",
+     0.44
+    ],
+    [
+     "Princeton/Silver Star",
+     0.33
+    ],
+    [
+     "Engelwood Park",
+     0.26
+    ],
+    [
+     "Lake Underhill",
+     0.24
+    ],
+    [
+     "Airport North",
+     0.23
+    ],
+    [
+     "Rowena Gardens",
+     0.21
+    ],
+    [
+     "Southport",
+     0.21
+    ],
+    [
+     "Rosemont",
+     0.21
+    ],
+    [
+     "South Eola",
+     0.2
+    ],
+    [
+     "North Orange",
+     0.17
+    ],
+    [
+     "Johnson Village",
+     0.16
+    ],
+    [
+     "Orlando Executive Airport",
+     0.14
+    ],
+    [
+     "Rio Grande Park",
+     0.14
+    ],
+    [
+     "Lake Formosa",
+     0.13
+    ],
+    [
+     "West Colonial",
+     0.13
+    ],
+    [
+     "Lake Cherokee",
+     0.11
+    ],
+    [
+     "Lake Davis/Greenwood",
+     0.11
+    ],
+    [
+     "Monterey",
+     0.11
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     0.1
+    ],
+    [
+     "Colonial Town Center",
+     0.1
+    ],
+    [
+     "Lawsona/Fern Creek",
+     0.1
+    ],
+    [
+     "Park Lake/Highland",
+     0.09
+    ],
+    [
+     "Lake Nona South",
+     0.09
+    ],
+    [
+     "Audubon Park",
+     0.06
+    ],
+    [
+     "Richmond Heights",
+     0.06
+    ],
+    [
+     "Mercy Drive",
+     0.06
+    ],
+    [
+     "Milk District",
+     0.06
+    ],
+    [
+     "Holden/Parramore",
+     0.05
+    ],
+    [
+     "Clear Lake",
+     0.04
+    ],
+    [
+     "Wadeview Park",
+     0.04
+    ],
+    [
+     "Callahan",
+     0.04
+    ],
+    [
+     "Holden Heights",
+     0.04
+    ],
+    [
+     "Countryside",
+     0.03
+    ],
+    [
+     "Lake Dot",
+     0.03
+    ],
+    [
+     "Dover Shores East",
+     0.03
+    ],
+    [
+     "Rock Lake",
+     0.03
+    ],
+    [
+     "Lake Como",
+     0.03
+    ],
+    [
+     "Malibu Groves",
+     0.02
+    ],
+    [
+     "Rosemont North",
+     0.02
+    ],
+    [
+     "Washington Shores",
+     0.02
+    ],
+    [
+     "Lorna Doone",
+     0.02
+    ],
+    [
+     "Lake Sunset",
+     0.02
+    ],
+    [
+     "South Orange",
+     0.02
+    ],
+    [
+     "Delaney Park",
+     0.02
+    ],
+    [
+     "Central Business District",
+     0.01
+    ],
+    [
+     "The Willows",
+     0.01
+    ],
+    [
+     "Richmond Estates",
+     0.01
+    ],
+    [
+     "Carver Shores",
+     0.01
+    ],
+    [
+     "Lake Mann Estates",
+     0.01
+    ],
+    [
+     "Lake Richmond",
+     0.01
+    ],
+    [
+     "Colonialtown North",
+     0.01
+    ],
+    [
+     "East Park",
+     0.01
+    ],
+    [
+     "New Malibu",
+     0.01
+    ],
+    [
+     "Colonialtown South",
+     0.01
+    ],
+    [
+     "Spring Lake",
+     0.01
+    ],
+    [
+     "Lancaster Park",
+     0.01
+    ],
+    [
+     "Orwin Manor",
+     0.0
+    ],
+    [
+     "South Semoran",
+     0.0
+    ],
+    [
+     "Timberleaf",
+     0.0
+    ],
+    [
+     "Lake Weldona",
+     0.0
+    ],
+    [
+     "North Quarter",
+     0.0
+    ]
+   ]
+  },
+  "colegios_barrio": {
+   "unidad": "colegios públicos de OCPS · por barrio",
+   "fuente": "orlando_sig",
+   "puntos": [
+    [
+     "College Park",
+     3
+    ],
+    [
+     "Lake Nona South",
+     3
+    ],
+    [
+     "Richmond Heights",
+     2
+    ],
+    [
+     "Rio Grande Park",
+     2
+    ],
+    [
+     "Wadeview Park",
+     2
+    ],
+    [
+     "Engelwood Park",
+     2
+    ],
+    [
+     "Millenia",
+     2
+    ],
+    [
+     "Baldwin Park",
+     2
+    ],
+    [
+     "Vista East",
+     2
+    ],
+    [
+     "Metro West",
+     2
+    ],
+    [
+     "Malibu Groves",
+     1
+    ],
+    [
+     "Audubon Park",
+     1
+    ],
+    [
+     "Randal Park",
+     1
+    ],
+    [
+     "Thornton Park",
+     1
+    ],
+    [
+     "Eagles Nest",
+     1
+    ],
+    [
+     "Countryside",
+     1
+    ],
+    [
+     "Florida Center",
+     1
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     1
+    ],
+    [
+     "Washington Shores",
+     1
+    ],
+    [
+     "Lorna Doone",
+     1
+    ],
+    [
+     "Lake Sunset",
+     1
+    ],
+    [
+     "Lake Eola Heights",
+     1
+    ],
+    [
+     "Colonialtown North",
+     1
+    ],
+    [
+     "Callahan",
+     1
+    ],
+    [
+     "Ventura",
+     1
+    ],
+    [
+     "Dover Shores East",
+     1
+    ],
+    [
+     "Rock Lake",
+     1
+    ],
+    [
+     "Lake Nona Central",
+     1
+    ],
+    [
+     "Storey Park",
+     1
+    ],
+    [
+     "Azalea Park",
+     1
+    ],
+    [
+     "Florida Center North",
+     1
+    ],
+    [
+     "Airport North",
+     1
+    ],
+    [
+     "Lake Como",
+     1
+    ],
+    [
+     "Rosemont",
+     1
+    ],
+    [
+     "Palomar",
+     1
+    ]
+   ]
+  },
+  "charter_barrio": {
+   "unidad": "escuelas chárter de OCPS · por barrio",
+   "fuente": "orlando_sig",
+   "puntos": [
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     1
+    ],
+    [
+     "Central Business District",
+     1
+    ],
+    [
+     "Dover Manor",
+     1
+    ],
+    [
+     "Lawsona/Fern Creek",
+     1
+    ],
+    [
+     "Clear Lake",
+     1
+    ],
+    [
+     "Mercy Drive",
+     1
+    ],
+    [
+     "Callahan",
+     1
+    ],
+    [
+     "Dover Shores East",
+     1
+    ],
+    [
+     "Milk District",
+     1
+    ],
+    [
+     "Bal Bay",
+     1
+    ],
+    [
+     "Engelwood Park",
+     1
+    ],
+    [
+     "Airport North",
+     1
+    ],
+    [
+     "West Colonial",
+     1
+    ],
+    [
+     "Princeton/Silver Star",
+     1
+    ],
+    [
+     "Pineloch",
+     1
+    ]
+   ]
+  },
+  "sunrail_barrio": {
+   "unidad": "estaciones de SunRail · por barrio",
+   "fuente": "orlando_sig",
+   "puntos": [
+    [
+     "Central Business District",
+     3
+    ],
+    [
+     "South Orange",
+     1
+    ],
+    [
+     "Lake Formosa",
+     1
+    ]
+   ]
+  },
+  "ciclovias_km_barrio": {
+   "unidad": "km de ciclovía existente · por barrio",
+   "fuente": "orlando_sig",
+   "puntos": [
+    [
+     "Lake Nona South",
+     42.6
+    ],
+    [
+     "Florida Center",
+     24.47
+    ],
+    [
+     "College Park",
+     23.07
+    ],
+    [
+     "Airport North",
+     20.3
+    ],
+    [
+     "Metro West",
+     18.76
+    ],
+    [
+     "ORLANDO INTERNATIONAL AIRPORT",
+     14.94
+    ],
+    [
+     "Baldwin Park",
+     14.59
+    ],
+    [
+     "Lake Nona Central",
+     13.14
+    ],
+    [
+     "Storey Park",
+     11.05
+    ],
+    [
+     "Vista East",
+     11.04
+    ],
+    [
+     "Florida Center North",
+     9.82
+    ],
+    [
+     "Rosemont",
+     9.75
+    ],
+    [
+     "South Semoran",
+     8.19
+    ],
+    [
+     "Eagles Nest",
+     7.23
+    ],
+    [
+     "Holden/Parramore",
+     7.07
+    ],
+    [
+     "Central Business District",
+     6.08
+    ],
+    [
+     "33rd St. Industrial",
+     5.91
+    ],
+    [
+     "Millenia",
+     5.5
+    ],
+    [
+     "Princeton/Silver Star",
+     5.19
+    ],
+    [
+     "East Park",
+     5.02
+    ],
+    [
+     "West Colonial",
+     4.87
+    ],
+    [
+     "Colonialtown North",
+     4.86
+    ],
+    [
+     "North Quarter",
+     4.11
+    ],
+    [
+     "Colonial Town Center",
+     4.08
+    ],
+    [
+     "Monterey",
+     3.71
+    ],
+    [
+     "Richmond Heights",
+     3.57
+    ],
+    [
+     "Lake Eola Heights",
+     3.33
+    ],
+    [
+     "Park Lake/Highland",
+     3.1
+    ],
+    [
+     "North Orange",
+     3.05
+    ],
+    [
+     "Lake Nona Estates",
+     3.05
+    ],
+    [
+     "Randal Park",
+     2.95
+    ],
+    [
+     "Lake Formosa",
+     2.91
+    ],
+    [
+     "Orlando Executive Airport",
+     2.74
+    ],
+    [
+     "Northlake Park at Lake Nona",
+     2.67
+    ],
+    [
+     "Bryn Mawr",
+     2.6
+    ],
+    [
+     "Dover Shores East",
+     2.58
+    ],
+    [
+     "Mercy Drive",
+     2.53
+    ],
+    [
+     "Clear Lake",
+     2.46
+    ],
+    [
+     "Callahan",
+     2.39
+    ],
+    [
+     "Lake Underhill",
+     2.35
+    ],
+    [
+     "Colonialtown South",
+     2.26
+    ],
+    [
+     "Signal Hill",
+     2.25
+    ],
+    [
+     "Pineloch",
+     2.25
+    ],
+    [
+     "The Dovers",
+     2.2
+    ],
+    [
+     "Malibu Groves",
+     1.93
+    ],
+    [
+     "Lake Davis/Greenwood",
+     1.89
+    ],
+    [
+     "Rock Lake",
+     1.87
+    ],
+    [
+     "Rose Isle",
+     1.86
+    ],
+    [
+     "Palomar",
+     1.84
+    ],
+    [
+     "Lake Fredrica",
+     1.8
+    ],
+    [
+     "Lake Cherokee",
+     1.71
+    ],
+    [
+     "Windhover",
+     1.7
+    ],
+    [
+     "Meridian Park",
+     1.69
+    ],
+    [
+     "Lake Como",
+     1.67
+    ],
+    [
+     "Lake Sunset",
+     1.64
+    ],
+    [
+     "Lake Dot",
+     1.63
+    ],
+    [
+     "Wadeview Park",
+     1.62
+    ],
+    [
+     "Richmond Estates",
+     1.6
+    ],
+    [
+     "Orwin Manor",
+     1.55
+    ],
+    [
+     "South Eola",
+     1.46
+    ],
+    [
+     "Rio Grande Park",
+     1.46
+    ],
+    [
+     "Kirkman North",
+     1.4
+    ],
+    [
+     "Dover Shores West",
+     1.35
+    ],
+    [
+     "Mariners Village",
+     1.3
+    ],
+    [
+     "Carver Shores",
+     1.24
+    ],
+    [
+     "Delaney Park",
+     1.24
+    ],
+    [
+     "Thornton Park",
+     1.16
+    ],
+    [
+     "LaVina",
+     1.14
+    ],
+    [
+     "Bel Air",
+     1.05
+    ],
+    [
+     "Seaboard Industrial",
+     1.03
+    ],
+    [
+     "Engelwood Park",
+     1.03
+    ],
+    [
+     "Johnson Village",
+     0.99
+    ],
+    [
+     "Dover Manor",
+     0.94
+    ],
+    [
+     "Coytown",
+     0.92
+    ],
+    [
+     "Milk District",
+     0.87
+    ],
+    [
+     "Rosemont North",
+     0.85
+    ],
+    [
+     "Holden Heights",
+     0.81
+    ],
+    [
+     "Lorna Doone",
+     0.71
+    ],
+    [
+     "Beltway Commerce Center",
+     0.67
+    ],
+    [
+     "Catalina",
+     0.65
+    ],
+    [
+     "Lake Weldona",
+     0.61
+    ],
+    [
+     "Spring Lake",
+     0.57
+    ],
+    [
+     "Washington Shores",
+     0.49
+    ],
+    [
+     "Azalea Park",
+     0.46
+    ],
+    [
+     "Lawsona/Fern Creek",
+     0.44
+    ],
+    [
+     "Lake Copeland",
+     0.43
+    ],
+    [
+     "Roosevelt Park",
+     0.42
+    ],
+    [
+     "Lake Richmond",
+     0.36
+    ],
+    [
+     "Countryside",
+     0.27
+    ],
+    [
+     "Audubon Park",
+     0.07
+    ],
+    [
+     "Lancaster Park",
+     0.04
+    ]
+   ]
+  }
+ }
+}

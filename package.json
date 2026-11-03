@@ -1,0 +1,6 @@
+{
+  "name": "cerebro-orlando",
+  "private": true,
+  "type": "module",
+  "description": "Sin dependencias. Este archivo solo marca middleware.js como módulo ES para Vercel."
+}

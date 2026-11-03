@@ -10,11 +10,11 @@ Lee:     - Proyecciones de población y empleo 2017 → 2045 por zona de anális
          - Anexiones de la ciudad por año (cuánto ha crecido el territorio).
 Escribe: lago/raw/planeacion/planeacion.json con la forma del contrato.
 
-Cómo se lleva a barrios (derivado): rejilla de puntos cada 150 m (ver comun.reparto). La población y el empleo de cada
+Cómo se lleva a barrios (derivado): rejilla de puntos cada 40 m (ver comun.reparto y pull_censo.py). La población y el empleo de cada
 zona se reparten según la parte de la zona que cae en cada barrio; las zonas con incentivo se miden como «qué parte
 del barrio está adentro». Las solicitudes ya traen el barrio. Barrio-año con menos de 5 solicitudes no se publica."""
 import datetime, urllib.parse
-from comun import (get_json, fuente_lago, cifra, escribir_lago, Capa, reparto, cobertura_zona, leer_territorio, desde_esri,
+from comun import (get_json, fuente_lago, cifra, escribir_lago, Capa, reparto, cobertura_zona, leer_territorio, desde_esri, fecha_prueba,
                    arcgis, suprimir)
 
 SIG = "https://gis.orlando.gov/server/rest/services"
@@ -38,7 +38,7 @@ def soql(ds, **partes):
     return f"{PORTAL}/resource/{ds}.json?" + "&".join(f"${k}={urllib.parse.quote(v, safe='')}" for k, v in partes.items())
 
 
-hoy = datetime.date.today()
+hoy = fecha_prueba()
 nombres = [f["properties"]["nombre"] for f in leer_territorio("barrios")]
 FS, FP, FA = "orlando_sig", "orlando_planeacion", "orlando_anexiones"
 series, cifras = {}, {}
@@ -48,7 +48,7 @@ url_taz = arcgis(TAZ, outFields="TrafficZoneNumber,ResPop2017,ResPop2045,EmpPop2
                  maxAllowableOffset="0.0003", geometryPrecision="5")
 zonas = get_json(url_taz, timeout=120)["features"]
 capa = Capa([(i, desde_esri(z["geometry"])) for i, z in enumerate(zonas)])
-pesos, _ = reparto(capa, paso_m=150)
+pesos, _ = reparto(capa, paso_m=40)
 acum = {}
 for i, bs in pesos.items():
     a = zonas[i]["attributes"]
@@ -75,7 +75,7 @@ urls_z = {}
 for k, (capa_url, campo) in ZONAS.items():
     urls_z[k] = arcgis(capa_url, outFields=campo, returnGeometry="true", maxAllowableOffset="0.0002", geometryPrecision="5")
     feats = get_json(urls_z[k], timeout=120)["features"]
-    frac, cuales = cobertura_zona(Capa([(f["attributes"].get(campo) or "sin nombre", desde_esri(f["geometry"])) for f in feats]), paso_m=150)
+    frac, cuales = cobertura_zona(Capa([(f["attributes"].get(campo) or "sin nombre", desde_esri(f["geometry"])) for f in feats]), paso_m=40)
     series[f"{k}_barrio"] = {"unidad": "% de la tierra del barrio dentro de la zona", "fuente": FS,
                              "puntos": sorted(([b, round(frac[b] * 100)] for b in nombres if frac.get(b, 0) >= .05), key=lambda p: -p[1])}
     cifras[f"barrios_en_{k}"] = cifra(len(series[f"{k}_barrio"]["puntos"]), "barrios con al menos 5 % de su tierra en la zona", hoy.isoformat(), FS)

@@ -1,0 +1,160 @@
+{
+ "tema": "clima",
+ "probado": "2026-11-02",
+ "fuentes": [
+  {
+   "id": "nws_api",
+   "nombre": "National Weather Service · pronóstico, alertas y observaciones para Orlando",
+   "url": "https://api.weather.gov/points/28.5383,-81.3792",
+   "estado": "vivo",
+   "licencia": "Dominio público (obra del gobierno de EE. UU.)",
+   "crudo": [
+    "crudo/sitio=api.weather.gov/fecha=2026-11-02/28-5383--81-3792-d0e73946f2.json.gz",
+    "crudo/sitio=api.weather.gov/fecha=2026-11-02/active-23b1b8087c.json.gz",
+    "crudo/sitio=api.weather.gov/fecha=2026-11-02/forecast-561f4a7dad.json.gz",
+    "crudo/sitio=api.weather.gov/fecha=2026-11-02/latest-32a12a697f.json.gz",
+    "crudo/sitio=api.weather.gov/fecha=2026-11-02/stations-10fb1e6dd6.json.gz"
+   ]
+  }
+ ],
+ "cifras": {
+  "temperatura_actual": {
+   "valor": 75.0,
+   "unidad": "°F",
+   "vigencia": "2026-11-02",
+   "fuente": "nws_api"
+  },
+  "alertas_activas": {
+   "valor": 1,
+   "unidad": "alertas vigentes",
+   "vigencia": "2026-11-02",
+   "fuente": "nws_api"
+  }
+ },
+ "series": {
+  "pronostico_temperatura": {
+   "unidad": "°F",
+   "fuente": "nws_api",
+   "puntos": [
+    [
+     "2026-11-02T17:00",
+     79
+    ],
+    [
+     "2026-11-02T18:00",
+     70
+    ],
+    [
+     "2026-11-03T06:00",
+     83
+    ],
+    [
+     "2026-11-03T18:00",
+     70
+    ],
+    [
+     "2026-11-04T06:00",
+     85
+    ],
+    [
+     "2026-11-04T18:00",
+     68
+    ],
+    [
+     "2026-11-05T06:00",
+     85
+    ],
+    [
+     "2026-11-05T18:00",
+     68
+    ],
+    [
+     "2026-11-06T06:00",
+     83
+    ],
+    [
+     "2026-11-06T18:00",
+     64
+    ],
+    [
+     "2026-11-07T06:00",
+     81
+    ],
+    [
+     "2026-11-07T18:00",
+     62
+    ],
+    [
+     "2026-11-08T06:00",
+     80
+    ],
+    [
+     "2026-11-08T18:00",
+     62
+    ]
+   ]
+  },
+  "pronostico_lluvia": {
+   "unidad": "% de probabilidad",
+   "fuente": "nws_api",
+   "puntos": [
+    [
+     "2026-11-02T17:00",
+     44
+    ],
+    [
+     "2026-11-02T18:00",
+     37
+    ],
+    [
+     "2026-11-03T06:00",
+     47
+    ],
+    [
+     "2026-11-03T18:00",
+     20
+    ],
+    [
+     "2026-11-04T06:00",
+     35
+    ],
+    [
+     "2026-11-04T18:00",
+     35
+    ],
+    [
+     "2026-11-05T06:00",
+     13
+    ],
+    [
+     "2026-11-05T18:00",
+     13
+    ],
+    [
+     "2026-11-06T06:00",
+     11
+    ],
+    [
+     "2026-11-06T18:00",
+     11
+    ],
+    [
+     "2026-11-07T06:00",
+     4
+    ],
+    [
+     "2026-11-07T18:00",
+     4
+    ],
+    [
+     "2026-11-08T06:00",
+     9
+    ],
+    [
+     "2026-11-08T18:00",
+     16
+    ]
+   ]
+  }
+ }
+}

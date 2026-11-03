@@ -9,7 +9,9 @@ Lee:     - American Community Survey 2020-2024 (5 años) por sector censal («tr
 Escribe: lago/raw/censo/censo.json y lago/raw/riesgo/riesgo.json con la forma del contrato.
 
 Cómo se pasa de sectores a barrios (derivado, y así se dice en la vista): se cubre el área con una rejilla de puntos de
-tierra firme cada 150 m (sin lagos) y se cuenta qué parte de cada sector cae en cada barrio. Los conteos (personas,
+tierra firme cada 40 m (sin lagos) y se cuenta qué parte de cada sector cae en cada barrio. Con 150 m un barrio de
+0,12 km² (Camellia Gardens) recibía 4 puntos y su población salía casi el doble; a 40 m los barrios cambian en promedio
+menos de 3 % frente a 75 m, así que la estimación ya no depende de dónde caiga la rejilla. Los conteos (personas,
 hogares, arrendatarios…) se reparten con esa fracción, suponiendo que la gente se reparte parejo dentro del sector.
 Las medianas (ingreso, arriendo, valor) no se pueden sumar: se promedian ponderando por los hogares que aporta cada
 sector, y por eso se llaman «aproximadas». Un barrio con menos de 200 habitantes estimados no tiene porcentajes ni
@@ -27,6 +29,7 @@ GRUPOS = ["B01003,B19013,B25064,B25003,B25070,B01002,B25077,B25002", "B08201,B08
 NRI = "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Census_Tracts/FeatureServer/0"
 NRI_CAMPOS = ["TRACTFIPS", "POPULATION", "RISK_SCORE", "EAL_VALT", "SOVI_SCORE", "RESL_SCORE", "HRCN_RISKS", "IFLD_RISKS",
               "HWAV_RISKS", "TRND_RISKS", "HRCN_EALT", "IFLD_EALT", "NRI_VER"]
+PASO_M = 40                                                    # rejilla fina: los barrios pequeños necesitan puntos
 MIN_HAB = 200                                                 # bajo esto un barrio no tiene porcentajes ni medianas
 
 
@@ -107,7 +110,7 @@ anio_geo = edicion["id"][3:7]                                  # acs2024_5yr -> 
 url_geo = f"{API}/geo/show/tiger{anio_geo}?geo_ids=140|{CONDADO}"
 geo = get_json(url_geo, timeout=180)
 capa = Capa([(f["properties"]["geoid"], f["geometry"]) for f in geo["features"]])
-pesos, cobertura = reparto(capa, paso_m=150)
+pesos, cobertura = reparto(capa, paso_m=PASO_M)
 
 CONTEOS = ["poblacion", "hogares", "propietarios", "arrendatarios", "carga", "base_carga", "viviendas", "vacantes", "sin_carro",
            "base_carro", "minutos", "trabajadores", "pobres", "base_pobreza", "universitarios", "base_educ", "espanol", "base_idioma"]

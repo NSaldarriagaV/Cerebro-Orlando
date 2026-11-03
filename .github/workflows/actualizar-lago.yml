@@ -1,0 +1,34 @@
+# Actualización automática del lago (experimental).
+# Corre la ingesta desde los servidores de GitHub, verifica y, si todo pasa, guarda la foto nueva en el repositorio.
+# Vercel publica sola cada cambio. Está en modo manual: cuando una corrida manual salga bien, se puede activar
+# el horario quitando el «#» de las dos líneas de «schedule». Algunas fuentes podrían rechazar a los servidores de GitHub;
+# si una falla, la verificación lo dice y no se guarda nada.
+name: Actualizar el lago
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "17 11 * * 1"      # lunes 6:17 a. m. de Orlando
+permissions:
+  contents: write
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Traer las fuentes, verificar y armar la zona de consumo
+        env:
+          CONTACTO: ${{ vars.CONTACTO }}
+        run: python reconstruir.py
+      - name: Reconstruir la vista
+        run: python vista/construir_vista.py
+      - name: Guardar la foto nueva
+        run: |
+          git config user.name "cerebro-orlando-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add lago vista/index.html publico/index.html publico/app.js
+          git diff --cached --quiet || git commit -m "Lago: foto del $(date -u +%F)"
+          git push

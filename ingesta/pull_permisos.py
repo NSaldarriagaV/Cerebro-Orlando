@@ -18,7 +18,7 @@ Las solicitudes sin esa fecha todavía no se cuentan.
 Cruce con la capa de barrios: los nombres del campo «neighborhood» se comparan con los de la capa de barrios del portal y el
 porcentaje que coincide queda en el lago; si es bajo, el nombre no es una llave confiable."""
 import datetime, urllib.parse
-from comun import get_json, fuente_lago, cifra, escribir_lago, variacion_pct
+from comun import get_json, fuente_lago, cifra, escribir_lago, variacion_pct, fecha_prueba
 
 PORTAL = "https://data.cityoforlando.net"
 DATASET = "ryhf-m453"
@@ -36,7 +36,7 @@ def limpio(txt):
     return " ".join(str(txt or "").split())
 
 
-hoy = datetime.date.today()
+hoy = fecha_prueba()
 filas = get_json(soql("neighborhood, date_extract_y(issue_permit_date) as anio, count(*) as permisos",
                       "issue_permit_date IS NOT NULL", "neighborhood, anio", "anio"), timeout=120)
 if not filas:
