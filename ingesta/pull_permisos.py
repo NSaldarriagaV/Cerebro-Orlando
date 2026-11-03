@@ -23,6 +23,7 @@ from comun import get_json, fuente_lago, cifra, escribir_lago, variacion_pct
 PORTAL = "https://data.cityoforlando.net"
 DATASET = "ryhf-m453"
 UMBRAL = 5                       # mínimo de permisos por barrio y año para mostrarlo
+ANIOS_BARRIO = 5                 # años completos que se publican por barrio (para ver dónde crece y dónde se frena)
 UNIDAD = "permisos emitidos (solicitudes con fecha de emisión)"
 
 
@@ -91,6 +92,10 @@ series = {
     "permisos_por_barrio_ultimo_anio": {"unidad": UNIDAD, "fuente": F,
                                         "puntos": sorted(([b, n] for b, n in mostrados.items()), key=lambda p: -p[1])},
 }
+for a in completos[-ANIOS_BARRIO:]:
+    vis = {b: n for b, n in por_anio_barrio[a].items() if b and n >= UMBRAL}
+    series[f"permisos_barrio_{a}"] = {"unidad": f"permisos emitidos en {a}", "fuente": F,
+                                      "puntos": sorted(([b, n] for b, n in vis.items()), key=lambda p: -p[1])}
 url = f"{PORTAL}/resource/{DATASET}.json"
 ruta = escribir_lago("permisos", [fuente_lago(F, url)], cifras, series)
 print(f"Permisos {ultimo}: {total[ultimo]} en la ciudad; {len(mostrados)} barrios mostrados, {suprimidos} suprimidos (< {UMBRAL}), "

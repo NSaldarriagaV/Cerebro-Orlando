@@ -7,6 +7,8 @@ Escribe: lago/raw/clima/clima.json con la forma del contrato.
 OJO: es tiempo real. Este archivo cambia en cada corrida, así que no entra en la prueba de
 reproducibilidad (git diff siempre lo mostrará distinto). Eso es esperado, no un error.
 Unidad: todo en °F (la observación llega en °C y se convierte aquí)."""
+from datetime import datetime, timedelta, timezone
+
 from comun import get_json, hoy, fuente_lago, cifra, escribir_lago
 
 LAT, LON = 28.5383, -81.3792          # centro de Orlando
@@ -20,12 +22,12 @@ periodos = get_json(punto["forecast"])["properties"]["periods"]
 alertas = get_json(f"{BASE}/alerts/active?point={LAT},{LON}")["features"]
 
 # Observación más reciente: la primera estación cercana que traiga temperatura
-temp_f, dia_obs = None, None
+temp_f, ts_obs = None, None
 for est in get_json(punto["observationStations"])["features"][:5]:
     obs = get_json(est["id"] + "/observations/latest")["properties"]
     t = (obs.get("temperature") or {}).get("value")
     if t is not None:
-        temp_f, dia_obs = round(t * 9 / 5 + 32, 1), obs["timestamp"][:10]   # °C -> °F
+        temp_f, ts_obs = round(t * 9 / 5 + 32, 1), obs["timestamp"]   # °C -> °F
         break
 if temp_f is None:
     raise SystemExit("Ninguna de las cinco estaciones cercanas entregó temperatura.")
@@ -35,6 +37,13 @@ def en_f(p):
     t = p["temperature"]
     return round(t * 9 / 5 + 32, 1) if p.get("temperatureUnit") == "C" else t
 
+
+# La observación llega en UTC: se pasa a la hora de Orlando con el desfase que trae el pronóstico (-04:00 o -05:00)
+desfase = periodos[0]["startTime"][-6:]
+signo = -1 if desfase[0] == "-" else 1
+local = datetime.fromisoformat(ts_obs.replace("Z", "+00:00")).astimezone(
+    timezone(signo * timedelta(hours=int(desfase[1:3]), minutes=int(desfase[4:6]))))
+dia_obs = local.date().isoformat()
 
 pronostico = [[p["startTime"][:16], en_f(p)] for p in periodos]
 lluvia = [[p["startTime"][:16], p["probabilityOfPrecipitation"]["value"]] for p in periodos

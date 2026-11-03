@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """La puerta de salida del tramo: borrar el lago y reconstruirlo desde los scripts.
 
-Equivale a: rm -rf lago/raw; for s in ingesta/pull_*.py; do python3 $s; done; python3 verificacion/verificar.py; git diff --stat
+Equivale a: rm -rf lago/raw; python3 ingesta/pull_territorio.py; for s in (los demás) ingesta/pull_*.py; do python3 $s; done; python3 verificacion/verificar.py; git diff --stat
 Funciona igual en Windows. Si después git muestra cambios que nadie esperaba, la ingesta no es reproducible.
 (clima.json cambia siempre: es tiempo real y es esperado.)"""
 import os, pathlib, shutil, subprocess, sys
@@ -13,7 +13,8 @@ for carpeta, patron in (("lago/raw", "*/*.json"), ("lago/territorio", "*.geojson
     for f in (RAIZ / carpeta).glob(patron):
         f.unlink()
 fallaron = []
-for s in sorted((RAIZ / "ingesta").glob("pull_*.py")):
+# pull_territorio.py va primero: censo, código, permisos, planeación y servicios leen las capas que escribe
+for s in sorted((RAIZ / "ingesta").glob("pull_*.py"), key=lambda s: (s.name != "pull_territorio.py", s.name)):
     print(f"\n== {s.name}")
     if subprocess.run([sys.executable, str(s)], cwd=RAIZ, env=ENV).returncode != 0:
         fallaron.append(s.name)
